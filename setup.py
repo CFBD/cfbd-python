@@ -14,7 +14,7 @@
 from setuptools import setup, find_packages  # noqa: H301
 
 NAME = "cfbd"
-VERSION = "$api_version"
+VERSION = "2.0.1"
 # To install the library, run the following
 #
 # python setup.py install
