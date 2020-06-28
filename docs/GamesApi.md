@@ -79,7 +79,7 @@ from pprint import pprint
 api_instance = cfbd.GamesApi()
 year = 56 # int | Year filter
 week = 56 # int | Week filter (optional)
-season_type = 56 # int | Season type filter (regular, postseason, or both) (optional)
+season_type = 'season_type_example' # str | Season type filter (regular, postseason, or both) (optional)
 team = 'team_example' # str | Team filter (optional)
 conference = 'conference_example' # str | Conference filter (optional)
 media_type = 'media_type_example' # str | Media type filter (tv, radio, web, ppv, or mobile) (optional)
@@ -98,7 +98,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **year** | **int**| Year filter | 
  **week** | **int**| Week filter | [optional] 
- **season_type** | **int**| Season type filter (regular, postseason, or both) | [optional] 
+ **season_type** | **str**| Season type filter (regular, postseason, or both) | [optional] 
  **team** | **str**| Team filter | [optional] 
  **conference** | **str**| Conference filter | [optional] 
  **media_type** | **str**| Media type filter (tv, radio, web, ppv, or mobile) | [optional] 
