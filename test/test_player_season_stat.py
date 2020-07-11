@@ -16,12 +16,12 @@ from __future__ import absolute_import
 import unittest
 
 import cfbd
-from cfbd.models.team_sp_rating_special_teams import TeamSPRatingSpecialTeams  # noqa: E501
+from cfbd.models.player_season_stat import PlayerSeasonStat  # noqa: E501
 from cfbd.rest import ApiException
 
 
-class TestTeamSPRatingSpecialTeams(unittest.TestCase):
-    """TeamSPRatingSpecialTeams unit test stubs"""
+class TestPlayerSeasonStat(unittest.TestCase):
+    """PlayerSeasonStat unit test stubs"""
 
     def setUp(self):
         pass
@@ -29,10 +29,10 @@ class TestTeamSPRatingSpecialTeams(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def testTeamSPRatingSpecialTeams(self):
-        """Test TeamSPRatingSpecialTeams"""
+    def testPlayerSeasonStat(self):
+        """Test PlayerSeasonStat"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = cfbd.models.team_sp_rating_special_teams.TeamSPRatingSpecialTeams()  # noqa: E501
+        # model = cfbd.models.player_season_stat.PlayerSeasonStat()  # noqa: E501
         pass
 
 
