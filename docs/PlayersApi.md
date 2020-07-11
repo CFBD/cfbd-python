@@ -33,7 +33,7 @@ conference = 'conference_example' # str | Conference abbreviation filter (option
 start_week = 56 # int | Start week filter (optional)
 end_week = 56 # int | Start week filter (optional)
 season_type = 'season_type_example' # str | Season type filter (regular, postseason, or both) (optional)
-category = 'category_example' # str | Start category filter (e.g. passing) (optional)
+category = 'category_example' # str | Stat category filter (e.g. passing) (optional)
 
 try:
     # Get player stats aggregated by season
@@ -53,7 +53,7 @@ Name | Type | Description  | Notes
  **start_week** | **int**| Start week filter | [optional] 
  **end_week** | **int**| Start week filter | [optional] 
  **season_type** | **str**| Season type filter (regular, postseason, or both) | [optional] 
- **category** | **str**| Start category filter (e.g. passing) | [optional] 
+ **category** | **str**| Stat category filter (e.g. passing) | [optional] 
 
 ### Return type
 
