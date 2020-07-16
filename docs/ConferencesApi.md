@@ -4,15 +4,15 @@ All URIs are relative to *https://api.collegefootballdata.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**get_conferences**](ConferencesApi.md#get_conferences) | **GET** /conferences | Get conference list
+[**get_conferences**](ConferencesApi.md#get_conferences) | **GET** /conferences | Conferences
 
 
 # **get_conferences**
 > list[Conference] get_conferences()
 
-Get conference list
-
 Conferences
+
+Get conference list
 
 ### Example
 ```python
@@ -26,7 +26,7 @@ from pprint import pprint
 api_instance = cfbd.ConferencesApi()
 
 try:
-    # Get conference list
+    # Conferences
     api_response = api_instance.get_conferences()
     pprint(api_response)
 except ApiException as e:

@@ -4,13 +4,13 @@ All URIs are relative to *https://api.collegefootballdata.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**get_lines**](BettingApi.md#get_lines) | **GET** /lines | Get betting line information
+[**get_lines**](BettingApi.md#get_lines) | **GET** /lines | Betting lines
 
 
 # **get_lines**
 > list[GameLines] get_lines(game_id=game_id, year=year, week=week, season_type=season_type, team=team, home=home, away=away, conference=conference)
 
-Get betting line information
+Betting lines
 
 Closing betting lines
 
@@ -34,7 +34,7 @@ away = 'away_example' # str | Away team filter (optional)
 conference = 'conference_example' # str | Conference abbreviation filter (optional)
 
 try:
-    # Get betting line information
+    # Betting lines
     api_response = api_instance.get_lines(game_id=game_id, year=year, week=week, season_type=season_type, team=team, home=home, away=away, conference=conference)
     pprint(api_response)
 except ApiException as e:

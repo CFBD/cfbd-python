@@ -4,15 +4,15 @@ All URIs are relative to *https://api.collegefootballdata.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**get_drvies**](DrivesApi.md#get_drvies) | **GET** /drives | Get drive information
+[**get_drvies**](DrivesApi.md#get_drvies) | **GET** /drives | Drive data and results
 
 
 # **get_drvies**
 > list[Drive] get_drvies(year, season_type=season_type, week=week, team=team, offense=offense, defense=defense, conference=conference, offense_conference=offense_conference, defense_conference=defense_conference)
 
-Get drive information
+Drive data and results
 
-Drive results
+Get game drives
 
 ### Example
 ```python
@@ -35,7 +35,7 @@ offense_conference = 'offense_conference_example' # str | Offensive conference f
 defense_conference = 'defense_conference_example' # str | Defensive conference filter (optional)
 
 try:
-    # Get drive information
+    # Drive data and results
     api_response = api_instance.get_drvies(year, season_type=season_type, week=week, team=team, offense=offense, defense=defense, conference=conference, offense_conference=offense_conference, defense_conference=defense_conference)
     pprint(api_response)
 except ApiException as e:

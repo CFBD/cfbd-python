@@ -4,13 +4,13 @@ All URIs are relative to *https://api.collegefootballdata.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**get_rankings**](RankingsApi.md#get_rankings) | **GET** /rankings | Get historical rankings and polls
+[**get_rankings**](RankingsApi.md#get_rankings) | **GET** /rankings | Historical polls and rankings
 
 
 # **get_rankings**
 > list[RankingWeek] get_rankings(year, week=week, season_type=season_type)
 
-Get historical rankings and polls
+Historical polls and rankings
 
 Poll rankings
 
@@ -29,7 +29,7 @@ week = 56 # int | Week filter (optional)
 season_type = 'regular' # str | Season type filter (regular or postseason) (optional) (default to regular)
 
 try:
-    # Get historical rankings and polls
+    # Historical polls and rankings
     api_response = api_instance.get_rankings(year, week=week, season_type=season_type)
     pprint(api_response)
 except ApiException as e:

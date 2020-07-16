@@ -4,16 +4,16 @@ All URIs are relative to *https://api.collegefootballdata.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**get_player_season_stats**](PlayersApi.md#get_player_season_stats) | **GET** /stats/player/season | Get player stats aggregated by season
-[**get_player_usage**](PlayersApi.md#get_player_usage) | **GET** /player/usage | Get player usage metrics for the season
-[**get_returning_production**](PlayersApi.md#get_returning_production) | **GET** /player/returning | Get returning production metrics
-[**player_search**](PlayersApi.md#player_search) | **GET** /player/search | Search for players
+[**get_player_season_stats**](PlayersApi.md#get_player_season_stats) | **GET** /stats/player/season | Player stats by season
+[**get_player_usage**](PlayersApi.md#get_player_usage) | **GET** /player/usage | Player usage metrics broken down by season
+[**get_returning_production**](PlayersApi.md#get_returning_production) | **GET** /player/returning | Team returning production metrics
+[**player_search**](PlayersApi.md#player_search) | **GET** /player/search | Search for player information
 
 
 # **get_player_season_stats**
 > list[PlayerSeasonStat] get_player_season_stats(year, team=team, conference=conference, start_week=start_week, end_week=end_week, season_type=season_type, category=category)
 
-Get player stats aggregated by season
+Player stats by season
 
 Season player stats
 
@@ -36,7 +36,7 @@ season_type = 'season_type_example' # str | Season type filter (regular, postsea
 category = 'category_example' # str | Stat category filter (e.g. passing) (optional)
 
 try:
-    # Get player stats aggregated by season
+    # Player stats by season
     api_response = api_instance.get_player_season_stats(year, team=team, conference=conference, start_week=start_week, end_week=end_week, season_type=season_type, category=category)
     pprint(api_response)
 except ApiException as e:
@@ -73,7 +73,7 @@ No authorization required
 # **get_player_usage**
 > list[PlayerUsage] get_player_usage(year, team=team, conference=conference, position=position, player_id=player_id, exclude_garbage_time=exclude_garbage_time)
 
-Get player usage metrics for the season
+Player usage metrics broken down by season
 
 Player usage metrics by season
 
@@ -95,7 +95,7 @@ player_id = 56 # int | Player id filter (optional)
 exclude_garbage_time = true # bool | Filter to remove garbage time plays from calculations (optional)
 
 try:
-    # Get player usage metrics for the season
+    # Player usage metrics broken down by season
     api_response = api_instance.get_player_usage(year, team=team, conference=conference, position=position, player_id=player_id, exclude_garbage_time=exclude_garbage_time)
     pprint(api_response)
 except ApiException as e:
@@ -131,7 +131,7 @@ No authorization required
 # **get_returning_production**
 > list[ReturningProduction] get_returning_production(year=year, team=team, conference=conference)
 
-Get returning production metrics
+Team returning production metrics
 
 Returning production metrics
 
@@ -150,7 +150,7 @@ team = 'team_example' # str | Team filter (optional)
 conference = 'conference_example' # str | Conference abbreviation filter (optional)
 
 try:
-    # Get returning production metrics
+    # Team returning production metrics
     api_response = api_instance.get_returning_production(year=year, team=team, conference=conference)
     pprint(api_response)
 except ApiException as e:
@@ -183,7 +183,7 @@ No authorization required
 # **player_search**
 > list[PlayerSearchResult] player_search(search_term, position=position, team=team, year=year)
 
-Search for players
+Search for player information
 
 Search for players
 
@@ -203,7 +203,7 @@ team = 'team_example' # str | Team filter (optional)
 year = 56 # int | Year filter (optional)
 
 try:
-    # Search for players
+    # Search for player information
     api_response = api_instance.player_search(search_term, position=position, team=team, year=year)
     pprint(api_response)
 except ApiException as e:

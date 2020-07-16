@@ -4,15 +4,15 @@ All URIs are relative to *https://api.collegefootballdata.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**get_recruiting_groups**](RecruitingApi.md#get_recruiting_groups) | **GET** /recruiting/groups | Get position group aggregated ratings
-[**get_recruiting_players**](RecruitingApi.md#get_recruiting_players) | **GET** /recruiting/players | Get player recruiting rankings and data. Requires either a year or team to be specified.
-[**get_recruiting_teams**](RecruitingApi.md#get_recruiting_teams) | **GET** /recruiting/teams | Get team recruiting rankings
+[**get_recruiting_groups**](RecruitingApi.md#get_recruiting_groups) | **GET** /recruiting/groups | Recruit position group ratings
+[**get_recruiting_players**](RecruitingApi.md#get_recruiting_players) | **GET** /recruiting/players | Player recruiting ratings and rankings
+[**get_recruiting_teams**](RecruitingApi.md#get_recruiting_teams) | **GET** /recruiting/teams | Team recruiting rankings and ratings
 
 
 # **get_recruiting_groups**
 > list[PositionGroupRecruitingRating] get_recruiting_groups(start_year=start_year, end_year=end_year, team=team, conference=conference)
 
-Get position group aggregated ratings
+Recruit position group ratings
 
 Gets a list of aggregated statistics by team and position grouping
 
@@ -32,7 +32,7 @@ team = 'team_example' # str | Team filter (optional)
 conference = 'conference_example' # str | conference filter (optional)
 
 try:
-    # Get position group aggregated ratings
+    # Recruit position group ratings
     api_response = api_instance.get_recruiting_groups(start_year=start_year, end_year=end_year, team=team, conference=conference)
     pprint(api_response)
 except ApiException as e:
@@ -66,9 +66,9 @@ No authorization required
 # **get_recruiting_players**
 > list[Recruit] get_recruiting_players(year=year, classification=classification, position=position, state=state, team=team)
 
-Get player recruiting rankings and data. Requires either a year or team to be specified.
+Player recruiting ratings and rankings
 
-Player recruiting rankings
+Get player recruiting rankings and data. Requires either a year or team to be specified.
 
 ### Example
 ```python
@@ -87,7 +87,7 @@ state = 'state_example' # str | State or province abbreviation filter (optional)
 team = 'team_example' # str | Committed team filter (required if year not specified) (optional)
 
 try:
-    # Get player recruiting rankings and data. Requires either a year or team to be specified.
+    # Player recruiting ratings and rankings
     api_response = api_instance.get_recruiting_players(year=year, classification=classification, position=position, state=state, team=team)
     pprint(api_response)
 except ApiException as e:
@@ -122,7 +122,7 @@ No authorization required
 # **get_recruiting_teams**
 > list[TeamRecruitingRank] get_recruiting_teams(year=year, team=team)
 
-Get team recruiting rankings
+Team recruiting rankings and ratings
 
 Team recruiting rankings
 
@@ -140,7 +140,7 @@ year = 56 # int | Recruiting class year (optional)
 team = 'team_example' # str | Team filter (optional)
 
 try:
-    # Get team recruiting rankings
+    # Team recruiting rankings and ratings
     api_response = api_instance.get_recruiting_teams(year=year, team=team)
     pprint(api_response)
 except ApiException as e:

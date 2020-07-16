@@ -4,16 +4,16 @@ All URIs are relative to *https://api.collegefootballdata.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**get_play_stat_types**](PlaysApi.md#get_play_stat_types) | **GET** /play/stat/types | Get play stat type lists
-[**get_play_stats**](PlaysApi.md#get_play_stats) | **GET** /play/stats | Get play statistics
-[**get_play_types**](PlaysApi.md#get_play_types) | **GET** /play/types | Get play type list
-[**get_plays**](PlaysApi.md#get_plays) | **GET** /plays | Get play information. Requires either a week or team to be specified.
+[**get_play_stat_types**](PlaysApi.md#get_play_stat_types) | **GET** /play/stat/types | Types of player play stats
+[**get_play_stats**](PlaysApi.md#get_play_stats) | **GET** /play/stats | Play stats by play
+[**get_play_types**](PlaysApi.md#get_play_types) | **GET** /play/types | Play types
+[**get_plays**](PlaysApi.md#get_plays) | **GET** /plays | Play by play data
 
 
 # **get_play_stat_types**
 > list[PlayStatType] get_play_stat_types()
 
-Get play stat type lists
+Types of player play stats
 
 Type of play stats
 
@@ -29,7 +29,7 @@ from pprint import pprint
 api_instance = cfbd.PlaysApi()
 
 try:
-    # Get play stat type lists
+    # Types of player play stats
     api_response = api_instance.get_play_stat_types()
     pprint(api_response)
 except ApiException as e:
@@ -57,7 +57,7 @@ No authorization required
 # **get_play_stats**
 > list[PlayStat] get_play_stats(year=year, week=week, team=team, game_id=game_id, athlete_id=athlete_id, stat_type_id=stat_type_id, season_type=season_type)
 
-Get play statistics
+Play stats by play
 
 Gets player stats associated by play (limit 1000)
 
@@ -80,7 +80,7 @@ stat_type_id = 56 # int | statTypeId filter (from /play/stat/types endpoint) (op
 season_type = 'season_type_example' # str | regular, postseason, or both (optional)
 
 try:
-    # Get play statistics
+    # Play stats by play
     api_response = api_instance.get_play_stats(year=year, week=week, team=team, game_id=game_id, athlete_id=athlete_id, stat_type_id=stat_type_id, season_type=season_type)
     pprint(api_response)
 except ApiException as e:
@@ -117,7 +117,7 @@ No authorization required
 # **get_play_types**
 > list[PlayType] get_play_types()
 
-Get play type list
+Play types
 
 Types of plays
 
@@ -133,7 +133,7 @@ from pprint import pprint
 api_instance = cfbd.PlaysApi()
 
 try:
-    # Get play type list
+    # Play types
     api_response = api_instance.get_play_types()
     pprint(api_response)
 except ApiException as e:
@@ -161,9 +161,9 @@ No authorization required
 # **get_plays**
 > list[Play] get_plays(year, season_type=season_type, week=week, team=team, offense=offense, defense=defense, conference=conference, offense_conference=offense_conference, defense_conference=defense_conference, play_type=play_type)
 
-Get play information. Requires either a week or team to be specified.
+Play by play data
 
-Play results
+Get play data and results. Requires either a week or team to be specified.
 
 ### Example
 ```python
@@ -187,7 +187,7 @@ defense_conference = 'defense_conference_example' # str | Defensive conference f
 play_type = 56 # int | Play type filter (optional)
 
 try:
-    # Get play information. Requires either a week or team to be specified.
+    # Play by play data
     api_response = api_instance.get_plays(year, season_type=season_type, week=week, team=team, offense=offense, defense=defense, conference=conference, offense_conference=offense_conference, defense_conference=defense_conference, play_type=play_type)
     pprint(api_response)
 except ApiException as e:

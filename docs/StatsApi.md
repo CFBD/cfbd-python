@@ -4,16 +4,16 @@ All URIs are relative to *https://api.collegefootballdata.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**get_advanced_team_game_stats**](StatsApi.md#get_advanced_team_game_stats) | **GET** /stats/game/advanced | Get advanced game team stats
-[**get_advanced_team_season_stats**](StatsApi.md#get_advanced_team_season_stats) | **GET** /stats/season/advanced | Get advanced season team stats
-[**get_stat_categories**](StatsApi.md#get_stat_categories) | **GET** /stats/categories | Get stat category list
-[**get_team_season_stats**](StatsApi.md#get_team_season_stats) | **GET** /stats/season | Get season team stats
+[**get_advanced_team_game_stats**](StatsApi.md#get_advanced_team_game_stats) | **GET** /stats/game/advanced | Advanced team metrics by game
+[**get_advanced_team_season_stats**](StatsApi.md#get_advanced_team_season_stats) | **GET** /stats/season/advanced | Advanced team metrics by season
+[**get_stat_categories**](StatsApi.md#get_stat_categories) | **GET** /stats/categories | Team stat categories
+[**get_team_season_stats**](StatsApi.md#get_team_season_stats) | **GET** /stats/season | Team statistics by season
 
 
 # **get_advanced_team_game_stats**
 > list[AdvancedGameStat] get_advanced_team_game_stats(year=year, week=week, team=team, opponent=opponent, exclude_garbage_time=exclude_garbage_time, season_type=season_type)
 
-Get advanced game team stats
+Advanced team metrics by game
 
 Advanced team game stats
 
@@ -35,7 +35,7 @@ exclude_garbage_time = true # bool | Filter to remove garbage time plays from ca
 season_type = 'season_type_example' # str | Season type filter (regular, postseason, or both) (optional)
 
 try:
-    # Get advanced game team stats
+    # Advanced team metrics by game
     api_response = api_instance.get_advanced_team_game_stats(year=year, week=week, team=team, opponent=opponent, exclude_garbage_time=exclude_garbage_time, season_type=season_type)
     pprint(api_response)
 except ApiException as e:
@@ -71,7 +71,7 @@ No authorization required
 # **get_advanced_team_season_stats**
 > list[AdvancedSeasonStat] get_advanced_team_season_stats(year=year, team=team, exclude_garbage_time=exclude_garbage_time, start_week=start_week, end_week=end_week)
 
-Get advanced season team stats
+Advanced team metrics by season
 
 Advanced team season stats
 
@@ -92,7 +92,7 @@ start_week = 56 # int | Starting week filter (optional)
 end_week = 56 # int | Starting week filter (optional)
 
 try:
-    # Get advanced season team stats
+    # Advanced team metrics by season
     api_response = api_instance.get_advanced_team_season_stats(year=year, team=team, exclude_garbage_time=exclude_garbage_time, start_week=start_week, end_week=end_week)
     pprint(api_response)
 except ApiException as e:
@@ -127,7 +127,7 @@ No authorization required
 # **get_stat_categories**
 > list[str] get_stat_categories()
 
-Get stat category list
+Team stat categories
 
 Stat category list
 
@@ -143,7 +143,7 @@ from pprint import pprint
 api_instance = cfbd.StatsApi()
 
 try:
-    # Get stat category list
+    # Team stat categories
     api_response = api_instance.get_stat_categories()
     pprint(api_response)
 except ApiException as e:
@@ -171,7 +171,7 @@ No authorization required
 # **get_team_season_stats**
 > list[TeamSeasonStat] get_team_season_stats(year=year, team=team, conference=conference, start_week=start_week, end_week=end_week)
 
-Get season team stats
+Team statistics by season
 
 Team season stats
 
@@ -192,7 +192,7 @@ start_week = 56 # int | Starting week filter (optional)
 end_week = 56 # int | Starting week filter (optional)
 
 try:
-    # Get season team stats
+    # Team statistics by season
     api_response = api_instance.get_team_season_stats(year=year, team=team, conference=conference, start_week=start_week, end_week=end_week)
     pprint(api_response)
 except ApiException as e:

@@ -4,20 +4,20 @@ All URIs are relative to *https://api.collegefootballdata.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**get_advanced_box_score**](GamesApi.md#get_advanced_box_score) | **GET** /game/box/advanced | Get advanced box score
-[**get_game_media**](GamesApi.md#get_game_media) | **GET** /games/media | Get game media information (TV, radio, etc)
-[**get_games**](GamesApi.md#get_games) | **GET** /games | Get game information
-[**get_player_game_stats**](GamesApi.md#get_player_game_stats) | **GET** /games/players | Get player statistics by game
-[**get_team_game_stats**](GamesApi.md#get_team_game_stats) | **GET** /games/teams | Get team statistics by game
-[**get_team_records**](GamesApi.md#get_team_records) | **GET** /records | Get records by year
+[**get_advanced_box_score**](GamesApi.md#get_advanced_box_score) | **GET** /game/box/advanced | Advanced box scores
+[**get_game_media**](GamesApi.md#get_game_media) | **GET** /games/media | Game media information and schedules
+[**get_games**](GamesApi.md#get_games) | **GET** /games | Games and results
+[**get_player_game_stats**](GamesApi.md#get_player_game_stats) | **GET** /games/players | Player game stats
+[**get_team_game_stats**](GamesApi.md#get_team_game_stats) | **GET** /games/teams | Team game stats
+[**get_team_records**](GamesApi.md#get_team_records) | **GET** /records | Team records
 
 
 # **get_advanced_box_score**
 > list[BoxScore] get_advanced_box_score(game_id)
 
-Get advanced box score
+Advanced box scores
 
-Advanced box score
+Get advanced box score data
 
 ### Example
 ```python
@@ -32,7 +32,7 @@ api_instance = cfbd.GamesApi()
 game_id = 56 # int | Game id parameters
 
 try:
-    # Get advanced box score
+    # Advanced box scores
     api_response = api_instance.get_advanced_box_score(game_id)
     pprint(api_response)
 except ApiException as e:
@@ -63,7 +63,7 @@ No authorization required
 # **get_game_media**
 > list[GameMedia] get_game_media(year, week=week, season_type=season_type, team=team, conference=conference, media_type=media_type)
 
-Get game media information (TV, radio, etc)
+Game media information and schedules
 
 Game media information (TV, radio, etc)
 
@@ -85,7 +85,7 @@ conference = 'conference_example' # str | Conference filter (optional)
 media_type = 'media_type_example' # str | Media type filter (tv, radio, web, ppv, or mobile) (optional)
 
 try:
-    # Get game media information (TV, radio, etc)
+    # Game media information and schedules
     api_response = api_instance.get_game_media(year, week=week, season_type=season_type, team=team, conference=conference, media_type=media_type)
     pprint(api_response)
 except ApiException as e:
@@ -121,9 +121,9 @@ No authorization required
 # **get_games**
 > list[Game] get_games(year, week=week, season_type=season_type, team=team, home=home, away=away, conference=conference, id=id)
 
-Get game information
+Games and results
 
-Game results
+Get game results
 
 ### Example
 ```python
@@ -145,7 +145,7 @@ conference = 'conference_example' # str | Conference abbreviation filter (option
 id = 56 # int | id filter for querying a single game (optional)
 
 try:
-    # Get game information
+    # Games and results
     api_response = api_instance.get_games(year, week=week, season_type=season_type, team=team, home=home, away=away, conference=conference, id=id)
     pprint(api_response)
 except ApiException as e:
@@ -183,9 +183,9 @@ No authorization required
 # **get_player_game_stats**
 > list[PlayerGame] get_player_game_stats(year, week=week, season_type=season_type, team=team, conference=conference, category=category, game_id=game_id)
 
-Get player statistics by game
-
 Player game stats
+
+Player stats broken down by game
 
 ### Example
 ```python
@@ -206,7 +206,7 @@ category = 'category_example' # str | Category filter (e.g defensive) (optional)
 game_id = 56 # int | Game id filter (optional)
 
 try:
-    # Get player statistics by game
+    # Player game stats
     api_response = api_instance.get_player_game_stats(year, week=week, season_type=season_type, team=team, conference=conference, category=category, game_id=game_id)
     pprint(api_response)
 except ApiException as e:
@@ -243,9 +243,9 @@ No authorization required
 # **get_team_game_stats**
 > list[TeamGame] get_team_game_stats(year, week=week, season_type=season_type, team=team, conference=conference, game_id=game_id)
 
-Get team statistics by game
-
 Team game stats
+
+Team stats broken down by game
 
 ### Example
 ```python
@@ -265,7 +265,7 @@ conference = 'conference_example' # str | Conference abbreviation filter (option
 game_id = 56 # int | Game id filter (optional)
 
 try:
-    # Get team statistics by game
+    # Team game stats
     api_response = api_instance.get_team_game_stats(year, week=week, season_type=season_type, team=team, conference=conference, game_id=game_id)
     pprint(api_response)
 except ApiException as e:
@@ -301,9 +301,9 @@ No authorization required
 # **get_team_records**
 > list[TeamRecord] get_team_records(year=year, team=team, conference=conference)
 
-Get records by year
+Team records
 
-Team records by year
+Get team records by year
 
 ### Example
 ```python
@@ -320,7 +320,7 @@ team = 'team_example' # str | Team filter (optional)
 conference = 'conference_example' # str | Conference filter (optional)
 
 try:
-    # Get records by year
+    # Team records
     api_response = api_instance.get_team_records(year=year, team=team, conference=conference)
     pprint(api_response)
 except ApiException as e:

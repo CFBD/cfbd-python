@@ -4,17 +4,17 @@ All URIs are relative to *https://api.collegefootballdata.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**get_conference_sp_ratings**](RatingsApi.md#get_conference_sp_ratings) | **GET** /ratings/sp/conferences | Get average SP+ historical rating data by conference
-[**get_sp_ratings**](RatingsApi.md#get_sp_ratings) | **GET** /ratings/sp | Get SP+ historical rating data (requires either a year or team specified)
-[**get_srs_ratings**](RatingsApi.md#get_srs_ratings) | **GET** /ratings/srs | Get SRS historical rating data (requires either a year or team specified)
+[**get_conference_sp_ratings**](RatingsApi.md#get_conference_sp_ratings) | **GET** /ratings/sp/conferences | Historical SP+ ratings by conference
+[**get_sp_ratings**](RatingsApi.md#get_sp_ratings) | **GET** /ratings/sp | Historical SP+ ratings
+[**get_srs_ratings**](RatingsApi.md#get_srs_ratings) | **GET** /ratings/srs | Historical SRS ratings
 
 
 # **get_conference_sp_ratings**
 > list[ConferenceSPRating] get_conference_sp_ratings(year=year, conference=conference)
 
-Get average SP+ historical rating data by conference
+Historical SP+ ratings by conference
 
-Conference average SP+ ratings by year
+Get average SP+ historical rating data by conference
 
 ### Example
 ```python
@@ -30,7 +30,7 @@ year = 56 # int | Season filter (optional)
 conference = 'conference_example' # str | Conference abbreviation filter (optional)
 
 try:
-    # Get average SP+ historical rating data by conference
+    # Historical SP+ ratings by conference
     api_response = api_instance.get_conference_sp_ratings(year=year, conference=conference)
     pprint(api_response)
 except ApiException as e:
@@ -62,7 +62,7 @@ No authorization required
 # **get_sp_ratings**
 > list[TeamSPRating] get_sp_ratings(year=year, team=team)
 
-Get SP+ historical rating data (requires either a year or team specified)
+Historical SP+ ratings
 
 SP+ rating data
 
@@ -80,7 +80,7 @@ year = 56 # int | Season filter (required if team not specified) (optional)
 team = 'team_example' # str | Team filter (required if year not specified) (optional)
 
 try:
-    # Get SP+ historical rating data (requires either a year or team specified)
+    # Historical SP+ ratings
     api_response = api_instance.get_sp_ratings(year=year, team=team)
     pprint(api_response)
 except ApiException as e:
@@ -112,9 +112,9 @@ No authorization required
 # **get_srs_ratings**
 > list[TeamSRSRating] get_srs_ratings(year=year, team=team, conference=conference)
 
-Get SRS historical rating data (requires either a year or team specified)
+Historical SRS ratings
 
-SRS rating data
+SRS rating data (requires either a year or team specified)
 
 ### Example
 ```python
@@ -131,7 +131,7 @@ team = 'team_example' # str | Team filter (required if year not specified) (opti
 conference = 'conference_example' # str | Conference filter (optional)
 
 try:
-    # Get SRS historical rating data (requires either a year or team specified)
+    # Historical SRS ratings
     api_response = api_instance.get_srs_ratings(year=year, team=team, conference=conference)
     pprint(api_response)
 except ApiException as e:

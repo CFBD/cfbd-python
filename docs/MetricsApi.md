@@ -4,19 +4,19 @@ All URIs are relative to *https://api.collegefootballdata.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**get_game_ppa**](MetricsApi.md#get_game_ppa) | **GET** /ppa/games | Get team game averages for Predicted Points Added (PPA)
-[**get_player_game_ppa**](MetricsApi.md#get_player_game_ppa) | **GET** /ppa/players/games | Get player game averages for Predicted Points Added (PPA)
-[**get_player_season_ppa**](MetricsApi.md#get_player_season_ppa) | **GET** /ppa/players/season | Get player season averages for Predicted Points Added (PPA)
-[**get_predicted_points**](MetricsApi.md#get_predicted_points) | **GET** /ppa/predicted | Calculate Predicted Points
-[**get_pregame_win_probabilities**](MetricsApi.md#get_pregame_win_probabilities) | **GET** /metrics/wp/pregame | Get pregame win probabilities
-[**get_team_ppa**](MetricsApi.md#get_team_ppa) | **GET** /ppa/teams | Get team averages for Predicted Points Added (PPA)
-[**get_win_probability_data**](MetricsApi.md#get_win_probability_data) | **GET** /metrics/wp | Get win probability chart data
+[**get_game_ppa**](MetricsApi.md#get_game_ppa) | **GET** /ppa/games | Team Predicated Points Added (PPA/EPA) by game
+[**get_player_game_ppa**](MetricsApi.md#get_player_game_ppa) | **GET** /ppa/players/games | Player Predicated Points Added (PPA/EPA) broken down by game
+[**get_player_season_ppa**](MetricsApi.md#get_player_season_ppa) | **GET** /ppa/players/season | Player Predicated Points Added (PPA/EPA) broken down by season
+[**get_predicted_points**](MetricsApi.md#get_predicted_points) | **GET** /ppa/predicted | Predicted Points (i.e. Expected Points or EP)
+[**get_pregame_win_probabilities**](MetricsApi.md#get_pregame_win_probabilities) | **GET** /metrics/wp/pregame | Pregame win probability data
+[**get_team_ppa**](MetricsApi.md#get_team_ppa) | **GET** /ppa/teams | Predicted Points Added (PPA/EPA) data by team
+[**get_win_probability_data**](MetricsApi.md#get_win_probability_data) | **GET** /metrics/wp | Win probability chart data
 
 
 # **get_game_ppa**
 > list[GamePPA] get_game_ppa(year, week=week, team=team, conference=conference, exclude_garbage_time=exclude_garbage_time)
 
-Get team game averages for Predicted Points Added (PPA)
+Team Predicated Points Added (PPA/EPA) by game
 
 Predicted Points Added (PPA) by game
 
@@ -37,7 +37,7 @@ conference = 'conference_example' # str | Conference filter (optional)
 exclude_garbage_time = true # bool | Filter to remove garbage time plays from calculations (optional)
 
 try:
-    # Get team game averages for Predicted Points Added (PPA)
+    # Team Predicated Points Added (PPA/EPA) by game
     api_response = api_instance.get_game_ppa(year, week=week, team=team, conference=conference, exclude_garbage_time=exclude_garbage_time)
     pprint(api_response)
 except ApiException as e:
@@ -72,7 +72,7 @@ No authorization required
 # **get_player_game_ppa**
 > list[PlayerGamePPA] get_player_game_ppa(year=year, week=week, team=team, position=position, player_id=player_id, threshold=threshold, exclude_garbage_time=exclude_garbage_time)
 
-Get player game averages for Predicted Points Added (PPA)
+Player Predicated Points Added (PPA/EPA) broken down by game
 
 Predicted Points Added (PPA) by player game
 
@@ -95,7 +95,7 @@ threshold = 'threshold_example' # str | Minimum play threshold filter (optional)
 exclude_garbage_time = true # bool | Filter to remove garbage time plays from calculations (optional)
 
 try:
-    # Get player game averages for Predicted Points Added (PPA)
+    # Player Predicated Points Added (PPA/EPA) broken down by game
     api_response = api_instance.get_player_game_ppa(year=year, week=week, team=team, position=position, player_id=player_id, threshold=threshold, exclude_garbage_time=exclude_garbage_time)
     pprint(api_response)
 except ApiException as e:
@@ -132,7 +132,7 @@ No authorization required
 # **get_player_season_ppa**
 > list[PlayerSeasonPPA] get_player_season_ppa(year=year, team=team, conference=conference, position=position, player_id=player_id, threshold=threshold, exclude_garbage_time=exclude_garbage_time)
 
-Get player season averages for Predicted Points Added (PPA)
+Player Predicated Points Added (PPA/EPA) broken down by season
 
 Predicted Points Added (PPA) by player season
 
@@ -155,7 +155,7 @@ threshold = 'threshold_example' # str | Minimum play threshold filter (optional)
 exclude_garbage_time = true # bool | Filter to remove garbage time plays from calculations (optional)
 
 try:
-    # Get player season averages for Predicted Points Added (PPA)
+    # Player Predicated Points Added (PPA/EPA) broken down by season
     api_response = api_instance.get_player_season_ppa(year=year, team=team, conference=conference, position=position, player_id=player_id, threshold=threshold, exclude_garbage_time=exclude_garbage_time)
     pprint(api_response)
 except ApiException as e:
@@ -192,7 +192,7 @@ No authorization required
 # **get_predicted_points**
 > list[PredictedPoints] get_predicted_points(down, distance)
 
-Calculate Predicted Points
+Predicted Points (i.e. Expected Points or EP)
 
 Predicted Points
 
@@ -210,7 +210,7 @@ down = 56 # int | Down filter
 distance = 56 # int | Distance filter
 
 try:
-    # Calculate Predicted Points
+    # Predicted Points (i.e. Expected Points or EP)
     api_response = api_instance.get_predicted_points(down, distance)
     pprint(api_response)
 except ApiException as e:
@@ -242,7 +242,7 @@ No authorization required
 # **get_pregame_win_probabilities**
 > list[PregameWP] get_pregame_win_probabilities(year=year, week=week, team=team, season_type=season_type)
 
-Get pregame win probabilities
+Pregame win probability data
 
 Pregame win probabilities
 
@@ -262,7 +262,7 @@ team = 'team_example' # str | Team filter (optional)
 season_type = 'season_type_example' # str | regular or postseason (optional)
 
 try:
-    # Get pregame win probabilities
+    # Pregame win probability data
     api_response = api_instance.get_pregame_win_probabilities(year=year, week=week, team=team, season_type=season_type)
     pprint(api_response)
 except ApiException as e:
@@ -296,7 +296,7 @@ No authorization required
 # **get_team_ppa**
 > list[TeamPPA] get_team_ppa(year=year, team=team, conference=conference, exclude_garbage_time=exclude_garbage_time)
 
-Get team averages for Predicted Points Added (PPA)
+Predicted Points Added (PPA/EPA) data by team
 
 Predicted Points Added (PPA)
 
@@ -316,7 +316,7 @@ conference = 'conference_example' # str | Conference filter (optional)
 exclude_garbage_time = true # bool | Filter to remove garbage time plays from calculations (optional)
 
 try:
-    # Get team averages for Predicted Points Added (PPA)
+    # Predicted Points Added (PPA/EPA) data by team
     api_response = api_instance.get_team_ppa(year=year, team=team, conference=conference, exclude_garbage_time=exclude_garbage_time)
     pprint(api_response)
 except ApiException as e:
@@ -350,7 +350,7 @@ No authorization required
 # **get_win_probability_data**
 > list[PlayWP] get_win_probability_data(game_id, adjust_for_spread=adjust_for_spread)
 
-Get win probability chart data
+Win probability chart data
 
 Win probability data
 
@@ -368,7 +368,7 @@ game_id = 56 # int | Game id filter
 adjust_for_spread = true # bool | Toggles pregame spread adjustments (optional) (default to true)
 
 try:
-    # Get win probability chart data
+    # Win probability chart data
     api_response = api_instance.get_win_probability_data(game_id, adjust_for_spread=adjust_for_spread)
     pprint(api_response)
 except ApiException as e:

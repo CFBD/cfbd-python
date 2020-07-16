@@ -4,13 +4,13 @@ All URIs are relative to *https://api.collegefootballdata.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**get_venues**](VenuesApi.md#get_venues) | **GET** /venues | Get venue information
+[**get_venues**](VenuesApi.md#get_venues) | **GET** /venues | Arena and venue information
 
 
 # **get_venues**
 > list[Venue] get_venues()
 
-Get venue information
+Arena and venue information
 
 Venues
 
@@ -26,7 +26,7 @@ from pprint import pprint
 api_instance = cfbd.VenuesApi()
 
 try:
-    # Get venue information
+    # Arena and venue information
     api_response = api_instance.get_venues()
     pprint(api_response)
 except ApiException as e:
