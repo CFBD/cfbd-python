@@ -14,6 +14,7 @@ Name | Type | Description | Notes
 **position** | **str** |  | [optional] 
 **hometown** | **str** |  | [optional] 
 **team_color** | **str** |  | [optional] 
+**team_color_secondary** | **str** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
