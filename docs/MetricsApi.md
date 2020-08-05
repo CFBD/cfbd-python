@@ -348,7 +348,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_win_probability_data**
-> list[PlayWP] get_win_probability_data(game_id, adjust_for_spread=adjust_for_spread)
+> list[PlayWP] get_win_probability_data(game_id)
 
 Win probability chart data
 
@@ -365,11 +365,10 @@ from pprint import pprint
 # create an instance of the API class
 api_instance = cfbd.MetricsApi()
 game_id = 56 # int | Game id filter
-adjust_for_spread = true # bool | Toggles pregame spread adjustments (optional) (default to true)
 
 try:
     # Win probability chart data
-    api_response = api_instance.get_win_probability_data(game_id, adjust_for_spread=adjust_for_spread)
+    api_response = api_instance.get_win_probability_data(game_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling MetricsApi->get_win_probability_data: %s\n" % e)
@@ -380,7 +379,6 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **game_id** | **int**| Game id filter | 
- **adjust_for_spread** | **bool**| Toggles pregame spread adjustments | [optional] [default to true]
 
 ### Return type
 
