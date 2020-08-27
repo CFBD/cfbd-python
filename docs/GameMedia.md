@@ -7,6 +7,8 @@ Name | Type | Description | Notes
 **season** | **int** |  | [optional] 
 **week** | **int** |  | [optional] 
 **season_type** | **str** |  | [optional] 
+**start_time** | **str** |  | [optional] 
+**is_start_time_tbd** | **bool** |  | [optional] 
 **home_team** | **str** |  | [optional] 
 **home_conference** | **str** |  | [optional] 
 **away_team** | **str** |  | [optional] 
