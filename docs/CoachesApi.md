@@ -8,7 +8,7 @@ Method | HTTP request | Description
 
 
 # **get_coaches**
-> InlineResponse200 get_coaches(first_name=first_name, last_name=last_name, team=team, year=year, min_year=min_year, max_year=max_year)
+> list[InlineResponse200] get_coaches(first_name=first_name, last_name=last_name, team=team, year=year, min_year=min_year, max_year=max_year)
 
 Coaching records and history
 
@@ -52,7 +52,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse200**](InlineResponse200.md)
+[**list[InlineResponse200]**](InlineResponse200.md)
 
 ### Authorization
 
