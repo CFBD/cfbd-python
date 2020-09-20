@@ -159,7 +159,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_plays**
-> list[Play] get_plays(year, season_type=season_type, week=week, team=team, offense=offense, defense=defense, conference=conference, offense_conference=offense_conference, defense_conference=defense_conference, play_type=play_type)
+> list[Play] get_plays(year, week, season_type=season_type, team=team, offense=offense, defense=defense, conference=conference, offense_conference=offense_conference, defense_conference=defense_conference, play_type=play_type)
 
 Play by play data
 
@@ -176,8 +176,8 @@ from pprint import pprint
 # create an instance of the API class
 api_instance = cfbd.PlaysApi()
 year = 56 # int | Year filter
+week = 56 # int | Week filter (required if team, offense, or defense, not specified)
 season_type = 'regular' # str | Season type filter (optional) (default to regular)
-week = 56 # int | Week filter (required if team, offense, or defense, not specified) (optional)
 team = 'team_example' # str | Team filter (optional)
 offense = 'offense_example' # str | Offensive team filter (optional)
 defense = 'defense_example' # str | Defensive team filter (optional)
@@ -188,7 +188,7 @@ play_type = 56 # int | Play type filter (optional)
 
 try:
     # Play by play data
-    api_response = api_instance.get_plays(year, season_type=season_type, week=week, team=team, offense=offense, defense=defense, conference=conference, offense_conference=offense_conference, defense_conference=defense_conference, play_type=play_type)
+    api_response = api_instance.get_plays(year, week, season_type=season_type, team=team, offense=offense, defense=defense, conference=conference, offense_conference=offense_conference, defense_conference=defense_conference, play_type=play_type)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling PlaysApi->get_plays: %s\n" % e)
@@ -199,8 +199,8 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **year** | **int**| Year filter | 
+ **week** | **int**| Week filter (required if team, offense, or defense, not specified) | 
  **season_type** | **str**| Season type filter | [optional] [default to regular]
- **week** | **int**| Week filter (required if team, offense, or defense, not specified) | [optional] 
  **team** | **str**| Team filter | [optional] 
  **offense** | **str**| Offensive team filter | [optional] 
  **defense** | **str**| Defensive team filter | [optional] 
