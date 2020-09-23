@@ -19,6 +19,7 @@ Name | Type | Description | Notes
 **open_field_yards_total** | **int** |  | [optional] 
 **points_per_opportunity** | **float** |  | [optional] 
 **field_position** | [**AdvancedSeasonStatOffenseFieldPosition**](AdvancedSeasonStatOffenseFieldPosition.md) |  | [optional] 
+**havoc** | [**TeamSPRatingDefenseHavoc**](TeamSPRatingDefenseHavoc.md) |  | [optional] 
 **standard_downs** | [**AdvancedSeasonStatOffenseStandardDowns**](AdvancedSeasonStatOffenseStandardDowns.md) |  | [optional] 
 **passing_downs** | [**AdvancedSeasonStatOffenseStandardDowns**](AdvancedSeasonStatOffenseStandardDowns.md) |  | [optional] 
 **rushing_plays** | [**AdvancedSeasonStatOffenseRushingPlays**](AdvancedSeasonStatOffenseRushingPlays.md) |  | [optional] 

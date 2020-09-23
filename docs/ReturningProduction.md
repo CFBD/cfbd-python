@@ -3,6 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**season** | **int** |  | [optional] 
 **team** | **str** |  | [optional] 
 **conference** | **str** |  | [optional] 
 **total_ppa** | **float** |  | [optional] 
