@@ -73,6 +73,8 @@ except ApiException as e:
 
 All URIs are relative to *https://api.collegefootballdata.com*
 
+# NOTICE: All Api Methods are Constructor Methods
+
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
 *BettingApi* | [**get_lines**](docs/BettingApi.md#get_lines) | **GET** /lines | Betting lines
