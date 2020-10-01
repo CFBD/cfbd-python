@@ -78,7 +78,7 @@ Class | Method | HTTP request | Description
 *BettingApi* | [**get_lines**](docs/BettingApi.md#get_lines) | **GET** /lines | Betting lines
 *CoachesApi* | [**get_coaches**](docs/CoachesApi.md#get_coaches) | **GET** /coaches | Coaching records and history
 *ConferencesApi* | [**get_conferences**](docs/ConferencesApi.md#get_conferences) | **GET** /conferences | Conferences
-*DrivesApi* | [**get_drvies**](docs/DrivesApi.md#get_drvies) | **GET** /drives | Drive data and results
+*DrivesApi* | [**get_drives**](docs/DrivesApi.md#get_drvies) | **GET** /drives | Drive data and results
 *GamesApi* | [**get_advanced_box_score**](docs/GamesApi.md#get_advanced_box_score) | **GET** /game/box/advanced | Advanced box scores
 *GamesApi* | [**get_game_media**](docs/GamesApi.md#get_game_media) | **GET** /games/media | Game media information and schedules
 *GamesApi* | [**get_games**](docs/GamesApi.md#get_games) | **GET** /games | Games and results
