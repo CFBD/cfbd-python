@@ -14,7 +14,7 @@ Method | HTTP request | Description
 
 
 # **get_game_ppa**
-> list[GamePPA] get_game_ppa(year, week=week, team=team, conference=conference, exclude_garbage_time=exclude_garbage_time)
+> list[GamePPA] get_game_ppa(year, week=week, team=team, conference=conference, exclude_garbage_time=exclude_garbage_time, season_type=season_type)
 
 Team Predicated Points Added (PPA/EPA) by game
 
@@ -35,10 +35,11 @@ week = 56 # int | Week filter (optional)
 team = 'team_example' # str | Team filter (optional)
 conference = 'conference_example' # str | Conference filter (optional)
 exclude_garbage_time = true # bool | Filter to remove garbage time plays from calculations (optional)
+season_type = 'regular' # str | Season type filter (regular or postseason) (optional) (default to regular)
 
 try:
     # Team Predicated Points Added (PPA/EPA) by game
-    api_response = api_instance.get_game_ppa(year, week=week, team=team, conference=conference, exclude_garbage_time=exclude_garbage_time)
+    api_response = api_instance.get_game_ppa(year, week=week, team=team, conference=conference, exclude_garbage_time=exclude_garbage_time, season_type=season_type)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling MetricsApi->get_game_ppa: %s\n" % e)
@@ -53,6 +54,7 @@ Name | Type | Description  | Notes
  **team** | **str**| Team filter | [optional] 
  **conference** | **str**| Conference filter | [optional] 
  **exclude_garbage_time** | **bool**| Filter to remove garbage time plays from calculations | [optional] 
+ **season_type** | **str**| Season type filter (regular or postseason) | [optional] [default to regular]
 
 ### Return type
 
@@ -70,7 +72,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_player_game_ppa**
-> list[PlayerGamePPA] get_player_game_ppa(year=year, week=week, team=team, position=position, player_id=player_id, threshold=threshold, exclude_garbage_time=exclude_garbage_time)
+> list[PlayerGamePPA] get_player_game_ppa(year=year, week=week, team=team, position=position, player_id=player_id, threshold=threshold, exclude_garbage_time=exclude_garbage_time, season_type=season_type)
 
 Player Predicated Points Added (PPA/EPA) broken down by game
 
@@ -93,10 +95,11 @@ position = 'position_example' # str | Position abbreviation filter (optional)
 player_id = 56 # int | Player id filter (optional)
 threshold = 'threshold_example' # str | Minimum play threshold filter (optional)
 exclude_garbage_time = true # bool | Filter to remove garbage time plays from calculations (optional)
+season_type = 'regular' # str | Season type filter (regular or postseason) (optional) (default to regular)
 
 try:
     # Player Predicated Points Added (PPA/EPA) broken down by game
-    api_response = api_instance.get_player_game_ppa(year=year, week=week, team=team, position=position, player_id=player_id, threshold=threshold, exclude_garbage_time=exclude_garbage_time)
+    api_response = api_instance.get_player_game_ppa(year=year, week=week, team=team, position=position, player_id=player_id, threshold=threshold, exclude_garbage_time=exclude_garbage_time, season_type=season_type)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling MetricsApi->get_player_game_ppa: %s\n" % e)
@@ -113,6 +116,7 @@ Name | Type | Description  | Notes
  **player_id** | **int**| Player id filter | [optional] 
  **threshold** | **str**| Minimum play threshold filter | [optional] 
  **exclude_garbage_time** | **bool**| Filter to remove garbage time plays from calculations | [optional] 
+ **season_type** | **str**| Season type filter (regular or postseason) | [optional] [default to regular]
 
 ### Return type
 
