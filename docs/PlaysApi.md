@@ -55,7 +55,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_play_stats**
-> list[PlayStat] get_play_stats(year=year, week=week, team=team, game_id=game_id, athlete_id=athlete_id, stat_type_id=stat_type_id, season_type=season_type)
+> list[PlayStat] get_play_stats(year=year, week=week, team=team, game_id=game_id, athlete_id=athlete_id, stat_type_id=stat_type_id, season_type=season_type, conference=conference)
 
 Play stats by play
 
@@ -78,10 +78,11 @@ game_id = 56 # int | gameId filter (from /games endpoint) (optional)
 athlete_id = 56 # int | athleteId filter (from /roster endpoint) (optional)
 stat_type_id = 56 # int | statTypeId filter (from /play/stat/types endpoint) (optional)
 season_type = 'season_type_example' # str | regular, postseason, or both (optional)
+conference = 'conference_example' # str | conference abbreviation filter (optional)
 
 try:
     # Play stats by play
-    api_response = api_instance.get_play_stats(year=year, week=week, team=team, game_id=game_id, athlete_id=athlete_id, stat_type_id=stat_type_id, season_type=season_type)
+    api_response = api_instance.get_play_stats(year=year, week=week, team=team, game_id=game_id, athlete_id=athlete_id, stat_type_id=stat_type_id, season_type=season_type, conference=conference)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling PlaysApi->get_play_stats: %s\n" % e)
@@ -98,6 +99,7 @@ Name | Type | Description  | Notes
  **athlete_id** | **int**| athleteId filter (from /roster endpoint) | [optional] 
  **stat_type_id** | **int**| statTypeId filter (from /play/stat/types endpoint) | [optional] 
  **season_type** | **str**| regular, postseason, or both | [optional] 
+ **conference** | **str**| conference abbreviation filter | [optional] 
 
 ### Return type
 
