@@ -87,7 +87,7 @@ from pprint import pprint
 
 # create an instance of the API class
 api_instance = cfbd.PlayersApi()
-year = 2019 # int | Year filter (default to 2019)
+year = 2020 # int | Year filter (default to 2020)
 team = 'team_example' # str | Team filter (optional)
 conference = 'conference_example' # str | Conference abbreviation filter (optional)
 position = 'position_example' # str | Position abbreviation filter (optional)
@@ -106,7 +106,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **year** | **int**| Year filter | [default to 2019]
+ **year** | **int**| Year filter | [default to 2020]
  **team** | **str**| Team filter | [optional] 
  **conference** | **str**| Conference abbreviation filter | [optional] 
  **position** | **str**| Position abbreviation filter | [optional] 
