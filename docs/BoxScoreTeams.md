@@ -4,6 +4,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **ppa** | [**list[BoxScoreTeamsPpa]**](BoxScoreTeamsPpa.md) |  | [optional] 
+**cumulative_ppa** | [**list[BoxScoreTeamsPpa]**](BoxScoreTeamsPpa.md) |  | [optional] 
 **success_rates** | [**list[BoxScoreTeamsSuccessRates]**](BoxScoreTeamsSuccessRates.md) |  | [optional] 
 **explosiveness** | [**list[BoxScoreTeamsExplosiveness]**](BoxScoreTeamsExplosiveness.md) |  | [optional] 
 **rushing** | [**list[BoxScoreTeamsRushing]**](BoxScoreTeamsRushing.md) |  | [optional] 
