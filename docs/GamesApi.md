@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 
 # **get_advanced_box_score**
-> list[BoxScore] get_advanced_box_score(game_id)
+> BoxScore get_advanced_box_score(game_id)
 
 Advanced box scores
 
@@ -47,7 +47,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**list[BoxScore]**](BoxScore.md)
+[**BoxScore**](BoxScore.md)
 
 ### Authorization
 
