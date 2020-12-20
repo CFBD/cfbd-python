@@ -60,7 +60,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_roster**
-> list[Player] get_roster(team, year=year)
+> list[Player] get_roster(team=team, year=year)
 
 Team rosters
 
@@ -76,12 +76,12 @@ from pprint import pprint
 
 # create an instance of the API class
 api_instance = cfbd.TeamsApi()
-team = 'team_example' # str | Team name
+team = 'team_example' # str | Team name (optional)
 year = 56 # int | Season year (optional)
 
 try:
     # Team rosters
-    api_response = api_instance.get_roster(team, year=year)
+    api_response = api_instance.get_roster(team=team, year=year)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling TeamsApi->get_roster: %s\n" % e)
@@ -91,7 +91,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **team** | **str**| Team name | 
+ **team** | **str**| Team name | [optional] 
  **year** | **int**| Season year | [optional] 
 
 ### Return type

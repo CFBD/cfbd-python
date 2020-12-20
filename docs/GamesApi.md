@@ -5,6 +5,7 @@ All URIs are relative to *https://api.collegefootballdata.com*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**get_advanced_box_score**](GamesApi.md#get_advanced_box_score) | **GET** /game/box/advanced | Advanced box scores
+[**get_calendar**](GamesApi.md#get_calendar) | **GET** /calendar | Season calendar
 [**get_game_media**](GamesApi.md#get_game_media) | **GET** /games/media | Game media information and schedules
 [**get_games**](GamesApi.md#get_games) | **GET** /games | Games and results
 [**get_player_game_stats**](GamesApi.md#get_player_game_stats) | **GET** /games/players | Player game stats
@@ -48,6 +49,54 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**BoxScore**](BoxScore.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_calendar**
+> list[Week] get_calendar(year)
+
+Season calendar
+
+Get calendar of weeks by season
+
+### Example
+```python
+from __future__ import print_function
+import time
+import cfbd
+from cfbd.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = cfbd.GamesApi()
+year = 56 # int | Year filter
+
+try:
+    # Season calendar
+    api_response = api_instance.get_calendar(year)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling GamesApi->get_calendar: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **year** | **int**| Year filter | 
+
+### Return type
+
+[**list[Week]**](Week.md)
 
 ### Authorization
 

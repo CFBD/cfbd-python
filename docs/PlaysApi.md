@@ -165,7 +165,7 @@ No authorization required
 
 Play by play data
 
-Get play data and results. Requires either a week or team to be specified.
+Get play data and results
 
 ### Example
 ```python

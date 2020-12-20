@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 **id** | **int** |  | [optional] 
 **first_name** | **str** |  | [optional] 
 **last_name** | **str** |  | [optional] 
+**team** | **str** |  | [optional] 
 **height** | **int** |  | [optional] 
 **weight** | **int** |  | [optional] 
 **jersey** | **int** |  | [optional] 
