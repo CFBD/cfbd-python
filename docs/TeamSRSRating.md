@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **conference** | **str** |  | [optional] 
 **division** | **str** |  | [optional] 
 **rating** | **float** |  | [optional] 
+**ranking** | **float** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
