@@ -25,8 +25,14 @@ import cfbd
 from cfbd.rest import ApiException
 from pprint import pprint
 
+# Configure API key authorization: ApiKeyAuth
+configuration = cfbd.Configuration()
+configuration.api_key['Bearer'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Bearer'] = 'Bearer'
+
 # create an instance of the API class
-api_instance = cfbd.PlaysApi()
+api_instance = cfbd.PlaysApi(cfbd.ApiClient(configuration))
 
 try:
     # Types of player play stats
@@ -45,7 +51,7 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-No authorization required
+[ApiKeyAuth](../README.md#ApiKeyAuth)
 
 ### HTTP request headers
 
@@ -69,8 +75,14 @@ import cfbd
 from cfbd.rest import ApiException
 from pprint import pprint
 
+# Configure API key authorization: ApiKeyAuth
+configuration = cfbd.Configuration()
+configuration.api_key['Bearer'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Bearer'] = 'Bearer'
+
 # create an instance of the API class
-api_instance = cfbd.PlaysApi()
+api_instance = cfbd.PlaysApi(cfbd.ApiClient(configuration))
 year = 56 # int | Year filter (optional)
 week = 56 # int | Week filter (optional)
 team = 'team_example' # str | Team filter (optional)
@@ -107,7 +119,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[ApiKeyAuth](../README.md#ApiKeyAuth)
 
 ### HTTP request headers
 
@@ -131,8 +143,14 @@ import cfbd
 from cfbd.rest import ApiException
 from pprint import pprint
 
+# Configure API key authorization: ApiKeyAuth
+configuration = cfbd.Configuration()
+configuration.api_key['Bearer'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Bearer'] = 'Bearer'
+
 # create an instance of the API class
-api_instance = cfbd.PlaysApi()
+api_instance = cfbd.PlaysApi(cfbd.ApiClient(configuration))
 
 try:
     # Play types
@@ -151,7 +169,7 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-No authorization required
+[ApiKeyAuth](../README.md#ApiKeyAuth)
 
 ### HTTP request headers
 
@@ -175,8 +193,14 @@ import cfbd
 from cfbd.rest import ApiException
 from pprint import pprint
 
+# Configure API key authorization: ApiKeyAuth
+configuration = cfbd.Configuration()
+configuration.api_key['Bearer'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Bearer'] = 'Bearer'
+
 # create an instance of the API class
-api_instance = cfbd.PlaysApi()
+api_instance = cfbd.PlaysApi(cfbd.ApiClient(configuration))
 year = 56 # int | Year filter
 week = 56 # int | Week filter (required if team, offense, or defense, not specified)
 season_type = 'regular' # str | Season type filter (optional) (default to regular)
@@ -217,7 +241,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[ApiKeyAuth](../README.md#ApiKeyAuth)
 
 ### HTTP request headers
 

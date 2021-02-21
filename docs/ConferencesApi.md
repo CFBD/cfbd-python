@@ -22,8 +22,14 @@ import cfbd
 from cfbd.rest import ApiException
 from pprint import pprint
 
+# Configure API key authorization: ApiKeyAuth
+configuration = cfbd.Configuration()
+configuration.api_key['Bearer'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Bearer'] = 'Bearer'
+
 # create an instance of the API class
-api_instance = cfbd.ConferencesApi()
+api_instance = cfbd.ConferencesApi(cfbd.ApiClient(configuration))
 
 try:
     # Conferences
@@ -42,7 +48,7 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-No authorization required
+[ApiKeyAuth](../README.md#ApiKeyAuth)
 
 ### HTTP request headers
 

@@ -24,8 +24,14 @@ import cfbd
 from cfbd.rest import ApiException
 from pprint import pprint
 
+# Configure API key authorization: ApiKeyAuth
+configuration = cfbd.Configuration()
+configuration.api_key['Bearer'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Bearer'] = 'Bearer'
+
 # create an instance of the API class
-api_instance = cfbd.RecruitingApi()
+api_instance = cfbd.RecruitingApi(cfbd.ApiClient(configuration))
 start_year = 56 # int | Starting year (optional)
 end_year = 56 # int | Ending year (optional)
 team = 'team_example' # str | Team filter (optional)
@@ -54,7 +60,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[ApiKeyAuth](../README.md#ApiKeyAuth)
 
 ### HTTP request headers
 
@@ -78,8 +84,14 @@ import cfbd
 from cfbd.rest import ApiException
 from pprint import pprint
 
+# Configure API key authorization: ApiKeyAuth
+configuration = cfbd.Configuration()
+configuration.api_key['Bearer'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Bearer'] = 'Bearer'
+
 # create an instance of the API class
-api_instance = cfbd.RecruitingApi()
+api_instance = cfbd.RecruitingApi(cfbd.ApiClient(configuration))
 year = 56 # int | Recruiting class year (required if team no specified) (optional)
 classification = 'HighSchool' # str | Type of recruit (HighSchool, JUCO, PrepSchool) (optional) (default to HighSchool)
 position = 'position_example' # str | Position abbreviation filter (optional)
@@ -110,7 +122,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[ApiKeyAuth](../README.md#ApiKeyAuth)
 
 ### HTTP request headers
 
@@ -134,8 +146,14 @@ import cfbd
 from cfbd.rest import ApiException
 from pprint import pprint
 
+# Configure API key authorization: ApiKeyAuth
+configuration = cfbd.Configuration()
+configuration.api_key['Bearer'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Bearer'] = 'Bearer'
+
 # create an instance of the API class
-api_instance = cfbd.RecruitingApi()
+api_instance = cfbd.RecruitingApi(cfbd.ApiClient(configuration))
 year = 56 # int | Recruiting class year (optional)
 team = 'team_example' # str | Team filter (optional)
 
@@ -160,7 +178,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[ApiKeyAuth](../README.md#ApiKeyAuth)
 
 ### HTTP request headers
 

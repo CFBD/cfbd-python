@@ -25,8 +25,14 @@ import cfbd
 from cfbd.rest import ApiException
 from pprint import pprint
 
+# Configure API key authorization: ApiKeyAuth
+configuration = cfbd.Configuration()
+configuration.api_key['Bearer'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Bearer'] = 'Bearer'
+
 # create an instance of the API class
-api_instance = cfbd.PlayersApi()
+api_instance = cfbd.PlayersApi(cfbd.ApiClient(configuration))
 year = 56 # int | Year filter
 team = 'team_example' # str | Team filter (optional)
 conference = 'conference_example' # str | Conference abbreviation filter (optional)
@@ -61,7 +67,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[ApiKeyAuth](../README.md#ApiKeyAuth)
 
 ### HTTP request headers
 
@@ -85,8 +91,14 @@ import cfbd
 from cfbd.rest import ApiException
 from pprint import pprint
 
+# Configure API key authorization: ApiKeyAuth
+configuration = cfbd.Configuration()
+configuration.api_key['Bearer'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Bearer'] = 'Bearer'
+
 # create an instance of the API class
-api_instance = cfbd.PlayersApi()
+api_instance = cfbd.PlayersApi(cfbd.ApiClient(configuration))
 year = 2020 # int | Year filter (default to 2020)
 team = 'team_example' # str | Team filter (optional)
 conference = 'conference_example' # str | Conference abbreviation filter (optional)
@@ -119,7 +131,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[ApiKeyAuth](../README.md#ApiKeyAuth)
 
 ### HTTP request headers
 
@@ -143,8 +155,14 @@ import cfbd
 from cfbd.rest import ApiException
 from pprint import pprint
 
+# Configure API key authorization: ApiKeyAuth
+configuration = cfbd.Configuration()
+configuration.api_key['Bearer'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Bearer'] = 'Bearer'
+
 # create an instance of the API class
-api_instance = cfbd.PlayersApi()
+api_instance = cfbd.PlayersApi(cfbd.ApiClient(configuration))
 year = 56 # int | Year filter (optional)
 team = 'team_example' # str | Team filter (optional)
 conference = 'conference_example' # str | Conference abbreviation filter (optional)
@@ -171,7 +189,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[ApiKeyAuth](../README.md#ApiKeyAuth)
 
 ### HTTP request headers
 
@@ -195,8 +213,14 @@ import cfbd
 from cfbd.rest import ApiException
 from pprint import pprint
 
+# Configure API key authorization: ApiKeyAuth
+configuration = cfbd.Configuration()
+configuration.api_key['Bearer'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Bearer'] = 'Bearer'
+
 # create an instance of the API class
-api_instance = cfbd.PlayersApi()
+api_instance = cfbd.PlayersApi(cfbd.ApiClient(configuration))
 search_term = 'search_term_example' # str | Term to search on
 position = 'position_example' # str | Position abbreviation filter (optional)
 team = 'team_example' # str | Team filter (optional)
@@ -225,7 +249,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[ApiKeyAuth](../README.md#ApiKeyAuth)
 
 ### HTTP request headers
 

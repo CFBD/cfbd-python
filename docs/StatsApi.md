@@ -25,8 +25,14 @@ import cfbd
 from cfbd.rest import ApiException
 from pprint import pprint
 
+# Configure API key authorization: ApiKeyAuth
+configuration = cfbd.Configuration()
+configuration.api_key['Bearer'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Bearer'] = 'Bearer'
+
 # create an instance of the API class
-api_instance = cfbd.StatsApi()
+api_instance = cfbd.StatsApi(cfbd.ApiClient(configuration))
 year = 56 # int | Year filter (required if no team specified) (optional)
 week = 56 # int | Week filter (optional)
 team = 'team_example' # str | Team filter (required if no year specified) (optional)
@@ -59,7 +65,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[ApiKeyAuth](../README.md#ApiKeyAuth)
 
 ### HTTP request headers
 
@@ -83,8 +89,14 @@ import cfbd
 from cfbd.rest import ApiException
 from pprint import pprint
 
+# Configure API key authorization: ApiKeyAuth
+configuration = cfbd.Configuration()
+configuration.api_key['Bearer'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Bearer'] = 'Bearer'
+
 # create an instance of the API class
-api_instance = cfbd.StatsApi()
+api_instance = cfbd.StatsApi(cfbd.ApiClient(configuration))
 year = 56 # int | Year filter (required if no team specified) (optional)
 team = 'team_example' # str | Team filter (required if no year specified) (optional)
 exclude_garbage_time = true # bool | Filter to remove garbage time plays from calculations (optional)
@@ -115,7 +127,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[ApiKeyAuth](../README.md#ApiKeyAuth)
 
 ### HTTP request headers
 
@@ -139,8 +151,14 @@ import cfbd
 from cfbd.rest import ApiException
 from pprint import pprint
 
+# Configure API key authorization: ApiKeyAuth
+configuration = cfbd.Configuration()
+configuration.api_key['Bearer'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Bearer'] = 'Bearer'
+
 # create an instance of the API class
-api_instance = cfbd.StatsApi()
+api_instance = cfbd.StatsApi(cfbd.ApiClient(configuration))
 
 try:
     # Team stat categories
@@ -159,7 +177,7 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-No authorization required
+[ApiKeyAuth](../README.md#ApiKeyAuth)
 
 ### HTTP request headers
 
@@ -183,8 +201,14 @@ import cfbd
 from cfbd.rest import ApiException
 from pprint import pprint
 
+# Configure API key authorization: ApiKeyAuth
+configuration = cfbd.Configuration()
+configuration.api_key['Bearer'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Bearer'] = 'Bearer'
+
 # create an instance of the API class
-api_instance = cfbd.StatsApi()
+api_instance = cfbd.StatsApi(cfbd.ApiClient(configuration))
 year = 56 # int | Year filter (required if no team specified) (optional)
 team = 'team_example' # str | Team filter (required if no year specified) (optional)
 conference = 'conference_example' # str | Conference abbreviation filter (optional)
@@ -215,7 +239,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[ApiKeyAuth](../README.md#ApiKeyAuth)
 
 ### HTTP request headers
 

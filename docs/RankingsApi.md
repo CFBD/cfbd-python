@@ -22,8 +22,14 @@ import cfbd
 from cfbd.rest import ApiException
 from pprint import pprint
 
+# Configure API key authorization: ApiKeyAuth
+configuration = cfbd.Configuration()
+configuration.api_key['Bearer'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Bearer'] = 'Bearer'
+
 # create an instance of the API class
-api_instance = cfbd.RankingsApi()
+api_instance = cfbd.RankingsApi(cfbd.ApiClient(configuration))
 year = 56 # int | Year/season filter for games
 week = 56 # int | Week filter (optional)
 season_type = 'regular' # str | Season type filter (regular or postseason) (optional) (default to regular)
@@ -50,7 +56,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[ApiKeyAuth](../README.md#ApiKeyAuth)
 
 ### HTTP request headers
 
