@@ -4,11 +4,11 @@ All URIs are relative to *https://api.collegefootballdata.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**get_drvies**](DrivesApi.md#get_drvies) | **GET** /drives | Drive data and results
+[**get_drives**](DrivesApi.md#get_drives) | **GET** /drives | Drive data and results
 
 
-# **get_drvies**
-> list[Drive] get_drvies(year, season_type=season_type, week=week, team=team, offense=offense, defense=defense, conference=conference, offense_conference=offense_conference, defense_conference=defense_conference)
+# **get_drives**
+> list[Drive] get_drives(year, season_type=season_type, week=week, team=team, offense=offense, defense=defense, conference=conference, offense_conference=offense_conference, defense_conference=defense_conference)
 
 Drive data and results
 
@@ -42,10 +42,10 @@ defense_conference = 'defense_conference_example' # str | Defensive conference f
 
 try:
     # Drive data and results
-    api_response = api_instance.get_drvies(year, season_type=season_type, week=week, team=team, offense=offense, defense=defense, conference=conference, offense_conference=offense_conference, defense_conference=defense_conference)
+    api_response = api_instance.get_drives(year, season_type=season_type, week=week, team=team, offense=offense, defense=defense, conference=conference, offense_conference=offense_conference, defense_conference=defense_conference)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling DrivesApi->get_drvies: %s\n" % e)
+    print("Exception when calling DrivesApi->get_drives: %s\n" % e)
 ```
 
 ### Parameters
