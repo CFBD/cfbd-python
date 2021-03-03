@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 **away_team** | **str** |  | [optional] 
 **away_conference** | **str** |  | [optional] 
 **away_score** | **int** |  | [optional] 
-**lines** | [**list[GameLinesLines]**](GameLinesLines.md) |  | [optional] 
+**lines** | **list[object]** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

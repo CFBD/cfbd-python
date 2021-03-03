@@ -5,7 +5,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **team** | **str** |  | [optional] 
 **conference** | **str** |  | [optional] 
-**positiion_group** | **str** |  | [optional] 
+**position_group** | **str** |  | [optional] 
 **average_rating** | **float** |  | [optional] 
 **total_rating** | **float** |  | [optional] 
 **commits** | **float** |  | [optional] 

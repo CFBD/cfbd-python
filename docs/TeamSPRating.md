@@ -10,9 +10,9 @@ Name | Type | Description | Notes
 **ranking** | **float** |  | [optional] 
 **second_order_wins** | **float** |  | [optional] 
 **sos** | **float** |  | [optional] 
-**offense** | [**TeamSPRatingOffense**](TeamSPRatingOffense.md) |  | [optional] 
-**defense** | [**TeamSPRatingDefense**](TeamSPRatingDefense.md) |  | [optional] 
-**special_teams** | [**TeamSPRatingSpecialTeams**](TeamSPRatingSpecialTeams.md) |  | [optional] 
+**offense** | **object** |  | [optional] 
+**defense** | **object** |  | [optional] 
+**special_teams** | **object** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
