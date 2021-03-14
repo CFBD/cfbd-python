@@ -22,6 +22,11 @@ Name | Type | Description | Notes
 **plays** | **int** |  | [optional] 
 **yards** | **int** |  | [optional] 
 **drive_result** | **str** |  | [optional] 
+**is_home_offense** | **bool** |  | [optional] 
+**start_offense_score** | **int** |  | [optional] 
+**start_defense_score** | **int** |  | [optional] 
+**end_offense_score** | **int** |  | [optional] 
+**end_defense_score** | **int** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
