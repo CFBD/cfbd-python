@@ -30,9 +30,9 @@ from pprint import pprint
 
 # Configure API key authorization: ApiKeyAuth
 configuration = cfbd.Configuration()
-configuration.api_key['Bearer'] = 'YOUR_API_KEY'
+configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['Bearer'] = 'Bearer'
+# configuration.api_key_prefix['Authorization'] = 'Bearer'
 
 # create an instance of the API class
 api_instance = cfbd.GamesApi(cfbd.ApiClient(configuration))
@@ -84,9 +84,9 @@ from pprint import pprint
 
 # Configure API key authorization: ApiKeyAuth
 configuration = cfbd.Configuration()
-configuration.api_key['Bearer'] = 'YOUR_API_KEY'
+configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['Bearer'] = 'Bearer'
+# configuration.api_key_prefix['Authorization'] = 'Bearer'
 
 # create an instance of the API class
 api_instance = cfbd.GamesApi(cfbd.ApiClient(configuration))
@@ -138,9 +138,9 @@ from pprint import pprint
 
 # Configure API key authorization: ApiKeyAuth
 configuration = cfbd.Configuration()
-configuration.api_key['Bearer'] = 'YOUR_API_KEY'
+configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['Bearer'] = 'Bearer'
+# configuration.api_key_prefix['Authorization'] = 'Bearer'
 
 # create an instance of the API class
 api_instance = cfbd.GamesApi(cfbd.ApiClient(configuration))
@@ -202,9 +202,9 @@ from pprint import pprint
 
 # Configure API key authorization: ApiKeyAuth
 configuration = cfbd.Configuration()
-configuration.api_key['Bearer'] = 'YOUR_API_KEY'
+configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['Bearer'] = 'Bearer'
+# configuration.api_key_prefix['Authorization'] = 'Bearer'
 
 # create an instance of the API class
 api_instance = cfbd.GamesApi(cfbd.ApiClient(configuration))
@@ -270,9 +270,9 @@ from pprint import pprint
 
 # Configure API key authorization: ApiKeyAuth
 configuration = cfbd.Configuration()
-configuration.api_key['Bearer'] = 'YOUR_API_KEY'
+configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['Bearer'] = 'Bearer'
+# configuration.api_key_prefix['Authorization'] = 'Bearer'
 
 # create an instance of the API class
 api_instance = cfbd.GamesApi(cfbd.ApiClient(configuration))
@@ -336,9 +336,9 @@ from pprint import pprint
 
 # Configure API key authorization: ApiKeyAuth
 configuration = cfbd.Configuration()
-configuration.api_key['Bearer'] = 'YOUR_API_KEY'
+configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['Bearer'] = 'Bearer'
+# configuration.api_key_prefix['Authorization'] = 'Bearer'
 
 # create an instance of the API class
 api_instance = cfbd.GamesApi(cfbd.ApiClient(configuration))
@@ -400,9 +400,9 @@ from pprint import pprint
 
 # Configure API key authorization: ApiKeyAuth
 configuration = cfbd.Configuration()
-configuration.api_key['Bearer'] = 'YOUR_API_KEY'
+configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['Bearer'] = 'Bearer'
+# configuration.api_key_prefix['Authorization'] = 'Bearer'
 
 # create an instance of the API class
 api_instance = cfbd.GamesApi(cfbd.ApiClient(configuration))
