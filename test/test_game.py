@@ -3,7 +3,7 @@
 """
     College Football Data API
 
-    This is an API for accessing all sorts of college football data.  It currently has a wide array of data ranging from play by play to player statistics to game scores and more.  # noqa: E501
+    This is an API for accessing all sorts of college football data.  Please note that API keys should be supplied with \"Bearer \" prepended (e.g. \"Bearer your_key\").  # noqa: E501
 
     OpenAPI spec version: 3.0.1
     Contact: admin@collegefootballdata.com
