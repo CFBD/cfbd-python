@@ -17,6 +17,7 @@ Name | Type | Description | Notes
 **city** | **str** |  | [optional] 
 **state_province** | **str** |  | [optional] 
 **country** | **str** |  | [optional] 
+**hometown_info** | **object** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
