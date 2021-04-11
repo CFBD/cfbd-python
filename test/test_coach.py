@@ -16,12 +16,12 @@ from __future__ import absolute_import
 import unittest
 
 import cfbd
-from cfbd.models.game_media import GameMedia  # noqa: E501
+from cfbd.models.coach import Coach  # noqa: E501
 from cfbd.rest import ApiException
 
 
-class TestGameMedia(unittest.TestCase):
-    """GameMedia unit test stubs"""
+class TestCoach(unittest.TestCase):
+    """Coach unit test stubs"""
 
     def setUp(self):
         pass
@@ -29,10 +29,10 @@ class TestGameMedia(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def testGameMedia(self):
-        """Test GameMedia"""
+    def testCoach(self):
+        """Test Coach"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = cfbd.models.game_media.GameMedia()  # noqa: E501
+        # model = cfbd.models.coach.Coach()  # noqa: E501
         pass
 
 

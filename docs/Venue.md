@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **zip** | **str** |  | [optional] 
 **country_code** | **str** |  | [optional] 
 **location** | **object** |  | [optional] 
-**elevation** | **int** |  | [optional] 
+**elevation** | **float** |  | [optional] 
 **year** | **int** |  | [optional] 
 **dome** | **bool** |  | [optional] 
 **timezone** | **str** |  | [optional] 

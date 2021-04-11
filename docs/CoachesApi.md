@@ -8,7 +8,7 @@ Method | HTTP request | Description
 
 
 # **get_coaches**
-> list[object] get_coaches(first_name=first_name, last_name=last_name, team=team, year=year, min_year=min_year, max_year=max_year)
+> list[Coach] get_coaches(first_name=first_name, last_name=last_name, team=team, year=year, min_year=min_year, max_year=max_year)
 
 Coaching records and history
 
@@ -58,7 +58,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**list[object]**
+[**list[Coach]**](Coach.md)
 
 ### Authorization
 
