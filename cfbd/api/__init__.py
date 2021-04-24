@@ -6,6 +6,7 @@ from __future__ import absolute_import
 from cfbd.api.betting_api import BettingApi
 from cfbd.api.coaches_api import CoachesApi
 from cfbd.api.conferences_api import ConferencesApi
+from cfbd.api.draft_api import DraftApi
 from cfbd.api.drives_api import DrivesApi
 from cfbd.api.games_api import GamesApi
 from cfbd.api.metrics_api import MetricsApi
