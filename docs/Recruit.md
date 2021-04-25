@@ -3,6 +3,8 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**id** | **int** |  | [optional] 
+**athlete_id** | **int** |  | [optional] 
 **recruit_type** | **str** |  | [optional] 
 **year** | **int** |  | [optional] 
 **ranking** | **int** |  | [optional] 
