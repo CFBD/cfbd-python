@@ -27,6 +27,7 @@ Name | Type | Description | Notes
 **away_line_scores** | **list[int]** |  | [optional] 
 **away_post_win_prob** | **float** |  | [optional] 
 **excitement_index** | **float** |  | [optional] 
+**highlights** | **str** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -18,6 +18,7 @@ Name | Type | Description | Notes
 **home_latitude** | **float** |  | [optional] 
 **home_longitude** | **float** |  | [optional] 
 **home_county_fips** | **str** |  | [optional] 
+**recruit_ids** | **list[int]** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
