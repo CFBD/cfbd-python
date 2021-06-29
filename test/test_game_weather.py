@@ -16,12 +16,12 @@ from __future__ import absolute_import
 import unittest
 
 import cfbd
-from cfbd.models.play_stat_type import PlayStatType  # noqa: E501
+from cfbd.models.game_weather import GameWeather  # noqa: E501
 from cfbd.rest import ApiException
 
 
-class TestPlayStatType(unittest.TestCase):
-    """PlayStatType unit test stubs"""
+class TestGameWeather(unittest.TestCase):
+    """GameWeather unit test stubs"""
 
     def setUp(self):
         pass
@@ -29,10 +29,10 @@ class TestPlayStatType(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def testPlayStatType(self):
-        """Test PlayStatType"""
+    def testGameWeather(self):
+        """Test GameWeather"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = cfbd.models.play_stat_type.PlayStatType()  # noqa: E501
+        # model = cfbd.models.game_weather.GameWeather()  # noqa: E501
         pass
 
 

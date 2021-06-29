@@ -7,6 +7,7 @@ Method | HTTP request | Description
 [**get_advanced_box_score**](GamesApi.md#get_advanced_box_score) | **GET** /game/box/advanced | Advanced box scores
 [**get_calendar**](GamesApi.md#get_calendar) | **GET** /calendar | Season calendar
 [**get_game_media**](GamesApi.md#get_game_media) | **GET** /games/media | Game media information and schedules
+[**get_game_weather**](GamesApi.md#get_game_weather) | **GET** /games/weather | Game weather information (Patreon only)
 [**get_games**](GamesApi.md#get_games) | **GET** /games | Games and results
 [**get_player_game_stats**](GamesApi.md#get_player_game_stats) | **GET** /games/players | Player game stats
 [**get_team_game_stats**](GamesApi.md#get_team_game_stats) | **GET** /games/teams | Team game stats
@@ -173,6 +174,68 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**list[GameMedia]**](GameMedia.md)
+
+### Authorization
+
+[ApiKeyAuth](../README.md#ApiKeyAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_game_weather**
+> list[GameWeather] get_game_weather(year, week=week, season_type=season_type, team=team, conference=conference)
+
+Game weather information (Patreon only)
+
+Weather information for the hour of kickoff
+
+### Example
+```python
+from __future__ import print_function
+import time
+import cfbd
+from cfbd.rest import ApiException
+from pprint import pprint
+
+# Configure API key authorization: ApiKeyAuth
+configuration = cfbd.Configuration()
+configuration.api_key['Authorization'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Authorization'] = 'Bearer'
+
+# create an instance of the API class
+api_instance = cfbd.GamesApi(cfbd.ApiClient(configuration))
+year = 56 # int | Year filter
+week = 56 # int | Week filter (optional)
+season_type = 'season_type_example' # str | Season type filter (regular, postseason, or both) (optional)
+team = 'team_example' # str | Team filter (optional)
+conference = 'conference_example' # str | Conference filter (optional)
+
+try:
+    # Game weather information (Patreon only)
+    api_response = api_instance.get_game_weather(year, week=week, season_type=season_type, team=team, conference=conference)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling GamesApi->get_game_weather: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **year** | **int**| Year filter | 
+ **week** | **int**| Week filter | [optional] 
+ **season_type** | **str**| Season type filter (regular, postseason, or both) | [optional] 
+ **team** | **str**| Team filter | [optional] 
+ **conference** | **str**| Conference filter | [optional] 
+
+### Return type
+
+[**list[GameWeather]**](GameWeather.md)
 
 ### Authorization
 
