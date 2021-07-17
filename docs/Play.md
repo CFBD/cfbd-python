@@ -29,6 +29,7 @@ Name | Type | Description | Notes
 **play_type** | **str** |  | [optional] 
 **play_text** | **str** |  | [optional] 
 **ppa** | **float** |  | [optional] 
+**wallclock** | **str** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
