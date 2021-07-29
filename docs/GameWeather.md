@@ -24,6 +24,7 @@ Name | Type | Description | Notes
 **wind_speed** | **float** |  | [optional] 
 **pressure** | **float** |  | [optional] 
 **weather_condition_code** | **int** |  | [optional] 
+**weather_condition** | **str** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
