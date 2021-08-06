@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **school** | **str** |  | [optional] 
 **committed_to** | **str** |  | [optional] 
 **position** | **str** |  | [optional] 
-**height** | **int** |  | [optional] 
+**height** | **float** |  | [optional] 
 **weight** | **int** |  | [optional] 
 **stars** | **int** |  | [optional] 
 **rating** | **float** |  | [optional] 
