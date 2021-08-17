@@ -176,7 +176,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_team_matchup**
-> list[TeamMatchup] get_team_matchup(team1, team2, min_year=min_year, max_year=max_year)
+> TeamMatchup get_team_matchup(team1, team2, min_year=min_year, max_year=max_year)
 
 Team matchup history
 
@@ -222,7 +222,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**list[TeamMatchup]**](TeamMatchup.md)
+[**TeamMatchup**](TeamMatchup.md)
 
 ### Authorization
 
