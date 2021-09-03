@@ -10,6 +10,7 @@ Method | HTTP request | Description
 [**get_game_weather**](GamesApi.md#get_game_weather) | **GET** /games/weather | Game weather information (Patreon only)
 [**get_games**](GamesApi.md#get_games) | **GET** /games | Games and results
 [**get_player_game_stats**](GamesApi.md#get_player_game_stats) | **GET** /games/players | Player game stats
+[**get_scoreboard**](GamesApi.md#get_scoreboard) | **GET** /scoreboard | Live game results (Patreon only)
 [**get_team_game_stats**](GamesApi.md#get_team_game_stats) | **GET** /games/teams | Team game stats
 [**get_team_records**](GamesApi.md#get_team_records) | **GET** /records | Team records
 
@@ -370,6 +371,56 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**list[PlayerGame]**](PlayerGame.md)
+
+### Authorization
+
+[ApiKeyAuth](../README.md#ApiKeyAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_scoreboard**
+> list[ScoreboardGame] get_scoreboard()
+
+Live game results (Patreon only)
+
+Get live game results
+
+### Example
+```python
+from __future__ import print_function
+import time
+import cfbd
+from cfbd.rest import ApiException
+from pprint import pprint
+
+# Configure API key authorization: ApiKeyAuth
+configuration = cfbd.Configuration()
+configuration.api_key['Authorization'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Authorization'] = 'Bearer'
+
+# create an instance of the API class
+api_instance = cfbd.GamesApi(cfbd.ApiClient(configuration))
+
+try:
+    # Live game results (Patreon only)
+    api_response = api_instance.get_scoreboard()
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling GamesApi->get_scoreboard: %s\n" % e)
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**list[ScoreboardGame]**](ScoreboardGame.md)
 
 ### Authorization
 

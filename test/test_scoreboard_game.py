@@ -16,24 +16,23 @@ from __future__ import absolute_import
 import unittest
 
 import cfbd
-from cfbd.api.venues_api import VenuesApi  # noqa: E501
+from cfbd.models.scoreboard_game import ScoreboardGame  # noqa: E501
 from cfbd.rest import ApiException
 
 
-class TestVenuesApi(unittest.TestCase):
-    """VenuesApi unit test stubs"""
+class TestScoreboardGame(unittest.TestCase):
+    """ScoreboardGame unit test stubs"""
 
     def setUp(self):
-        self.api = cfbd.api.venues_api.VenuesApi()  # noqa: E501
+        pass
 
     def tearDown(self):
         pass
 
-    def test_get_venues(self):
-        """Test case for get_venues
-
-        Arena and venue information  # noqa: E501
-        """
+    def testScoreboardGame(self):
+        """Test ScoreboardGame"""
+        # FIXME: construct object with mandatory attributes with example values
+        # model = cfbd.models.scoreboard_game.ScoreboardGame()  # noqa: E501
         pass
 
 
