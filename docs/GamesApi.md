@@ -188,7 +188,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_game_weather**
-> list[GameWeather] get_game_weather(year, week=week, season_type=season_type, team=team, conference=conference)
+> list[GameWeather] get_game_weather(game_id=game_id, year=year, week=week, season_type=season_type, team=team, conference=conference)
 
 Game weather information (Patreon only)
 
@@ -210,7 +210,8 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = cfbd.GamesApi(cfbd.ApiClient(configuration))
-year = 56 # int | Year filter
+game_id = 56 # int | Game id filter (required if no year) (optional)
+year = 56 # int | Year filter (required if no game id) (optional)
 week = 56 # int | Week filter (optional)
 season_type = 'season_type_example' # str | Season type filter (regular, postseason, or both) (optional)
 team = 'team_example' # str | Team filter (optional)
@@ -218,7 +219,7 @@ conference = 'conference_example' # str | Conference filter (optional)
 
 try:
     # Game weather information (Patreon only)
-    api_response = api_instance.get_game_weather(year, week=week, season_type=season_type, team=team, conference=conference)
+    api_response = api_instance.get_game_weather(game_id=game_id, year=year, week=week, season_type=season_type, team=team, conference=conference)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling GamesApi->get_game_weather: %s\n" % e)
@@ -228,7 +229,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **year** | **int**| Year filter | 
+ **game_id** | **int**| Game id filter (required if no year) | [optional] 
+ **year** | **int**| Year filter (required if no game id) | [optional] 
  **week** | **int**| Week filter | [optional] 
  **season_type** | **str**| Season type filter (regular, postseason, or both) | [optional] 
  **team** | **str**| Team filter | [optional] 
