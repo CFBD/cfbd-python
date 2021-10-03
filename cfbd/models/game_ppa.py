@@ -33,45 +33,45 @@ class GamePPA(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'id': 'int',
+        'gameId': 'int',
         'season': 'int',
         'week': 'int',
         'team': 'str',
         'conference': 'str',
-        'opponnent': 'str',
+        'opponent': 'str',
         'offense': 'object',
         'defense': 'object'
     }
 
     attribute_map = {
-        'id': 'id',
+        'gameId': 'gameId',
         'season': 'season',
         'week': 'week',
         'team': 'team',
         'conference': 'conference',
-        'opponnent': 'opponnent',
+        'opponent': 'opponent',
         'offense': 'offense',
         'defense': 'defense'
     }
 
-    def __init__(self, id=None, season=None, week=None, team=None, conference=None, opponnent=None, offense=None, defense=None, _configuration=None):  # noqa: E501
+    def __init__(self, gameId=None, season=None, week=None, team=None, conference=None, opponent=None, offense=None, defense=None, _configuration=None):  # noqa: E501
         """GamePPA - a model defined in Swagger"""  # noqa: E501
         if _configuration is None:
             _configuration = Configuration()
         self._configuration = _configuration
 
-        self._id = None
+        self._gameId = None
         self._season = None
         self._week = None
         self._team = None
         self._conference = None
-        self._opponnent = None
+        self._opponent = None
         self._offense = None
         self._defense = None
         self.discriminator = None
 
-        if id is not None:
-            self.id = id
+        if gameId is not None:
+            self.gameId = gameId
         if season is not None:
             self.season = season
         if week is not None:
@@ -80,33 +80,33 @@ class GamePPA(object):
             self.team = team
         if conference is not None:
             self.conference = conference
-        if opponnent is not None:
-            self.opponnent = opponnent
+        if opponent is not None:
+            self.opponent = opponent
         if offense is not None:
             self.offense = offense
         if defense is not None:
             self.defense = defense
 
     @property
-    def id(self):
-        """Gets the id of this GamePPA.  # noqa: E501
+    def gameId(self):
+        """Gets the gameId of this GamePPA.  # noqa: E501
 
 
-        :return: The id of this GamePPA.  # noqa: E501
+        :return: The gameId of this GamePPA.  # noqa: E501
         :rtype: int
         """
-        return self._id
+        return self._gameId
 
-    @id.setter
-    def id(self, id):
-        """Sets the id of this GamePPA.
+    @gameId.setter
+    def gameId(self, gameId):
+        """Sets the gameId of this GamePPA.
 
 
-        :param id: The id of this GamePPA.  # noqa: E501
+        :param gameId: The gameId of this GamePPA.  # noqa: E501
         :type: int
         """
 
-        self._id = id
+        self._gameId = gameId
 
     @property
     def season(self):
@@ -193,25 +193,25 @@ class GamePPA(object):
         self._conference = conference
 
     @property
-    def opponnent(self):
-        """Gets the opponnent of this GamePPA.  # noqa: E501
+    def opponent(self):
+        """Gets the opponent of this GamePPA.  # noqa: E501
 
 
-        :return: The opponnent of this GamePPA.  # noqa: E501
+        :return: The opponent of this GamePPA.  # noqa: E501
         :rtype: str
         """
-        return self._opponnent
+        return self._opponent
 
-    @opponnent.setter
-    def opponnent(self, opponnent):
-        """Sets the opponnent of this GamePPA.
+    @opponent.setter
+    def opponent(self, opponent):
+        """Sets the opponent of this GamePPA.
 
 
-        :param opponnent: The opponnent of this GamePPA.  # noqa: E501
+        :param opponent: The opponent of this GamePPA.  # noqa: E501
         :type: str
         """
 
-        self._opponnent = opponnent
+        self._opponent = opponent
 
     @property
     def offense(self):
