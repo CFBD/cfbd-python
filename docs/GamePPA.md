@@ -3,12 +3,12 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **int** |  | [optional] 
+**game_id** | **int** |  | [optional] 
 **season** | **int** |  | [optional] 
 **week** | **int** |  | [optional] 
 **team** | **str** |  | [optional] 
 **conference** | **str** |  | [optional] 
-**opponnent** | **str** |  | [optional] 
+**opponent** | **str** |  | [optional] 
 **offense** | **object** |  | [optional] 
 **defense** | **object** |  | [optional] 
 
