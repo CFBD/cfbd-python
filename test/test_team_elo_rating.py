@@ -16,12 +16,12 @@ from __future__ import absolute_import
 import unittest
 
 import cfbd
-from cfbd.models.coach import Coach  # noqa: E501
+from cfbd.models.team_elo_rating import TeamEloRating  # noqa: E501
 from cfbd.rest import ApiException
 
 
-class TestCoach(unittest.TestCase):
-    """Coach unit test stubs"""
+class TestTeamEloRating(unittest.TestCase):
+    """TeamEloRating unit test stubs"""
 
     def setUp(self):
         pass
@@ -29,10 +29,10 @@ class TestCoach(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def testCoach(self):
-        """Test Coach"""
+    def testTeamEloRating(self):
+        """Test TeamEloRating"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = cfbd.models.coach.Coach()  # noqa: E501
+        # model = cfbd.models.team_elo_rating.TeamEloRating()  # noqa: E501
         pass
 
 

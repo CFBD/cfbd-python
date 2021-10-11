@@ -5,6 +5,7 @@ All URIs are relative to *https://api.collegefootballdata.com*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**get_conference_sp_ratings**](RatingsApi.md#get_conference_sp_ratings) | **GET** /ratings/sp/conferences | Historical SP+ ratings by conference
+[**get_elo_ratings**](RatingsApi.md#get_elo_ratings) | **GET** /ratings/elo | Historical Elo ratings
 [**get_sp_ratings**](RatingsApi.md#get_sp_ratings) | **GET** /ratings/sp | Historical SP+ ratings
 [**get_srs_ratings**](RatingsApi.md#get_srs_ratings) | **GET** /ratings/srs | Historical SRS ratings
 
@@ -53,6 +54,66 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**list[ConferenceSPRating]**](ConferenceSPRating.md)
+
+### Authorization
+
+[ApiKeyAuth](../README.md#ApiKeyAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_elo_ratings**
+> list[TeamEloRating] get_elo_ratings(year=year, week=week, team=team, conference=conference)
+
+Historical Elo ratings
+
+Elo rating data
+
+### Example
+```python
+from __future__ import print_function
+import time
+import cfbd
+from cfbd.rest import ApiException
+from pprint import pprint
+
+# Configure API key authorization: ApiKeyAuth
+configuration = cfbd.Configuration()
+configuration.api_key['Authorization'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Authorization'] = 'Bearer'
+
+# create an instance of the API class
+api_instance = cfbd.RatingsApi(cfbd.ApiClient(configuration))
+year = 56 # int | Season filter (optional)
+week = 56 # int | Maximum week filter (optional)
+team = 'team_example' # str | Team filter (optional)
+conference = 'conference_example' # str | Conference filter (optional)
+
+try:
+    # Historical Elo ratings
+    api_response = api_instance.get_elo_ratings(year=year, week=week, team=team, conference=conference)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling RatingsApi->get_elo_ratings: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **year** | **int**| Season filter | [optional] 
+ **week** | **int**| Maximum week filter | [optional] 
+ **team** | **str**| Team filter | [optional] 
+ **conference** | **str**| Conference filter | [optional] 
+
+### Return type
+
+[**list[TeamEloRating]**](TeamEloRating.md)
 
 ### Authorization
 
