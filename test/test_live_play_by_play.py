@@ -16,12 +16,12 @@ from __future__ import absolute_import
 import unittest
 
 import cfbd
-from cfbd.models.advanced_game_stat import AdvancedGameStat  # noqa: E501
+from cfbd.models.live_play_by_play import LivePlayByPlay  # noqa: E501
 from cfbd.rest import ApiException
 
 
-class TestAdvancedGameStat(unittest.TestCase):
-    """AdvancedGameStat unit test stubs"""
+class TestLivePlayByPlay(unittest.TestCase):
+    """LivePlayByPlay unit test stubs"""
 
     def setUp(self):
         pass
@@ -29,10 +29,10 @@ class TestAdvancedGameStat(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def testAdvancedGameStat(self):
-        """Test AdvancedGameStat"""
+    def testLivePlayByPlay(self):
+        """Test LivePlayByPlay"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = cfbd.models.advanced_game_stat.AdvancedGameStat()  # noqa: E501
+        # model = cfbd.models.live_play_by_play.LivePlayByPlay()  # noqa: E501
         pass
 
 
