@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 **country_code** | **str** |  | [optional] 
 **location** | **object** |  | [optional] 
 **elevation** | **float** |  | [optional] 
-**year** | **int** |  | [optional] 
+**year_constructed** | **int** |  | [optional] 
 **dome** | **bool** |  | [optional] 
 **timezone** | **str** |  | [optional] 
 
