@@ -4,7 +4,7 @@ All URIs are relative to *https://api.collegefootballdata.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**get_live_plays**](PlaysApi.md#get_live_plays) | **GET** /live/plays | Live metrics and PBP (Patreon Tier 2)
+[**get_live_plays**](PlaysApi.md#get_live_plays) | **GET** /live/plays | Live metrics and PBP (Patreon only)
 [**get_play_stat_types**](PlaysApi.md#get_play_stat_types) | **GET** /play/stat/types | Types of player play stats
 [**get_play_stats**](PlaysApi.md#get_play_stats) | **GET** /play/stats | Play stats by play
 [**get_play_types**](PlaysApi.md#get_play_types) | **GET** /play/types | Play types
@@ -14,7 +14,7 @@ Method | HTTP request | Description
 # **get_live_plays**
 > LivePlayByPlay get_live_plays(id)
 
-Live metrics and PBP (Patreon Tier 2)
+Live metrics and PBP (Patreon only)
 
 Get live metrics and PBP
 
@@ -37,7 +37,7 @@ api_instance = cfbd.PlaysApi(cfbd.ApiClient(configuration))
 id = 56 # int | Game id
 
 try:
-    # Live metrics and PBP (Patreon Tier 2)
+    # Live metrics and PBP (Patreon only)
     api_response = api_instance.get_live_plays(id)
     pprint(api_response)
 except ApiException as e:
