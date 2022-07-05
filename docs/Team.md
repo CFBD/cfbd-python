@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **alt_name_1** | **str** |  | [optional] 
 **alt_name_2** | **str** |  | [optional] 
 **alt_name_3** | **str** |  | [optional] 
+**classification** | **str** |  | [optional] 
 **conference** | **str** |  | [optional] 
 **division** | **str** |  | [optional] 
 **color** | **str** |  | [optional] 

@@ -252,7 +252,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_games**
-> list[Game] get_games(year, week=week, season_type=season_type, team=team, home=home, away=away, conference=conference, id=id)
+> list[Game] get_games(year, week=week, season_type=season_type, team=team, home=home, away=away, conference=conference, division=division, id=id)
 
 Games and results
 
@@ -281,11 +281,12 @@ team = 'team_example' # str | Team (optional)
 home = 'home_example' # str | Home team filter (optional)
 away = 'away_example' # str | Away team filter (optional)
 conference = 'conference_example' # str | Conference abbreviation filter (optional)
+division = 'division_example' # str | Division filter (fbs/fcs/ii/iii) (optional)
 id = 56 # int | id filter for querying a single game (optional)
 
 try:
     # Games and results
-    api_response = api_instance.get_games(year, week=week, season_type=season_type, team=team, home=home, away=away, conference=conference, id=id)
+    api_response = api_instance.get_games(year, week=week, season_type=season_type, team=team, home=home, away=away, conference=conference, division=division, id=id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling GamesApi->get_games: %s\n" % e)
@@ -302,6 +303,7 @@ Name | Type | Description  | Notes
  **home** | **str**| Home team filter | [optional] 
  **away** | **str**| Away team filter | [optional] 
  **conference** | **str**| Conference abbreviation filter | [optional] 
+ **division** | **str**| Division filter (fbs/fcs/ii/iii) | [optional] 
  **id** | **int**| id filter for querying a single game | [optional] 
 
 ### Return type
