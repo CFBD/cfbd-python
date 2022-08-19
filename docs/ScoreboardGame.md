@@ -5,6 +5,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **int** |  | [optional] 
 **start_date** | **str** |  | [optional] 
+**start_time_tbd** | **bool** |  | [optional] 
 **tv** | **str** |  | [optional] 
 **neutral_site** | **bool** |  | [optional] 
 **conference_game** | **bool** |  | [optional] 

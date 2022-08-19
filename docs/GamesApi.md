@@ -388,7 +388,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_scoreboard**
-> list[ScoreboardGame] get_scoreboard()
+> list[ScoreboardGame] get_scoreboard(classification=classification, conference=conference)
 
 Live game results (Patreon only)
 
@@ -410,17 +410,23 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = cfbd.GamesApi(cfbd.ApiClient(configuration))
+classification = 'classification_example' # str | Classification filter (fbs, fcs, ii, or iii). Defaults to fbs. (optional)
+conference = 'conference_example' # str | Conference abbreviation filter. (optional)
 
 try:
     # Live game results (Patreon only)
-    api_response = api_instance.get_scoreboard()
+    api_response = api_instance.get_scoreboard(classification=classification, conference=conference)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling GamesApi->get_scoreboard: %s\n" % e)
 ```
 
 ### Parameters
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **classification** | **str**| Classification filter (fbs, fcs, ii, or iii). Defaults to fbs. | [optional] 
+ **conference** | **str**| Conference abbreviation filter. | [optional] 
 
 ### Return type
 
