@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **distance** | **int** |  | [optional] 
 **yards_to_goal** | **int** |  | [optional] 
 **teams** | **list[object]** |  | [optional] 
-**plays** | **list[object]** |  | [optional] 
+**drives** | **list[object]** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
