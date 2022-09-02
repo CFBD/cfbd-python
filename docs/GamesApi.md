@@ -124,7 +124,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_game_media**
-> list[GameMedia] get_game_media(year, week=week, season_type=season_type, team=team, conference=conference, media_type=media_type)
+> list[GameMedia] get_game_media(year, week=week, season_type=season_type, team=team, conference=conference, media_type=media_type, classification=classification)
 
 Game media information and schedules
 
@@ -152,10 +152,11 @@ season_type = 'season_type_example' # str | Season type filter (regular, postsea
 team = 'team_example' # str | Team filter (optional)
 conference = 'conference_example' # str | Conference filter (optional)
 media_type = 'media_type_example' # str | Media type filter (tv, radio, web, ppv, or mobile) (optional)
+classification = 'classification_example' # str | Division classification filter (fbs/fcs/ii/iii) (optional)
 
 try:
     # Game media information and schedules
-    api_response = api_instance.get_game_media(year, week=week, season_type=season_type, team=team, conference=conference, media_type=media_type)
+    api_response = api_instance.get_game_media(year, week=week, season_type=season_type, team=team, conference=conference, media_type=media_type, classification=classification)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling GamesApi->get_game_media: %s\n" % e)
@@ -171,6 +172,7 @@ Name | Type | Description  | Notes
  **team** | **str**| Team filter | [optional] 
  **conference** | **str**| Conference filter | [optional] 
  **media_type** | **str**| Media type filter (tv, radio, web, ppv, or mobile) | [optional] 
+ **classification** | **str**| Division classification filter (fbs/fcs/ii/iii) | [optional] 
 
 ### Return type
 
@@ -188,7 +190,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_game_weather**
-> list[GameWeather] get_game_weather(game_id=game_id, year=year, week=week, season_type=season_type, team=team, conference=conference)
+> list[GameWeather] get_game_weather(game_id=game_id, year=year, week=week, season_type=season_type, team=team, conference=conference, classification=classification)
 
 Game weather information (Patreon only)
 
@@ -216,10 +218,11 @@ week = 56 # int | Week filter (optional)
 season_type = 'season_type_example' # str | Season type filter (regular, postseason, or both) (optional)
 team = 'team_example' # str | Team filter (optional)
 conference = 'conference_example' # str | Conference filter (optional)
+classification = 'classification_example' # str | Division classification filter (fbs/fcs/ii/iii) (optional)
 
 try:
     # Game weather information (Patreon only)
-    api_response = api_instance.get_game_weather(game_id=game_id, year=year, week=week, season_type=season_type, team=team, conference=conference)
+    api_response = api_instance.get_game_weather(game_id=game_id, year=year, week=week, season_type=season_type, team=team, conference=conference, classification=classification)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling GamesApi->get_game_weather: %s\n" % e)
@@ -235,6 +238,7 @@ Name | Type | Description  | Notes
  **season_type** | **str**| Season type filter (regular, postseason, or both) | [optional] 
  **team** | **str**| Team filter | [optional] 
  **conference** | **str**| Conference filter | [optional] 
+ **classification** | **str**| Division classification filter (fbs/fcs/ii/iii) | [optional] 
 
 ### Return type
 
@@ -281,7 +285,7 @@ team = 'team_example' # str | Team (optional)
 home = 'home_example' # str | Home team filter (optional)
 away = 'away_example' # str | Away team filter (optional)
 conference = 'conference_example' # str | Conference abbreviation filter (optional)
-division = 'division_example' # str | Division filter (fbs/fcs/ii/iii) (optional)
+division = 'division_example' # str | Division classification filter (fbs/fcs/ii/iii) (optional)
 id = 56 # int | id filter for querying a single game (optional)
 
 try:
@@ -303,7 +307,7 @@ Name | Type | Description  | Notes
  **home** | **str**| Home team filter | [optional] 
  **away** | **str**| Away team filter | [optional] 
  **conference** | **str**| Conference abbreviation filter | [optional] 
- **division** | **str**| Division filter (fbs/fcs/ii/iii) | [optional] 
+ **division** | **str**| Division classification filter (fbs/fcs/ii/iii) | [optional] 
  **id** | **int**| id filter for querying a single game | [optional] 
 
 ### Return type

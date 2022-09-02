@@ -8,7 +8,7 @@ Method | HTTP request | Description
 
 
 # **get_drives**
-> list[Drive] get_drives(year, season_type=season_type, week=week, team=team, offense=offense, defense=defense, conference=conference, offense_conference=offense_conference, defense_conference=defense_conference)
+> list[Drive] get_drives(year, season_type=season_type, week=week, team=team, offense=offense, defense=defense, conference=conference, offense_conference=offense_conference, defense_conference=defense_conference, classification=classification)
 
 Drive data and results
 
@@ -39,10 +39,11 @@ defense = 'defense_example' # str | Defensive team filter (optional)
 conference = 'conference_example' # str | Conference filter (optional)
 offense_conference = 'offense_conference_example' # str | Offensive conference filter (optional)
 defense_conference = 'defense_conference_example' # str | Defensive conference filter (optional)
+classification = 'classification_example' # str | Division classification filter (fbs/fcs/ii/iii) (optional)
 
 try:
     # Drive data and results
-    api_response = api_instance.get_drives(year, season_type=season_type, week=week, team=team, offense=offense, defense=defense, conference=conference, offense_conference=offense_conference, defense_conference=defense_conference)
+    api_response = api_instance.get_drives(year, season_type=season_type, week=week, team=team, offense=offense, defense=defense, conference=conference, offense_conference=offense_conference, defense_conference=defense_conference, classification=classification)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling DrivesApi->get_drives: %s\n" % e)
@@ -61,6 +62,7 @@ Name | Type | Description  | Notes
  **conference** | **str**| Conference filter | [optional] 
  **offense_conference** | **str**| Offensive conference filter | [optional] 
  **defense_conference** | **str**| Defensive conference filter | [optional] 
+ **classification** | **str**| Division classification filter (fbs/fcs/ii/iii) | [optional] 
 
 ### Return type
 

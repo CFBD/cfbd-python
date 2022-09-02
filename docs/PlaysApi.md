@@ -234,7 +234,7 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_plays**
-> list[Play] get_plays(year, week, season_type=season_type, team=team, offense=offense, defense=defense, conference=conference, offense_conference=offense_conference, defense_conference=defense_conference, play_type=play_type)
+> list[Play] get_plays(year, week, season_type=season_type, team=team, offense=offense, defense=defense, conference=conference, offense_conference=offense_conference, defense_conference=defense_conference, play_type=play_type, classification=classification)
 
 Play by play data
 
@@ -266,10 +266,11 @@ conference = 'conference_example' # str | Conference filter (optional)
 offense_conference = 'offense_conference_example' # str | Offensive conference filter (optional)
 defense_conference = 'defense_conference_example' # str | Defensive conference filter (optional)
 play_type = 56 # int | Play type filter (optional)
+classification = 'classification_example' # str | Division classification filter (fbs/fcs/ii/iii) (optional)
 
 try:
     # Play by play data
-    api_response = api_instance.get_plays(year, week, season_type=season_type, team=team, offense=offense, defense=defense, conference=conference, offense_conference=offense_conference, defense_conference=defense_conference, play_type=play_type)
+    api_response = api_instance.get_plays(year, week, season_type=season_type, team=team, offense=offense, defense=defense, conference=conference, offense_conference=offense_conference, defense_conference=defense_conference, play_type=play_type, classification=classification)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling PlaysApi->get_plays: %s\n" % e)
@@ -289,6 +290,7 @@ Name | Type | Description  | Notes
  **offense_conference** | **str**| Offensive conference filter | [optional] 
  **defense_conference** | **str**| Defensive conference filter | [optional] 
  **play_type** | **int**| Play type filter | [optional] 
+ **classification** | **str**| Division classification filter (fbs/fcs/ii/iii) | [optional] 
 
 ### Return type
 
