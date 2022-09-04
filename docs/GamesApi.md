@@ -448,7 +448,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_team_game_stats**
-> list[TeamGame] get_team_game_stats(year, week=week, season_type=season_type, team=team, conference=conference, game_id=game_id)
+> list[TeamGame] get_team_game_stats(year, week=week, season_type=season_type, team=team, conference=conference, game_id=game_id, classification=classification)
 
 Team game stats
 
@@ -476,10 +476,11 @@ season_type = 'regular' # str | Season type filter (regular or postseason) (opti
 team = 'team_example' # str | Team filter (optional)
 conference = 'conference_example' # str | Conference abbreviation filter (optional)
 game_id = 56 # int | Game id filter (optional)
+classification = 'classification_example' # str | Division classification filter (fbs/fcs/ii/iii) (optional)
 
 try:
     # Team game stats
-    api_response = api_instance.get_team_game_stats(year, week=week, season_type=season_type, team=team, conference=conference, game_id=game_id)
+    api_response = api_instance.get_team_game_stats(year, week=week, season_type=season_type, team=team, conference=conference, game_id=game_id, classification=classification)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling GamesApi->get_team_game_stats: %s\n" % e)
@@ -495,6 +496,7 @@ Name | Type | Description  | Notes
  **team** | **str**| Team filter | [optional] 
  **conference** | **str**| Conference abbreviation filter | [optional] 
  **game_id** | **int**| Game id filter | [optional] 
+ **classification** | **str**| Division classification filter (fbs/fcs/ii/iii) | [optional] 
 
 ### Return type
 
