@@ -6,8 +6,8 @@ Name | Type | Description | Notes
 **season** | **int** |  | [optional] 
 **team** | **str** |  | [optional] 
 **conference** | **str** |  | [optional] 
-**offense** | **object** |  | [optional] 
-**defense** | **object** |  | [optional] 
+**offense** | [**AdvancedSeasonStatOffense**](AdvancedSeasonStatOffense.md) |  | [optional] 
+**defense** | [**AdvancedSeasonStatOffense**](AdvancedSeasonStatOffense.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

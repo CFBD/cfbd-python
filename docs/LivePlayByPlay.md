@@ -11,8 +11,8 @@ Name | Type | Description | Notes
 **down** | **int** |  | [optional] 
 **distance** | **int** |  | [optional] 
 **yards_to_goal** | **int** |  | [optional] 
-**teams** | **list[object]** |  | [optional] 
-**drives** | **list[object]** |  | [optional] 
+**teams** | [**list[LivePlayByPlayTeams]**](LivePlayByPlayTeams.md) |  | [optional] 
+**drives** | [**list[LivePlayByPlayDrives]**](LivePlayByPlayDrives.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

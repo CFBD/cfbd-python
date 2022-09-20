@@ -39,7 +39,7 @@ class PlayerUsage(object):
         'position': 'str',
         'team': 'str',
         'conference': 'str',
-        'usage': 'object'
+        'usage': 'PlayerUsageUsage'
     }
 
     attribute_map = {
@@ -214,7 +214,7 @@ class PlayerUsage(object):
 
 
         :return: The usage of this PlayerUsage.  # noqa: E501
-        :rtype: object
+        :rtype: PlayerUsageUsage
         """
         return self._usage
 
@@ -224,7 +224,7 @@ class PlayerUsage(object):
 
 
         :param usage: The usage of this PlayerUsage.  # noqa: E501
-        :type: object
+        :type: PlayerUsageUsage
         """
 
         self._usage = usage

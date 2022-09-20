@@ -36,8 +36,8 @@ class TeamPPA(object):
         'season': 'int',
         'team': 'str',
         'conference': 'str',
-        'offense': 'object',
-        'defense': 'object'
+        'offense': 'TeamPPAOffense',
+        'defense': 'TeamPPAOffense'
     }
 
     attribute_map = {
@@ -141,7 +141,7 @@ class TeamPPA(object):
 
 
         :return: The offense of this TeamPPA.  # noqa: E501
-        :rtype: object
+        :rtype: TeamPPAOffense
         """
         return self._offense
 
@@ -151,7 +151,7 @@ class TeamPPA(object):
 
 
         :param offense: The offense of this TeamPPA.  # noqa: E501
-        :type: object
+        :type: TeamPPAOffense
         """
 
         self._offense = offense
@@ -162,7 +162,7 @@ class TeamPPA(object):
 
 
         :return: The defense of this TeamPPA.  # noqa: E501
-        :rtype: object
+        :rtype: TeamPPAOffense
         """
         return self._defense
 
@@ -172,7 +172,7 @@ class TeamPPA(object):
 
 
         :param defense: The defense of this TeamPPA.  # noqa: E501
-        :type: object
+        :type: TeamPPAOffense
         """
 
         self._defense = defense

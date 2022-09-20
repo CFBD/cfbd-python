@@ -44,7 +44,7 @@ class GameLines(object):
         'away_team': 'str',
         'away_conference': 'str',
         'away_score': 'int',
-        'lines': 'list[object]'
+        'lines': 'list[GameLinesLines]'
     }
 
     attribute_map = {
@@ -344,7 +344,7 @@ class GameLines(object):
 
 
         :return: The lines of this GameLines.  # noqa: E501
-        :rtype: list[object]
+        :rtype: list[GameLinesLines]
         """
         return self._lines
 
@@ -354,7 +354,7 @@ class GameLines(object):
 
 
         :param lines: The lines of this GameLines.  # noqa: E501
-        :type: list[object]
+        :type: list[GameLinesLines]
         """
 
         self._lines = lines

@@ -40,9 +40,9 @@ class TeamSPRating(object):
         'ranking': 'float',
         'second_order_wins': 'float',
         'sos': 'float',
-        'offense': 'object',
-        'defense': 'object',
-        'special_teams': 'object'
+        'offense': 'TeamSPRatingOffense',
+        'defense': 'TeamSPRatingDefense',
+        'special_teams': 'TeamSPRatingSpecialTeams'
     }
 
     attribute_map = {
@@ -250,7 +250,7 @@ class TeamSPRating(object):
 
 
         :return: The offense of this TeamSPRating.  # noqa: E501
-        :rtype: object
+        :rtype: TeamSPRatingOffense
         """
         return self._offense
 
@@ -260,7 +260,7 @@ class TeamSPRating(object):
 
 
         :param offense: The offense of this TeamSPRating.  # noqa: E501
-        :type: object
+        :type: TeamSPRatingOffense
         """
 
         self._offense = offense
@@ -271,7 +271,7 @@ class TeamSPRating(object):
 
 
         :return: The defense of this TeamSPRating.  # noqa: E501
-        :rtype: object
+        :rtype: TeamSPRatingDefense
         """
         return self._defense
 
@@ -281,7 +281,7 @@ class TeamSPRating(object):
 
 
         :param defense: The defense of this TeamSPRating.  # noqa: E501
-        :type: object
+        :type: TeamSPRatingDefense
         """
 
         self._defense = defense
@@ -292,7 +292,7 @@ class TeamSPRating(object):
 
 
         :return: The special_teams of this TeamSPRating.  # noqa: E501
-        :rtype: object
+        :rtype: TeamSPRatingSpecialTeams
         """
         return self._special_teams
 
@@ -302,7 +302,7 @@ class TeamSPRating(object):
 
 
         :param special_teams: The special_teams of this TeamSPRating.  # noqa: E501
-        :type: object
+        :type: TeamSPRatingSpecialTeams
         """
 
         self._special_teams = special_teams

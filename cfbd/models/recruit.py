@@ -49,7 +49,7 @@ class Recruit(object):
         'city': 'str',
         'state_province': 'str',
         'country': 'str',
-        'hometown_info': 'object'
+        'hometown_info': 'RecruitHometownInfo'
     }
 
     attribute_map = {
@@ -474,7 +474,7 @@ class Recruit(object):
 
 
         :return: The hometown_info of this Recruit.  # noqa: E501
-        :rtype: object
+        :rtype: RecruitHometownInfo
         """
         return self._hometown_info
 
@@ -484,7 +484,7 @@ class Recruit(object):
 
 
         :param hometown_info: The hometown_info of this Recruit.  # noqa: E501
-        :type: object
+        :type: RecruitHometownInfo
         """
 
         self._hometown_info = hometown_info

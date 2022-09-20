@@ -39,8 +39,8 @@ class PlayerSeasonPPA(object):
         'position': 'str',
         'team': 'str',
         'conference': 'str',
-        'average_ppa': 'object',
-        'total_ppa': 'object'
+        'average_ppa': 'PlayerSeasonPPAAveragePPA',
+        'total_ppa': 'PlayerSeasonPPAAveragePPA'
     }
 
     attribute_map = {
@@ -219,7 +219,7 @@ class PlayerSeasonPPA(object):
 
 
         :return: The average_ppa of this PlayerSeasonPPA.  # noqa: E501
-        :rtype: object
+        :rtype: PlayerSeasonPPAAveragePPA
         """
         return self._average_ppa
 
@@ -229,7 +229,7 @@ class PlayerSeasonPPA(object):
 
 
         :param average_ppa: The average_ppa of this PlayerSeasonPPA.  # noqa: E501
-        :type: object
+        :type: PlayerSeasonPPAAveragePPA
         """
 
         self._average_ppa = average_ppa
@@ -240,7 +240,7 @@ class PlayerSeasonPPA(object):
 
 
         :return: The total_ppa of this PlayerSeasonPPA.  # noqa: E501
-        :rtype: object
+        :rtype: PlayerSeasonPPAAveragePPA
         """
         return self._total_ppa
 
@@ -250,7 +250,7 @@ class PlayerSeasonPPA(object):
 
 
         :param total_ppa: The total_ppa of this PlayerSeasonPPA.  # noqa: E501
-        :type: object
+        :type: PlayerSeasonPPAAveragePPA
         """
 
         self._total_ppa = total_ppa

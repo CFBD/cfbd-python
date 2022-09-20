@@ -17,6 +17,7 @@ Name | Type | Description | Notes
 **second_level_yards_total** | **int** |  | [optional] 
 **open_field_yards** | **float** |  | [optional] 
 **open_field_yards_total** | **int** |  | [optional] 
+**total_opportunies** | **int** |  | [optional] 
 **points_per_opportunity** | **float** |  | [optional] 
 **field_position** | [**AdvancedSeasonStatOffenseFieldPosition**](AdvancedSeasonStatOffenseFieldPosition.md) |  | [optional] 
 **havoc** | [**TeamSPRatingDefenseHavoc**](TeamSPRatingDefenseHavoc.md) |  | [optional] 

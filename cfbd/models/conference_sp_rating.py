@@ -38,9 +38,9 @@ class ConferenceSPRating(object):
         'rating': 'float',
         'second_order_wins': 'float',
         'sos': 'float',
-        'offense': 'object',
-        'defense': 'object',
-        'special_teams': 'object'
+        'offense': 'ConferenceSPRatingOffense',
+        'defense': 'ConferenceSPRatingDefense',
+        'special_teams': 'TeamSPRatingSpecialTeams'
     }
 
     attribute_map = {
@@ -198,7 +198,7 @@ class ConferenceSPRating(object):
 
 
         :return: The offense of this ConferenceSPRating.  # noqa: E501
-        :rtype: object
+        :rtype: ConferenceSPRatingOffense
         """
         return self._offense
 
@@ -208,7 +208,7 @@ class ConferenceSPRating(object):
 
 
         :param offense: The offense of this ConferenceSPRating.  # noqa: E501
-        :type: object
+        :type: ConferenceSPRatingOffense
         """
 
         self._offense = offense
@@ -219,7 +219,7 @@ class ConferenceSPRating(object):
 
 
         :return: The defense of this ConferenceSPRating.  # noqa: E501
-        :rtype: object
+        :rtype: ConferenceSPRatingDefense
         """
         return self._defense
 
@@ -229,7 +229,7 @@ class ConferenceSPRating(object):
 
 
         :param defense: The defense of this ConferenceSPRating.  # noqa: E501
-        :type: object
+        :type: ConferenceSPRatingDefense
         """
 
         self._defense = defense
@@ -240,7 +240,7 @@ class ConferenceSPRating(object):
 
 
         :return: The special_teams of this ConferenceSPRating.  # noqa: E501
-        :rtype: object
+        :rtype: TeamSPRatingSpecialTeams
         """
         return self._special_teams
 
@@ -250,7 +250,7 @@ class ConferenceSPRating(object):
 
 
         :param special_teams: The special_teams of this ConferenceSPRating.  # noqa: E501
-        :type: object
+        :type: TeamSPRatingSpecialTeams
         """
 
         self._special_teams = special_teams

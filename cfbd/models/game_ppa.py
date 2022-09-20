@@ -39,8 +39,8 @@ class GamePPA(object):
         'team': 'str',
         'conference': 'str',
         'opponent': 'str',
-        'offense': 'object',
-        'defense': 'object'
+        'offense': 'GamePPAOffense',
+        'defense': 'GamePPAOffense'
     }
 
     attribute_map = {
@@ -219,7 +219,7 @@ class GamePPA(object):
 
 
         :return: The offense of this GamePPA.  # noqa: E501
-        :rtype: object
+        :rtype: GamePPAOffense
         """
         return self._offense
 
@@ -229,7 +229,7 @@ class GamePPA(object):
 
 
         :param offense: The offense of this GamePPA.  # noqa: E501
-        :type: object
+        :type: GamePPAOffense
         """
 
         self._offense = offense
@@ -240,7 +240,7 @@ class GamePPA(object):
 
 
         :return: The defense of this GamePPA.  # noqa: E501
-        :rtype: object
+        :rtype: GamePPAOffense
         """
         return self._defense
 
@@ -250,7 +250,7 @@ class GamePPA(object):
 
 
         :param defense: The defense of this GamePPA.  # noqa: E501
-        :type: object
+        :type: GamePPAOffense
         """
 
         self._defense = defense

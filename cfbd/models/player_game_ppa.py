@@ -39,7 +39,7 @@ class PlayerGamePPA(object):
         'position': 'str',
         'team': 'str',
         'opponent': 'str',
-        'average_ppa': 'object'
+        'average_ppa': 'PlayerGamePPAAveragePPA'
     }
 
     attribute_map = {
@@ -214,7 +214,7 @@ class PlayerGamePPA(object):
 
 
         :return: The average_ppa of this PlayerGamePPA.  # noqa: E501
-        :rtype: object
+        :rtype: PlayerGamePPAAveragePPA
         """
         return self._average_ppa
 
@@ -224,7 +224,7 @@ class PlayerGamePPA(object):
 
 
         :param average_ppa: The average_ppa of this PlayerGamePPA.  # noqa: E501
-        :type: object
+        :type: PlayerGamePPAAveragePPA
         """
 
         self._average_ppa = average_ppa

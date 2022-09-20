@@ -38,10 +38,10 @@ class TeamRecord(object):
         'conference': 'str',
         'division': 'str',
         'expected_wins': 'float',
-        'total': 'object',
-        'conference_games': 'object',
-        'home_games': 'object',
-        'away_games': 'object'
+        'total': 'TeamRecordTotal',
+        'conference_games': 'TeamRecordTotal',
+        'home_games': 'TeamRecordTotal',
+        'away_games': 'TeamRecordTotal'
     }
 
     attribute_map = {
@@ -203,7 +203,7 @@ class TeamRecord(object):
 
 
         :return: The total of this TeamRecord.  # noqa: E501
-        :rtype: object
+        :rtype: TeamRecordTotal
         """
         return self._total
 
@@ -213,7 +213,7 @@ class TeamRecord(object):
 
 
         :param total: The total of this TeamRecord.  # noqa: E501
-        :type: object
+        :type: TeamRecordTotal
         """
 
         self._total = total
@@ -224,7 +224,7 @@ class TeamRecord(object):
 
 
         :return: The conference_games of this TeamRecord.  # noqa: E501
-        :rtype: object
+        :rtype: TeamRecordTotal
         """
         return self._conference_games
 
@@ -234,7 +234,7 @@ class TeamRecord(object):
 
 
         :param conference_games: The conference_games of this TeamRecord.  # noqa: E501
-        :type: object
+        :type: TeamRecordTotal
         """
 
         self._conference_games = conference_games
@@ -245,7 +245,7 @@ class TeamRecord(object):
 
 
         :return: The home_games of this TeamRecord.  # noqa: E501
-        :rtype: object
+        :rtype: TeamRecordTotal
         """
         return self._home_games
 
@@ -255,7 +255,7 @@ class TeamRecord(object):
 
 
         :param home_games: The home_games of this TeamRecord.  # noqa: E501
-        :type: object
+        :type: TeamRecordTotal
         """
 
         self._home_games = home_games
@@ -266,7 +266,7 @@ class TeamRecord(object):
 
 
         :return: The away_games of this TeamRecord.  # noqa: E501
-        :rtype: object
+        :rtype: TeamRecordTotal
         """
         return self._away_games
 
@@ -276,7 +276,7 @@ class TeamRecord(object):
 
 
         :param away_games: The away_games of this TeamRecord.  # noqa: E501
-        :type: object
+        :type: TeamRecordTotal
         """
 
         self._away_games = away_games

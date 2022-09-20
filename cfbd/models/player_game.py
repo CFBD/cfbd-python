@@ -34,7 +34,7 @@ class PlayerGame(object):
     """
     swagger_types = {
         'id': 'int',
-        'teams': 'list[object]'
+        'teams': 'list[PlayerGameTeams]'
     }
 
     attribute_map = {
@@ -84,7 +84,7 @@ class PlayerGame(object):
 
 
         :return: The teams of this PlayerGame.  # noqa: E501
-        :rtype: list[object]
+        :rtype: list[PlayerGameTeams]
         """
         return self._teams
 
@@ -94,7 +94,7 @@ class PlayerGame(object):
 
 
         :param teams: The teams of this PlayerGame.  # noqa: E501
-        :type: list[object]
+        :type: list[PlayerGameTeams]
         """
 
         self._teams = teams

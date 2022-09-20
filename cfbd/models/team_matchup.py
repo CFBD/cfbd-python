@@ -40,7 +40,7 @@ class TeamMatchup(object):
         'team1_wins': 'int',
         'team2_wins': 'int',
         'ties': 'int',
-        'games': 'list[object]'
+        'games': 'list[TeamMatchupGames]'
     }
 
     attribute_map = {
@@ -240,7 +240,7 @@ class TeamMatchup(object):
 
 
         :return: The games of this TeamMatchup.  # noqa: E501
-        :rtype: list[object]
+        :rtype: list[TeamMatchupGames]
         """
         return self._games
 
@@ -250,7 +250,7 @@ class TeamMatchup(object):
 
 
         :param games: The games of this TeamMatchup.  # noqa: E501
-        :type: list[object]
+        :type: list[TeamMatchupGames]
         """
 
         self._games = games

@@ -9,8 +9,8 @@ Name | Type | Description | Notes
 **team** | **str** |  | [optional] 
 **conference** | **str** |  | [optional] 
 **opponent** | **str** |  | [optional] 
-**offense** | **object** |  | [optional] 
-**defense** | **object** |  | [optional] 
+**offense** | [**GamePPAOffense**](GamePPAOffense.md) |  | [optional] 
+**defense** | [**GamePPAOffense**](GamePPAOffense.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

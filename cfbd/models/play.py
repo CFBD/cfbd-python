@@ -47,7 +47,7 @@ class Play(object):
         'defense_conference': 'str',
         'defense_score': 'int',
         'period': 'int',
-        'clock': 'object',
+        'clock': 'DriveStartTime',
         'offense_timeouts': 'int',
         'defense_timeouts': 'int',
         'yard_line': 'int',
@@ -482,7 +482,7 @@ class Play(object):
 
 
         :return: The clock of this Play.  # noqa: E501
-        :rtype: object
+        :rtype: DriveStartTime
         """
         return self._clock
 
@@ -492,7 +492,7 @@ class Play(object):
 
 
         :param clock: The clock of this Play.  # noqa: E501
-        :type: object
+        :type: DriveStartTime
         """
 
         self._clock = clock

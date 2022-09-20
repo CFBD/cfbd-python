@@ -42,11 +42,11 @@ class ScoreboardGame(object):
         'status': 'str',
         'period': 'int',
         'clock': 'str',
-        'venue': 'object',
-        'home_team': 'object',
-        'away_team': 'object',
-        'weather': 'object',
-        'betting': 'object'
+        'venue': 'ScoreboardGameVenue',
+        'home_team': 'ScoreboardGameHomeTeam',
+        'away_team': 'ScoreboardGameHomeTeam',
+        'weather': 'ScoreboardGameWeather',
+        'betting': 'ScoreboardGameBetting'
     }
 
     attribute_map = {
@@ -312,7 +312,7 @@ class ScoreboardGame(object):
 
 
         :return: The venue of this ScoreboardGame.  # noqa: E501
-        :rtype: object
+        :rtype: ScoreboardGameVenue
         """
         return self._venue
 
@@ -322,7 +322,7 @@ class ScoreboardGame(object):
 
 
         :param venue: The venue of this ScoreboardGame.  # noqa: E501
-        :type: object
+        :type: ScoreboardGameVenue
         """
 
         self._venue = venue
@@ -333,7 +333,7 @@ class ScoreboardGame(object):
 
 
         :return: The home_team of this ScoreboardGame.  # noqa: E501
-        :rtype: object
+        :rtype: ScoreboardGameHomeTeam
         """
         return self._home_team
 
@@ -343,7 +343,7 @@ class ScoreboardGame(object):
 
 
         :param home_team: The home_team of this ScoreboardGame.  # noqa: E501
-        :type: object
+        :type: ScoreboardGameHomeTeam
         """
 
         self._home_team = home_team
@@ -354,7 +354,7 @@ class ScoreboardGame(object):
 
 
         :return: The away_team of this ScoreboardGame.  # noqa: E501
-        :rtype: object
+        :rtype: ScoreboardGameHomeTeam
         """
         return self._away_team
 
@@ -364,7 +364,7 @@ class ScoreboardGame(object):
 
 
         :param away_team: The away_team of this ScoreboardGame.  # noqa: E501
-        :type: object
+        :type: ScoreboardGameHomeTeam
         """
 
         self._away_team = away_team
@@ -375,7 +375,7 @@ class ScoreboardGame(object):
 
 
         :return: The weather of this ScoreboardGame.  # noqa: E501
-        :rtype: object
+        :rtype: ScoreboardGameWeather
         """
         return self._weather
 
@@ -385,7 +385,7 @@ class ScoreboardGame(object):
 
 
         :param weather: The weather of this ScoreboardGame.  # noqa: E501
-        :type: object
+        :type: ScoreboardGameWeather
         """
 
         self._weather = weather
@@ -396,7 +396,7 @@ class ScoreboardGame(object):
 
 
         :return: The betting of this ScoreboardGame.  # noqa: E501
-        :rtype: object
+        :rtype: ScoreboardGameBetting
         """
         return self._betting
 
@@ -406,7 +406,7 @@ class ScoreboardGame(object):
 
 
         :param betting: The betting of this ScoreboardGame.  # noqa: E501
-        :type: object
+        :type: ScoreboardGameBetting
         """
 
         self._betting = betting

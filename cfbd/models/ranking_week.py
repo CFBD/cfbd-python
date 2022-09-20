@@ -36,7 +36,7 @@ class RankingWeek(object):
         'season': 'int',
         'season_type': 'str',
         'week': 'int',
-        'polls': 'list[object]'
+        'polls': 'list[RankingWeekPolls]'
     }
 
     attribute_map = {
@@ -136,7 +136,7 @@ class RankingWeek(object):
 
 
         :return: The polls of this RankingWeek.  # noqa: E501
-        :rtype: list[object]
+        :rtype: list[RankingWeekPolls]
         """
         return self._polls
 
@@ -146,7 +146,7 @@ class RankingWeek(object):
 
 
         :param polls: The polls of this RankingWeek.  # noqa: E501
-        :type: list[object]
+        :type: list[RankingWeekPolls]
         """
 
         self._polls = polls

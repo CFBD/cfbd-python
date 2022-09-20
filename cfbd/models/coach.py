@@ -36,7 +36,7 @@ class Coach(object):
         'first_name': 'str',
         'last_name': 'str',
         'hire_date': 'str',
-        'seasons': 'list[object]'
+        'seasons': 'list[CoachSeasons]'
     }
 
     attribute_map = {
@@ -136,7 +136,7 @@ class Coach(object):
 
 
         :return: The seasons of this Coach.  # noqa: E501
-        :rtype: list[object]
+        :rtype: list[CoachSeasons]
         """
         return self._seasons
 
@@ -146,7 +146,7 @@ class Coach(object):
 
 
         :param seasons: The seasons of this Coach.  # noqa: E501
-        :type: list[object]
+        :type: list[CoachSeasons]
         """
 
         self._seasons = seasons

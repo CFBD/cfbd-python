@@ -50,7 +50,7 @@ class DraftPick(object):
         'pre_draft_ranking': 'int',
         'pre_draft_position_ranking': 'int',
         'pre_draft_grade': 'int',
-        'hometown_info': 'object'
+        'hometown_info': 'DraftPickHometownInfo'
     }
 
     attribute_map = {
@@ -500,7 +500,7 @@ class DraftPick(object):
 
 
         :return: The hometown_info of this DraftPick.  # noqa: E501
-        :rtype: object
+        :rtype: DraftPickHometownInfo
         """
         return self._hometown_info
 
@@ -510,7 +510,7 @@ class DraftPick(object):
 
 
         :param hometown_info: The hometown_info of this DraftPick.  # noqa: E501
-        :type: object
+        :type: DraftPickHometownInfo
         """
 
         self._hometown_info = hometown_info

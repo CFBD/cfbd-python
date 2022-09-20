@@ -44,11 +44,11 @@ class Drive(object):
         'start_period': 'int',
         'start_yardline': 'int',
         'start_yards_to_goal': 'int',
-        'start_time': 'object',
+        'start_time': 'DriveStartTime',
         'end_period': 'int',
         'end_yardline': 'int',
         'end_yards_to_goal': 'int',
-        'end_time': 'object',
+        'end_time': 'DriveStartTime',
         'plays': 'int',
         'yards': 'int',
         'drive_result': 'str',
@@ -404,7 +404,7 @@ class Drive(object):
 
 
         :return: The start_time of this Drive.  # noqa: E501
-        :rtype: object
+        :rtype: DriveStartTime
         """
         return self._start_time
 
@@ -414,7 +414,7 @@ class Drive(object):
 
 
         :param start_time: The start_time of this Drive.  # noqa: E501
-        :type: object
+        :type: DriveStartTime
         """
 
         self._start_time = start_time
@@ -488,7 +488,7 @@ class Drive(object):
 
 
         :return: The end_time of this Drive.  # noqa: E501
-        :rtype: object
+        :rtype: DriveStartTime
         """
         return self._end_time
 
@@ -498,7 +498,7 @@ class Drive(object):
 
 
         :param end_time: The end_time of this Drive.  # noqa: E501
-        :type: object
+        :type: DriveStartTime
         """
 
         self._end_time = end_time

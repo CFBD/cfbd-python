@@ -20,7 +20,7 @@ Name | Type | Description | Notes
 **pre_draft_ranking** | **int** |  | [optional] 
 **pre_draft_position_ranking** | **int** |  | [optional] 
 **pre_draft_grade** | **int** |  | [optional] 
-**hometown_info** | **object** |  | [optional] 
+**hometown_info** | [**DraftPickHometownInfo**](DraftPickHometownInfo.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

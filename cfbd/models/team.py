@@ -46,7 +46,7 @@ class Team(object):
         'color': 'str',
         'alt_color': 'str',
         'logos': 'list[str]',
-        'location': 'object'
+        'location': 'TeamLocation'
     }
 
     attribute_map = {
@@ -396,7 +396,7 @@ class Team(object):
 
 
         :return: The location of this Team.  # noqa: E501
-        :rtype: object
+        :rtype: TeamLocation
         """
         return self._location
 
@@ -406,7 +406,7 @@ class Team(object):
 
 
         :param location: The location of this Team.  # noqa: E501
-        :type: object
+        :type: TeamLocation
         """
 
         self._location = location

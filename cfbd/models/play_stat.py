@@ -44,7 +44,7 @@ class PlayStat(object):
         'drive_id': 'int',
         'play_id': 'int',
         'period': 'int',
-        'clock': 'object',
+        'clock': 'DriveStartTime',
         'yards_to_goal': 'int',
         'down': 'int',
         'distance': 'int',
@@ -379,7 +379,7 @@ class PlayStat(object):
 
 
         :return: The clock of this PlayStat.  # noqa: E501
-        :rtype: object
+        :rtype: DriveStartTime
         """
         return self._clock
 
@@ -389,7 +389,7 @@ class PlayStat(object):
 
 
         :param clock: The clock of this PlayStat.  # noqa: E501
-        :type: object
+        :type: DriveStartTime
         """
 
         self._clock = clock

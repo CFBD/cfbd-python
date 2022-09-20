@@ -9,8 +9,8 @@ Name | Type | Description | Notes
 **position** | **str** |  | [optional] 
 **team** | **str** |  | [optional] 
 **conference** | **str** |  | [optional] 
-**average_ppa** | **object** |  | [optional] 
-**total_ppa** | **object** |  | [optional] 
+**average_ppa** | [**PlayerSeasonPPAAveragePPA**](PlayerSeasonPPAAveragePPA.md) |  | [optional] 
+**total_ppa** | [**PlayerSeasonPPAAveragePPA**](PlayerSeasonPPAAveragePPA.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -41,8 +41,8 @@ class LivePlayByPlay(object):
         'down': 'int',
         'distance': 'int',
         'yards_to_goal': 'int',
-        'teams': 'list[object]',
-        'drives': 'list[object]'
+        'teams': 'list[LivePlayByPlayTeams]',
+        'drives': 'list[LivePlayByPlayDrives]'
     }
 
     attribute_map = {
@@ -271,7 +271,7 @@ class LivePlayByPlay(object):
 
 
         :return: The teams of this LivePlayByPlay.  # noqa: E501
-        :rtype: list[object]
+        :rtype: list[LivePlayByPlayTeams]
         """
         return self._teams
 
@@ -281,7 +281,7 @@ class LivePlayByPlay(object):
 
 
         :param teams: The teams of this LivePlayByPlay.  # noqa: E501
-        :type: list[object]
+        :type: list[LivePlayByPlayTeams]
         """
 
         self._teams = teams
@@ -292,7 +292,7 @@ class LivePlayByPlay(object):
 
 
         :return: The drives of this LivePlayByPlay.  # noqa: E501
-        :rtype: list[object]
+        :rtype: list[LivePlayByPlayDrives]
         """
         return self._drives
 
@@ -302,7 +302,7 @@ class LivePlayByPlay(object):
 
 
         :param drives: The drives of this LivePlayByPlay.  # noqa: E501
-        :type: list[object]
+        :type: list[LivePlayByPlayDrives]
         """
 
         self._drives = drives

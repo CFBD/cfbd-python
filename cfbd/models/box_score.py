@@ -33,8 +33,8 @@ class BoxScore(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'teams': 'object',
-        'players': 'object'
+        'teams': 'BoxScoreTeams',
+        'players': 'BoxScorePlayers'
     }
 
     attribute_map = {
@@ -63,7 +63,7 @@ class BoxScore(object):
 
 
         :return: The teams of this BoxScore.  # noqa: E501
-        :rtype: object
+        :rtype: BoxScoreTeams
         """
         return self._teams
 
@@ -73,7 +73,7 @@ class BoxScore(object):
 
 
         :param teams: The teams of this BoxScore.  # noqa: E501
-        :type: object
+        :type: BoxScoreTeams
         """
 
         self._teams = teams
@@ -84,7 +84,7 @@ class BoxScore(object):
 
 
         :return: The players of this BoxScore.  # noqa: E501
-        :rtype: object
+        :rtype: BoxScorePlayers
         """
         return self._players
 
@@ -94,7 +94,7 @@ class BoxScore(object):
 
 
         :param players: The players of this BoxScore.  # noqa: E501
-        :type: object
+        :type: BoxScorePlayers
         """
 
         self._players = players

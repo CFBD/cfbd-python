@@ -41,7 +41,7 @@ class Venue(object):
         'state': 'str',
         'zip': 'str',
         'country_code': 'str',
-        'location': 'object',
+        'location': 'VenueLocation',
         'elevation': 'float',
         'year_constructed': 'int',
         'dome': 'bool',
@@ -286,7 +286,7 @@ class Venue(object):
 
 
         :return: The location of this Venue.  # noqa: E501
-        :rtype: object
+        :rtype: VenueLocation
         """
         return self._location
 
@@ -296,7 +296,7 @@ class Venue(object):
 
 
         :param location: The location of this Venue.  # noqa: E501
-        :type: object
+        :type: VenueLocation
         """
 
         self._location = location

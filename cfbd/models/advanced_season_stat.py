@@ -36,8 +36,8 @@ class AdvancedSeasonStat(object):
         'season': 'int',
         'team': 'str',
         'conference': 'str',
-        'offense': 'object',
-        'defense': 'object'
+        'offense': 'AdvancedSeasonStatOffense',
+        'defense': 'AdvancedSeasonStatOffense'
     }
 
     attribute_map = {
@@ -141,7 +141,7 @@ class AdvancedSeasonStat(object):
 
 
         :return: The offense of this AdvancedSeasonStat.  # noqa: E501
-        :rtype: object
+        :rtype: AdvancedSeasonStatOffense
         """
         return self._offense
 
@@ -151,7 +151,7 @@ class AdvancedSeasonStat(object):
 
 
         :param offense: The offense of this AdvancedSeasonStat.  # noqa: E501
-        :type: object
+        :type: AdvancedSeasonStatOffense
         """
 
         self._offense = offense
@@ -162,7 +162,7 @@ class AdvancedSeasonStat(object):
 
 
         :return: The defense of this AdvancedSeasonStat.  # noqa: E501
-        :rtype: object
+        :rtype: AdvancedSeasonStatOffense
         """
         return self._defense
 
@@ -172,7 +172,7 @@ class AdvancedSeasonStat(object):
 
 
         :param defense: The defense of this AdvancedSeasonStat.  # noqa: E501
-        :type: object
+        :type: AdvancedSeasonStatOffense
         """
 
         self._defense = defense
