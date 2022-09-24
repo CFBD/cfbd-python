@@ -4,7 +4,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **spread** | **float** |  | [optional] 
-**over_under** | **int** |  | [optional] 
+**over_under** | **float** |  | [optional] 
 **home_moneyline** | **int** |  | [optional] 
 **away_moneyline** | **int** |  | [optional] 
 
