@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**spread** | **int** |  | [optional] 
+**spread** | **float** |  | [optional] 
 **over_under** | **int** |  | [optional] 
 **home_moneyline** | **int** |  | [optional] 
 **away_moneyline** | **int** |  | [optional] 
