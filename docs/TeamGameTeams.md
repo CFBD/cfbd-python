@@ -5,7 +5,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **school** | **str** |  | [optional] 
 **conference** | **str** |  | [optional] 
-**home_away** | **bool** |  | [optional] 
+**home_away** | **str** |  | [optional] 
 **points** | **int** |  | [optional] 
 **stats** | [**list[TeamGameStats]**](TeamGameStats.md) |  | [optional] 
 
