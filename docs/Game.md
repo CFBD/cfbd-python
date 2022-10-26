@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **season_type** | **str** |  | [optional] 
 **start_date** | **str** |  | [optional] 
 **start_time_tbd** | **bool** |  | [optional] 
+**completed** | **bool** |  | [optional] 
 **neutral_site** | **bool** |  | [optional] 
 **conference_game** | **bool** |  | [optional] 
 **attendance** | **int** |  | [optional] 
