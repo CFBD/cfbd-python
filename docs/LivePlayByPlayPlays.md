@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **clock** | **str** |  | [optional] 
 **wallclock** | **str** |  | [optional] 
 **team_id** | **int** |  | [optional] 
-**team** | **object** |  | [optional] 
+**team** | **str** |  | [optional] 
 **down** | **int** |  | [optional] 
 **distance** | **int** |  | [optional] 
 **yards_to_goal** | **int** |  | [optional] 
