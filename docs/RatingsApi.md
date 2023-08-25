@@ -67,7 +67,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_elo_ratings**
-> list[TeamEloRating] get_elo_ratings(year=year, week=week, team=team, conference=conference)
+> list[TeamEloRating] get_elo_ratings(year=year, week=week, season_type=season_type, team=team, conference=conference)
 
 Historical Elo ratings
 
@@ -91,12 +91,13 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 api_instance = cfbd.RatingsApi(cfbd.ApiClient(configuration))
 year = 56 # int | Season filter (optional)
 week = 56 # int | Maximum week filter (optional)
+season_type = NULL # object | Maximum season type to consider (defaults to regular if week is specified else defaults to postseason) (optional)
 team = 'team_example' # str | Team filter (optional)
 conference = 'conference_example' # str | Conference filter (optional)
 
 try:
     # Historical Elo ratings
-    api_response = api_instance.get_elo_ratings(year=year, week=week, team=team, conference=conference)
+    api_response = api_instance.get_elo_ratings(year=year, week=week, season_type=season_type, team=team, conference=conference)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling RatingsApi->get_elo_ratings: %s\n" % e)
@@ -108,6 +109,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **year** | **int**| Season filter | [optional] 
  **week** | **int**| Maximum week filter | [optional] 
+ **season_type** | [**object**](.md)| Maximum season type to consider (defaults to regular if week is specified else defaults to postseason) | [optional] 
  **team** | **str**| Team filter | [optional] 
  **conference** | **str**| Conference filter | [optional] 
 
