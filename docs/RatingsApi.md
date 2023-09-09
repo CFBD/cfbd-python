@@ -6,6 +6,7 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**get_conference_sp_ratings**](RatingsApi.md#get_conference_sp_ratings) | **GET** /ratings/sp/conferences | Historical SP+ ratings by conference
 [**get_elo_ratings**](RatingsApi.md#get_elo_ratings) | **GET** /ratings/elo | Historical Elo ratings
+[**get_fpi_ratings**](RatingsApi.md#get_fpi_ratings) | **GET** /ratings/fpi | Historical FPI ratings
 [**get_sp_ratings**](RatingsApi.md#get_sp_ratings) | **GET** /ratings/sp | Historical SP+ ratings
 [**get_srs_ratings**](RatingsApi.md#get_srs_ratings) | **GET** /ratings/srs | Historical SRS ratings
 
@@ -116,6 +117,64 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**list[TeamEloRating]**](TeamEloRating.md)
+
+### Authorization
+
+[ApiKeyAuth](../README.md#ApiKeyAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_fpi_ratings**
+> list[TeamFPIRating] get_fpi_ratings(year=year, team=team, conference=conference)
+
+Historical FPI ratings
+
+FPI rating data
+
+### Example
+```python
+from __future__ import print_function
+import time
+import cfbd
+from cfbd.rest import ApiException
+from pprint import pprint
+
+# Configure API key authorization: ApiKeyAuth
+configuration = cfbd.Configuration()
+configuration.api_key['Authorization'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Authorization'] = 'Bearer'
+
+# create an instance of the API class
+api_instance = cfbd.RatingsApi(cfbd.ApiClient(configuration))
+year = 56 # int | Season filter (optional)
+team = 'team_example' # str | Team filter (optional)
+conference = 'conference_example' # str | Conference filter (optional)
+
+try:
+    # Historical FPI ratings
+    api_response = api_instance.get_fpi_ratings(year=year, team=team, conference=conference)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling RatingsApi->get_fpi_ratings: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **year** | **int**| Season filter | [optional] 
+ **team** | **str**| Team filter | [optional] 
+ **conference** | **str**| Conference filter | [optional] 
+
+### Return type
+
+[**list[TeamFPIRating]**](TeamFPIRating.md)
 
 ### Authorization
 
