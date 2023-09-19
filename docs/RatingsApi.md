@@ -92,7 +92,7 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 api_instance = cfbd.RatingsApi(cfbd.ApiClient(configuration))
 year = 56 # int | Season filter (optional)
 week = 56 # int | Maximum week filter (optional)
-season_type = NULL # object | Maximum season type to consider (defaults to regular if week is specified else defaults to postseason) (optional)
+season_type = 'season_type_example' # str | Maximum season type to consider (defaults to regular if week is specified else defaults to postseason) (optional)
 team = 'team_example' # str | Team filter (optional)
 conference = 'conference_example' # str | Conference filter (optional)
 
@@ -110,7 +110,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **year** | **int**| Season filter | [optional] 
  **week** | **int**| Maximum week filter | [optional] 
- **season_type** | [**object**](.md)| Maximum season type to consider (defaults to regular if week is specified else defaults to postseason) | [optional] 
+ **season_type** | **str**| Maximum season type to consider (defaults to regular if week is specified else defaults to postseason) | [optional] 
  **team** | **str**| Team filter | [optional] 
  **conference** | **str**| Conference filter | [optional] 
 
