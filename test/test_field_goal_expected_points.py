@@ -16,12 +16,12 @@ from __future__ import absolute_import
 import unittest
 
 import cfbd
-from cfbd.models.scoreboard_game_home_team import ScoreboardGameHomeTeam  # noqa: E501
+from cfbd.models.field_goal_expected_points import FieldGoalExpectedPoints  # noqa: E501
 from cfbd.rest import ApiException
 
 
-class TestScoreboardGameHomeTeam(unittest.TestCase):
-    """ScoreboardGameHomeTeam unit test stubs"""
+class TestFieldGoalExpectedPoints(unittest.TestCase):
+    """FieldGoalExpectedPoints unit test stubs"""
 
     def setUp(self):
         pass
@@ -29,10 +29,10 @@ class TestScoreboardGameHomeTeam(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def testScoreboardGameHomeTeam(self):
-        """Test ScoreboardGameHomeTeam"""
+    def testFieldGoalExpectedPoints(self):
+        """Test FieldGoalExpectedPoints"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = cfbd.models.scoreboard_game_home_team.ScoreboardGameHomeTeam()  # noqa: E501
+        # model = cfbd.models.field_goal_expected_points.FieldGoalExpectedPoints()  # noqa: E501
         pass
 
 

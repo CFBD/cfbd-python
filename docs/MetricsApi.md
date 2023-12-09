@@ -4,6 +4,7 @@ All URIs are relative to *https://api.collegefootballdata.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**get_fgep**](MetricsApi.md#get_fgep) | **GET** /metrics/fg/ep | Field Goal Expected Points
 [**get_game_ppa**](MetricsApi.md#get_game_ppa) | **GET** /ppa/games | Team Predicated Points Added (PPA/EPA) by game
 [**get_player_game_ppa**](MetricsApi.md#get_player_game_ppa) | **GET** /ppa/players/games | Player Predicated Points Added (PPA/EPA) broken down by game
 [**get_player_season_ppa**](MetricsApi.md#get_player_season_ppa) | **GET** /ppa/players/season | Player Predicated Points Added (PPA/EPA) broken down by season
@@ -12,6 +13,56 @@ Method | HTTP request | Description
 [**get_team_ppa**](MetricsApi.md#get_team_ppa) | **GET** /ppa/teams | Predicted Points Added (PPA/EPA) data by team
 [**get_win_probability_data**](MetricsApi.md#get_win_probability_data) | **GET** /metrics/wp | Win probability chart data
 
+
+# **get_fgep**
+> list[FieldGoalExpectedPoints] get_fgep()
+
+Field Goal Expected Points
+
+Field Goal Expected Poitns
+
+### Example
+```python
+from __future__ import print_function
+import time
+import cfbd
+from cfbd.rest import ApiException
+from pprint import pprint
+
+# Configure API key authorization: ApiKeyAuth
+configuration = cfbd.Configuration()
+configuration.api_key['Authorization'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Authorization'] = 'Bearer'
+
+# create an instance of the API class
+api_instance = cfbd.MetricsApi(cfbd.ApiClient(configuration))
+
+try:
+    # Field Goal Expected Points
+    api_response = api_instance.get_fgep()
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling MetricsApi->get_fgep: %s\n" % e)
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**list[FieldGoalExpectedPoints]**](FieldGoalExpectedPoints.md)
+
+### Authorization
+
+[ApiKeyAuth](../README.md#ApiKeyAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_game_ppa**
 > list[GamePPA] get_game_ppa(year, week=week, team=team, conference=conference, exclude_garbage_time=exclude_garbage_time, season_type=season_type)
