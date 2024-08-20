@@ -1,173 +1,239 @@
 # cfbd.DraftApi
 
-All URIs are relative to *https://api.collegefootballdata.com*
+All URIs are relative to *https://apinext.collegefootballdata.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**get_draft_picks**](DraftApi.md#get_draft_picks) | **GET** /draft/picks | List of NFL Draft picks
-[**get_nfl_positions**](DraftApi.md#get_nfl_positions) | **GET** /draft/positions | List of NFL positions
-[**get_nfl_teams**](DraftApi.md#get_nfl_teams) | **GET** /draft/teams | List of NFL teams
+[**get_draft_picks**](DraftApi.md#get_draft_picks) | **GET** /draft/picks | 
+[**get_draft_positions**](DraftApi.md#get_draft_positions) | **GET** /draft/positions | 
+[**get_draft_teams**](DraftApi.md#get_draft_teams) | **GET** /draft/teams | 
 
 
 # **get_draft_picks**
-> list[DraftPick] get_draft_picks(year=year, nfl_team=nfl_team, college=college, conference=conference, position=position)
+> List[DraftPick] get_draft_picks(year=year, team=team, school=school, conference=conference, position=position)
 
-List of NFL Draft picks
 
-List of NFL Draft picks
+
+Retrieve historical NFL draft data
 
 ### Example
+
+* Bearer Authentication (apiKey):
 ```python
-from __future__ import print_function
 import time
+import os
 import cfbd
+from cfbd.models.draft_pick import DraftPick
 from cfbd.rest import ApiException
 from pprint import pprint
 
-# Configure API key authorization: ApiKeyAuth
-configuration = cfbd.Configuration()
-configuration.api_key['Authorization'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['Authorization'] = 'Bearer'
+# Defining the host is optional and defaults to https://apinext.collegefootballdata.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = cfbd.Configuration(
+    host = "https://apinext.collegefootballdata.com"
+)
 
-# create an instance of the API class
-api_instance = cfbd.DraftApi(cfbd.ApiClient(configuration))
-year = 56 # int | Year filter (optional)
-nfl_team = 'nfl_team_example' # str | NFL team filter (optional)
-college = 'college_example' # str | Player college filter (optional)
-conference = 'conference_example' # str | College confrence abbreviation filter (optional)
-position = 'position_example' # str | NFL position filter (optional)
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
 
-try:
-    # List of NFL Draft picks
-    api_response = api_instance.get_draft_picks(year=year, nfl_team=nfl_team, college=college, conference=conference, position=position)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling DraftApi->get_draft_picks: %s\n" % e)
+# Configure Bearer authorization: apiKey
+configuration = cfbd.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+with cfbd.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cfbd.DraftApi(api_client)
+    year = 56 # int | Optional year filter (optional)
+    team = 'team_example' # str | Optional NFL team filter (optional)
+    school = 'school_example' # str | Optional college team filter (optional)
+    conference = 'conference_example' # str | Optional college conference filter (optional)
+    position = 'position_example' # str | Optional position classification filter (optional)
+
+    try:
+        api_response = api_instance.get_draft_picks(year=year, team=team, school=school, conference=conference, position=position)
+        print("The response of DraftApi->get_draft_picks:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling DraftApi->get_draft_picks: %s\n" % e)
 ```
+
+
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **year** | **int**| Year filter | [optional] 
- **nfl_team** | **str**| NFL team filter | [optional] 
- **college** | **str**| Player college filter | [optional] 
- **conference** | **str**| College confrence abbreviation filter | [optional] 
- **position** | **str**| NFL position filter | [optional] 
+ **year** | **int**| Optional year filter | [optional] 
+ **team** | **str**| Optional NFL team filter | [optional] 
+ **school** | **str**| Optional college team filter | [optional] 
+ **conference** | **str**| Optional college conference filter | [optional] 
+ **position** | **str**| Optional position classification filter | [optional] 
 
 ### Return type
 
-[**list[DraftPick]**](DraftPick.md)
+[**List[DraftPick]**](DraftPick.md)
 
 ### Authorization
 
-[ApiKeyAuth](../README.md#ApiKeyAuth)
+[apiKey](../README.md#apiKey)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Ok |  -  |
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_nfl_positions**
-> list[DraftPosition] get_nfl_positions()
+# **get_draft_positions**
+> List[DraftPosition] get_draft_positions()
 
-List of NFL positions
 
-List of NFL positions
+
+Retrieves list of player position categories for the NFL Draft
 
 ### Example
+
+* Bearer Authentication (apiKey):
 ```python
-from __future__ import print_function
 import time
+import os
 import cfbd
+from cfbd.models.draft_position import DraftPosition
 from cfbd.rest import ApiException
 from pprint import pprint
 
-# Configure API key authorization: ApiKeyAuth
-configuration = cfbd.Configuration()
-configuration.api_key['Authorization'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['Authorization'] = 'Bearer'
+# Defining the host is optional and defaults to https://apinext.collegefootballdata.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = cfbd.Configuration(
+    host = "https://apinext.collegefootballdata.com"
+)
 
-# create an instance of the API class
-api_instance = cfbd.DraftApi(cfbd.ApiClient(configuration))
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
 
-try:
-    # List of NFL positions
-    api_response = api_instance.get_nfl_positions()
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling DraftApi->get_nfl_positions: %s\n" % e)
+# Configure Bearer authorization: apiKey
+configuration = cfbd.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+with cfbd.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cfbd.DraftApi(api_client)
+
+    try:
+        api_response = api_instance.get_draft_positions()
+        print("The response of DraftApi->get_draft_positions:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling DraftApi->get_draft_positions: %s\n" % e)
 ```
+
+
 
 ### Parameters
 This endpoint does not need any parameter.
 
 ### Return type
 
-[**list[DraftPosition]**](DraftPosition.md)
+[**List[DraftPosition]**](DraftPosition.md)
 
 ### Authorization
 
-[ApiKeyAuth](../README.md#ApiKeyAuth)
+[apiKey](../README.md#apiKey)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Ok |  -  |
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_nfl_teams**
-> list[DraftTeam] get_nfl_teams()
+# **get_draft_teams**
+> List[DraftTeam] get_draft_teams()
 
-List of NFL teams
 
-List of NFL teams
+
+Retrieves list of NFL teams
 
 ### Example
+
+* Bearer Authentication (apiKey):
 ```python
-from __future__ import print_function
 import time
+import os
 import cfbd
+from cfbd.models.draft_team import DraftTeam
 from cfbd.rest import ApiException
 from pprint import pprint
 
-# Configure API key authorization: ApiKeyAuth
-configuration = cfbd.Configuration()
-configuration.api_key['Authorization'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['Authorization'] = 'Bearer'
+# Defining the host is optional and defaults to https://apinext.collegefootballdata.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = cfbd.Configuration(
+    host = "https://apinext.collegefootballdata.com"
+)
 
-# create an instance of the API class
-api_instance = cfbd.DraftApi(cfbd.ApiClient(configuration))
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
 
-try:
-    # List of NFL teams
-    api_response = api_instance.get_nfl_teams()
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling DraftApi->get_nfl_teams: %s\n" % e)
+# Configure Bearer authorization: apiKey
+configuration = cfbd.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+with cfbd.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cfbd.DraftApi(api_client)
+
+    try:
+        api_response = api_instance.get_draft_teams()
+        print("The response of DraftApi->get_draft_teams:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling DraftApi->get_draft_teams: %s\n" % e)
 ```
+
+
 
 ### Parameters
 This endpoint does not need any parameter.
 
 ### Return type
 
-[**list[DraftTeam]**](DraftTeam.md)
+[**List[DraftTeam]**](DraftTeam.md)
 
 ### Authorization
 
-[ApiKeyAuth](../README.md#ApiKeyAuth)
+[apiKey](../README.md#apiKey)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Ok |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

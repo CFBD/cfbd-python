@@ -1,0 +1,30 @@
+[tool.poetry]
+name = "cfbd"
+version = "5.0.0"
+description = "College Football Data API"
+authors = ["the developer <admin@collegefootballdata.com>"]
+license = "MIT"
+readme = "README.md"
+repository = "https://github.com//"
+keywords = ["OpenAPI", "OpenAPI-Generator", "College Football Data API"]
+include = ["cfbd/py.typed"]
+
+[tool.poetry.dependencies]
+python = "^3.7"
+
+urllib3 = ">= 1.25.3"
+python-dateutil = ">=2.8.2"
+pydantic = "^1.10.5, <2"
+aenum = ">=3.1.11"
+
+[tool.poetry.dev-dependencies]
+pytest = ">=7.2.1"
+tox = ">=3.9.0"
+flake8 = ">=4.0.0"
+
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[tool.pylint.'MESSAGES CONTROL']
+extension-pkg-whitelist = "pydantic"

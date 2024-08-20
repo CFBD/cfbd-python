@@ -1,5 +1,3 @@
-from __future__ import absolute_import
-
 # flake8: noqa
 
 # import apis into api package
@@ -18,3 +16,4 @@ from cfbd.api.recruiting_api import RecruitingApi
 from cfbd.api.stats_api import StatsApi
 from cfbd.api.teams_api import TeamsApi
 from cfbd.api.venues_api import VenuesApi
+

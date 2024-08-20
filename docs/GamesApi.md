@@ -1,573 +1,785 @@
 # cfbd.GamesApi
 
-All URIs are relative to *https://api.collegefootballdata.com*
+All URIs are relative to *https://apinext.collegefootballdata.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**get_advanced_box_score**](GamesApi.md#get_advanced_box_score) | **GET** /game/box/advanced | Advanced box scores
-[**get_calendar**](GamesApi.md#get_calendar) | **GET** /calendar | Season calendar
-[**get_game_media**](GamesApi.md#get_game_media) | **GET** /games/media | Game media information and schedules
-[**get_game_weather**](GamesApi.md#get_game_weather) | **GET** /games/weather | Game weather information (Patreon only)
-[**get_games**](GamesApi.md#get_games) | **GET** /games | Games and results
-[**get_player_game_stats**](GamesApi.md#get_player_game_stats) | **GET** /games/players | Player game stats
-[**get_scoreboard**](GamesApi.md#get_scoreboard) | **GET** /scoreboard | Live game results (Patreon only)
-[**get_team_game_stats**](GamesApi.md#get_team_game_stats) | **GET** /games/teams | Team game stats
-[**get_team_records**](GamesApi.md#get_team_records) | **GET** /records | Team records
+[**get_advanced_box_score**](GamesApi.md#get_advanced_box_score) | **GET** /game/box/advanced | 
+[**get_calendar**](GamesApi.md#get_calendar) | **GET** /calendar | 
+[**get_game_player_stats**](GamesApi.md#get_game_player_stats) | **GET** /games/players | 
+[**get_game_team_stats**](GamesApi.md#get_game_team_stats) | **GET** /games/teams | 
+[**get_games**](GamesApi.md#get_games) | **GET** /games | 
+[**get_media**](GamesApi.md#get_media) | **GET** /games/media | 
+[**get_records**](GamesApi.md#get_records) | **GET** /records | 
+[**get_scoreboard**](GamesApi.md#get_scoreboard) | **GET** /scoreboard | 
+[**get_weather**](GamesApi.md#get_weather) | **GET** /games/weather | 
 
 
 # **get_advanced_box_score**
-> BoxScore get_advanced_box_score(game_id)
+> AdvancedBoxScore get_advanced_box_score(id)
 
-Advanced box scores
 
-Get advanced box score data
+
+Retrieves an advanced box score for a game
 
 ### Example
+
+* Bearer Authentication (apiKey):
 ```python
-from __future__ import print_function
 import time
+import os
 import cfbd
+from cfbd.models.advanced_box_score import AdvancedBoxScore
 from cfbd.rest import ApiException
 from pprint import pprint
 
-# Configure API key authorization: ApiKeyAuth
-configuration = cfbd.Configuration()
-configuration.api_key['Authorization'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['Authorization'] = 'Bearer'
+# Defining the host is optional and defaults to https://apinext.collegefootballdata.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = cfbd.Configuration(
+    host = "https://apinext.collegefootballdata.com"
+)
 
-# create an instance of the API class
-api_instance = cfbd.GamesApi(cfbd.ApiClient(configuration))
-game_id = 56 # int | Game id parameters
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
 
-try:
-    # Advanced box scores
-    api_response = api_instance.get_advanced_box_score(game_id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling GamesApi->get_advanced_box_score: %s\n" % e)
+# Configure Bearer authorization: apiKey
+configuration = cfbd.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+with cfbd.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cfbd.GamesApi(api_client)
+    id = 56 # int | Required game id filter
+
+    try:
+        api_response = api_instance.get_advanced_box_score(id)
+        print("The response of GamesApi->get_advanced_box_score:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling GamesApi->get_advanced_box_score: %s\n" % e)
 ```
+
+
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **game_id** | **int**| Game id parameters | 
+ **id** | **int**| Required game id filter | 
 
 ### Return type
 
-[**BoxScore**](BoxScore.md)
+[**AdvancedBoxScore**](AdvancedBoxScore.md)
 
 ### Authorization
 
-[ApiKeyAuth](../README.md#ApiKeyAuth)
+[apiKey](../README.md#apiKey)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Ok |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_calendar**
-> list[Week] get_calendar(year)
+> List[CalendarWeek] get_calendar(year)
 
-Season calendar
 
-Get calendar of weeks by season
+
+Retrieves calendar information
 
 ### Example
+
+* Bearer Authentication (apiKey):
 ```python
-from __future__ import print_function
 import time
+import os
 import cfbd
+from cfbd.models.calendar_week import CalendarWeek
 from cfbd.rest import ApiException
 from pprint import pprint
 
-# Configure API key authorization: ApiKeyAuth
-configuration = cfbd.Configuration()
-configuration.api_key['Authorization'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['Authorization'] = 'Bearer'
+# Defining the host is optional and defaults to https://apinext.collegefootballdata.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = cfbd.Configuration(
+    host = "https://apinext.collegefootballdata.com"
+)
 
-# create an instance of the API class
-api_instance = cfbd.GamesApi(cfbd.ApiClient(configuration))
-year = 56 # int | Year filter
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
 
-try:
-    # Season calendar
-    api_response = api_instance.get_calendar(year)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling GamesApi->get_calendar: %s\n" % e)
+# Configure Bearer authorization: apiKey
+configuration = cfbd.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+with cfbd.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cfbd.GamesApi(api_client)
+    year = 56 # int | Required year filter
+
+    try:
+        api_response = api_instance.get_calendar(year)
+        print("The response of GamesApi->get_calendar:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling GamesApi->get_calendar: %s\n" % e)
 ```
+
+
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **year** | **int**| Year filter | 
+ **year** | **int**| Required year filter | 
 
 ### Return type
 
-[**list[Week]**](Week.md)
+[**List[CalendarWeek]**](CalendarWeek.md)
 
 ### Authorization
 
-[ApiKeyAuth](../README.md#ApiKeyAuth)
+[apiKey](../README.md#apiKey)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Ok |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_game_media**
-> list[GameMedia] get_game_media(year, week=week, season_type=season_type, team=team, conference=conference, media_type=media_type, classification=classification)
+# **get_game_player_stats**
+> List[GamePlayerStats] get_game_player_stats(year=year, week=week, team=team, conference=conference, classification=classification, season_type=season_type, category=category, id=id)
 
-Game media information and schedules
 
-Game media information (TV, radio, etc)
+
+Retrieves player box score statistics
 
 ### Example
+
+* Bearer Authentication (apiKey):
 ```python
-from __future__ import print_function
 import time
+import os
 import cfbd
+from cfbd.models.division_classification import DivisionClassification
+from cfbd.models.game_player_stats import GamePlayerStats
+from cfbd.models.season_type import SeasonType
 from cfbd.rest import ApiException
 from pprint import pprint
 
-# Configure API key authorization: ApiKeyAuth
-configuration = cfbd.Configuration()
-configuration.api_key['Authorization'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['Authorization'] = 'Bearer'
+# Defining the host is optional and defaults to https://apinext.collegefootballdata.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = cfbd.Configuration(
+    host = "https://apinext.collegefootballdata.com"
+)
 
-# create an instance of the API class
-api_instance = cfbd.GamesApi(cfbd.ApiClient(configuration))
-year = 56 # int | Year filter
-week = 56 # int | Week filter (optional)
-season_type = 'season_type_example' # str | Season type filter (regular, postseason, or both) (optional)
-team = 'team_example' # str | Team filter (optional)
-conference = 'conference_example' # str | Conference filter (optional)
-media_type = 'media_type_example' # str | Media type filter (tv, radio, web, ppv, or mobile) (optional)
-classification = 'classification_example' # str | Division classification filter (fbs/fcs/ii/iii) (optional)
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
 
-try:
-    # Game media information and schedules
-    api_response = api_instance.get_game_media(year, week=week, season_type=season_type, team=team, conference=conference, media_type=media_type, classification=classification)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling GamesApi->get_game_media: %s\n" % e)
+# Configure Bearer authorization: apiKey
+configuration = cfbd.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+with cfbd.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cfbd.GamesApi(api_client)
+    year = 56 # int | Required year filter (along with one of week, team, or conference), unless id is specified (optional)
+    week = 56 # int | Optional week filter, required if team and conference not specified (optional)
+    team = 'team_example' # str | Optional team filter, required if week and conference not specified (optional)
+    conference = 'conference_example' # str | Optional conference filter, required if week and team not specified (optional)
+    classification = cfbd.DivisionClassification() # DivisionClassification | Optional division classification filter (optional)
+    season_type = cfbd.SeasonType() # SeasonType | Optional season type filter (optional)
+    category = 'category_example' # str | Optional player statistical category filter (optional)
+    id = 56 # int | Optional id filter to retrieve a single game (optional)
+
+    try:
+        api_response = api_instance.get_game_player_stats(year=year, week=week, team=team, conference=conference, classification=classification, season_type=season_type, category=category, id=id)
+        print("The response of GamesApi->get_game_player_stats:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling GamesApi->get_game_player_stats: %s\n" % e)
 ```
+
+
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **year** | **int**| Year filter | 
- **week** | **int**| Week filter | [optional] 
- **season_type** | **str**| Season type filter (regular, postseason, or both) | [optional] 
- **team** | **str**| Team filter | [optional] 
- **conference** | **str**| Conference filter | [optional] 
- **media_type** | **str**| Media type filter (tv, radio, web, ppv, or mobile) | [optional] 
- **classification** | **str**| Division classification filter (fbs/fcs/ii/iii) | [optional] 
+ **year** | **int**| Required year filter (along with one of week, team, or conference), unless id is specified | [optional] 
+ **week** | **int**| Optional week filter, required if team and conference not specified | [optional] 
+ **team** | **str**| Optional team filter, required if week and conference not specified | [optional] 
+ **conference** | **str**| Optional conference filter, required if week and team not specified | [optional] 
+ **classification** | [**DivisionClassification**](.md)| Optional division classification filter | [optional] 
+ **season_type** | [**SeasonType**](.md)| Optional season type filter | [optional] 
+ **category** | **str**| Optional player statistical category filter | [optional] 
+ **id** | **int**| Optional id filter to retrieve a single game | [optional] 
 
 ### Return type
 
-[**list[GameMedia]**](GameMedia.md)
+[**List[GamePlayerStats]**](GamePlayerStats.md)
 
 ### Authorization
 
-[ApiKeyAuth](../README.md#ApiKeyAuth)
+[apiKey](../README.md#apiKey)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Ok |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_game_weather**
-> list[GameWeather] get_game_weather(game_id=game_id, year=year, week=week, season_type=season_type, team=team, conference=conference, classification=classification)
+# **get_game_team_stats**
+> List[GameTeamStats] get_game_team_stats(year=year, week=week, team=team, conference=conference, classification=classification, season_type=season_type, id=id)
 
-Game weather information (Patreon only)
 
-Weather information for the hour of kickoff
+
+Retrieves team box score statistics
 
 ### Example
+
+* Bearer Authentication (apiKey):
 ```python
-from __future__ import print_function
 import time
+import os
 import cfbd
+from cfbd.models.division_classification import DivisionClassification
+from cfbd.models.game_team_stats import GameTeamStats
+from cfbd.models.season_type import SeasonType
 from cfbd.rest import ApiException
 from pprint import pprint
 
-# Configure API key authorization: ApiKeyAuth
-configuration = cfbd.Configuration()
-configuration.api_key['Authorization'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['Authorization'] = 'Bearer'
+# Defining the host is optional and defaults to https://apinext.collegefootballdata.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = cfbd.Configuration(
+    host = "https://apinext.collegefootballdata.com"
+)
 
-# create an instance of the API class
-api_instance = cfbd.GamesApi(cfbd.ApiClient(configuration))
-game_id = 56 # int | Game id filter (required if no year) (optional)
-year = 56 # int | Year filter (required if no game id) (optional)
-week = 56 # int | Week filter (optional)
-season_type = 'season_type_example' # str | Season type filter (regular, postseason, or both) (optional)
-team = 'team_example' # str | Team filter (optional)
-conference = 'conference_example' # str | Conference filter (optional)
-classification = 'classification_example' # str | Division classification filter (fbs/fcs/ii/iii) (optional)
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
 
-try:
-    # Game weather information (Patreon only)
-    api_response = api_instance.get_game_weather(game_id=game_id, year=year, week=week, season_type=season_type, team=team, conference=conference, classification=classification)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling GamesApi->get_game_weather: %s\n" % e)
+# Configure Bearer authorization: apiKey
+configuration = cfbd.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+with cfbd.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cfbd.GamesApi(api_client)
+    year = 56 # int | Required year filter (along with one of week, team, or conference), unless id is specified (optional)
+    week = 56 # int | Optional week filter, required if team and conference not specified (optional)
+    team = 'team_example' # str | Optional team filter, required if week and conference not specified (optional)
+    conference = 'conference_example' # str | Optional conference filter, required if week and team not specified (optional)
+    classification = cfbd.DivisionClassification() # DivisionClassification | Optional division classification filter (optional)
+    season_type = cfbd.SeasonType() # SeasonType | Optional season type filter (optional)
+    id = 56 # int | Optional id filter to retrieve a single game (optional)
+
+    try:
+        api_response = api_instance.get_game_team_stats(year=year, week=week, team=team, conference=conference, classification=classification, season_type=season_type, id=id)
+        print("The response of GamesApi->get_game_team_stats:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling GamesApi->get_game_team_stats: %s\n" % e)
 ```
+
+
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **game_id** | **int**| Game id filter (required if no year) | [optional] 
- **year** | **int**| Year filter (required if no game id) | [optional] 
- **week** | **int**| Week filter | [optional] 
- **season_type** | **str**| Season type filter (regular, postseason, or both) | [optional] 
- **team** | **str**| Team filter | [optional] 
- **conference** | **str**| Conference filter | [optional] 
- **classification** | **str**| Division classification filter (fbs/fcs/ii/iii) | [optional] 
+ **year** | **int**| Required year filter (along with one of week, team, or conference), unless id is specified | [optional] 
+ **week** | **int**| Optional week filter, required if team and conference not specified | [optional] 
+ **team** | **str**| Optional team filter, required if week and conference not specified | [optional] 
+ **conference** | **str**| Optional conference filter, required if week and team not specified | [optional] 
+ **classification** | [**DivisionClassification**](.md)| Optional division classification filter | [optional] 
+ **season_type** | [**SeasonType**](.md)| Optional season type filter | [optional] 
+ **id** | **int**| Optional id filter to retrieve a single game | [optional] 
 
 ### Return type
 
-[**list[GameWeather]**](GameWeather.md)
+[**List[GameTeamStats]**](GameTeamStats.md)
 
 ### Authorization
 
-[ApiKeyAuth](../README.md#ApiKeyAuth)
+[apiKey](../README.md#apiKey)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Ok |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_games**
-> list[Game] get_games(year, week=week, season_type=season_type, team=team, home=home, away=away, conference=conference, division=division, id=id)
+> List[Game] get_games(year=year, week=week, season_type=season_type, classification=classification, team=team, home=home, away=away, conference=conference, id=id)
 
-Games and results
 
-Get game results
+
+Retrieves historical game data
 
 ### Example
+
+* Bearer Authentication (apiKey):
 ```python
-from __future__ import print_function
 import time
+import os
 import cfbd
+from cfbd.models.division_classification import DivisionClassification
+from cfbd.models.game import Game
+from cfbd.models.season_type import SeasonType
 from cfbd.rest import ApiException
 from pprint import pprint
 
-# Configure API key authorization: ApiKeyAuth
-configuration = cfbd.Configuration()
-configuration.api_key['Authorization'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['Authorization'] = 'Bearer'
+# Defining the host is optional and defaults to https://apinext.collegefootballdata.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = cfbd.Configuration(
+    host = "https://apinext.collegefootballdata.com"
+)
 
-# create an instance of the API class
-api_instance = cfbd.GamesApi(cfbd.ApiClient(configuration))
-year = 56 # int | Year/season filter for games
-week = 56 # int | Week filter (optional)
-season_type = 'regular' # str | Season type filter (regular or postseason) (optional) (default to regular)
-team = 'team_example' # str | Team (optional)
-home = 'home_example' # str | Home team filter (optional)
-away = 'away_example' # str | Away team filter (optional)
-conference = 'conference_example' # str | Conference abbreviation filter (optional)
-division = 'division_example' # str | Division classification filter (fbs/fcs/ii/iii) (optional)
-id = 56 # int | id filter for querying a single game (optional)
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
 
-try:
-    # Games and results
-    api_response = api_instance.get_games(year, week=week, season_type=season_type, team=team, home=home, away=away, conference=conference, division=division, id=id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling GamesApi->get_games: %s\n" % e)
+# Configure Bearer authorization: apiKey
+configuration = cfbd.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+with cfbd.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cfbd.GamesApi(api_client)
+    year = 56 # int | Required year filter (except when id is specified) (optional)
+    week = 56 # int | Optional week filter (optional)
+    season_type = cfbd.SeasonType() # SeasonType | Optional season type filter (optional)
+    classification = cfbd.DivisionClassification() # DivisionClassification | Optional division classification filter (optional)
+    team = 'team_example' # str | Optional team filter (optional)
+    home = 'home_example' # str | Optional home team filter (optional)
+    away = 'away_example' # str | Optional away team filter (optional)
+    conference = 'conference_example' # str | Optional conference filter (optional)
+    id = 56 # int | Game id filter to retrieve a single game (optional)
+
+    try:
+        api_response = api_instance.get_games(year=year, week=week, season_type=season_type, classification=classification, team=team, home=home, away=away, conference=conference, id=id)
+        print("The response of GamesApi->get_games:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling GamesApi->get_games: %s\n" % e)
 ```
+
+
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **year** | **int**| Year/season filter for games | 
- **week** | **int**| Week filter | [optional] 
- **season_type** | **str**| Season type filter (regular or postseason) | [optional] [default to regular]
- **team** | **str**| Team | [optional] 
- **home** | **str**| Home team filter | [optional] 
- **away** | **str**| Away team filter | [optional] 
- **conference** | **str**| Conference abbreviation filter | [optional] 
- **division** | **str**| Division classification filter (fbs/fcs/ii/iii) | [optional] 
- **id** | **int**| id filter for querying a single game | [optional] 
+ **year** | **int**| Required year filter (except when id is specified) | [optional] 
+ **week** | **int**| Optional week filter | [optional] 
+ **season_type** | [**SeasonType**](.md)| Optional season type filter | [optional] 
+ **classification** | [**DivisionClassification**](.md)| Optional division classification filter | [optional] 
+ **team** | **str**| Optional team filter | [optional] 
+ **home** | **str**| Optional home team filter | [optional] 
+ **away** | **str**| Optional away team filter | [optional] 
+ **conference** | **str**| Optional conference filter | [optional] 
+ **id** | **int**| Game id filter to retrieve a single game | [optional] 
 
 ### Return type
 
-[**list[Game]**](Game.md)
+[**List[Game]**](Game.md)
 
 ### Authorization
 
-[ApiKeyAuth](../README.md#ApiKeyAuth)
+[apiKey](../README.md#apiKey)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Ok |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_player_game_stats**
-> list[PlayerGame] get_player_game_stats(year, week=week, season_type=season_type, team=team, conference=conference, category=category, game_id=game_id)
+# **get_media**
+> List[GameMedia] get_media(year, season_type=season_type, week=week, team=team, conference=conference, media_type=media_type, classification=classification)
 
-Player game stats
 
-Player stats broken down by game
+
+Retrieves media information for games
 
 ### Example
+
+* Bearer Authentication (apiKey):
 ```python
-from __future__ import print_function
 import time
+import os
 import cfbd
+from cfbd.models.division_classification import DivisionClassification
+from cfbd.models.game_media import GameMedia
+from cfbd.models.media_type import MediaType
+from cfbd.models.season_type import SeasonType
 from cfbd.rest import ApiException
 from pprint import pprint
 
-# Configure API key authorization: ApiKeyAuth
-configuration = cfbd.Configuration()
-configuration.api_key['Authorization'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['Authorization'] = 'Bearer'
+# Defining the host is optional and defaults to https://apinext.collegefootballdata.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = cfbd.Configuration(
+    host = "https://apinext.collegefootballdata.com"
+)
 
-# create an instance of the API class
-api_instance = cfbd.GamesApi(cfbd.ApiClient(configuration))
-year = 56 # int | Year/season filter for games
-week = 56 # int | Week filter (optional)
-season_type = 'regular' # str | Season type filter (regular or postseason) (optional) (default to regular)
-team = 'team_example' # str | Team filter (optional)
-conference = 'conference_example' # str | Conference abbreviation filter (optional)
-category = 'category_example' # str | Category filter (e.g defensive) (optional)
-game_id = 56 # int | Game id filter (optional)
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
 
-try:
-    # Player game stats
-    api_response = api_instance.get_player_game_stats(year, week=week, season_type=season_type, team=team, conference=conference, category=category, game_id=game_id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling GamesApi->get_player_game_stats: %s\n" % e)
+# Configure Bearer authorization: apiKey
+configuration = cfbd.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+with cfbd.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cfbd.GamesApi(api_client)
+    year = 56 # int | Required year filter
+    season_type = cfbd.SeasonType() # SeasonType | Optional season type filter (optional)
+    week = 56 # int | Optional week filter (optional)
+    team = 'team_example' # str | Optional team filter (optional)
+    conference = 'conference_example' # str | Optional conference filter (optional)
+    media_type = cfbd.MediaType() # MediaType | Optional media type filter (optional)
+    classification = cfbd.DivisionClassification() # DivisionClassification | Optional division classification filter (optional)
+
+    try:
+        api_response = api_instance.get_media(year, season_type=season_type, week=week, team=team, conference=conference, media_type=media_type, classification=classification)
+        print("The response of GamesApi->get_media:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling GamesApi->get_media: %s\n" % e)
 ```
+
+
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **year** | **int**| Year/season filter for games | 
- **week** | **int**| Week filter | [optional] 
- **season_type** | **str**| Season type filter (regular or postseason) | [optional] [default to regular]
- **team** | **str**| Team filter | [optional] 
- **conference** | **str**| Conference abbreviation filter | [optional] 
- **category** | **str**| Category filter (e.g defensive) | [optional] 
- **game_id** | **int**| Game id filter | [optional] 
+ **year** | **int**| Required year filter | 
+ **season_type** | [**SeasonType**](.md)| Optional season type filter | [optional] 
+ **week** | **int**| Optional week filter | [optional] 
+ **team** | **str**| Optional team filter | [optional] 
+ **conference** | **str**| Optional conference filter | [optional] 
+ **media_type** | [**MediaType**](.md)| Optional media type filter | [optional] 
+ **classification** | [**DivisionClassification**](.md)| Optional division classification filter | [optional] 
 
 ### Return type
 
-[**list[PlayerGame]**](PlayerGame.md)
+[**List[GameMedia]**](GameMedia.md)
 
 ### Authorization
 
-[ApiKeyAuth](../README.md#ApiKeyAuth)
+[apiKey](../README.md#apiKey)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Ok |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_records**
+> List[TeamRecords] get_records(year=year, team=team, conference=conference)
+
+
+
+Retrieves historical team records
+
+### Example
+
+* Bearer Authentication (apiKey):
+```python
+import time
+import os
+import cfbd
+from cfbd.models.team_records import TeamRecords
+from cfbd.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://apinext.collegefootballdata.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = cfbd.Configuration(
+    host = "https://apinext.collegefootballdata.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: apiKey
+configuration = cfbd.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+with cfbd.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cfbd.GamesApi(api_client)
+    year = 56 # int | Year filter, required if team not specified (optional)
+    team = 'team_example' # str | Team filter, required if year not specified (optional)
+    conference = 'conference_example' # str | Optional conference filter (optional)
+
+    try:
+        api_response = api_instance.get_records(year=year, team=team, conference=conference)
+        print("The response of GamesApi->get_records:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling GamesApi->get_records: %s\n" % e)
+```
+
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **year** | **int**| Year filter, required if team not specified | [optional] 
+ **team** | **str**| Team filter, required if year not specified | [optional] 
+ **conference** | **str**| Optional conference filter | [optional] 
+
+### Return type
+
+[**List[TeamRecords]**](TeamRecords.md)
+
+### Authorization
+
+[apiKey](../README.md#apiKey)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Ok |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_scoreboard**
-> list[ScoreboardGame] get_scoreboard(classification=classification, conference=conference)
+> List[ScoreboardGame] get_scoreboard(classification=classification, conference=conference)
 
-Live game results (Patreon only)
 
-Get live game results
+
+Retrieves live scoreboard data
 
 ### Example
+
+* Bearer Authentication (apiKey):
 ```python
-from __future__ import print_function
 import time
+import os
 import cfbd
+from cfbd.models.division_classification import DivisionClassification
+from cfbd.models.scoreboard_game import ScoreboardGame
 from cfbd.rest import ApiException
 from pprint import pprint
 
-# Configure API key authorization: ApiKeyAuth
-configuration = cfbd.Configuration()
-configuration.api_key['Authorization'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['Authorization'] = 'Bearer'
+# Defining the host is optional and defaults to https://apinext.collegefootballdata.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = cfbd.Configuration(
+    host = "https://apinext.collegefootballdata.com"
+)
 
-# create an instance of the API class
-api_instance = cfbd.GamesApi(cfbd.ApiClient(configuration))
-classification = 'classification_example' # str | Classification filter (fbs, fcs, ii, or iii). Defaults to fbs. (optional)
-conference = 'conference_example' # str | Conference abbreviation filter. (optional)
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
 
-try:
-    # Live game results (Patreon only)
-    api_response = api_instance.get_scoreboard(classification=classification, conference=conference)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling GamesApi->get_scoreboard: %s\n" % e)
+# Configure Bearer authorization: apiKey
+configuration = cfbd.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+with cfbd.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cfbd.GamesApi(api_client)
+    classification = cfbd.DivisionClassification() # DivisionClassification | Optional division classification filter, defaults to fbs (optional)
+    conference = 'conference_example' # str | Optional conference filter (optional)
+
+    try:
+        api_response = api_instance.get_scoreboard(classification=classification, conference=conference)
+        print("The response of GamesApi->get_scoreboard:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling GamesApi->get_scoreboard: %s\n" % e)
 ```
+
+
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **classification** | **str**| Classification filter (fbs, fcs, ii, or iii). Defaults to fbs. | [optional] 
- **conference** | **str**| Conference abbreviation filter. | [optional] 
+ **classification** | [**DivisionClassification**](.md)| Optional division classification filter, defaults to fbs | [optional] 
+ **conference** | **str**| Optional conference filter | [optional] 
 
 ### Return type
 
-[**list[ScoreboardGame]**](ScoreboardGame.md)
+[**List[ScoreboardGame]**](ScoreboardGame.md)
 
 ### Authorization
 
-[ApiKeyAuth](../README.md#ApiKeyAuth)
+[apiKey](../README.md#apiKey)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Ok |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_team_game_stats**
-> list[TeamGame] get_team_game_stats(year, week=week, season_type=season_type, team=team, conference=conference, game_id=game_id, classification=classification)
+# **get_weather**
+> List[GameWeather] get_weather(year=year, season_type=season_type, week=week, team=team, conference=conference, classification=classification, game_id=game_id)
 
-Team game stats
 
-Team stats broken down by game
+
+Retrieve historical and future weather data (Patreon only)
 
 ### Example
+
+* Bearer Authentication (apiKey):
 ```python
-from __future__ import print_function
 import time
+import os
 import cfbd
+from cfbd.models.division_classification import DivisionClassification
+from cfbd.models.game_weather import GameWeather
+from cfbd.models.season_type import SeasonType
 from cfbd.rest import ApiException
 from pprint import pprint
 
-# Configure API key authorization: ApiKeyAuth
-configuration = cfbd.Configuration()
-configuration.api_key['Authorization'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['Authorization'] = 'Bearer'
+# Defining the host is optional and defaults to https://apinext.collegefootballdata.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = cfbd.Configuration(
+    host = "https://apinext.collegefootballdata.com"
+)
 
-# create an instance of the API class
-api_instance = cfbd.GamesApi(cfbd.ApiClient(configuration))
-year = 56 # int | Year/season filter for games
-week = 56 # int | Week filter (optional)
-season_type = 'regular' # str | Season type filter (regular or postseason) (optional) (default to regular)
-team = 'team_example' # str | Team filter (optional)
-conference = 'conference_example' # str | Conference abbreviation filter (optional)
-game_id = 56 # int | Game id filter (optional)
-classification = 'classification_example' # str | Division classification filter (fbs/fcs/ii/iii) (optional)
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
 
-try:
-    # Team game stats
-    api_response = api_instance.get_team_game_stats(year, week=week, season_type=season_type, team=team, conference=conference, game_id=game_id, classification=classification)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling GamesApi->get_team_game_stats: %s\n" % e)
+# Configure Bearer authorization: apiKey
+configuration = cfbd.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+with cfbd.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cfbd.GamesApi(api_client)
+    year = 56 # int | Year filter, required if game id not specified (optional)
+    season_type = cfbd.SeasonType() # SeasonType | Optional season type filter (optional)
+    week = 56 # int | Optional week filter (optional)
+    team = 'team_example' # str | Optional team filter (optional)
+    conference = 'conference_example' # str | Optional conference filter (optional)
+    classification = cfbd.DivisionClassification() # DivisionClassification | Optional division classification filter (optional)
+    game_id = 56 # int | Filter for retrieving a single game (optional)
+
+    try:
+        api_response = api_instance.get_weather(year=year, season_type=season_type, week=week, team=team, conference=conference, classification=classification, game_id=game_id)
+        print("The response of GamesApi->get_weather:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling GamesApi->get_weather: %s\n" % e)
 ```
+
+
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **year** | **int**| Year/season filter for games | 
- **week** | **int**| Week filter | [optional] 
- **season_type** | **str**| Season type filter (regular or postseason) | [optional] [default to regular]
- **team** | **str**| Team filter | [optional] 
- **conference** | **str**| Conference abbreviation filter | [optional] 
- **game_id** | **int**| Game id filter | [optional] 
- **classification** | **str**| Division classification filter (fbs/fcs/ii/iii) | [optional] 
+ **year** | **int**| Year filter, required if game id not specified | [optional] 
+ **season_type** | [**SeasonType**](.md)| Optional season type filter | [optional] 
+ **week** | **int**| Optional week filter | [optional] 
+ **team** | **str**| Optional team filter | [optional] 
+ **conference** | **str**| Optional conference filter | [optional] 
+ **classification** | [**DivisionClassification**](.md)| Optional division classification filter | [optional] 
+ **game_id** | **int**| Filter for retrieving a single game | [optional] 
 
 ### Return type
 
-[**list[TeamGame]**](TeamGame.md)
+[**List[GameWeather]**](GameWeather.md)
 
 ### Authorization
 
-[ApiKeyAuth](../README.md#ApiKeyAuth)
+[apiKey](../README.md#apiKey)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **get_team_records**
-> list[TeamRecord] get_team_records(year=year, team=team, conference=conference)
-
-Team records
-
-Get team records by year
-
-### Example
-```python
-from __future__ import print_function
-import time
-import cfbd
-from cfbd.rest import ApiException
-from pprint import pprint
-
-# Configure API key authorization: ApiKeyAuth
-configuration = cfbd.Configuration()
-configuration.api_key['Authorization'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['Authorization'] = 'Bearer'
-
-# create an instance of the API class
-api_instance = cfbd.GamesApi(cfbd.ApiClient(configuration))
-year = 56 # int | Year filter (optional)
-team = 'team_example' # str | Team filter (optional)
-conference = 'conference_example' # str | Conference filter (optional)
-
-try:
-    # Team records
-    api_response = api_instance.get_team_records(year=year, team=team, conference=conference)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling GamesApi->get_team_records: %s\n" % e)
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **year** | **int**| Year filter | [optional] 
- **team** | **str**| Team filter | [optional] 
- **conference** | **str**| Conference filter | [optional] 
-
-### Return type
-
-[**list[TeamRecord]**](TeamRecord.md)
-
-### Authorization
-
-[ApiKeyAuth](../README.md#ApiKeyAuth)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Ok |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

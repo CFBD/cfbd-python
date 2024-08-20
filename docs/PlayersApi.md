@@ -1,315 +1,336 @@
 # cfbd.PlayersApi
 
-All URIs are relative to *https://api.collegefootballdata.com*
+All URIs are relative to *https://apinext.collegefootballdata.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**get_player_season_stats**](PlayersApi.md#get_player_season_stats) | **GET** /stats/player/season | Player stats by season
-[**get_player_usage**](PlayersApi.md#get_player_usage) | **GET** /player/usage | Player usage metrics broken down by season
-[**get_returning_production**](PlayersApi.md#get_returning_production) | **GET** /player/returning | Team returning production metrics
-[**get_transfer_portal**](PlayersApi.md#get_transfer_portal) | **GET** /player/portal | Transfer portal by season
-[**player_search**](PlayersApi.md#player_search) | **GET** /player/search | Search for player information
+[**get_player_usage**](PlayersApi.md#get_player_usage) | **GET** /player/usage | 
+[**get_returning_production**](PlayersApi.md#get_returning_production) | **GET** /player/returning | 
+[**get_transfer_portal**](PlayersApi.md#get_transfer_portal) | **GET** /player/portal | 
+[**search_players**](PlayersApi.md#search_players) | **GET** /player/search | 
 
-
-# **get_player_season_stats**
-> list[PlayerSeasonStat] get_player_season_stats(year, team=team, conference=conference, start_week=start_week, end_week=end_week, season_type=season_type, category=category)
-
-Player stats by season
-
-Season player stats
-
-### Example
-```python
-from __future__ import print_function
-import time
-import cfbd
-from cfbd.rest import ApiException
-from pprint import pprint
-
-# Configure API key authorization: ApiKeyAuth
-configuration = cfbd.Configuration()
-configuration.api_key['Authorization'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['Authorization'] = 'Bearer'
-
-# create an instance of the API class
-api_instance = cfbd.PlayersApi(cfbd.ApiClient(configuration))
-year = 56 # int | Year filter
-team = 'team_example' # str | Team filter (optional)
-conference = 'conference_example' # str | Conference abbreviation filter (optional)
-start_week = 56 # int | Start week filter (optional)
-end_week = 56 # int | Start week filter (optional)
-season_type = 'season_type_example' # str | Season type filter (regular, postseason, or both) (optional)
-category = 'category_example' # str | Stat category filter (e.g. passing) (optional)
-
-try:
-    # Player stats by season
-    api_response = api_instance.get_player_season_stats(year, team=team, conference=conference, start_week=start_week, end_week=end_week, season_type=season_type, category=category)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling PlayersApi->get_player_season_stats: %s\n" % e)
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **year** | **int**| Year filter | 
- **team** | **str**| Team filter | [optional] 
- **conference** | **str**| Conference abbreviation filter | [optional] 
- **start_week** | **int**| Start week filter | [optional] 
- **end_week** | **int**| Start week filter | [optional] 
- **season_type** | **str**| Season type filter (regular, postseason, or both) | [optional] 
- **category** | **str**| Stat category filter (e.g. passing) | [optional] 
-
-### Return type
-
-[**list[PlayerSeasonStat]**](PlayerSeasonStat.md)
-
-### Authorization
-
-[ApiKeyAuth](../README.md#ApiKeyAuth)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_player_usage**
-> list[PlayerUsage] get_player_usage(year, team=team, conference=conference, position=position, player_id=player_id, exclude_garbage_time=exclude_garbage_time)
+> List[PlayerUsage] get_player_usage(year, conference=conference, position=position, team=team, player_id=player_id, exclude_garbage_time=exclude_garbage_time)
 
-Player usage metrics broken down by season
 
-Player usage metrics by season
+
+Retrieves player usage data for a given season
 
 ### Example
+
+* Bearer Authentication (apiKey):
 ```python
-from __future__ import print_function
 import time
+import os
 import cfbd
+from cfbd.models.player_usage import PlayerUsage
 from cfbd.rest import ApiException
 from pprint import pprint
 
-# Configure API key authorization: ApiKeyAuth
-configuration = cfbd.Configuration()
-configuration.api_key['Authorization'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['Authorization'] = 'Bearer'
+# Defining the host is optional and defaults to https://apinext.collegefootballdata.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = cfbd.Configuration(
+    host = "https://apinext.collegefootballdata.com"
+)
 
-# create an instance of the API class
-api_instance = cfbd.PlayersApi(cfbd.ApiClient(configuration))
-year = 2022 # int | Year filter (default to 2022)
-team = 'team_example' # str | Team filter (optional)
-conference = 'conference_example' # str | Conference abbreviation filter (optional)
-position = 'position_example' # str | Position abbreviation filter (optional)
-player_id = 56 # int | Player id filter (optional)
-exclude_garbage_time = true # bool | Filter to remove garbage time plays from calculations (optional)
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
 
-try:
-    # Player usage metrics broken down by season
-    api_response = api_instance.get_player_usage(year, team=team, conference=conference, position=position, player_id=player_id, exclude_garbage_time=exclude_garbage_time)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling PlayersApi->get_player_usage: %s\n" % e)
+# Configure Bearer authorization: apiKey
+configuration = cfbd.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+with cfbd.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cfbd.PlayersApi(api_client)
+    year = 56 # int | Required year filter
+    conference = 'conference_example' # str | Optional conference abbreviation filter (optional)
+    position = 'position_example' # str | Optional position abbreivation filter (optional)
+    team = 'team_example' # str | Optional team filter (optional)
+    player_id = 56 # int | Optional player id filter (optional)
+    exclude_garbage_time = True # bool | Optional exclude garbage time flag, defaults to false (optional)
+
+    try:
+        api_response = api_instance.get_player_usage(year, conference=conference, position=position, team=team, player_id=player_id, exclude_garbage_time=exclude_garbage_time)
+        print("The response of PlayersApi->get_player_usage:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling PlayersApi->get_player_usage: %s\n" % e)
 ```
+
+
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **year** | **int**| Year filter | [default to 2022]
- **team** | **str**| Team filter | [optional] 
- **conference** | **str**| Conference abbreviation filter | [optional] 
- **position** | **str**| Position abbreviation filter | [optional] 
- **player_id** | **int**| Player id filter | [optional] 
- **exclude_garbage_time** | **bool**| Filter to remove garbage time plays from calculations | [optional] 
+ **year** | **int**| Required year filter | 
+ **conference** | **str**| Optional conference abbreviation filter | [optional] 
+ **position** | **str**| Optional position abbreivation filter | [optional] 
+ **team** | **str**| Optional team filter | [optional] 
+ **player_id** | **int**| Optional player id filter | [optional] 
+ **exclude_garbage_time** | **bool**| Optional exclude garbage time flag, defaults to false | [optional] 
 
 ### Return type
 
-[**list[PlayerUsage]**](PlayerUsage.md)
+[**List[PlayerUsage]**](PlayerUsage.md)
 
 ### Authorization
 
-[ApiKeyAuth](../README.md#ApiKeyAuth)
+[apiKey](../README.md#apiKey)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Ok |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_returning_production**
-> list[ReturningProduction] get_returning_production(year=year, team=team, conference=conference)
+> List[ReturningProduction] get_returning_production(year=year, team=team, conference=conference)
 
-Team returning production metrics
 
-Returning production metrics
+
+Retrieves returning production data. Either a year or team filter must be specified.
 
 ### Example
+
+* Bearer Authentication (apiKey):
 ```python
-from __future__ import print_function
 import time
+import os
 import cfbd
+from cfbd.models.returning_production import ReturningProduction
 from cfbd.rest import ApiException
 from pprint import pprint
 
-# Configure API key authorization: ApiKeyAuth
-configuration = cfbd.Configuration()
-configuration.api_key['Authorization'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['Authorization'] = 'Bearer'
+# Defining the host is optional and defaults to https://apinext.collegefootballdata.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = cfbd.Configuration(
+    host = "https://apinext.collegefootballdata.com"
+)
 
-# create an instance of the API class
-api_instance = cfbd.PlayersApi(cfbd.ApiClient(configuration))
-year = 56 # int | Year filter (optional)
-team = 'team_example' # str | Team filter (optional)
-conference = 'conference_example' # str | Conference abbreviation filter (optional)
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
 
-try:
-    # Team returning production metrics
-    api_response = api_instance.get_returning_production(year=year, team=team, conference=conference)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling PlayersApi->get_returning_production: %s\n" % e)
+# Configure Bearer authorization: apiKey
+configuration = cfbd.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+with cfbd.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cfbd.PlayersApi(api_client)
+    year = 56 # int | Year filter, required if team not specified (optional)
+    team = 'team_example' # str | Team filter, required if year not specified (optional)
+    conference = 'conference_example' # str | Optional conference filter (optional)
+
+    try:
+        api_response = api_instance.get_returning_production(year=year, team=team, conference=conference)
+        print("The response of PlayersApi->get_returning_production:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling PlayersApi->get_returning_production: %s\n" % e)
 ```
+
+
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **year** | **int**| Year filter | [optional] 
- **team** | **str**| Team filter | [optional] 
- **conference** | **str**| Conference abbreviation filter | [optional] 
+ **year** | **int**| Year filter, required if team not specified | [optional] 
+ **team** | **str**| Team filter, required if year not specified | [optional] 
+ **conference** | **str**| Optional conference filter | [optional] 
 
 ### Return type
 
-[**list[ReturningProduction]**](ReturningProduction.md)
+[**List[ReturningProduction]**](ReturningProduction.md)
 
 ### Authorization
 
-[ApiKeyAuth](../README.md#ApiKeyAuth)
+[apiKey](../README.md#apiKey)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Ok |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_transfer_portal**
-> list[PortalPlayer] get_transfer_portal(year)
+> List[PlayerTransfer] get_transfer_portal(year)
 
-Transfer portal by season
 
-Transfer portal by season
+
+Retrieves transfer portal data for a given year
 
 ### Example
+
+* Bearer Authentication (apiKey):
 ```python
-from __future__ import print_function
 import time
+import os
 import cfbd
+from cfbd.models.player_transfer import PlayerTransfer
 from cfbd.rest import ApiException
 from pprint import pprint
 
-# Configure API key authorization: ApiKeyAuth
-configuration = cfbd.Configuration()
-configuration.api_key['Authorization'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['Authorization'] = 'Bearer'
+# Defining the host is optional and defaults to https://apinext.collegefootballdata.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = cfbd.Configuration(
+    host = "https://apinext.collegefootballdata.com"
+)
 
-# create an instance of the API class
-api_instance = cfbd.PlayersApi(cfbd.ApiClient(configuration))
-year = 56 # int | Year filter
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
 
-try:
-    # Transfer portal by season
-    api_response = api_instance.get_transfer_portal(year)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling PlayersApi->get_transfer_portal: %s\n" % e)
+# Configure Bearer authorization: apiKey
+configuration = cfbd.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+with cfbd.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cfbd.PlayersApi(api_client)
+    year = 56 # int | Required year filter
+
+    try:
+        api_response = api_instance.get_transfer_portal(year)
+        print("The response of PlayersApi->get_transfer_portal:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling PlayersApi->get_transfer_portal: %s\n" % e)
 ```
+
+
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **year** | **int**| Year filter | 
+ **year** | **int**| Required year filter | 
 
 ### Return type
 
-[**list[PortalPlayer]**](PortalPlayer.md)
+[**List[PlayerTransfer]**](PlayerTransfer.md)
 
 ### Authorization
 
-[ApiKeyAuth](../README.md#ApiKeyAuth)
+[apiKey](../README.md#apiKey)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Ok |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **player_search**
-> list[PlayerSearchResult] player_search(search_term, position=position, team=team, year=year)
+# **search_players**
+> List[PlayerSearchResult] search_players(search_term, year=year, team=team, position=position)
 
-Search for player information
 
-Search for players
+
+Search for players (lists top 100 results)
 
 ### Example
+
+* Bearer Authentication (apiKey):
 ```python
-from __future__ import print_function
 import time
+import os
 import cfbd
+from cfbd.models.player_search_result import PlayerSearchResult
 from cfbd.rest import ApiException
 from pprint import pprint
 
-# Configure API key authorization: ApiKeyAuth
-configuration = cfbd.Configuration()
-configuration.api_key['Authorization'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['Authorization'] = 'Bearer'
+# Defining the host is optional and defaults to https://apinext.collegefootballdata.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = cfbd.Configuration(
+    host = "https://apinext.collegefootballdata.com"
+)
 
-# create an instance of the API class
-api_instance = cfbd.PlayersApi(cfbd.ApiClient(configuration))
-search_term = 'search_term_example' # str | Term to search on
-position = 'position_example' # str | Position abbreviation filter (optional)
-team = 'team_example' # str | Team filter (optional)
-year = 56 # int | Year filter (optional)
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
 
-try:
-    # Search for player information
-    api_response = api_instance.player_search(search_term, position=position, team=team, year=year)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling PlayersApi->player_search: %s\n" % e)
+# Configure Bearer authorization: apiKey
+configuration = cfbd.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+with cfbd.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cfbd.PlayersApi(api_client)
+    search_term = 'search_term_example' # str | Search term for matching player name
+    year = 56 # int | Optional year filter (optional)
+    team = 'team_example' # str | Optional team filter (optional)
+    position = 'position_example' # str | Optional position abbreviation filter (optional)
+
+    try:
+        api_response = api_instance.search_players(search_term, year=year, team=team, position=position)
+        print("The response of PlayersApi->search_players:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling PlayersApi->search_players: %s\n" % e)
 ```
+
+
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **search_term** | **str**| Term to search on | 
- **position** | **str**| Position abbreviation filter | [optional] 
- **team** | **str**| Team filter | [optional] 
- **year** | **int**| Year filter | [optional] 
+ **search_term** | **str**| Search term for matching player name | 
+ **year** | **int**| Optional year filter | [optional] 
+ **team** | **str**| Optional team filter | [optional] 
+ **position** | **str**| Optional position abbreviation filter | [optional] 
 
 ### Return type
 
-[**list[PlayerSearchResult]**](PlayerSearchResult.md)
+[**List[PlayerSearchResult]**](PlayerSearchResult.md)
 
 ### Authorization
 
-[ApiKeyAuth](../README.md#ApiKeyAuth)
+[apiKey](../README.md#apiKey)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Ok |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

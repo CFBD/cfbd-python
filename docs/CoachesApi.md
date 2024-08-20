@@ -1,73 +1,95 @@
 # cfbd.CoachesApi
 
-All URIs are relative to *https://api.collegefootballdata.com*
+All URIs are relative to *https://apinext.collegefootballdata.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**get_coaches**](CoachesApi.md#get_coaches) | **GET** /coaches | Coaching records and history
+[**get_coaches**](CoachesApi.md#get_coaches) | **GET** /coaches | 
 
 
 # **get_coaches**
-> list[Coach] get_coaches(first_name=first_name, last_name=last_name, team=team, year=year, min_year=min_year, max_year=max_year)
+> List[Coach] get_coaches(first_name=first_name, last_name=last_name, team=team, year=year, min_year=min_year, max_year=max_year)
 
-Coaching records and history
 
-Coaching history
+
+Retrieves historical head coach information and records
 
 ### Example
+
+* Bearer Authentication (apiKey):
 ```python
-from __future__ import print_function
 import time
+import os
 import cfbd
+from cfbd.models.coach import Coach
 from cfbd.rest import ApiException
 from pprint import pprint
 
-# Configure API key authorization: ApiKeyAuth
-configuration = cfbd.Configuration()
-configuration.api_key['Authorization'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['Authorization'] = 'Bearer'
+# Defining the host is optional and defaults to https://apinext.collegefootballdata.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = cfbd.Configuration(
+    host = "https://apinext.collegefootballdata.com"
+)
 
-# create an instance of the API class
-api_instance = cfbd.CoachesApi(cfbd.ApiClient(configuration))
-first_name = 'first_name_example' # str | First name filter (optional)
-last_name = 'last_name_example' # str | Last name filter (optional)
-team = 'team_example' # str | Team name filter (optional)
-year = 56 # int | Year filter (optional)
-min_year = 56 # int | Minimum year filter (inclusive) (optional)
-max_year = 56 # int | Maximum year filter (inclusive) (optional)
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
 
-try:
-    # Coaching records and history
-    api_response = api_instance.get_coaches(first_name=first_name, last_name=last_name, team=team, year=year, min_year=min_year, max_year=max_year)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling CoachesApi->get_coaches: %s\n" % e)
+# Configure Bearer authorization: apiKey
+configuration = cfbd.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+with cfbd.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cfbd.CoachesApi(api_client)
+    first_name = 'first_name_example' # str | Optional first name filter (optional)
+    last_name = 'last_name_example' # str | Optional last name filter (optional)
+    team = 'team_example' # str | Optional team filter (optional)
+    year = 56 # int | Optional year filter (optional)
+    min_year = 56 # int | Optional start year range filter (optional)
+    max_year = 56 # int | Optional end year range filter (optional)
+
+    try:
+        api_response = api_instance.get_coaches(first_name=first_name, last_name=last_name, team=team, year=year, min_year=min_year, max_year=max_year)
+        print("The response of CoachesApi->get_coaches:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling CoachesApi->get_coaches: %s\n" % e)
 ```
+
+
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **first_name** | **str**| First name filter | [optional] 
- **last_name** | **str**| Last name filter | [optional] 
- **team** | **str**| Team name filter | [optional] 
- **year** | **int**| Year filter | [optional] 
- **min_year** | **int**| Minimum year filter (inclusive) | [optional] 
- **max_year** | **int**| Maximum year filter (inclusive) | [optional] 
+ **first_name** | **str**| Optional first name filter | [optional] 
+ **last_name** | **str**| Optional last name filter | [optional] 
+ **team** | **str**| Optional team filter | [optional] 
+ **year** | **int**| Optional year filter | [optional] 
+ **min_year** | **int**| Optional start year range filter | [optional] 
+ **max_year** | **int**| Optional end year range filter | [optional] 
 
 ### Return type
 
-[**list[Coach]**](Coach.md)
+[**List[Coach]**](Coach.md)
 
 ### Authorization
 
-[ApiKeyAuth](../README.md#ApiKeyAuth)
+[apiKey](../README.md#apiKey)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Ok |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

@@ -1,19 +1,31 @@
 # TeamRecord
 
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**year** | **int** |  | [optional] 
-**team_id** | **int** |  | [optional] 
-**team** | **str** |  | [optional] 
-**conference** | **str** |  | [optional] 
-**division** | **str** |  | [optional] 
-**expected_wins** | **float** |  | [optional] 
-**total** | [**TeamRecordTotal**](TeamRecordTotal.md) |  | [optional] 
-**conference_games** | [**TeamRecordTotal**](TeamRecordTotal.md) |  | [optional] 
-**home_games** | [**TeamRecordTotal**](TeamRecordTotal.md) |  | [optional] 
-**away_games** | [**TeamRecordTotal**](TeamRecordTotal.md) |  | [optional] 
+**games** | **int** |  | 
+**wins** | **int** |  | 
+**losses** | **int** |  | 
+**ties** | **int** |  | 
 
+## Example
+
+```python
+from cfbd.models.team_record import TeamRecord
+
+# TODO update the JSON string below
+json = "{}"
+# create an instance of TeamRecord from a JSON string
+team_record_instance = TeamRecord.from_json(json)
+# print the JSON string representation of the object
+print TeamRecord.to_json()
+
+# convert the object into a dict
+team_record_dict = team_record_instance.to_dict()
+# create an instance of TeamRecord from a dict
+team_record_from_dict = TeamRecord.from_dict(team_record_dict)
+```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
 

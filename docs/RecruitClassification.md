@@ -1,0 +1,14 @@
+# RecruitClassification
+
+
+## Enum
+
+* `JUCO` (value: `'JUCO'`)
+
+* `PREPSCHOOL` (value: `'PrepSchool'`)
+
+* `HIGHSCHOOL` (value: `'HighSchool'`)
+
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+
+

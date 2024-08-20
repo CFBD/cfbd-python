@@ -1,24 +1,40 @@
 # Team
 
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **int** |  | [optional] 
-**school** | **str** |  | [optional] 
-**mascot** | **str** |  | [optional] 
-**abbreviation** | **str** |  | [optional] 
-**alt_name_1** | **str** |  | [optional] 
-**alt_name_2** | **str** |  | [optional] 
-**alt_name_3** | **str** |  | [optional] 
-**classification** | **str** |  | [optional] 
-**conference** | **str** |  | [optional] 
-**division** | **str** |  | [optional] 
-**color** | **str** |  | [optional] 
-**alt_color** | **str** |  | [optional] 
-**logos** | **list[str]** |  | [optional] 
-**twitter** | **str** |  | [optional] 
-**location** | [**TeamLocation**](TeamLocation.md) |  | [optional] 
+**id** | **int** |  | 
+**school** | **str** |  | 
+**mascot** | **str** |  | 
+**abbreviation** | **str** |  | 
+**alternate_names** | **List[str]** |  | 
+**conference** | **str** |  | 
+**division** | **str** |  | 
+**classification** | **str** |  | 
+**color** | **str** |  | 
+**alternate_color** | **str** |  | 
+**logos** | **List[str]** |  | 
+**twitter** | **str** |  | 
+**location** | [**Venue**](Venue.md) |  | 
 
+## Example
+
+```python
+from cfbd.models.team import Team
+
+# TODO update the JSON string below
+json = "{}"
+# create an instance of Team from a JSON string
+team_instance = Team.from_json(json)
+# print the JSON string representation of the object
+print Team.to_json()
+
+# convert the object into a dict
+team_dict = team_instance.to_dict()
+# create an instance of Team from a dict
+team_from_dict = Team.from_dict(team_dict)
+```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
 

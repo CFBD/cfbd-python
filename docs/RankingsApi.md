@@ -1,67 +1,90 @@
 # cfbd.RankingsApi
 
-All URIs are relative to *https://api.collegefootballdata.com*
+All URIs are relative to *https://apinext.collegefootballdata.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**get_rankings**](RankingsApi.md#get_rankings) | **GET** /rankings | Historical polls and rankings
+[**get_rankings**](RankingsApi.md#get_rankings) | **GET** /rankings | 
 
 
 # **get_rankings**
-> list[RankingWeek] get_rankings(year, week=week, season_type=season_type)
+> List[PollWeek] get_rankings(year, season_type=season_type, week=week)
 
-Historical polls and rankings
 
-Poll rankings
+
+Retrieves historical poll data
 
 ### Example
+
+* Bearer Authentication (apiKey):
 ```python
-from __future__ import print_function
 import time
+import os
 import cfbd
+from cfbd.models.poll_week import PollWeek
+from cfbd.models.season_type import SeasonType
 from cfbd.rest import ApiException
 from pprint import pprint
 
-# Configure API key authorization: ApiKeyAuth
-configuration = cfbd.Configuration()
-configuration.api_key['Authorization'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['Authorization'] = 'Bearer'
+# Defining the host is optional and defaults to https://apinext.collegefootballdata.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = cfbd.Configuration(
+    host = "https://apinext.collegefootballdata.com"
+)
 
-# create an instance of the API class
-api_instance = cfbd.RankingsApi(cfbd.ApiClient(configuration))
-year = 56 # int | Year/season filter for games
-week = 56 # int | Week filter (optional)
-season_type = 'regular' # str | Season type filter (regular or postseason) (optional) (default to regular)
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
 
-try:
-    # Historical polls and rankings
-    api_response = api_instance.get_rankings(year, week=week, season_type=season_type)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling RankingsApi->get_rankings: %s\n" % e)
+# Configure Bearer authorization: apiKey
+configuration = cfbd.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+with cfbd.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cfbd.RankingsApi(api_client)
+    year = 56 # int | Required year filter
+    season_type = cfbd.SeasonType() # SeasonType | Optional season type filter (optional)
+    week = 3.4 # float | Optional week filter (optional)
+
+    try:
+        api_response = api_instance.get_rankings(year, season_type=season_type, week=week)
+        print("The response of RankingsApi->get_rankings:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling RankingsApi->get_rankings: %s\n" % e)
 ```
+
+
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **year** | **int**| Year/season filter for games | 
- **week** | **int**| Week filter | [optional] 
- **season_type** | **str**| Season type filter (regular or postseason) | [optional] [default to regular]
+ **year** | **int**| Required year filter | 
+ **season_type** | [**SeasonType**](.md)| Optional season type filter | [optional] 
+ **week** | **float**| Optional week filter | [optional] 
 
 ### Return type
 
-[**list[RankingWeek]**](RankingWeek.md)
+[**List[PollWeek]**](PollWeek.md)
 
 ### Authorization
 
-[ApiKeyAuth](../README.md#ApiKeyAuth)
+[apiKey](../README.md#apiKey)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Ok |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

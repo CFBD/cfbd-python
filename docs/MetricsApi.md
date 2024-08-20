@@ -1,494 +1,673 @@
 # cfbd.MetricsApi
 
-All URIs are relative to *https://api.collegefootballdata.com*
+All URIs are relative to *https://apinext.collegefootballdata.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**get_fgep**](MetricsApi.md#get_fgep) | **GET** /metrics/fg/ep | Field Goal Expected Points
-[**get_game_ppa**](MetricsApi.md#get_game_ppa) | **GET** /ppa/games | Team Predicated Points Added (PPA/EPA) by game
-[**get_player_game_ppa**](MetricsApi.md#get_player_game_ppa) | **GET** /ppa/players/games | Player Predicated Points Added (PPA/EPA) broken down by game
-[**get_player_season_ppa**](MetricsApi.md#get_player_season_ppa) | **GET** /ppa/players/season | Player Predicated Points Added (PPA/EPA) broken down by season
-[**get_predicted_points**](MetricsApi.md#get_predicted_points) | **GET** /ppa/predicted | Predicted Points (i.e. Expected Points or EP)
-[**get_pregame_win_probabilities**](MetricsApi.md#get_pregame_win_probabilities) | **GET** /metrics/wp/pregame | Pregame win probability data
-[**get_team_ppa**](MetricsApi.md#get_team_ppa) | **GET** /ppa/teams | Predicted Points Added (PPA/EPA) data by team
-[**get_win_probability_data**](MetricsApi.md#get_win_probability_data) | **GET** /metrics/wp | Win probability chart data
+[**get_field_goal_expected_points**](MetricsApi.md#get_field_goal_expected_points) | **GET** /metrics/fg/ep | 
+[**get_predicted_points**](MetricsApi.md#get_predicted_points) | **GET** /ppa/predicted | 
+[**get_predicted_points_added_by_game**](MetricsApi.md#get_predicted_points_added_by_game) | **GET** /ppa/games | 
+[**get_predicted_points_added_by_player_game**](MetricsApi.md#get_predicted_points_added_by_player_game) | **GET** /ppa/players/games | 
+[**get_predicted_points_added_by_player_season**](MetricsApi.md#get_predicted_points_added_by_player_season) | **GET** /ppa/players/season | 
+[**get_predicted_points_added_by_team**](MetricsApi.md#get_predicted_points_added_by_team) | **GET** /ppa/teams | 
+[**get_pregame_win_probabilities**](MetricsApi.md#get_pregame_win_probabilities) | **GET** /metrics/wp/pregame | 
+[**get_win_probability**](MetricsApi.md#get_win_probability) | **GET** /metrics/wp | 
 
 
-# **get_fgep**
-> list[FieldGoalExpectedPoints] get_fgep()
+# **get_field_goal_expected_points**
+> List[FieldGoalEP] get_field_goal_expected_points()
 
-Field Goal Expected Points
 
-Field Goal Expected Poitns
+
+Queries field goal expected points values
 
 ### Example
+
+* Bearer Authentication (apiKey):
 ```python
-from __future__ import print_function
 import time
+import os
 import cfbd
+from cfbd.models.field_goal_ep import FieldGoalEP
 from cfbd.rest import ApiException
 from pprint import pprint
 
-# Configure API key authorization: ApiKeyAuth
-configuration = cfbd.Configuration()
-configuration.api_key['Authorization'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['Authorization'] = 'Bearer'
+# Defining the host is optional and defaults to https://apinext.collegefootballdata.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = cfbd.Configuration(
+    host = "https://apinext.collegefootballdata.com"
+)
 
-# create an instance of the API class
-api_instance = cfbd.MetricsApi(cfbd.ApiClient(configuration))
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
 
-try:
-    # Field Goal Expected Points
-    api_response = api_instance.get_fgep()
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling MetricsApi->get_fgep: %s\n" % e)
+# Configure Bearer authorization: apiKey
+configuration = cfbd.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+with cfbd.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cfbd.MetricsApi(api_client)
+
+    try:
+        api_response = api_instance.get_field_goal_expected_points()
+        print("The response of MetricsApi->get_field_goal_expected_points:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling MetricsApi->get_field_goal_expected_points: %s\n" % e)
 ```
+
+
 
 ### Parameters
 This endpoint does not need any parameter.
 
 ### Return type
 
-[**list[FieldGoalExpectedPoints]**](FieldGoalExpectedPoints.md)
+[**List[FieldGoalEP]**](FieldGoalEP.md)
 
 ### Authorization
 
-[ApiKeyAuth](../README.md#ApiKeyAuth)
+[apiKey](../README.md#apiKey)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **get_game_ppa**
-> list[GamePPA] get_game_ppa(year, week=week, team=team, conference=conference, exclude_garbage_time=exclude_garbage_time, season_type=season_type)
-
-Team Predicated Points Added (PPA/EPA) by game
-
-Predicted Points Added (PPA) by game
-
-### Example
-```python
-from __future__ import print_function
-import time
-import cfbd
-from cfbd.rest import ApiException
-from pprint import pprint
-
-# Configure API key authorization: ApiKeyAuth
-configuration = cfbd.Configuration()
-configuration.api_key['Authorization'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['Authorization'] = 'Bearer'
-
-# create an instance of the API class
-api_instance = cfbd.MetricsApi(cfbd.ApiClient(configuration))
-year = 56 # int | Year filter
-week = 56 # int | Week filter (optional)
-team = 'team_example' # str | Team filter (optional)
-conference = 'conference_example' # str | Conference filter (optional)
-exclude_garbage_time = true # bool | Filter to remove garbage time plays from calculations (optional)
-season_type = 'regular' # str | Season type filter (regular or postseason) (optional) (default to regular)
-
-try:
-    # Team Predicated Points Added (PPA/EPA) by game
-    api_response = api_instance.get_game_ppa(year, week=week, team=team, conference=conference, exclude_garbage_time=exclude_garbage_time, season_type=season_type)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling MetricsApi->get_game_ppa: %s\n" % e)
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **year** | **int**| Year filter | 
- **week** | **int**| Week filter | [optional] 
- **team** | **str**| Team filter | [optional] 
- **conference** | **str**| Conference filter | [optional] 
- **exclude_garbage_time** | **bool**| Filter to remove garbage time plays from calculations | [optional] 
- **season_type** | **str**| Season type filter (regular or postseason) | [optional] [default to regular]
-
-### Return type
-
-[**list[GamePPA]**](GamePPA.md)
-
-### Authorization
-
-[ApiKeyAuth](../README.md#ApiKeyAuth)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **get_player_game_ppa**
-> list[PlayerGamePPA] get_player_game_ppa(year=year, week=week, team=team, position=position, player_id=player_id, threshold=threshold, exclude_garbage_time=exclude_garbage_time, season_type=season_type)
-
-Player Predicated Points Added (PPA/EPA) broken down by game
-
-Predicted Points Added (PPA) by player game
-
-### Example
-```python
-from __future__ import print_function
-import time
-import cfbd
-from cfbd.rest import ApiException
-from pprint import pprint
-
-# Configure API key authorization: ApiKeyAuth
-configuration = cfbd.Configuration()
-configuration.api_key['Authorization'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['Authorization'] = 'Bearer'
-
-# create an instance of the API class
-api_instance = cfbd.MetricsApi(cfbd.ApiClient(configuration))
-year = 56 # int | Year filter (optional)
-week = 56 # int | Week filter (optional)
-team = 'team_example' # str | Team filter (optional)
-position = 'position_example' # str | Position abbreviation filter (optional)
-player_id = 56 # int | Player id filter (optional)
-threshold = 'threshold_example' # str | Minimum play threshold filter (optional)
-exclude_garbage_time = true # bool | Filter to remove garbage time plays from calculations (optional)
-season_type = 'regular' # str | Season type filter (regular or postseason) (optional) (default to regular)
-
-try:
-    # Player Predicated Points Added (PPA/EPA) broken down by game
-    api_response = api_instance.get_player_game_ppa(year=year, week=week, team=team, position=position, player_id=player_id, threshold=threshold, exclude_garbage_time=exclude_garbage_time, season_type=season_type)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling MetricsApi->get_player_game_ppa: %s\n" % e)
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **year** | **int**| Year filter | [optional] 
- **week** | **int**| Week filter | [optional] 
- **team** | **str**| Team filter | [optional] 
- **position** | **str**| Position abbreviation filter | [optional] 
- **player_id** | **int**| Player id filter | [optional] 
- **threshold** | **str**| Minimum play threshold filter | [optional] 
- **exclude_garbage_time** | **bool**| Filter to remove garbage time plays from calculations | [optional] 
- **season_type** | **str**| Season type filter (regular or postseason) | [optional] [default to regular]
-
-### Return type
-
-[**list[PlayerGamePPA]**](PlayerGamePPA.md)
-
-### Authorization
-
-[ApiKeyAuth](../README.md#ApiKeyAuth)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **get_player_season_ppa**
-> list[PlayerSeasonPPA] get_player_season_ppa(year=year, team=team, conference=conference, position=position, player_id=player_id, threshold=threshold, exclude_garbage_time=exclude_garbage_time)
-
-Player Predicated Points Added (PPA/EPA) broken down by season
-
-Predicted Points Added (PPA) by player season
-
-### Example
-```python
-from __future__ import print_function
-import time
-import cfbd
-from cfbd.rest import ApiException
-from pprint import pprint
-
-# Configure API key authorization: ApiKeyAuth
-configuration = cfbd.Configuration()
-configuration.api_key['Authorization'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['Authorization'] = 'Bearer'
-
-# create an instance of the API class
-api_instance = cfbd.MetricsApi(cfbd.ApiClient(configuration))
-year = 56 # int | Year filter (optional)
-team = 'team_example' # str | Team filter (optional)
-conference = 'conference_example' # str | Conference abbreviation filter (optional)
-position = 'position_example' # str | Position abbreviation filter (optional)
-player_id = 56 # int | Player id filter (optional)
-threshold = 'threshold_example' # str | Minimum play threshold filter (optional)
-exclude_garbage_time = true # bool | Filter to remove garbage time plays from calculations (optional)
-
-try:
-    # Player Predicated Points Added (PPA/EPA) broken down by season
-    api_response = api_instance.get_player_season_ppa(year=year, team=team, conference=conference, position=position, player_id=player_id, threshold=threshold, exclude_garbage_time=exclude_garbage_time)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling MetricsApi->get_player_season_ppa: %s\n" % e)
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **year** | **int**| Year filter | [optional] 
- **team** | **str**| Team filter | [optional] 
- **conference** | **str**| Conference abbreviation filter | [optional] 
- **position** | **str**| Position abbreviation filter | [optional] 
- **player_id** | **int**| Player id filter | [optional] 
- **threshold** | **str**| Minimum play threshold filter | [optional] 
- **exclude_garbage_time** | **bool**| Filter to remove garbage time plays from calculations | [optional] 
-
-### Return type
-
-[**list[PlayerSeasonPPA]**](PlayerSeasonPPA.md)
-
-### Authorization
-
-[ApiKeyAuth](../README.md#ApiKeyAuth)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Ok |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_predicted_points**
-> list[PredictedPoints] get_predicted_points(down, distance)
+> List[PredictedPointsValue] get_predicted_points(down, distance)
 
-Predicted Points (i.e. Expected Points or EP)
 
-Predicted Points
+
+Query Predicted Points values by down and distance
 
 ### Example
+
+* Bearer Authentication (apiKey):
 ```python
-from __future__ import print_function
 import time
+import os
 import cfbd
+from cfbd.models.predicted_points_value import PredictedPointsValue
 from cfbd.rest import ApiException
 from pprint import pprint
 
-# Configure API key authorization: ApiKeyAuth
-configuration = cfbd.Configuration()
-configuration.api_key['Authorization'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['Authorization'] = 'Bearer'
+# Defining the host is optional and defaults to https://apinext.collegefootballdata.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = cfbd.Configuration(
+    host = "https://apinext.collegefootballdata.com"
+)
 
-# create an instance of the API class
-api_instance = cfbd.MetricsApi(cfbd.ApiClient(configuration))
-down = 56 # int | Down filter
-distance = 56 # int | Distance filter
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
 
-try:
-    # Predicted Points (i.e. Expected Points or EP)
-    api_response = api_instance.get_predicted_points(down, distance)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling MetricsApi->get_predicted_points: %s\n" % e)
+# Configure Bearer authorization: apiKey
+configuration = cfbd.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+with cfbd.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cfbd.MetricsApi(api_client)
+    down = 56 # int | Down value
+    distance = 56 # int | Distance value
+
+    try:
+        api_response = api_instance.get_predicted_points(down, distance)
+        print("The response of MetricsApi->get_predicted_points:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling MetricsApi->get_predicted_points: %s\n" % e)
 ```
+
+
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **down** | **int**| Down filter | 
- **distance** | **int**| Distance filter | 
+ **down** | **int**| Down value | 
+ **distance** | **int**| Distance value | 
 
 ### Return type
 
-[**list[PredictedPoints]**](PredictedPoints.md)
+[**List[PredictedPointsValue]**](PredictedPointsValue.md)
 
 ### Authorization
 
-[ApiKeyAuth](../README.md#ApiKeyAuth)
+[apiKey](../README.md#apiKey)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Ok |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_predicted_points_added_by_game**
+> List[TeamGamePredictedPointsAdded] get_predicted_points_added_by_game(year, week=week, season_type=season_type, team=team, conference=conference, exclude_garbage_time=exclude_garbage_time)
+
+
+
+Retrieves historical team PPA metrics by game
+
+### Example
+
+* Bearer Authentication (apiKey):
+```python
+import time
+import os
+import cfbd
+from cfbd.models.season_type import SeasonType
+from cfbd.models.team_game_predicted_points_added import TeamGamePredictedPointsAdded
+from cfbd.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://apinext.collegefootballdata.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = cfbd.Configuration(
+    host = "https://apinext.collegefootballdata.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: apiKey
+configuration = cfbd.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+with cfbd.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cfbd.MetricsApi(api_client)
+    year = 56 # int | Required year filter
+    week = 56 # int | Optional week filter (optional)
+    season_type = cfbd.SeasonType() # SeasonType | Optional season type filter (optional)
+    team = 'team_example' # str | Optional team filter (optional)
+    conference = 'conference_example' # str | Optional conference abbreviation filter (optional)
+    exclude_garbage_time = True # bool | Optional flag to exclude garbage time plays (optional)
+
+    try:
+        api_response = api_instance.get_predicted_points_added_by_game(year, week=week, season_type=season_type, team=team, conference=conference, exclude_garbage_time=exclude_garbage_time)
+        print("The response of MetricsApi->get_predicted_points_added_by_game:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling MetricsApi->get_predicted_points_added_by_game: %s\n" % e)
+```
+
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **year** | **int**| Required year filter | 
+ **week** | **int**| Optional week filter | [optional] 
+ **season_type** | [**SeasonType**](.md)| Optional season type filter | [optional] 
+ **team** | **str**| Optional team filter | [optional] 
+ **conference** | **str**| Optional conference abbreviation filter | [optional] 
+ **exclude_garbage_time** | **bool**| Optional flag to exclude garbage time plays | [optional] 
+
+### Return type
+
+[**List[TeamGamePredictedPointsAdded]**](TeamGamePredictedPointsAdded.md)
+
+### Authorization
+
+[apiKey](../README.md#apiKey)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Ok |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_predicted_points_added_by_player_game**
+> List[PlayerGamePredictedPointsAdded] get_predicted_points_added_by_player_game(year, week=week, season_type=season_type, team=team, position=position, player_id=player_id, threshold=threshold, exclude_garbage_time=exclude_garbage_time)
+
+
+
+Queries player PPA statistics by game
+
+### Example
+
+* Bearer Authentication (apiKey):
+```python
+import time
+import os
+import cfbd
+from cfbd.models.player_game_predicted_points_added import PlayerGamePredictedPointsAdded
+from cfbd.models.season_type import SeasonType
+from cfbd.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://apinext.collegefootballdata.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = cfbd.Configuration(
+    host = "https://apinext.collegefootballdata.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: apiKey
+configuration = cfbd.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+with cfbd.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cfbd.MetricsApi(api_client)
+    year = 56 # int | Required year filter
+    week = 56 # int | Week filter, required if team not specified (optional)
+    season_type = cfbd.SeasonType() # SeasonType | Optional season type filter (optional)
+    team = 'team_example' # str | Team filter, required if week not specified (optional)
+    position = 'position_example' # str | Optional player position abbreviation filter (optional)
+    player_id = 'player_id_example' # str | Optional player ID filter (optional)
+    threshold = 3.4 # float | Threshold value for minimum number of plays (optional)
+    exclude_garbage_time = True # bool | Optional flag to exclude garbage time plays (optional)
+
+    try:
+        api_response = api_instance.get_predicted_points_added_by_player_game(year, week=week, season_type=season_type, team=team, position=position, player_id=player_id, threshold=threshold, exclude_garbage_time=exclude_garbage_time)
+        print("The response of MetricsApi->get_predicted_points_added_by_player_game:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling MetricsApi->get_predicted_points_added_by_player_game: %s\n" % e)
+```
+
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **year** | **int**| Required year filter | 
+ **week** | **int**| Week filter, required if team not specified | [optional] 
+ **season_type** | [**SeasonType**](.md)| Optional season type filter | [optional] 
+ **team** | **str**| Team filter, required if week not specified | [optional] 
+ **position** | **str**| Optional player position abbreviation filter | [optional] 
+ **player_id** | **str**| Optional player ID filter | [optional] 
+ **threshold** | **float**| Threshold value for minimum number of plays | [optional] 
+ **exclude_garbage_time** | **bool**| Optional flag to exclude garbage time plays | [optional] 
+
+### Return type
+
+[**List[PlayerGamePredictedPointsAdded]**](PlayerGamePredictedPointsAdded.md)
+
+### Authorization
+
+[apiKey](../README.md#apiKey)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Ok |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_predicted_points_added_by_player_season**
+> List[PlayerSeasonPredictedPointsAdded] get_predicted_points_added_by_player_season(year=year, conference=conference, team=team, position=position, player_id=player_id, threshold=threshold, exclude_garbage_time=exclude_garbage_time)
+
+
+
+Queries player PPA statistics by season
+
+### Example
+
+* Bearer Authentication (apiKey):
+```python
+import time
+import os
+import cfbd
+from cfbd.models.player_season_predicted_points_added import PlayerSeasonPredictedPointsAdded
+from cfbd.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://apinext.collegefootballdata.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = cfbd.Configuration(
+    host = "https://apinext.collegefootballdata.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: apiKey
+configuration = cfbd.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+with cfbd.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cfbd.MetricsApi(api_client)
+    year = 56 # int | Year filter, required if playerId not specified (optional)
+    conference = 'conference_example' # str | Optional conference abbreviation filter (optional)
+    team = 'team_example' # str | Optional team filter (optional)
+    position = 'position_example' # str | Optional position abbreviation filter (optional)
+    player_id = 'player_id_example' # str | Player ID filter, required if year not specified (optional)
+    threshold = 3.4 # float | Threshold value for minimum number of plays (optional)
+    exclude_garbage_time = True # bool | Optional flag to exclude garbage time plays (optional)
+
+    try:
+        api_response = api_instance.get_predicted_points_added_by_player_season(year=year, conference=conference, team=team, position=position, player_id=player_id, threshold=threshold, exclude_garbage_time=exclude_garbage_time)
+        print("The response of MetricsApi->get_predicted_points_added_by_player_season:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling MetricsApi->get_predicted_points_added_by_player_season: %s\n" % e)
+```
+
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **year** | **int**| Year filter, required if playerId not specified | [optional] 
+ **conference** | **str**| Optional conference abbreviation filter | [optional] 
+ **team** | **str**| Optional team filter | [optional] 
+ **position** | **str**| Optional position abbreviation filter | [optional] 
+ **player_id** | **str**| Player ID filter, required if year not specified | [optional] 
+ **threshold** | **float**| Threshold value for minimum number of plays | [optional] 
+ **exclude_garbage_time** | **bool**| Optional flag to exclude garbage time plays | [optional] 
+
+### Return type
+
+[**List[PlayerSeasonPredictedPointsAdded]**](PlayerSeasonPredictedPointsAdded.md)
+
+### Authorization
+
+[apiKey](../README.md#apiKey)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Ok |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_predicted_points_added_by_team**
+> List[TeamSeasonPredictedPointsAdded] get_predicted_points_added_by_team(year=year, team=team, conference=conference, exclude_garbage_time=exclude_garbage_time)
+
+
+
+Retrieves historical team PPA metrics by season
+
+### Example
+
+* Bearer Authentication (apiKey):
+```python
+import time
+import os
+import cfbd
+from cfbd.models.team_season_predicted_points_added import TeamSeasonPredictedPointsAdded
+from cfbd.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://apinext.collegefootballdata.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = cfbd.Configuration(
+    host = "https://apinext.collegefootballdata.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: apiKey
+configuration = cfbd.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+with cfbd.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cfbd.MetricsApi(api_client)
+    year = 56 # int | Year filter, required if team not specified (optional)
+    team = 'team_example' # str | Team filter, required if year not specified (optional)
+    conference = 'conference_example' # str | Conference abbreviation filter (optional)
+    exclude_garbage_time = True # bool | Exclude garbage time plays (optional)
+
+    try:
+        api_response = api_instance.get_predicted_points_added_by_team(year=year, team=team, conference=conference, exclude_garbage_time=exclude_garbage_time)
+        print("The response of MetricsApi->get_predicted_points_added_by_team:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling MetricsApi->get_predicted_points_added_by_team: %s\n" % e)
+```
+
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **year** | **int**| Year filter, required if team not specified | [optional] 
+ **team** | **str**| Team filter, required if year not specified | [optional] 
+ **conference** | **str**| Conference abbreviation filter | [optional] 
+ **exclude_garbage_time** | **bool**| Exclude garbage time plays | [optional] 
+
+### Return type
+
+[**List[TeamSeasonPredictedPointsAdded]**](TeamSeasonPredictedPointsAdded.md)
+
+### Authorization
+
+[apiKey](../README.md#apiKey)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Ok |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_pregame_win_probabilities**
-> list[PregameWP] get_pregame_win_probabilities(year=year, week=week, team=team, season_type=season_type)
+> List[PregameWinProbability] get_pregame_win_probabilities(year=year, week=week, season_type=season_type, team=team)
 
-Pregame win probability data
 
-Pregame win probabilities
+
+Queries pregame win probabilities
 
 ### Example
+
+* Bearer Authentication (apiKey):
 ```python
-from __future__ import print_function
 import time
+import os
 import cfbd
+from cfbd.models.pregame_win_probability import PregameWinProbability
+from cfbd.models.season_type import SeasonType
 from cfbd.rest import ApiException
 from pprint import pprint
 
-# Configure API key authorization: ApiKeyAuth
-configuration = cfbd.Configuration()
-configuration.api_key['Authorization'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['Authorization'] = 'Bearer'
+# Defining the host is optional and defaults to https://apinext.collegefootballdata.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = cfbd.Configuration(
+    host = "https://apinext.collegefootballdata.com"
+)
 
-# create an instance of the API class
-api_instance = cfbd.MetricsApi(cfbd.ApiClient(configuration))
-year = 56 # int | Year filter (optional)
-week = 56 # int | Week filter (optional)
-team = 'team_example' # str | Team filter (optional)
-season_type = 'season_type_example' # str | regular or postseason (optional)
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
 
-try:
-    # Pregame win probability data
-    api_response = api_instance.get_pregame_win_probabilities(year=year, week=week, team=team, season_type=season_type)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling MetricsApi->get_pregame_win_probabilities: %s\n" % e)
+# Configure Bearer authorization: apiKey
+configuration = cfbd.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+with cfbd.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cfbd.MetricsApi(api_client)
+    year = 56 # int | Optional year filter (optional)
+    week = 56 # int | Optional week filter (optional)
+    season_type = cfbd.SeasonType() # SeasonType | Optional season type filter (optional)
+    team = 'team_example' # str | Optional team filter (optional)
+
+    try:
+        api_response = api_instance.get_pregame_win_probabilities(year=year, week=week, season_type=season_type, team=team)
+        print("The response of MetricsApi->get_pregame_win_probabilities:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling MetricsApi->get_pregame_win_probabilities: %s\n" % e)
 ```
+
+
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **year** | **int**| Year filter | [optional] 
- **week** | **int**| Week filter | [optional] 
- **team** | **str**| Team filter | [optional] 
- **season_type** | **str**| regular or postseason | [optional] 
+ **year** | **int**| Optional year filter | [optional] 
+ **week** | **int**| Optional week filter | [optional] 
+ **season_type** | [**SeasonType**](.md)| Optional season type filter | [optional] 
+ **team** | **str**| Optional team filter | [optional] 
 
 ### Return type
 
-[**list[PregameWP]**](PregameWP.md)
+[**List[PregameWinProbability]**](PregameWinProbability.md)
 
 ### Authorization
 
-[ApiKeyAuth](../README.md#ApiKeyAuth)
+[apiKey](../README.md#apiKey)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Ok |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_team_ppa**
-> list[TeamPPA] get_team_ppa(year=year, team=team, conference=conference, exclude_garbage_time=exclude_garbage_time)
+# **get_win_probability**
+> List[PlayWinProbability] get_win_probability(game_id)
 
-Predicted Points Added (PPA/EPA) data by team
 
-Predicted Points Added (PPA)
+
+Query play win probabilities by game
 
 ### Example
+
+* Bearer Authentication (apiKey):
 ```python
-from __future__ import print_function
 import time
+import os
 import cfbd
+from cfbd.models.play_win_probability import PlayWinProbability
 from cfbd.rest import ApiException
 from pprint import pprint
 
-# Configure API key authorization: ApiKeyAuth
-configuration = cfbd.Configuration()
-configuration.api_key['Authorization'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['Authorization'] = 'Bearer'
+# Defining the host is optional and defaults to https://apinext.collegefootballdata.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = cfbd.Configuration(
+    host = "https://apinext.collegefootballdata.com"
+)
 
-# create an instance of the API class
-api_instance = cfbd.MetricsApi(cfbd.ApiClient(configuration))
-year = 56 # int | Year filter (required if team not specified) (optional)
-team = 'team_example' # str | Team filter (required if year not specified) (optional)
-conference = 'conference_example' # str | Conference filter (optional)
-exclude_garbage_time = true # bool | Filter to remove garbage time plays from calculations (optional)
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
 
-try:
-    # Predicted Points Added (PPA/EPA) data by team
-    api_response = api_instance.get_team_ppa(year=year, team=team, conference=conference, exclude_garbage_time=exclude_garbage_time)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling MetricsApi->get_team_ppa: %s\n" % e)
+# Configure Bearer authorization: apiKey
+configuration = cfbd.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+with cfbd.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cfbd.MetricsApi(api_client)
+    game_id = 56 # int | Required game ID filter
+
+    try:
+        api_response = api_instance.get_win_probability(game_id)
+        print("The response of MetricsApi->get_win_probability:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling MetricsApi->get_win_probability: %s\n" % e)
 ```
+
+
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **year** | **int**| Year filter (required if team not specified) | [optional] 
- **team** | **str**| Team filter (required if year not specified) | [optional] 
- **conference** | **str**| Conference filter | [optional] 
- **exclude_garbage_time** | **bool**| Filter to remove garbage time plays from calculations | [optional] 
+ **game_id** | **int**| Required game ID filter | 
 
 ### Return type
 
-[**list[TeamPPA]**](TeamPPA.md)
+[**List[PlayWinProbability]**](PlayWinProbability.md)
 
 ### Authorization
 
-[ApiKeyAuth](../README.md#ApiKeyAuth)
+[apiKey](../README.md#apiKey)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **get_win_probability_data**
-> list[PlayWP] get_win_probability_data(game_id)
-
-Win probability chart data
-
-Win probability data
-
-### Example
-```python
-from __future__ import print_function
-import time
-import cfbd
-from cfbd.rest import ApiException
-from pprint import pprint
-
-# Configure API key authorization: ApiKeyAuth
-configuration = cfbd.Configuration()
-configuration.api_key['Authorization'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['Authorization'] = 'Bearer'
-
-# create an instance of the API class
-api_instance = cfbd.MetricsApi(cfbd.ApiClient(configuration))
-game_id = 56 # int | Game id filter
-
-try:
-    # Win probability chart data
-    api_response = api_instance.get_win_probability_data(game_id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling MetricsApi->get_win_probability_data: %s\n" % e)
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **game_id** | **int**| Game id filter | 
-
-### Return type
-
-[**list[PlayWP]**](PlayWP.md)
-
-### Authorization
-
-[ApiKeyAuth](../README.md#ApiKeyAuth)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Ok |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
