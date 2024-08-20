@@ -77,7 +77,7 @@ class ApiClient:
             self.default_headers[header_name] = header_value
         self.cookie = cookie
         # Set default User-Agent.
-        self.user_agent = 'OpenAPI-Generator/5.0.0/python'
+        self.user_agent = 'OpenAPI-Generator/$api_version/python'
         self.client_side_validation = configuration.client_side_validation
 
     def __enter__(self):

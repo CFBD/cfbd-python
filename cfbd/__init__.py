@@ -15,7 +15,7 @@
 """  # noqa: E501
 
 
-__version__ = "5.0.0"
+__version__ = "$api_version"
 
 # import apis into sdk package
 from cfbd.api.betting_api import BettingApi
