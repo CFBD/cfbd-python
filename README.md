@@ -15,35 +15,15 @@ Python 3.7+
 ## Installation & Usage
 ### pip install
 
-If the python package is hosted on a repository, you can install directly using:
-
 ```sh
-pip install git+https:////.git
+pip install cfbd
 ```
-(you may need to run `pip` with root permission: `sudo pip install git+https:////.git`)
+(you may need to run `pip` with root permission: `sudo pip install cfbd`)
 
 Then import the package:
 ```python
 import cfbd
 ```
-
-### Setuptools
-
-Install via [Setuptools](http://pypi.python.org/pypi/setuptools).
-
-```sh
-python setup.py install --user
-```
-(or `sudo python setup.py install` to install the package for all users)
-
-Then import the package:
-```python
-import cfbd
-```
-
-### Tests
-
-Execute `pytest` to run the tests.
 
 ## Getting Started
 
