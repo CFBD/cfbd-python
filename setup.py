@@ -35,7 +35,6 @@ setup(
     name=NAME,
     version=VERSION,
     description="College Football Data API",
-    author="the developer",
     author_email="admin@collegefootballdata.com",
     url="https://github.com/CFBD/cfbd-python",
     keywords=["OpenAPI", "OpenAPI-Generator", "College Football Data API"],
