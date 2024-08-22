@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **first_name** | **str** |  | 
 **last_name** | **str** |  | 
-**hire_date** | **date** |  | 
+**hire_date** | **datetime** |  | 
 **seasons** | [**List[CoachSeason]**](CoachSeason.md) |  | 
 
 ## Example
