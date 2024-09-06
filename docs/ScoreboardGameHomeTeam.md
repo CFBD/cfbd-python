@@ -4,7 +4,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**line_score** | **List[int]** |  | 
+**line_scores** | **List[int]** |  | 
 **points** | **int** |  | 
 **classification** | [**DivisionClassification**](DivisionClassification.md) |  | 
 **conference** | **str** |  | 
