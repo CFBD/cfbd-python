@@ -15,6 +15,7 @@ Name | Type | Description | Notes
 **clock** | **str** |  | 
 **situation** | **str** |  | 
 **possession** | **str** |  | 
+**last_play** | **str** |  | 
 **venue** | [**ScoreboardGameVenue**](ScoreboardGameVenue.md) |  | 
 **home_team** | [**ScoreboardGameHomeTeam**](ScoreboardGameHomeTeam.md) |  | 
 **away_team** | [**ScoreboardGameHomeTeam**](ScoreboardGameHomeTeam.md) |  | 
