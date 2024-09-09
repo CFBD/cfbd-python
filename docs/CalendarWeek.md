@@ -7,6 +7,8 @@ Name | Type | Description | Notes
 **season** | **int** |  | 
 **week** | **int** |  | 
 **season_type** | [**SeasonType**](SeasonType.md) |  | 
+**start_date** | **datetime** |  | 
+**end_date** | **datetime** |  | 
 **first_game_start** | **datetime** |  | 
 **last_game_start** | **datetime** |  | 
 
