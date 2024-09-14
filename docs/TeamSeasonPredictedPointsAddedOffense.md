@@ -4,7 +4,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**cumulative** | [**TeamSeasonPredictedPointsAddedOffenseCumulative**](TeamSeasonPredictedPointsAddedOffenseCumulative.md) |  | 
+**cumulative** | [**AdjustedMetricsEpa**](AdjustedMetricsEpa.md) |  | 
 **third_down** | **float** |  | 
 **second_down** | **float** |  | 
 **first_down** | **float** |  | 

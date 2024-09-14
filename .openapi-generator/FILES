@@ -26,6 +26,10 @@ cfbd/api_response.py
 cfbd/configuration.py
 cfbd/exceptions.py
 cfbd/models/__init__.py
+cfbd/models/adjusted_metrics.py
+cfbd/models/adjusted_metrics_epa.py
+cfbd/models/adjusted_metrics_rushing.py
+cfbd/models/adjusted_metrics_success_rate.py
 cfbd/models/advanced_box_score.py
 cfbd/models/advanced_box_score_game_info.py
 cfbd/models/advanced_box_score_players.py
@@ -132,7 +136,6 @@ cfbd/models/team_rushing_stats.py
 cfbd/models/team_scoring_opportunities.py
 cfbd/models/team_season_predicted_points_added.py
 cfbd/models/team_season_predicted_points_added_offense.py
-cfbd/models/team_season_predicted_points_added_offense_cumulative.py
 cfbd/models/team_sp.py
 cfbd/models/team_sp_defense.py
 cfbd/models/team_sp_offense.py
@@ -146,6 +149,10 @@ cfbd/models/transfer_eligibility.py
 cfbd/models/venue.py
 cfbd/py.typed
 cfbd/rest.py
+docs/AdjustedMetrics.md
+docs/AdjustedMetricsEpa.md
+docs/AdjustedMetricsRushing.md
+docs/AdjustedMetricsSuccessRate.md
 docs/AdvancedBoxScore.md
 docs/AdvancedBoxScoreGameInfo.md
 docs/AdvancedBoxScorePlayers.md
@@ -270,7 +277,6 @@ docs/TeamSRS.md
 docs/TeamScoringOpportunities.md
 docs/TeamSeasonPredictedPointsAdded.md
 docs/TeamSeasonPredictedPointsAddedOffense.md
-docs/TeamSeasonPredictedPointsAddedOffenseCumulative.md
 docs/TeamStat.md
 docs/TeamStatStatValue.md
 docs/TeamSuccessRates.md
@@ -286,6 +292,10 @@ setup.cfg
 setup.py
 test-requirements.txt
 test/__init__.py
+test/test_adjusted_metrics.py
+test/test_adjusted_metrics_epa.py
+test/test_adjusted_metrics_rushing.py
+test/test_adjusted_metrics_success_rate.py
 test/test_advanced_box_score.py
 test/test_advanced_box_score_game_info.py
 test/test_advanced_box_score_players.py
@@ -405,7 +415,6 @@ test/test_team_rushing_stats.py
 test/test_team_scoring_opportunities.py
 test/test_team_season_predicted_points_added.py
 test/test_team_season_predicted_points_added_offense.py
-test/test_team_season_predicted_points_added_offense_cumulative.py
 test/test_team_sp.py
 test/test_team_sp_defense.py
 test/test_team_sp_offense.py
