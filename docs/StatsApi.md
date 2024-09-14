@@ -4,7 +4,7 @@ All URIs are relative to *https://apinext.collegefootballdata.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**get_adjusted_team_season_stats**](StatsApi.md#get_adjusted_team_season_stats) | **GET** /stats/team/season/adjusted | 
+[**get_adjusted_team_season_stats**](StatsApi.md#get_adjusted_team_season_stats) | **GET** /stats/season/adjusted | 
 [**get_advanced_game_stats**](StatsApi.md#get_advanced_game_stats) | **GET** /stats/game/advanced | 
 [**get_advanced_season_stats**](StatsApi.md#get_advanced_season_stats) | **GET** /stats/season/advanced | 
 [**get_categories**](StatsApi.md#get_categories) | **GET** /stats/categories | 
