@@ -4,7 +4,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**cumulative** | [**AdjustedMetricsEpa**](AdjustedMetricsEpa.md) |  | 
+**cumulative** | [**AdjustedTeamMetricsEpa**](AdjustedTeamMetricsEpa.md) |  | 
 **third_down** | **float** |  | 
 **second_down** | **float** |  | 
 **first_down** | **float** |  | 

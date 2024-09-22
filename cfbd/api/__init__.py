@@ -1,6 +1,7 @@
 # flake8: noqa
 
 # import apis into api package
+from cfbd.api.adjusted_metrics_api import AdjustedMetricsApi
 from cfbd.api.betting_api import BettingApi
 from cfbd.api.coaches_api import CoachesApi
 from cfbd.api.conferences_api import ConferencesApi

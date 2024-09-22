@@ -6,6 +6,7 @@
 README.md
 cfbd/__init__.py
 cfbd/api/__init__.py
+cfbd/api/adjusted_metrics_api.py
 cfbd/api/betting_api.py
 cfbd/api/coaches_api.py
 cfbd/api/conferences_api.py
@@ -26,10 +27,10 @@ cfbd/api_response.py
 cfbd/configuration.py
 cfbd/exceptions.py
 cfbd/models/__init__.py
-cfbd/models/adjusted_metrics.py
-cfbd/models/adjusted_metrics_epa.py
-cfbd/models/adjusted_metrics_rushing.py
-cfbd/models/adjusted_metrics_success_rate.py
+cfbd/models/adjusted_team_metrics.py
+cfbd/models/adjusted_team_metrics_epa.py
+cfbd/models/adjusted_team_metrics_rushing.py
+cfbd/models/adjusted_team_metrics_success_rate.py
 cfbd/models/advanced_box_score.py
 cfbd/models/advanced_box_score_game_info.py
 cfbd/models/advanced_box_score_players.py
@@ -74,6 +75,7 @@ cfbd/models/game_team_stats.py
 cfbd/models/game_team_stats_team.py
 cfbd/models/game_team_stats_team_stat.py
 cfbd/models/game_weather.py
+cfbd/models/kicker_paar.py
 cfbd/models/live_game.py
 cfbd/models/live_game_drive.py
 cfbd/models/live_game_play.py
@@ -101,6 +103,7 @@ cfbd/models/player_stats_by_quarter.py
 cfbd/models/player_transfer.py
 cfbd/models/player_usage.py
 cfbd/models/player_usage_usage.py
+cfbd/models/player_weighted_epa.py
 cfbd/models/poll.py
 cfbd/models/poll_rank.py
 cfbd/models/poll_week.py
@@ -149,10 +152,11 @@ cfbd/models/transfer_eligibility.py
 cfbd/models/venue.py
 cfbd/py.typed
 cfbd/rest.py
-docs/AdjustedMetrics.md
-docs/AdjustedMetricsEpa.md
-docs/AdjustedMetricsRushing.md
-docs/AdjustedMetricsSuccessRate.md
+docs/AdjustedMetricsApi.md
+docs/AdjustedTeamMetrics.md
+docs/AdjustedTeamMetricsEpa.md
+docs/AdjustedTeamMetricsRushing.md
+docs/AdjustedTeamMetricsSuccessRate.md
 docs/AdvancedBoxScore.md
 docs/AdvancedBoxScoreGameInfo.md
 docs/AdvancedBoxScorePlayers.md
@@ -203,6 +207,7 @@ docs/GameTeamStatsTeam.md
 docs/GameTeamStatsTeamStat.md
 docs/GameWeather.md
 docs/GamesApi.md
+docs/KickerPAAR.md
 docs/LiveGame.md
 docs/LiveGameDrive.md
 docs/LiveGamePlay.md
@@ -231,6 +236,7 @@ docs/PlayerStatsByQuarter.md
 docs/PlayerTransfer.md
 docs/PlayerUsage.md
 docs/PlayerUsageUsage.md
+docs/PlayerWeightedEPA.md
 docs/PlayersApi.md
 docs/PlaysApi.md
 docs/Poll.md
@@ -292,10 +298,11 @@ setup.cfg
 setup.py
 test-requirements.txt
 test/__init__.py
-test/test_adjusted_metrics.py
-test/test_adjusted_metrics_epa.py
-test/test_adjusted_metrics_rushing.py
-test/test_adjusted_metrics_success_rate.py
+test/test_adjusted_metrics_api.py
+test/test_adjusted_team_metrics.py
+test/test_adjusted_team_metrics_epa.py
+test/test_adjusted_team_metrics_rushing.py
+test/test_adjusted_team_metrics_success_rate.py
 test/test_advanced_box_score.py
 test/test_advanced_box_score_game_info.py
 test/test_advanced_box_score_players.py
@@ -346,6 +353,7 @@ test/test_game_team_stats_team.py
 test/test_game_team_stats_team_stat.py
 test/test_game_weather.py
 test/test_games_api.py
+test/test_kicker_paar.py
 test/test_live_game.py
 test/test_live_game_drive.py
 test/test_live_game_play.py
@@ -374,6 +382,7 @@ test/test_player_stats_by_quarter.py
 test/test_player_transfer.py
 test/test_player_usage.py
 test/test_player_usage_usage.py
+test/test_player_weighted_epa.py
 test/test_players_api.py
 test/test_plays_api.py
 test/test_poll.py
