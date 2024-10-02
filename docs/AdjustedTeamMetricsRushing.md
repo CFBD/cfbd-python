@@ -4,6 +4,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**highlight_yards** | **float** |  | 
 **open_field_yards** | **float** |  | 
 **second_level_yards** | **float** |  | 
 **line_yards** | **float** |  | 
