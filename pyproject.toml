@@ -1,16 +1,16 @@
 [tool.poetry]
 name = "cfbd"
-version = "5.3.2a1"
+version = "5.3.3a1"
 description = "College Football Data API"
 authors = ["the developer <admin@collegefootballdata.com>"]
 license = "MIT"
 readme = "README.md"
-repository = "https://github.com//"
+repository = "https:////"
 keywords = ["OpenAPI", "OpenAPI-Generator", "College Football Data API"]
 include = ["cfbd/py.typed"]
 
 [tool.poetry.dependencies]
-python = "^3.7"
+python = "^3.8"
 
 urllib3 = ">= 1.25.3"
 python-dateutil = ">=2.8.2"
