@@ -29,7 +29,7 @@ class Coach(BaseModel):
     """
     first_name: StrictStr = Field(default=..., alias="firstName")
     last_name: StrictStr = Field(default=..., alias="lastName")
-    hire_date: Optional[datetime] = Field(default=..., alias="hireDate")
+    hire_date: Optional[str] = Field(default=None, alias="hireDate")
     seasons: conlist(CoachSeason) = Field(...)
     __properties = ["firstName", "lastName", "hireDate", "seasons"]
 
