@@ -16,6 +16,8 @@ Name | Type | Description | Notes
 **home_games** | [**TeamRecord**](TeamRecord.md) |  | 
 **away_games** | [**TeamRecord**](TeamRecord.md) |  | 
 **neutral_site_games** | [**TeamRecord**](TeamRecord.md) |  | 
+**regular_season** | [**TeamRecord**](TeamRecord.md) |  | 
+**postseason** | [**TeamRecord**](TeamRecord.md) |  | 
 
 ## Example
 
