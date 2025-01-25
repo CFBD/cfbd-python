@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 **conference** | **str** |  | 
 **category** | **str** |  | 
 **stat_type** | **str** |  | 
-**stat** | **float** |  | 
+**stat** | **str** |  | 
 
 ## Example
 
