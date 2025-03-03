@@ -20,7 +20,7 @@ import json
 
 
 
-from pydantic import BaseModel, Field, StrictInt, StrictStr
+from pydantic import BaseModel, Field, StrictInt, StrictStr, validator
 from cfbd.models.player_usage_usage import PlayerUsageUsage
 
 class PlayerUsage(BaseModel):
@@ -40,6 +40,16 @@ class PlayerUsage(BaseModel):
         """Pydantic configuration"""
         allow_population_by_field_name = True
         validate_assignment = True
+
+
+    @validator('*', pre=True)
+    def convert_string_to_float(cls, v):
+        if isinstance(v, str):
+            try:
+                return float(v)
+            except ValueError:
+                raise ValueError(f"Cannot convert {v} to float")
+        return v
 
     def to_str(self) -> str:
         """Returns the string representation of the model using alias"""
