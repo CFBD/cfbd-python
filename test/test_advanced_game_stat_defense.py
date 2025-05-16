@@ -16,10 +16,10 @@
 import unittest
 import datetime
 
-from cfbd.models.advanced_game_stat_offense import AdvancedGameStatOffense  # noqa: E501
+from cfbd.models.advanced_game_stat_defense import AdvancedGameStatDefense  # noqa: E501
 
-class TestAdvancedGameStatOffense(unittest.TestCase):
-    """AdvancedGameStatOffense unit test stubs"""
+class TestAdvancedGameStatDefense(unittest.TestCase):
+    """AdvancedGameStatDefense unit test stubs"""
 
     def setUp(self):
         pass
@@ -27,16 +27,16 @@ class TestAdvancedGameStatOffense(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> AdvancedGameStatOffense:
-        """Test AdvancedGameStatOffense
+    def make_instance(self, include_optional) -> AdvancedGameStatDefense:
+        """Test AdvancedGameStatDefense
             include_option is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
-        # uncomment below to create an instance of `AdvancedGameStatOffense`
+        # uncomment below to create an instance of `AdvancedGameStatDefense`
         """
-        model = AdvancedGameStatOffense()  # noqa: E501
+        model = AdvancedGameStatDefense()  # noqa: E501
         if include_optional:
-            return AdvancedGameStatOffense(
+            return AdvancedGameStatDefense(
                 passing_plays = cfbd.models.advanced_game_stat_offense_passing_plays.AdvancedGameStat_offense_passingPlays(
                     explosiveness = 1.337, 
                     success_rate = 1.337, 
@@ -71,7 +71,7 @@ class TestAdvancedGameStatOffense(unittest.TestCase):
                 plays = 56
             )
         else:
-            return AdvancedGameStatOffense(
+            return AdvancedGameStatDefense(
                 passing_plays = cfbd.models.advanced_game_stat_offense_passing_plays.AdvancedGameStat_offense_passingPlays(
                     explosiveness = 1.337, 
                     success_rate = 1.337, 
@@ -107,8 +107,8 @@ class TestAdvancedGameStatOffense(unittest.TestCase):
         )
         """
 
-    def testAdvancedGameStatOffense(self):
-        """Test AdvancedGameStatOffense"""
+    def testAdvancedGameStatDefense(self):
+        """Test AdvancedGameStatDefense"""
         # inst_req_only = self.make_instance(include_optional=False)
         # inst_req_and_optional = self.make_instance(include_optional=True)
 

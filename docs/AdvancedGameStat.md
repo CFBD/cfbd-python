@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **team** | **str** |  | 
 **opponent** | **str** |  | 
 **offense** | [**AdvancedGameStatOffense**](AdvancedGameStatOffense.md) |  | 
-**defense** | [**AdvancedGameStatOffense**](AdvancedGameStatOffense.md) |  | 
+**defense** | [**AdvancedGameStatDefense**](AdvancedGameStatDefense.md) |  | 
 
 ## Example
 

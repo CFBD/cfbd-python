@@ -21,24 +21,18 @@ import json
 
 from typing import Optional, Union
 from pydantic import BaseModel, Field, StrictFloat, StrictInt
-from cfbd.models.advanced_season_stat_offense_field_position import AdvancedSeasonStatOffenseFieldPosition
-from cfbd.models.advanced_season_stat_offense_havoc import AdvancedSeasonStatOffenseHavoc
-from cfbd.models.advanced_season_stat_offense_passing_downs import AdvancedSeasonStatOffensePassingDowns
-from cfbd.models.advanced_season_stat_offense_passing_plays import AdvancedSeasonStatOffensePassingPlays
+from cfbd.models.advanced_game_stat_offense_passing_downs import AdvancedGameStatOffensePassingDowns
+from cfbd.models.advanced_game_stat_offense_passing_plays import AdvancedGameStatOffensePassingPlays
 
-class AdvancedSeasonStatDefense(BaseModel):
+class AdvancedGameStatDefense(BaseModel):
     """
-    AdvancedSeasonStatDefense
+    AdvancedGameStatDefense
     """
-    passing_plays: AdvancedSeasonStatOffensePassingPlays = Field(default=..., alias="passingPlays")
-    rushing_plays: AdvancedSeasonStatOffensePassingPlays = Field(default=..., alias="rushingPlays")
-    passing_downs: AdvancedSeasonStatOffensePassingPlays = Field(default=..., alias="passingDowns")
-    standard_downs: AdvancedSeasonStatOffensePassingDowns = Field(default=..., alias="standardDowns")
-    havoc: AdvancedSeasonStatOffenseHavoc = Field(...)
-    field_position: AdvancedSeasonStatOffenseFieldPosition = Field(default=..., alias="fieldPosition")
-    points_per_opportunity: Union[StrictFloat, StrictInt] = Field(default=..., alias="pointsPerOpportunity")
-    total_opportunies: StrictInt = Field(default=..., alias="totalOpportunies")
-    open_field_yards_total: StrictInt = Field(default=..., alias="openFieldYardsTotal")
+    passing_plays: AdvancedGameStatOffensePassingPlays = Field(default=..., alias="passingPlays")
+    rushing_plays: AdvancedGameStatOffensePassingPlays = Field(default=..., alias="rushingPlays")
+    passing_downs: AdvancedGameStatOffensePassingDowns = Field(default=..., alias="passingDowns")
+    standard_downs: AdvancedGameStatOffensePassingDowns = Field(default=..., alias="standardDowns")
+    open_field_yards_total: Optional[StrictInt] = Field(default=..., alias="openFieldYardsTotal")
     open_field_yards: Union[StrictFloat, StrictInt] = Field(default=..., alias="openFieldYards")
     second_level_yards_total: StrictInt = Field(default=..., alias="secondLevelYardsTotal")
     second_level_yards: Union[StrictFloat, StrictInt] = Field(default=..., alias="secondLevelYards")
@@ -46,13 +40,13 @@ class AdvancedSeasonStatDefense(BaseModel):
     line_yards: Union[StrictFloat, StrictInt] = Field(default=..., alias="lineYards")
     stuff_rate: Union[StrictFloat, StrictInt] = Field(default=..., alias="stuffRate")
     power_success: Optional[Union[StrictFloat, StrictInt]] = Field(default=..., alias="powerSuccess")
-    explosiveness: Optional[Union[StrictFloat, StrictInt]] = Field(...)
+    explosiveness: Union[StrictFloat, StrictInt] = Field(...)
     success_rate: Union[StrictFloat, StrictInt] = Field(default=..., alias="successRate")
     total_ppa: Union[StrictFloat, StrictInt] = Field(default=..., alias="totalPPA")
     ppa: Union[StrictFloat, StrictInt] = Field(...)
     drives: StrictInt = Field(...)
     plays: StrictInt = Field(...)
-    __properties = ["passingPlays", "rushingPlays", "passingDowns", "standardDowns", "havoc", "fieldPosition", "pointsPerOpportunity", "totalOpportunies", "openFieldYardsTotal", "openFieldYards", "secondLevelYardsTotal", "secondLevelYards", "lineYardsTotal", "lineYards", "stuffRate", "powerSuccess", "explosiveness", "successRate", "totalPPA", "ppa", "drives", "plays"]
+    __properties = ["passingPlays", "rushingPlays", "passingDowns", "standardDowns", "openFieldYardsTotal", "openFieldYards", "secondLevelYardsTotal", "secondLevelYards", "lineYardsTotal", "lineYards", "stuffRate", "powerSuccess", "explosiveness", "successRate", "totalPPA", "ppa", "drives", "plays"]
 
     class Config:
         """Pydantic configuration"""
@@ -68,8 +62,8 @@ class AdvancedSeasonStatDefense(BaseModel):
         return json.dumps(self.to_dict())
 
     @classmethod
-    def from_json(cls, json_str: str) -> AdvancedSeasonStatDefense:
-        """Create an instance of AdvancedSeasonStatDefense from a JSON string"""
+    def from_json(cls, json_str: str) -> AdvancedGameStatDefense:
+        """Create an instance of AdvancedGameStatDefense from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
     def to_dict(self):
@@ -90,42 +84,32 @@ class AdvancedSeasonStatDefense(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of standard_downs
         if self.standard_downs:
             _dict['standardDowns'] = self.standard_downs.to_dict()
-        # override the default output from pydantic by calling `to_dict()` of havoc
-        if self.havoc:
-            _dict['havoc'] = self.havoc.to_dict()
-        # override the default output from pydantic by calling `to_dict()` of field_position
-        if self.field_position:
-            _dict['fieldPosition'] = self.field_position.to_dict()
+        # set to None if open_field_yards_total (nullable) is None
+        # and __fields_set__ contains the field
+        if self.open_field_yards_total is None and "open_field_yards_total" in self.__fields_set__:
+            _dict['openFieldYardsTotal'] = None
+
         # set to None if power_success (nullable) is None
         # and __fields_set__ contains the field
         if self.power_success is None and "power_success" in self.__fields_set__:
             _dict['powerSuccess'] = None
 
-        # set to None if explosiveness (nullable) is None
-        # and __fields_set__ contains the field
-        if self.explosiveness is None and "explosiveness" in self.__fields_set__:
-            _dict['explosiveness'] = None
-
         return _dict
 
     @classmethod
-    def from_dict(cls, obj: dict) -> AdvancedSeasonStatDefense:
-        """Create an instance of AdvancedSeasonStatDefense from a dict"""
+    def from_dict(cls, obj: dict) -> AdvancedGameStatDefense:
+        """Create an instance of AdvancedGameStatDefense from a dict"""
         if obj is None:
             return None
 
         if not isinstance(obj, dict):
-            return AdvancedSeasonStatDefense.parse_obj(obj)
+            return AdvancedGameStatDefense.parse_obj(obj)
 
-        _obj = AdvancedSeasonStatDefense.parse_obj({
-            "passing_plays": AdvancedSeasonStatOffensePassingPlays.from_dict(obj.get("passingPlays")) if obj.get("passingPlays") is not None else None,
-            "rushing_plays": AdvancedSeasonStatOffensePassingPlays.from_dict(obj.get("rushingPlays")) if obj.get("rushingPlays") is not None else None,
-            "passing_downs": AdvancedSeasonStatOffensePassingPlays.from_dict(obj.get("passingDowns")) if obj.get("passingDowns") is not None else None,
-            "standard_downs": AdvancedSeasonStatOffensePassingDowns.from_dict(obj.get("standardDowns")) if obj.get("standardDowns") is not None else None,
-            "havoc": AdvancedSeasonStatOffenseHavoc.from_dict(obj.get("havoc")) if obj.get("havoc") is not None else None,
-            "field_position": AdvancedSeasonStatOffenseFieldPosition.from_dict(obj.get("fieldPosition")) if obj.get("fieldPosition") is not None else None,
-            "points_per_opportunity": obj.get("pointsPerOpportunity"),
-            "total_opportunies": obj.get("totalOpportunies"),
+        _obj = AdvancedGameStatDefense.parse_obj({
+            "passing_plays": AdvancedGameStatOffensePassingPlays.from_dict(obj.get("passingPlays")) if obj.get("passingPlays") is not None else None,
+            "rushing_plays": AdvancedGameStatOffensePassingPlays.from_dict(obj.get("rushingPlays")) if obj.get("rushingPlays") is not None else None,
+            "passing_downs": AdvancedGameStatOffensePassingDowns.from_dict(obj.get("passingDowns")) if obj.get("passingDowns") is not None else None,
+            "standard_downs": AdvancedGameStatOffensePassingDowns.from_dict(obj.get("standardDowns")) if obj.get("standardDowns") is not None else None,
             "open_field_yards_total": obj.get("openFieldYardsTotal"),
             "open_field_yards": obj.get("openFieldYards"),
             "second_level_yards_total": obj.get("secondLevelYardsTotal"),

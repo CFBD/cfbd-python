@@ -36,6 +36,7 @@ cfbd/models/advanced_box_score_game_info.py
 cfbd/models/advanced_box_score_players.py
 cfbd/models/advanced_box_score_teams.py
 cfbd/models/advanced_game_stat.py
+cfbd/models/advanced_game_stat_defense.py
 cfbd/models/advanced_game_stat_offense.py
 cfbd/models/advanced_game_stat_offense_passing_downs.py
 cfbd/models/advanced_game_stat_offense_passing_plays.py
@@ -162,6 +163,7 @@ docs/AdvancedBoxScoreGameInfo.md
 docs/AdvancedBoxScorePlayers.md
 docs/AdvancedBoxScoreTeams.md
 docs/AdvancedGameStat.md
+docs/AdvancedGameStatDefense.md
 docs/AdvancedGameStatOffense.md
 docs/AdvancedGameStatOffensePassingDowns.md
 docs/AdvancedGameStatOffensePassingPlays.md
@@ -308,6 +310,7 @@ test/test_advanced_box_score_game_info.py
 test/test_advanced_box_score_players.py
 test/test_advanced_box_score_teams.py
 test/test_advanced_game_stat.py
+test/test_advanced_game_stat_defense.py
 test/test_advanced_game_stat_offense.py
 test/test_advanced_game_stat_offense_passing_downs.py
 test/test_advanced_game_stat_offense_passing_plays.py
