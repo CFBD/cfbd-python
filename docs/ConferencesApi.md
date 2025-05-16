@@ -1,6 +1,6 @@
 # cfbd.ConferencesApi
 
-All URIs are relative to *https://apinext.collegefootballdata.com*
+All URIs are relative to *https://api.collegefootballdata.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -25,10 +25,10 @@ from cfbd.models.conference import Conference
 from cfbd.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://apinext.collegefootballdata.com
+# Defining the host is optional and defaults to https://api.collegefootballdata.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = cfbd.Configuration(
-    host = "https://apinext.collegefootballdata.com"
+    host = "https://api.collegefootballdata.com"
 )
 
 # The client must configure the authentication and authorization parameters
