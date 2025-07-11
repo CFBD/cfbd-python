@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **season** | **int** |  | 
 **player_id** | **str** |  | 
 **player** | **str** |  | 
+**position** | **str** |  | 
 **team** | **str** |  | 
 **conference** | **str** |  | 
 **category** | **str** |  | 
