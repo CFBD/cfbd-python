@@ -13,6 +13,7 @@ cfbd/api/conferences_api.py
 cfbd/api/draft_api.py
 cfbd/api/drives_api.py
 cfbd/api/games_api.py
+cfbd/api/info_api.py
 cfbd/api/metrics_api.py
 cfbd/api/players_api.py
 cfbd/api/plays_api.py
@@ -150,6 +151,7 @@ cfbd/models/team_stat_stat_value.py
 cfbd/models/team_success_rates.py
 cfbd/models/team_talent.py
 cfbd/models/transfer_eligibility.py
+cfbd/models/user_info.py
 cfbd/models/venue.py
 cfbd/py.typed
 cfbd/rest.py
@@ -209,6 +211,7 @@ docs/GameTeamStatsTeam.md
 docs/GameTeamStatsTeamStat.md
 docs/GameWeather.md
 docs/GamesApi.md
+docs/InfoApi.md
 docs/KickerPAAR.md
 docs/LiveGame.md
 docs/LiveGameDrive.md
@@ -291,6 +294,7 @@ docs/TeamSuccessRates.md
 docs/TeamTalent.md
 docs/TeamsApi.md
 docs/TransferEligibility.md
+docs/UserInfo.md
 docs/Venue.md
 docs/VenuesApi.md
 git_push.sh
@@ -356,6 +360,7 @@ test/test_game_team_stats_team.py
 test/test_game_team_stats_team_stat.py
 test/test_game_weather.py
 test/test_games_api.py
+test/test_info_api.py
 test/test_kicker_paar.py
 test/test_live_game.py
 test/test_live_game_drive.py
@@ -438,6 +443,7 @@ test/test_team_success_rates.py
 test/test_team_talent.py
 test/test_teams_api.py
 test/test_transfer_eligibility.py
+test/test_user_info.py
 test/test_venue.py
 test/test_venues_api.py
 tox.ini

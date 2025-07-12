@@ -8,6 +8,7 @@ from cfbd.api.conferences_api import ConferencesApi
 from cfbd.api.draft_api import DraftApi
 from cfbd.api.drives_api import DrivesApi
 from cfbd.api.games_api import GamesApi
+from cfbd.api.info_api import InfoApi
 from cfbd.api.metrics_api import MetricsApi
 from cfbd.api.players_api import PlayersApi
 from cfbd.api.plays_api import PlaysApi
