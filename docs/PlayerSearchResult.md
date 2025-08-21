@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **first_name** | **str** |  | 
 **last_name** | **str** |  | 
 **weight** | **int** |  | 
-**height** | **int** |  | 
+**height** | **float** |  | 
 **jersey** | **int** |  | 
 **position** | **str** |  | 
 **hometown** | **str** |  | 

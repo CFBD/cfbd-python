@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **first_name** | **str** |  | 
 **last_name** | **str** |  | 
 **team** | **str** |  | 
-**height** | **int** |  | 
+**height** | **float** |  | 
 **weight** | **int** |  | 
 **jersey** | **int** |  | 
 **year** | **int** |  | 

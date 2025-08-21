@@ -17,7 +17,7 @@ Name | Type | Description | Notes
 **pick** | **int** |  | 
 **name** | **str** |  | 
 **position** | **str** |  | 
-**height** | **int** |  | 
+**height** | **float** |  | 
 **weight** | **int** |  | 
 **pre_draft_ranking** | **int** |  | 
 **pre_draft_position_ranking** | **int** |  | 
