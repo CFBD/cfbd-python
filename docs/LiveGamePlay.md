@@ -21,7 +21,7 @@ Name | Type | Description | Notes
 **epa** | **float** |  | 
 **garbage_time** | **bool** |  | 
 **success** | **bool** |  | 
-**rush_pash** | **str** |  | 
+**rush_pass** | **str** |  | 
 **down_type** | **str** |  | 
 **play_text** | **str** |  | 
 
