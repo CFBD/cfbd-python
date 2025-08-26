@@ -208,7 +208,7 @@ with cfbd.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = cfbd.TeamsApi(api_client)
     team = 'team_example' # str | Optional team filter (optional)
-    year = 56 # int | Optional year filter, defaults to 2023 (optional)
+    year = 56 # int | Optional year filter, defaults to 2025 (optional)
 
     try:
         api_response = api_instance.get_roster(team=team, year=year)
@@ -225,7 +225,7 @@ with cfbd.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **team** | **str**| Optional team filter | [optional] 
- **year** | **int**| Optional year filter, defaults to 2023 | [optional] 
+ **year** | **int**| Optional year filter, defaults to 2025 | [optional] 
 
 ### Return type
 
