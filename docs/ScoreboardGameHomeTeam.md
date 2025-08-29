@@ -4,6 +4,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**win_probability** | **float** |  | 
 **line_scores** | **List[int]** |  | 
 **points** | **int** |  | 
 **classification** | [**DivisionClassification**](DivisionClassification.md) |  | 
