@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 **drives** | **int** |  | 
 **scoring_opportunities** | **int** |  | 
 **points_per_opportunity** | **float** |  | 
+**average_start_yard_line** | **float** |  | 
 **plays** | **int** |  | 
 **line_yards** | **float** |  | 
 **line_yards_per_rush** | **float** |  | 
@@ -29,6 +30,7 @@ Name | Type | Description | Notes
 **standard_down_success_rate** | **float** |  | 
 **passing_down_success_rate** | **float** |  | 
 **explosiveness** | **float** |  | 
+**deserve_to_win** | **float** | Deserve-to-win metric for this team | [optional] 
 
 ## Example
 
