@@ -20,6 +20,7 @@ Name | Type | Description | Notes
 **end_yardline** | **int** |  | 
 **end_yards_to_goal** | **int** |  | 
 **end_time** | [**PlayClock**](PlayClock.md) |  | 
+**elapsed** | [**PlayClock**](PlayClock.md) |  | 
 **plays** | **int** |  | 
 **yards** | **int** |  | 
 **drive_result** | **str** |  | 
