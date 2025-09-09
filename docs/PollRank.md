@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **rank** | **int** |  | 
+**team_id** | **int** |  | 
 **school** | **str** |  | 
 **conference** | **str** |  | 
 **first_place_votes** | **int** |  | 
