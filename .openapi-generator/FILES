@@ -124,6 +124,7 @@ cfbd/models/scoreboard_game_weather.py
 cfbd/models/season_type.py
 cfbd/models/stats_by_quarter.py
 cfbd/models/team.py
+cfbd/models/team_ats.py
 cfbd/models/team_elo.py
 cfbd/models/team_explosiveness.py
 cfbd/models/team_field_position.py
@@ -266,6 +267,7 @@ docs/SeasonType.md
 docs/StatsApi.md
 docs/StatsByQuarter.md
 docs/Team.md
+docs/TeamATS.md
 docs/TeamElo.md
 docs/TeamExplosiveness.md
 docs/TeamFPI.md
@@ -415,6 +417,7 @@ test/test_season_type.py
 test/test_stats_api.py
 test/test_stats_by_quarter.py
 test/test_team.py
+test/test_team_ats.py
 test/test_team_elo.py
 test/test_team_explosiveness.py
 test/test_team_field_position.py

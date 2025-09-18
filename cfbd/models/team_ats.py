@@ -19,28 +19,23 @@ import re  # noqa: F401
 import json
 
 
-from typing import List, Optional
-from pydantic import BaseModel, Field, StrictInt, StrictStr, conlist, validator
-from cfbd.models.game_team_stats_team_stat import GameTeamStatsTeamStat
+from typing import Optional, Union
+from pydantic import BaseModel, Field, StrictFloat, StrictInt, StrictStr
 
-class GameTeamStatsTeam(BaseModel):
+class TeamATS(BaseModel):
     """
-    GameTeamStatsTeam
+    TeamATS
     """
+    year: StrictInt = Field(...)
     team_id: StrictInt = Field(default=..., alias="teamId")
     team: StrictStr = Field(...)
     conference: Optional[StrictStr] = Field(...)
-    home_away: StrictStr = Field(default=..., alias="homeAway")
-    points: Optional[StrictInt] = Field(...)
-    stats: conlist(GameTeamStatsTeamStat) = Field(...)
-    __properties = ["teamId", "team", "conference", "homeAway", "points", "stats"]
-
-    @validator('home_away')
-    def home_away_validate_enum(cls, value):
-        """Validates the enum"""
-        if value not in ('home', 'away',):
-            raise ValueError("must be one of enum values ('home', 'away')")
-        return value
+    games: StrictInt = Field(...)
+    ats_wins: StrictInt = Field(default=..., alias="atsWins")
+    ats_losses: StrictInt = Field(default=..., alias="atsLosses")
+    ats_pushes: StrictInt = Field(default=..., alias="atsPushes")
+    avg_cover_margin: Optional[Union[StrictFloat, StrictInt]] = Field(default=..., alias="avgCoverMargin")
+    __properties = ["year", "teamId", "team", "conference", "games", "atsWins", "atsLosses", "atsPushes", "avgCoverMargin"]
 
     class Config:
         """Pydantic configuration"""
@@ -56,8 +51,8 @@ class GameTeamStatsTeam(BaseModel):
         return json.dumps(self.to_dict())
 
     @classmethod
-    def from_json(cls, json_str: str) -> GameTeamStatsTeam:
-        """Create an instance of GameTeamStatsTeam from a JSON string"""
+    def from_json(cls, json_str: str) -> TeamATS:
+        """Create an instance of TeamATS from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
     def to_dict(self):
@@ -66,41 +61,37 @@ class GameTeamStatsTeam(BaseModel):
                           exclude={
                           },
                           exclude_none=True)
-        # override the default output from pydantic by calling `to_dict()` of each item in stats (list)
-        _items = []
-        if self.stats:
-            for _item in self.stats:
-                if _item:
-                    _items.append(_item.to_dict())
-            _dict['stats'] = _items
         # set to None if conference (nullable) is None
         # and __fields_set__ contains the field
         if self.conference is None and "conference" in self.__fields_set__:
             _dict['conference'] = None
 
-        # set to None if points (nullable) is None
+        # set to None if avg_cover_margin (nullable) is None
         # and __fields_set__ contains the field
-        if self.points is None and "points" in self.__fields_set__:
-            _dict['points'] = None
+        if self.avg_cover_margin is None and "avg_cover_margin" in self.__fields_set__:
+            _dict['avgCoverMargin'] = None
 
         return _dict
 
     @classmethod
-    def from_dict(cls, obj: dict) -> GameTeamStatsTeam:
-        """Create an instance of GameTeamStatsTeam from a dict"""
+    def from_dict(cls, obj: dict) -> TeamATS:
+        """Create an instance of TeamATS from a dict"""
         if obj is None:
             return None
 
         if not isinstance(obj, dict):
-            return GameTeamStatsTeam.parse_obj(obj)
+            return TeamATS.parse_obj(obj)
 
-        _obj = GameTeamStatsTeam.parse_obj({
+        _obj = TeamATS.parse_obj({
+            "year": obj.get("year"),
             "team_id": obj.get("teamId"),
             "team": obj.get("team"),
             "conference": obj.get("conference"),
-            "home_away": obj.get("homeAway"),
-            "points": obj.get("points"),
-            "stats": [GameTeamStatsTeamStat.from_dict(_item) for _item in obj.get("stats")] if obj.get("stats") is not None else None
+            "games": obj.get("games"),
+            "ats_wins": obj.get("atsWins"),
+            "ats_losses": obj.get("atsLosses"),
+            "ats_pushes": obj.get("atsPushes"),
+            "avg_cover_margin": obj.get("avgCoverMargin")
         })
         return _obj
 
