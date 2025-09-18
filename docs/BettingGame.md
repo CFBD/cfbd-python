@@ -9,10 +9,12 @@ Name | Type | Description | Notes
 **season_type** | [**SeasonType**](SeasonType.md) |  | 
 **week** | **int** |  | 
 **start_date** | **datetime** |  | 
+**home_team_id** | **int** |  | 
 **home_team** | **str** |  | 
 **home_conference** | **str** |  | 
 **home_classification** | [**DivisionClassification**](DivisionClassification.md) |  | 
 **home_score** | **int** |  | 
+**away_team_id** | **int** |  | 
 **away_team** | **str** |  | 
 **away_conference** | **str** |  | 
 **away_classification** | [**DivisionClassification**](DivisionClassification.md) |  | 
