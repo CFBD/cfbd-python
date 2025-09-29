@@ -171,7 +171,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_roster**
-> List[RosterPlayer] get_roster(team=team, year=year)
+> List[RosterPlayer] get_roster(team=team, year=year, classification=classification)
 
 
 
@@ -184,6 +184,7 @@ Retrieves historical roster data
 import time
 import os
 import cfbd
+from cfbd.models.division_classification import DivisionClassification
 from cfbd.models.roster_player import RosterPlayer
 from cfbd.rest import ApiException
 from pprint import pprint
@@ -210,9 +211,10 @@ with cfbd.ApiClient(configuration) as api_client:
     api_instance = cfbd.TeamsApi(api_client)
     team = 'team_example' # str | Optional team filter (optional)
     year = 56 # int | Optional year filter, defaults to 2025 (optional)
+    classification = cfbd.DivisionClassification() # DivisionClassification | Optional filter to only include players from FBS or FCS teams (optional)
 
     try:
-        api_response = api_instance.get_roster(team=team, year=year)
+        api_response = api_instance.get_roster(team=team, year=year, classification=classification)
         print("The response of TeamsApi->get_roster:\n")
         pprint(api_response)
     except Exception as e:
@@ -227,6 +229,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **team** | **str**| Optional team filter | [optional] 
  **year** | **int**| Optional year filter, defaults to 2025 | [optional] 
+ **classification** | [**DivisionClassification**](.md)| Optional filter to only include players from FBS or FCS teams | [optional] 
 
 ### Return type
 

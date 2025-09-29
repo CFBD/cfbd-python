@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **game_id** | **int** |  | 
 **season** | **int** |  | 
+**season_type** | [**SeasonTypeDB**](SeasonTypeDB.md) |  | 
 **week** | **int** |  | 
 **team** | **str** |  | 
 **opponent** | **str** |  | 

@@ -65,6 +65,8 @@ cfbd/models/draft_team.py
 cfbd/models/drive.py
 cfbd/models/field_goal_ep.py
 cfbd/models/game.py
+cfbd/models/game_havoc_stats.py
+cfbd/models/game_havoc_stats_offense.py
 cfbd/models/game_line.py
 cfbd/models/game_media.py
 cfbd/models/game_player_stat_categories.py
@@ -122,6 +124,7 @@ cfbd/models/scoreboard_game_home_team.py
 cfbd/models/scoreboard_game_venue.py
 cfbd/models/scoreboard_game_weather.py
 cfbd/models/season_type.py
+cfbd/models/season_type_db.py
 cfbd/models/stats_by_quarter.py
 cfbd/models/team.py
 cfbd/models/team_ats.py
@@ -199,6 +202,8 @@ docs/Drive.md
 docs/DrivesApi.md
 docs/FieldGoalEP.md
 docs/Game.md
+docs/GameHavocStats.md
+docs/GameHavocStatsOffense.md
 docs/GameLine.md
 docs/GameMedia.md
 docs/GamePlayerStatCategories.md
@@ -264,6 +269,7 @@ docs/ScoreboardGameHomeTeam.md
 docs/ScoreboardGameVenue.md
 docs/ScoreboardGameWeather.md
 docs/SeasonType.md
+docs/SeasonTypeDB.md
 docs/StatsApi.md
 docs/StatsByQuarter.md
 docs/Team.md
@@ -349,6 +355,8 @@ test/test_drive.py
 test/test_drives_api.py
 test/test_field_goal_ep.py
 test/test_game.py
+test/test_game_havoc_stats.py
+test/test_game_havoc_stats_offense.py
 test/test_game_line.py
 test/test_game_media.py
 test/test_game_player_stat_categories.py
@@ -414,6 +422,7 @@ test/test_scoreboard_game_home_team.py
 test/test_scoreboard_game_venue.py
 test/test_scoreboard_game_weather.py
 test/test_season_type.py
+test/test_season_type_db.py
 test/test_stats_api.py
 test/test_stats_by_quarter.py
 test/test_team.py
