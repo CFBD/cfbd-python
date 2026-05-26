@@ -31,9 +31,10 @@ Please follow the [installation procedure](#installation--usage) and then run th
 
 ```python
 
+import os
 import time
 import cfbd
-from cfbd.rest import ApiException
+from cfbd.exceptions import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://api.collegefootballdata.com
