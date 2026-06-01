@@ -10,8 +10,8 @@ Name | Type | Description | Notes
 **position** | **str** |  | 
 **team** | **str** |  | 
 **conference** | **str** |  | 
-**average_ppa** | [**PlayerSeasonPredictedPointsAddedAveragePPA**](PlayerSeasonPredictedPointsAddedAveragePPA.md) |  | 
-**total_ppa** | [**PlayerSeasonPredictedPointsAddedAveragePPA**](PlayerSeasonPredictedPointsAddedAveragePPA.md) |  | 
+**average_ppa** | [**PlayerSeasonOverviewPPAAverage**](PlayerSeasonOverviewPPAAverage.md) |  | 
+**total_ppa** | [**PlayerSeasonOverviewPPAAverage**](PlayerSeasonOverviewPPAAverage.md) |  | 
 
 ## Example
 
