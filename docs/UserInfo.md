@@ -5,7 +5,14 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **patron_level** | **float** |  | 
+**tier_name** | **str** |  | 
+**monthly_limit** | **float** |  | 
 **remaining_calls** | **float** |  | 
+**used_calls** | **float** |  | 
+**reset_at** | **str** |  | 
+**shared_pool** | **bool** |  | 
+**products** | **List[str]** |  | 
+**features** | [**UserFeatureAccess**](UserFeatureAccess.md) |  | 
 
 ## Example
 
