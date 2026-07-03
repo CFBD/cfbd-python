@@ -8,7 +8,9 @@ Method | HTTP request | Description
 [**get_advanced_season_stats**](StatsApi.md#get_advanced_season_stats) | **GET** /stats/season/advanced | 
 [**get_categories**](StatsApi.md#get_categories) | **GET** /stats/categories | 
 [**get_game_havoc_stats**](StatsApi.md#get_game_havoc_stats) | **GET** /stats/game/havoc | 
+[**get_player_game_success_rates**](StatsApi.md#get_player_game_success_rates) | **GET** /stats/player/success/game | 
 [**get_player_season_stats**](StatsApi.md#get_player_season_stats) | **GET** /stats/player/season | 
+[**get_player_season_success_rates**](StatsApi.md#get_player_season_success_rates) | **GET** /stats/player/success | 
 [**get_team_stats**](StatsApi.md#get_team_stats) | **GET** /stats/season | 
 
 
@@ -339,6 +341,97 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **get_player_game_success_rates**
+> List[PlayerGameSuccessRate] get_player_game_success_rates(year, week=week, season_type=season_type, conference=conference, team=team, player_id=player_id, threshold=threshold, exclude_garbage_time=exclude_garbage_time)
+
+
+
+Retrieves player passing and rushing success rates by game
+
+### Example
+
+* Bearer Authentication (apiKey):
+```python
+import time
+import os
+import cfbd
+from cfbd.models.player_game_success_rate import PlayerGameSuccessRate
+from cfbd.models.season_type import SeasonType
+from cfbd.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://api.collegefootballdata.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = cfbd.Configuration(
+    host = "https://api.collegefootballdata.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: apiKey
+configuration = cfbd.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+with cfbd.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cfbd.StatsApi(api_client)
+    year = 56 # int | Required year filter
+    week = 56 # int | Week filter, required if team and playerId not specified (optional)
+    season_type = cfbd.SeasonType() # SeasonType | Optional season type filter (optional)
+    conference = 'conference_example' # str | Optional conference abbreviation filter (optional)
+    team = 'team_example' # str | Optional team filter (optional)
+    player_id = 56 # int | Optional player ID filter (optional)
+    threshold = 56 # int | Optional minimum credited passing plus rushing plays (optional)
+    exclude_garbage_time = True # bool | Optional flag to exclude garbage time plays (optional)
+
+    try:
+        api_response = api_instance.get_player_game_success_rates(year, week=week, season_type=season_type, conference=conference, team=team, player_id=player_id, threshold=threshold, exclude_garbage_time=exclude_garbage_time)
+        print("The response of StatsApi->get_player_game_success_rates:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling StatsApi->get_player_game_success_rates: %s\n" % e)
+```
+
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **year** | **int**| Required year filter | 
+ **week** | **int**| Week filter, required if team and playerId not specified | [optional] 
+ **season_type** | [**SeasonType**](.md)| Optional season type filter | [optional] 
+ **conference** | **str**| Optional conference abbreviation filter | [optional] 
+ **team** | **str**| Optional team filter | [optional] 
+ **player_id** | **int**| Optional player ID filter | [optional] 
+ **threshold** | **int**| Optional minimum credited passing plus rushing plays | [optional] 
+ **exclude_garbage_time** | **bool**| Optional flag to exclude garbage time plays | [optional] 
+
+### Return type
+
+[**List[PlayerGameSuccessRate]**](PlayerGameSuccessRate.md)
+
+### Authorization
+
+[apiKey](../README.md#apiKey)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Ok |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **get_player_season_stats**
 > List[PlayerStat] get_player_season_stats(year, conference=conference, team=team, start_week=start_week, end_week=end_week, season_type=season_type, category=category)
 
@@ -411,6 +504,99 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**List[PlayerStat]**](PlayerStat.md)
+
+### Authorization
+
+[apiKey](../README.md#apiKey)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Ok |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_player_season_success_rates**
+> List[PlayerSeasonSuccessRate] get_player_season_success_rates(year=year, conference=conference, team=team, player_id=player_id, season_type=season_type, start_week=start_week, end_week=end_week, threshold=threshold, exclude_garbage_time=exclude_garbage_time)
+
+
+
+Retrieves player passing and rushing success rates by season
+
+### Example
+
+* Bearer Authentication (apiKey):
+```python
+import time
+import os
+import cfbd
+from cfbd.models.player_season_success_rate import PlayerSeasonSuccessRate
+from cfbd.models.season_type import SeasonType
+from cfbd.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://api.collegefootballdata.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = cfbd.Configuration(
+    host = "https://api.collegefootballdata.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: apiKey
+configuration = cfbd.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+with cfbd.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cfbd.StatsApi(api_client)
+    year = 56 # int | Year filter, required if playerId not specified (optional)
+    conference = 'conference_example' # str | Optional conference abbreviation filter (optional)
+    team = 'team_example' # str | Optional team filter (optional)
+    player_id = 56 # int | Player ID filter, required if year not specified (optional)
+    season_type = cfbd.SeasonType() # SeasonType | Optional season type filter (optional)
+    start_week = 56 # int | Optional starting week range (optional)
+    end_week = 56 # int | Optional ending week range (optional)
+    threshold = 56 # int | Optional minimum credited passing plus rushing plays (optional)
+    exclude_garbage_time = True # bool | Optional flag to exclude garbage time plays (optional)
+
+    try:
+        api_response = api_instance.get_player_season_success_rates(year=year, conference=conference, team=team, player_id=player_id, season_type=season_type, start_week=start_week, end_week=end_week, threshold=threshold, exclude_garbage_time=exclude_garbage_time)
+        print("The response of StatsApi->get_player_season_success_rates:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling StatsApi->get_player_season_success_rates: %s\n" % e)
+```
+
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **year** | **int**| Year filter, required if playerId not specified | [optional] 
+ **conference** | **str**| Optional conference abbreviation filter | [optional] 
+ **team** | **str**| Optional team filter | [optional] 
+ **player_id** | **int**| Player ID filter, required if year not specified | [optional] 
+ **season_type** | [**SeasonType**](.md)| Optional season type filter | [optional] 
+ **start_week** | **int**| Optional starting week range | [optional] 
+ **end_week** | **int**| Optional ending week range | [optional] 
+ **threshold** | **int**| Optional minimum credited passing plus rushing plays | [optional] 
+ **exclude_garbage_time** | **bool**| Optional flag to exclude garbage time plays | [optional] 
+
+### Return type
+
+[**List[PlayerSeasonSuccessRate]**](PlayerSeasonSuccessRate.md)
 
 ### Authorization
 

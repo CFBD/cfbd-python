@@ -96,6 +96,7 @@ cfbd/models/play_type.py
 cfbd/models/play_win_probability.py
 cfbd/models/player_game_predicted_points_added.py
 cfbd/models/player_game_predicted_points_added_average_ppa.py
+cfbd/models/player_game_success_rate.py
 cfbd/models/player_game_usage.py
 cfbd/models/player_ppa.py
 cfbd/models/player_ppa_chart_item.py
@@ -107,8 +108,10 @@ cfbd/models/player_season_overview_ppa.py
 cfbd/models/player_season_overview_ppa_average.py
 cfbd/models/player_season_overview_stat.py
 cfbd/models/player_season_predicted_points_added.py
+cfbd/models/player_season_success_rate.py
 cfbd/models/player_stat.py
 cfbd/models/player_stats_by_quarter.py
+cfbd/models/player_success_rate_split.py
 cfbd/models/player_transfer.py
 cfbd/models/player_usage.py
 cfbd/models/player_usage_usage.py
@@ -248,6 +251,7 @@ docs/PlayType.md
 docs/PlayWinProbability.md
 docs/PlayerGamePredictedPointsAdded.md
 docs/PlayerGamePredictedPointsAddedAveragePPA.md
+docs/PlayerGameSuccessRate.md
 docs/PlayerGameUsage.md
 docs/PlayerPPA.md
 docs/PlayerPPAChartItem.md
@@ -259,8 +263,10 @@ docs/PlayerSeasonOverviewPPA.md
 docs/PlayerSeasonOverviewPPAAverage.md
 docs/PlayerSeasonOverviewStat.md
 docs/PlayerSeasonPredictedPointsAdded.md
+docs/PlayerSeasonSuccessRate.md
 docs/PlayerStat.md
 docs/PlayerStatsByQuarter.md
+docs/PlayerSuccessRateSplit.md
 docs/PlayerTransfer.md
 docs/PlayerUsage.md
 docs/PlayerUsageUsage.md
@@ -413,6 +419,7 @@ test/test_play_type.py
 test/test_play_win_probability.py
 test/test_player_game_predicted_points_added.py
 test/test_player_game_predicted_points_added_average_ppa.py
+test/test_player_game_success_rate.py
 test/test_player_game_usage.py
 test/test_player_ppa.py
 test/test_player_ppa_chart_item.py
@@ -424,8 +431,10 @@ test/test_player_season_overview_ppa.py
 test/test_player_season_overview_ppa_average.py
 test/test_player_season_overview_stat.py
 test/test_player_season_predicted_points_added.py
+test/test_player_season_success_rate.py
 test/test_player_stat.py
 test/test_player_stats_by_quarter.py
+test/test_player_success_rate_split.py
 test/test_player_transfer.py
 test/test_player_usage.py
 test/test_player_usage_usage.py
