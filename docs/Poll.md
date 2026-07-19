@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **poll** | **str** |  | 
+**is_final** | **bool** |  | 
 **ranks** | [**List[PollRank]**](PollRank.md) |  | 
 
 ## Example

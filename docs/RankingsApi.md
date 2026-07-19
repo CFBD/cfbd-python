@@ -8,7 +8,7 @@ Method | HTTP request | Description
 
 
 # **get_rankings**
-> List[PollWeek] get_rankings(year, season_type=season_type, week=week)
+> List[PollWeek] get_rankings(year, season_type=season_type, week=week, poll=poll, latest=latest, final=final)
 
 
 
@@ -22,6 +22,7 @@ import time
 import os
 import cfbd
 from cfbd.models.poll_week import PollWeek
+from cfbd.models.ranking_poll import RankingPoll
 from cfbd.models.season_type import SeasonType
 from cfbd.rest import ApiException
 from pprint import pprint
@@ -49,9 +50,12 @@ with cfbd.ApiClient(configuration) as api_client:
     year = 56 # int | Required year filter
     season_type = cfbd.SeasonType() # SeasonType | Optional season type filter (optional)
     week = 3.4 # float | Optional week filter (optional)
+    poll = cfbd.RankingPoll() # RankingPoll | Optional poll filter (optional)
+    latest = True # bool | Return the latest CFP snapshot, preferring the marked final (optional)
+    final = True # bool | Return the marked final CFP snapshot (optional)
 
     try:
-        api_response = api_instance.get_rankings(year, season_type=season_type, week=week)
+        api_response = api_instance.get_rankings(year, season_type=season_type, week=week, poll=poll, latest=latest, final=final)
         print("The response of RankingsApi->get_rankings:\n")
         pprint(api_response)
     except Exception as e:
@@ -67,6 +71,9 @@ Name | Type | Description  | Notes
  **year** | **int**| Required year filter | 
  **season_type** | [**SeasonType**](.md)| Optional season type filter | [optional] 
  **week** | **float**| Optional week filter | [optional] 
+ **poll** | [**RankingPoll**](.md)| Optional poll filter | [optional] 
+ **latest** | **bool**| Return the latest CFP snapshot, preferring the marked final | [optional] 
+ **final** | **bool**| Return the marked final CFP snapshot | [optional] 
 
 ### Return type
 
@@ -85,6 +92,7 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | Ok |  -  |
+**400** | Validation error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

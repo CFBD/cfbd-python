@@ -37,6 +37,7 @@ Name | Type | Description | Notes
 **excitement_index** | **float** |  | 
 **highlights** | **str** |  | 
 **notes** | **str** |  | 
+**playoff** | [**GamePlayoff**](GamePlayoff.md) |  | 
 
 ## Example
 

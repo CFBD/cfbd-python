@@ -350,7 +350,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_games**
-> List[Game] get_games(year=year, week=week, season_type=season_type, classification=classification, team=team, home=home, away=away, conference=conference, id=id)
+> List[Game] get_games(year=year, week=week, season_type=season_type, classification=classification, team=team, home=home, away=away, conference=conference, id=id, competition=competition, round=round)
 
 
 
@@ -365,6 +365,8 @@ import os
 import cfbd
 from cfbd.models.division_classification import DivisionClassification
 from cfbd.models.game import Game
+from cfbd.models.playoff_competition import PlayoffCompetition
+from cfbd.models.playoff_round import PlayoffRound
 from cfbd.models.season_type import SeasonType
 from cfbd.rest import ApiException
 from pprint import pprint
@@ -398,9 +400,11 @@ with cfbd.ApiClient(configuration) as api_client:
     away = 'away_example' # str | Optional away team filter (optional)
     conference = 'conference_example' # str | Optional conference filter (optional)
     id = 56 # int | Game id filter to retrieve a single game (optional)
+    competition = cfbd.PlayoffCompetition() # PlayoffCompetition | Optional playoff competition filter (optional)
+    round = cfbd.PlayoffRound() # PlayoffRound | Optional playoff round filter; requires competition (optional)
 
     try:
-        api_response = api_instance.get_games(year=year, week=week, season_type=season_type, classification=classification, team=team, home=home, away=away, conference=conference, id=id)
+        api_response = api_instance.get_games(year=year, week=week, season_type=season_type, classification=classification, team=team, home=home, away=away, conference=conference, id=id, competition=competition, round=round)
         print("The response of GamesApi->get_games:\n")
         pprint(api_response)
     except Exception as e:
@@ -422,6 +426,8 @@ Name | Type | Description  | Notes
  **away** | **str**| Optional away team filter | [optional] 
  **conference** | **str**| Optional conference filter | [optional] 
  **id** | **int**| Game id filter to retrieve a single game | [optional] 
+ **competition** | [**PlayoffCompetition**](.md)| Optional playoff competition filter | [optional] 
+ **round** | [**PlayoffRound**](.md)| Optional playoff round filter; requires competition | [optional] 
 
 ### Return type
 
@@ -440,6 +446,7 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | Ok |  -  |
+**400** | Validation error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

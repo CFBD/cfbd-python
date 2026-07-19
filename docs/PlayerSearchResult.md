@@ -16,6 +16,9 @@ Name | Type | Description | Notes
 **hometown** | **str** |  | 
 **team_color** | **str** |  | 
 **team_color_secondary** | **str** |  | 
+**active_start_year** | **int** |  | 
+**active_end_year** | **int** |  | 
+**team_stints** | [**List[PlayerSearchTeamStint]**](PlayerSearchTeamStint.md) |  | 
 
 ## Example
 
