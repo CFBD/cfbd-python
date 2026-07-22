@@ -6,6 +6,7 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**get_conference_sp**](RatingsApi.md#get_conference_sp) | **GET** /ratings/sp/conferences | 
 [**get_elo**](RatingsApi.md#get_elo) | **GET** /ratings/elo | 
+[**get_expanded_srs**](RatingsApi.md#get_expanded_srs) | **GET** /ratings/srs/expanded | 
 [**get_fpi**](RatingsApi.md#get_fpi) | **GET** /ratings/fpi | 
 [**get_sp**](RatingsApi.md#get_sp) | **GET** /ratings/sp | 
 [**get_srs**](RatingsApi.md#get_srs) | **GET** /ratings/srs | 
@@ -160,6 +161,89 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**List[TeamElo]**](TeamElo.md)
+
+### Authorization
+
+[apiKey](../README.md#apiKey)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Ok |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_expanded_srs**
+> List[ExpandedTeamSRS] get_expanded_srs(year=year, team=team, conference=conference, classification=classification)
+
+
+
+Retrieves expanded historical SRS (including FCS) for a year or team
+
+### Example
+
+* Bearer Authentication (apiKey):
+```python
+import time
+import os
+import cfbd
+from cfbd.models.division_classification import DivisionClassification
+from cfbd.models.expanded_team_srs import ExpandedTeamSRS
+from cfbd.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://api.collegefootballdata.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = cfbd.Configuration(
+    host = "https://api.collegefootballdata.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: apiKey
+configuration = cfbd.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+with cfbd.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cfbd.RatingsApi(api_client)
+    year = 56 # int | Year filter, required if team not specified (optional)
+    team = 'team_example' # str | Team filter, required if year not specified (optional)
+    conference = 'conference_example' # str | Optional conference filter (optional)
+    classification = cfbd.DivisionClassification() # DivisionClassification | Optional division classification filter (fbs or fcs) (optional)
+
+    try:
+        api_response = api_instance.get_expanded_srs(year=year, team=team, conference=conference, classification=classification)
+        print("The response of RatingsApi->get_expanded_srs:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling RatingsApi->get_expanded_srs: %s\n" % e)
+```
+
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **year** | **int**| Year filter, required if team not specified | [optional] 
+ **team** | **str**| Team filter, required if year not specified | [optional] 
+ **conference** | **str**| Optional conference filter | [optional] 
+ **classification** | [**DivisionClassification**](.md)| Optional division classification filter (fbs or fcs) | [optional] 
+
+### Return type
+
+[**List[ExpandedTeamSRS]**](ExpandedTeamSRS.md)
 
 ### Authorization
 

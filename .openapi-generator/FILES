@@ -66,6 +66,7 @@ cfbd/models/draft_pick_hometown_info.py
 cfbd/models/draft_position.py
 cfbd/models/draft_team.py
 cfbd/models/drive.py
+cfbd/models/expanded_team_srs.py
 cfbd/models/field_goal_ep.py
 cfbd/models/game.py
 cfbd/models/game_havoc_stats.py
@@ -238,6 +239,7 @@ docs/DraftPosition.md
 docs/DraftTeam.md
 docs/Drive.md
 docs/DrivesApi.md
+docs/ExpandedTeamSRS.md
 docs/FieldGoalEP.md
 docs/Game.md
 docs/GameHavocStats.md
@@ -427,6 +429,7 @@ test/test_draft_position.py
 test/test_draft_team.py
 test/test_drive.py
 test/test_drives_api.py
+test/test_expanded_team_srs.py
 test/test_field_goal_ep.py
 test/test_game.py
 test/test_game_havoc_stats.py
