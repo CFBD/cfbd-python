@@ -165,7 +165,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_predicted_points_added_by_game**
-> List[TeamGamePredictedPointsAdded] get_predicted_points_added_by_game(year, week=week, season_type=season_type, team=team, conference=conference, exclude_garbage_time=exclude_garbage_time)
+> List[TeamGamePredictedPointsAdded] get_predicted_points_added_by_game(year, week=week, season_type=season_type, team=team, conference=conference, exclude_garbage_time=exclude_garbage_time, classification=classification)
 
 
 
@@ -178,6 +178,7 @@ Retrieves historical team PPA metrics by game
 import time
 import os
 import cfbd
+from cfbd.models.division_classification import DivisionClassification
 from cfbd.models.season_type import SeasonType
 from cfbd.models.team_game_predicted_points_added import TeamGamePredictedPointsAdded
 from cfbd.rest import ApiException
@@ -209,9 +210,10 @@ with cfbd.ApiClient(configuration) as api_client:
     team = 'team_example' # str | Optional team filter (optional)
     conference = 'conference_example' # str | Optional conference abbreviation filter (optional)
     exclude_garbage_time = True # bool | Optional flag to exclude garbage time plays (optional)
+    classification = cfbd.DivisionClassification() # DivisionClassification | Optional division classification filter, defaults to fbs (optional)
 
     try:
-        api_response = api_instance.get_predicted_points_added_by_game(year, week=week, season_type=season_type, team=team, conference=conference, exclude_garbage_time=exclude_garbage_time)
+        api_response = api_instance.get_predicted_points_added_by_game(year, week=week, season_type=season_type, team=team, conference=conference, exclude_garbage_time=exclude_garbage_time, classification=classification)
         print("The response of MetricsApi->get_predicted_points_added_by_game:\n")
         pprint(api_response)
     except Exception as e:
@@ -230,6 +232,7 @@ Name | Type | Description  | Notes
  **team** | **str**| Optional team filter | [optional] 
  **conference** | **str**| Optional conference abbreviation filter | [optional] 
  **exclude_garbage_time** | **bool**| Optional flag to exclude garbage time plays | [optional] 
+ **classification** | [**DivisionClassification**](.md)| Optional division classification filter, defaults to fbs | [optional] 
 
 ### Return type
 
@@ -431,7 +434,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_predicted_points_added_by_team**
-> List[TeamSeasonPredictedPointsAdded] get_predicted_points_added_by_team(year=year, team=team, conference=conference, exclude_garbage_time=exclude_garbage_time)
+> List[TeamSeasonPredictedPointsAdded] get_predicted_points_added_by_team(year=year, team=team, conference=conference, exclude_garbage_time=exclude_garbage_time, classification=classification)
 
 
 
@@ -444,6 +447,7 @@ Retrieves historical team PPA metrics by season
 import time
 import os
 import cfbd
+from cfbd.models.division_classification import DivisionClassification
 from cfbd.models.team_season_predicted_points_added import TeamSeasonPredictedPointsAdded
 from cfbd.rest import ApiException
 from pprint import pprint
@@ -472,9 +476,10 @@ with cfbd.ApiClient(configuration) as api_client:
     team = 'team_example' # str | Team filter, required if year not specified (optional)
     conference = 'conference_example' # str | Conference abbreviation filter (optional)
     exclude_garbage_time = True # bool | Exclude garbage time plays (optional)
+    classification = cfbd.DivisionClassification() # DivisionClassification | Optional division classification filter, defaults to fbs (optional)
 
     try:
-        api_response = api_instance.get_predicted_points_added_by_team(year=year, team=team, conference=conference, exclude_garbage_time=exclude_garbage_time)
+        api_response = api_instance.get_predicted_points_added_by_team(year=year, team=team, conference=conference, exclude_garbage_time=exclude_garbage_time, classification=classification)
         print("The response of MetricsApi->get_predicted_points_added_by_team:\n")
         pprint(api_response)
     except Exception as e:
@@ -491,6 +496,7 @@ Name | Type | Description  | Notes
  **team** | **str**| Team filter, required if year not specified | [optional] 
  **conference** | **str**| Conference abbreviation filter | [optional] 
  **exclude_garbage_time** | **bool**| Exclude garbage time plays | [optional] 
+ **classification** | [**DivisionClassification**](.md)| Optional division classification filter, defaults to fbs | [optional] 
 
 ### Return type
 

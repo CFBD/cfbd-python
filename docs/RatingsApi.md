@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 
 # **get_conference_sp**
-> List[ConferenceSP] get_conference_sp(year=year, conference=conference)
+> List[ConferenceSP] get_conference_sp(year=year, conference=conference, classification=classification)
 
 
 
@@ -26,6 +26,7 @@ import time
 import os
 import cfbd
 from cfbd.models.conference_sp import ConferenceSP
+from cfbd.models.division_classification import DivisionClassification
 from cfbd.rest import ApiException
 from pprint import pprint
 
@@ -51,9 +52,10 @@ with cfbd.ApiClient(configuration) as api_client:
     api_instance = cfbd.RatingsApi(api_client)
     year = 56 # int | Optional year filter (optional)
     conference = 'conference_example' # str | Optional conference filter (optional)
+    classification = cfbd.DivisionClassification() # DivisionClassification | Optional division classification filter, defaults to fbs (optional)
 
     try:
-        api_response = api_instance.get_conference_sp(year=year, conference=conference)
+        api_response = api_instance.get_conference_sp(year=year, conference=conference, classification=classification)
         print("The response of RatingsApi->get_conference_sp:\n")
         pprint(api_response)
     except Exception as e:
@@ -68,6 +70,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **year** | **int**| Optional year filter | [optional] 
  **conference** | **str**| Optional conference filter | [optional] 
+ **classification** | [**DivisionClassification**](.md)| Optional division classification filter, defaults to fbs | [optional] 
 
 ### Return type
 

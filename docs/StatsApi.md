@@ -102,7 +102,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_advanced_season_stats**
-> List[AdvancedSeasonStat] get_advanced_season_stats(year=year, team=team, exclude_garbage_time=exclude_garbage_time, start_week=start_week, end_week=end_week)
+> List[AdvancedSeasonStat] get_advanced_season_stats(year=year, team=team, exclude_garbage_time=exclude_garbage_time, start_week=start_week, end_week=end_week, classification=classification)
 
 
 
@@ -116,6 +116,7 @@ import time
 import os
 import cfbd
 from cfbd.models.advanced_season_stat import AdvancedSeasonStat
+from cfbd.models.division_classification import DivisionClassification
 from cfbd.rest import ApiException
 from pprint import pprint
 
@@ -144,9 +145,10 @@ with cfbd.ApiClient(configuration) as api_client:
     exclude_garbage_time = True # bool | Garbage time exclusion filter, defaults to false (optional)
     start_week = 56 # int | Optional start week range filter (optional)
     end_week = 56 # int | Optional end week range filter (optional)
+    classification = cfbd.DivisionClassification() # DivisionClassification | Optional division classification filter, defaults to fbs (optional)
 
     try:
-        api_response = api_instance.get_advanced_season_stats(year=year, team=team, exclude_garbage_time=exclude_garbage_time, start_week=start_week, end_week=end_week)
+        api_response = api_instance.get_advanced_season_stats(year=year, team=team, exclude_garbage_time=exclude_garbage_time, start_week=start_week, end_week=end_week, classification=classification)
         print("The response of StatsApi->get_advanced_season_stats:\n")
         pprint(api_response)
     except Exception as e:
@@ -164,6 +166,7 @@ Name | Type | Description  | Notes
  **exclude_garbage_time** | **bool**| Garbage time exclusion filter, defaults to false | [optional] 
  **start_week** | **int**| Optional start week range filter | [optional] 
  **end_week** | **int**| Optional end week range filter | [optional] 
+ **classification** | [**DivisionClassification**](.md)| Optional division classification filter, defaults to fbs | [optional] 
 
 ### Return type
 
@@ -615,7 +618,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_team_stats**
-> List[TeamStat] get_team_stats(year=year, team=team, conference=conference, start_week=start_week, end_week=end_week)
+> List[TeamStat] get_team_stats(year=year, team=team, conference=conference, start_week=start_week, end_week=end_week, classification=classification)
 
 
 
@@ -628,6 +631,7 @@ Retrieves aggregated team season statistics
 import time
 import os
 import cfbd
+from cfbd.models.division_classification import DivisionClassification
 from cfbd.models.team_stat import TeamStat
 from cfbd.rest import ApiException
 from pprint import pprint
@@ -657,9 +661,10 @@ with cfbd.ApiClient(configuration) as api_client:
     conference = 'conference_example' # str | Optional conference filter (optional)
     start_week = 56 # int | Optional week start range filter (optional)
     end_week = 56 # int | Optional week end range filter (optional)
+    classification = cfbd.DivisionClassification() # DivisionClassification | Optional division classification filter, defaults to fbs (optional)
 
     try:
-        api_response = api_instance.get_team_stats(year=year, team=team, conference=conference, start_week=start_week, end_week=end_week)
+        api_response = api_instance.get_team_stats(year=year, team=team, conference=conference, start_week=start_week, end_week=end_week, classification=classification)
         print("The response of StatsApi->get_team_stats:\n")
         pprint(api_response)
     except Exception as e:
@@ -677,6 +682,7 @@ Name | Type | Description  | Notes
  **conference** | **str**| Optional conference filter | [optional] 
  **start_week** | **int**| Optional week start range filter | [optional] 
  **end_week** | **int**| Optional week end range filter | [optional] 
+ **classification** | [**DivisionClassification**](.md)| Optional division classification filter, defaults to fbs | [optional] 
 
 ### Return type
 
