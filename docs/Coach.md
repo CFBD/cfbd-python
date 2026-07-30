@@ -4,6 +4,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**id** | **int** |  | 
 **first_name** | **str** |  | 
 **last_name** | **str** |  | 
 **hire_date** | **datetime** |  | 

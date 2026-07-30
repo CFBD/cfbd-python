@@ -4,12 +4,15 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**team_id** | **int** |  | 
 **school** | **str** |  | 
+**conference** | **str** |  | 
 **year** | **int** |  | 
 **games** | **int** |  | 
 **wins** | **int** |  | 
 **losses** | **int** |  | 
 **ties** | **int** |  | 
+**win_percentage** | **float** |  | 
 **preseason_rank** | **int** |  | 
 **postseason_rank** | **int** |  | 
 **srs** | **float** |  | 
