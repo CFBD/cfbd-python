@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 
 
-Retrieves historical poll data
+Returns historical poll rankings.
 
 ### Example
 
@@ -47,12 +47,12 @@ configuration = cfbd.Configuration(
 with cfbd.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = cfbd.RankingsApi(api_client)
-    year = 56 # int | Required year filter
-    season_type = cfbd.SeasonType() # SeasonType | Optional season type filter (optional)
-    week = 3.4 # float | Optional week filter (optional)
-    poll = cfbd.RankingPoll() # RankingPoll | Optional poll filter (optional)
-    latest = True # bool | Return the latest CFP snapshot, preferring the marked final (optional)
-    final = True # bool | Return the marked final CFP snapshot (optional)
+    year = 56 # int | Season year.
+    season_type = cfbd.SeasonType() # SeasonType | Season type. (optional)
+    week = 3.4 # float | Poll week. (optional)
+    poll = cfbd.RankingPoll() # RankingPoll | Poll name. (optional)
+    latest = True # bool | Returns the latest CFP snapshot when `true`, preferring the snapshot marked as final. Requires `poll=cfp` and cannot be combined with `final`. (optional)
+    final = True # bool | Returns the CFP snapshot marked as final when `true`. Requires `poll=cfp` and cannot be combined with `latest`. (optional)
 
     try:
         api_response = api_instance.get_rankings(year, season_type=season_type, week=week, poll=poll, latest=latest, final=final)
@@ -68,12 +68,12 @@ with cfbd.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **year** | **int**| Required year filter | 
- **season_type** | [**SeasonType**](.md)| Optional season type filter | [optional] 
- **week** | **float**| Optional week filter | [optional] 
- **poll** | [**RankingPoll**](.md)| Optional poll filter | [optional] 
- **latest** | **bool**| Return the latest CFP snapshot, preferring the marked final | [optional] 
- **final** | **bool**| Return the marked final CFP snapshot | [optional] 
+ **year** | **int**| Season year. | 
+ **season_type** | [**SeasonType**](.md)| Season type. | [optional] 
+ **week** | **float**| Poll week. | [optional] 
+ **poll** | [**RankingPoll**](.md)| Poll name. | [optional] 
+ **latest** | **bool**| Returns the latest CFP snapshot when &#x60;true&#x60;, preferring the snapshot marked as final. Requires &#x60;poll&#x3D;cfp&#x60; and cannot be combined with &#x60;final&#x60;. | [optional] 
+ **final** | **bool**| Returns the CFP snapshot marked as final when &#x60;true&#x60;. Requires &#x60;poll&#x3D;cfp&#x60; and cannot be combined with &#x60;latest&#x60;. | [optional] 
 
 ### Return type
 

@@ -16,7 +16,7 @@ Method | HTTP request | Description
 
 
 
-Queries live play-by-play data and advanced stats
+Returns live play-by-play data and advanced metrics for a game.
 
 ### Example
 
@@ -49,7 +49,7 @@ configuration = cfbd.Configuration(
 with cfbd.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = cfbd.PlaysApi(api_client)
-    game_id = 56 # int | Game Id filter
+    game_id = 56 # int | Game ID.
 
     try:
         api_response = api_instance.get_live_plays(game_id)
@@ -65,7 +65,7 @@ with cfbd.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **game_id** | **int**| Game Id filter | 
+ **game_id** | **int**| Game ID. | 
 
 ### Return type
 
@@ -92,7 +92,7 @@ Name | Type | Description  | Notes
 
 
 
-Retrieves available play stat types
+Returns the available play stat types.
 
 ### Example
 
@@ -164,7 +164,7 @@ This endpoint does not need any parameter.
 
 
 
-Retrieve player-play associations (limit 2000)
+Returns player and play-stat associations, limited to 2,000 records.
 
 ### Example
 
@@ -198,14 +198,14 @@ configuration = cfbd.Configuration(
 with cfbd.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = cfbd.PlaysApi(api_client)
-    year = 56 # int | Optional year filter (optional)
-    week = 56 # int | Optional week filter (optional)
-    team = 'team_example' # str | Optional team filter (optional)
-    game_id = 56 # int | Optional gameId filter (optional)
-    athlete_id = 56 # int | Optional athleteId filter (optional)
-    stat_type_id = 56 # int | Optional statTypeId filter (optional)
-    season_type = cfbd.SeasonType() # SeasonType | Optional season type filter (optional)
-    conference = 'conference_example' # str | Optional conference filter (optional)
+    year = 56 # int | Season year. (optional)
+    week = 56 # int | Week number. (optional)
+    team = 'team_example' # str | Team name. (optional)
+    game_id = 56 # int | Game ID. (optional)
+    athlete_id = 56 # int | Athlete ID. (optional)
+    stat_type_id = 56 # int | Play stat type ID. (optional)
+    season_type = cfbd.SeasonType() # SeasonType | Season type. (optional)
+    conference = 'conference_example' # str | Conference name or abbreviation. (optional)
 
     try:
         api_response = api_instance.get_play_stats(year=year, week=week, team=team, game_id=game_id, athlete_id=athlete_id, stat_type_id=stat_type_id, season_type=season_type, conference=conference)
@@ -221,14 +221,14 @@ with cfbd.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **year** | **int**| Optional year filter | [optional] 
- **week** | **int**| Optional week filter | [optional] 
- **team** | **str**| Optional team filter | [optional] 
- **game_id** | **int**| Optional gameId filter | [optional] 
- **athlete_id** | **int**| Optional athleteId filter | [optional] 
- **stat_type_id** | **int**| Optional statTypeId filter | [optional] 
- **season_type** | [**SeasonType**](.md)| Optional season type filter | [optional] 
- **conference** | **str**| Optional conference filter | [optional] 
+ **year** | **int**| Season year. | [optional] 
+ **week** | **int**| Week number. | [optional] 
+ **team** | **str**| Team name. | [optional] 
+ **game_id** | **int**| Game ID. | [optional] 
+ **athlete_id** | **int**| Athlete ID. | [optional] 
+ **stat_type_id** | **int**| Play stat type ID. | [optional] 
+ **season_type** | [**SeasonType**](.md)| Season type. | [optional] 
+ **conference** | **str**| Conference name or abbreviation. | [optional] 
 
 ### Return type
 
@@ -255,7 +255,7 @@ Name | Type | Description  | Notes
 
 
 
-Retrieves available play types
+Returns the available play types.
 
 ### Example
 
@@ -327,7 +327,7 @@ This endpoint does not need any parameter.
 
 
 
-Retrieves historical play data
+Returns historical play-by-play data.
 
 ### Example
 
@@ -362,17 +362,17 @@ configuration = cfbd.Configuration(
 with cfbd.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = cfbd.PlaysApi(api_client)
-    year = 56 # int | Required year filter
-    week = 56 # int | Required week filter
-    team = 'team_example' # str | Optional team filter (optional)
-    offense = 'offense_example' # str | Optional offensive team filter (optional)
-    defense = 'defense_example' # str | Optional defensive team filter (optional)
-    offense_conference = 'offense_conference_example' # str | Optional offensive conference filter (optional)
-    defense_conference = 'defense_conference_example' # str | Optional defensive conference filter (optional)
-    conference = 'conference_example' # str | Optional conference filter (optional)
-    play_type = 'play_type_example' # str | Optoinal play type abbreviation filter (optional)
-    season_type = cfbd.SeasonType() # SeasonType | Optional season type filter (optional)
-    classification = cfbd.DivisionClassification() # DivisionClassification | Optional division classification filter (optional)
+    year = 56 # int | Season year.
+    week = 56 # int | Week number.
+    team = 'team_example' # str | Team name on either side of the play. (optional)
+    offense = 'offense_example' # str | Offensive team name. (optional)
+    defense = 'defense_example' # str | Defensive team name. (optional)
+    offense_conference = 'offense_conference_example' # str | Offensive team conference. (optional)
+    defense_conference = 'defense_conference_example' # str | Defensive team conference. (optional)
+    conference = 'conference_example' # str | Conference of either team. (optional)
+    play_type = 'play_type_example' # str | Play type abbreviation. (optional)
+    season_type = cfbd.SeasonType() # SeasonType | Season type. (optional)
+    classification = cfbd.DivisionClassification() # DivisionClassification | Division classification of either team. (optional)
 
     try:
         api_response = api_instance.get_plays(year, week, team=team, offense=offense, defense=defense, offense_conference=offense_conference, defense_conference=defense_conference, conference=conference, play_type=play_type, season_type=season_type, classification=classification)
@@ -388,17 +388,17 @@ with cfbd.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **year** | **int**| Required year filter | 
- **week** | **int**| Required week filter | 
- **team** | **str**| Optional team filter | [optional] 
- **offense** | **str**| Optional offensive team filter | [optional] 
- **defense** | **str**| Optional defensive team filter | [optional] 
- **offense_conference** | **str**| Optional offensive conference filter | [optional] 
- **defense_conference** | **str**| Optional defensive conference filter | [optional] 
- **conference** | **str**| Optional conference filter | [optional] 
- **play_type** | **str**| Optoinal play type abbreviation filter | [optional] 
- **season_type** | [**SeasonType**](.md)| Optional season type filter | [optional] 
- **classification** | [**DivisionClassification**](.md)| Optional division classification filter | [optional] 
+ **year** | **int**| Season year. | 
+ **week** | **int**| Week number. | 
+ **team** | **str**| Team name on either side of the play. | [optional] 
+ **offense** | **str**| Offensive team name. | [optional] 
+ **defense** | **str**| Defensive team name. | [optional] 
+ **offense_conference** | **str**| Offensive team conference. | [optional] 
+ **defense_conference** | **str**| Defensive team conference. | [optional] 
+ **conference** | **str**| Conference of either team. | [optional] 
+ **play_type** | **str**| Play type abbreviation. | [optional] 
+ **season_type** | [**SeasonType**](.md)| Season type. | [optional] 
+ **classification** | [**DivisionClassification**](.md)| Division classification of either team. | [optional] 
 
 ### Return type
 

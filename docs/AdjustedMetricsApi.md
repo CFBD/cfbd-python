@@ -15,7 +15,7 @@ Method | HTTP request | Description
 
 
 
-Retrieve opponent-adjusted player passing statistics
+Returns opponent-adjusted player passing metrics.
 
 ### Example
 
@@ -48,10 +48,10 @@ configuration = cfbd.Configuration(
 with cfbd.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = cfbd.AdjustedMetricsApi(api_client)
-    year = 56 # int | Optional year filter (optional)
-    team = 'team_example' # str | Optional team filter (optional)
-    conference = 'conference_example' # str | Optional conference abbreviation filter (optional)
-    position = 'position_example' # str | Optional position abbreviation filter (optional)
+    year = 56 # int | Season year. (optional)
+    team = 'team_example' # str | Team name. (optional)
+    conference = 'conference_example' # str | Conference abbreviation. (optional)
+    position = 'position_example' # str | Player position abbreviation. (optional)
 
     try:
         api_response = api_instance.get_adjusted_player_passing_stats(year=year, team=team, conference=conference, position=position)
@@ -67,10 +67,10 @@ with cfbd.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **year** | **int**| Optional year filter | [optional] 
- **team** | **str**| Optional team filter | [optional] 
- **conference** | **str**| Optional conference abbreviation filter | [optional] 
- **position** | **str**| Optional position abbreviation filter | [optional] 
+ **year** | **int**| Season year. | [optional] 
+ **team** | **str**| Team name. | [optional] 
+ **conference** | **str**| Conference abbreviation. | [optional] 
+ **position** | **str**| Player position abbreviation. | [optional] 
 
 ### Return type
 
@@ -97,7 +97,7 @@ Name | Type | Description  | Notes
 
 
 
-Retrieve opponent-adjusted player rushing statistics
+Returns opponent-adjusted player rushing metrics.
 
 ### Example
 
@@ -130,10 +130,10 @@ configuration = cfbd.Configuration(
 with cfbd.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = cfbd.AdjustedMetricsApi(api_client)
-    year = 56 # int | Optional year filter (optional)
-    team = 'team_example' # str | Optional team filter (optional)
-    conference = 'conference_example' # str | Optional conference abbreviation filter (optional)
-    position = 'position_example' # str | Optional position abbreviation filter (optional)
+    year = 56 # int | Season year. (optional)
+    team = 'team_example' # str | Team name. (optional)
+    conference = 'conference_example' # str | Conference abbreviation. (optional)
+    position = 'position_example' # str | Player position abbreviation. (optional)
 
     try:
         api_response = api_instance.get_adjusted_player_rushing_stats(year=year, team=team, conference=conference, position=position)
@@ -149,10 +149,10 @@ with cfbd.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **year** | **int**| Optional year filter | [optional] 
- **team** | **str**| Optional team filter | [optional] 
- **conference** | **str**| Optional conference abbreviation filter | [optional] 
- **position** | **str**| Optional position abbreviation filter | [optional] 
+ **year** | **int**| Season year. | [optional] 
+ **team** | **str**| Team name. | [optional] 
+ **conference** | **str**| Conference abbreviation. | [optional] 
+ **position** | **str**| Player position abbreviation. | [optional] 
 
 ### Return type
 
@@ -179,7 +179,7 @@ Name | Type | Description  | Notes
 
 
 
-Retrieve opponent-adjusted team season statistics
+Returns opponent-adjusted team statistics by season.
 
 ### Example
 
@@ -212,9 +212,9 @@ configuration = cfbd.Configuration(
 with cfbd.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = cfbd.AdjustedMetricsApi(api_client)
-    year = 56 # int | Optional year filter (optional)
-    team = 'team_example' # str | Optional team filter (optional)
-    conference = 'conference_example' # str | Optional conference filter (optional)
+    year = 56 # int | Season year. (optional)
+    team = 'team_example' # str | Team name. (optional)
+    conference = 'conference_example' # str | Conference name or abbreviation. (optional)
 
     try:
         api_response = api_instance.get_adjusted_team_season_stats(year=year, team=team, conference=conference)
@@ -230,9 +230,9 @@ with cfbd.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **year** | **int**| Optional year filter | [optional] 
- **team** | **str**| Optional team filter | [optional] 
- **conference** | **str**| Optional conference filter | [optional] 
+ **year** | **int**| Season year. | [optional] 
+ **team** | **str**| Team name. | [optional] 
+ **conference** | **str**| Conference name or abbreviation. | [optional] 
 
 ### Return type
 
@@ -259,7 +259,7 @@ Name | Type | Description  | Notes
 
 
 
-Retrieve Points Added Above Replacement (PAAR) ratings for kickers
+Returns Points Added Above Replacement (PAAR) ratings for kickers.
 
 ### Example
 
@@ -292,9 +292,9 @@ configuration = cfbd.Configuration(
 with cfbd.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = cfbd.AdjustedMetricsApi(api_client)
-    year = 56 # int | Optional year filter (optional)
-    team = 'team_example' # str | Optional team filter (optional)
-    conference = 'conference_example' # str | Optional conference abbreviation filter (optional)
+    year = 56 # int | Season year. (optional)
+    team = 'team_example' # str | Team name. (optional)
+    conference = 'conference_example' # str | Conference abbreviation. (optional)
 
     try:
         api_response = api_instance.get_kicker_paar(year=year, team=team, conference=conference)
@@ -310,9 +310,9 @@ with cfbd.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **year** | **int**| Optional year filter | [optional] 
- **team** | **str**| Optional team filter | [optional] 
- **conference** | **str**| Optional conference abbreviation filter | [optional] 
+ **year** | **int**| Season year. | [optional] 
+ **team** | **str**| Team name. | [optional] 
+ **conference** | **str**| Conference abbreviation. | [optional] 
 
 ### Return type
 

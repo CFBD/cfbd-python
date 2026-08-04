@@ -14,7 +14,7 @@ Method | HTTP request | Description
 
 
 
-Retrieve historical NFL draft data
+Returns historical NFL Draft picks.
 
 ### Example
 
@@ -47,11 +47,11 @@ configuration = cfbd.Configuration(
 with cfbd.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = cfbd.DraftApi(api_client)
-    year = 56 # int | Optional year filter (optional)
-    team = 'team_example' # str | Optional NFL team filter (optional)
-    school = 'school_example' # str | Optional college team filter (optional)
-    conference = 'conference_example' # str | Optional college conference filter (optional)
-    position = 'position_example' # str | Optional position classification filter (optional)
+    year = 56 # int | Draft year. (optional)
+    team = 'team_example' # str | NFL team name. (optional)
+    school = 'school_example' # str | College team name. (optional)
+    conference = 'conference_example' # str | College conference name or abbreviation. (optional)
+    position = 'position_example' # str | Position category. (optional)
 
     try:
         api_response = api_instance.get_draft_picks(year=year, team=team, school=school, conference=conference, position=position)
@@ -67,11 +67,11 @@ with cfbd.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **year** | **int**| Optional year filter | [optional] 
- **team** | **str**| Optional NFL team filter | [optional] 
- **school** | **str**| Optional college team filter | [optional] 
- **conference** | **str**| Optional college conference filter | [optional] 
- **position** | **str**| Optional position classification filter | [optional] 
+ **year** | **int**| Draft year. | [optional] 
+ **team** | **str**| NFL team name. | [optional] 
+ **school** | **str**| College team name. | [optional] 
+ **conference** | **str**| College conference name or abbreviation. | [optional] 
+ **position** | **str**| Position category. | [optional] 
 
 ### Return type
 
@@ -98,7 +98,7 @@ Name | Type | Description  | Notes
 
 
 
-Retrieves list of player position categories for the NFL Draft
+Returns the player position categories used in NFL Draft data.
 
 ### Example
 
@@ -170,7 +170,7 @@ This endpoint does not need any parameter.
 
 
 
-Retrieves list of NFL teams
+Returns the NFL teams represented in draft data.
 
 ### Example
 

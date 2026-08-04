@@ -20,7 +20,7 @@ Method | HTTP request | Description
 
 
 
-Retrieves an advanced box score for a game
+Returns an advanced box score for a game.
 
 ### Example
 
@@ -53,7 +53,7 @@ configuration = cfbd.Configuration(
 with cfbd.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = cfbd.GamesApi(api_client)
-    id = 56 # int | Required game id filter
+    id = 56 # int | Game ID.
 
     try:
         api_response = api_instance.get_advanced_box_score(id)
@@ -69,7 +69,7 @@ with cfbd.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **int**| Required game id filter | 
+ **id** | **int**| Game ID. | 
 
 ### Return type
 
@@ -96,7 +96,7 @@ Name | Type | Description  | Notes
 
 
 
-Retrieves calendar information
+Returns the week-by-week season calendar.
 
 ### Example
 
@@ -129,7 +129,7 @@ configuration = cfbd.Configuration(
 with cfbd.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = cfbd.GamesApi(api_client)
-    year = 56 # int | Required year filter
+    year = 56 # int | Season year.
 
     try:
         api_response = api_instance.get_calendar(year)
@@ -145,7 +145,7 @@ with cfbd.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **year** | **int**| Required year filter | 
+ **year** | **int**| Season year. | 
 
 ### Return type
 
@@ -172,7 +172,7 @@ Name | Type | Description  | Notes
 
 
 
-Retrieves player box score statistics
+Returns player box score statistics by game.
 
 ### Example
 
@@ -207,14 +207,14 @@ configuration = cfbd.Configuration(
 with cfbd.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = cfbd.GamesApi(api_client)
-    year = 56 # int | Required year filter (along with one of week, team, or conference), unless id is specified (optional)
-    week = 56 # int | Optional week filter, required if team and conference not specified (optional)
-    team = 'team_example' # str | Optional team filter, required if week and conference not specified (optional)
-    conference = 'conference_example' # str | Optional conference filter, required if week and team not specified (optional)
-    classification = cfbd.DivisionClassification() # DivisionClassification | Optional division classification filter (optional)
-    season_type = cfbd.SeasonType() # SeasonType | Optional season type filter (optional)
-    category = 'category_example' # str | Optional player statistical category filter (optional)
-    id = 56 # int | Optional id filter to retrieve a single game (optional)
+    year = 56 # int | Season year. Required unless `id` is specified. (optional)
+    week = 56 # int | Week number. One of `week`, `team`, or `conference` is required when filtering by year. (optional)
+    team = 'team_example' # str | Team name. One of `week`, `team`, or `conference` is required when filtering by year. (optional)
+    conference = 'conference_example' # str | Conference name or abbreviation. One of `week`, `team`, or `conference` is required when filtering by year. (optional)
+    classification = cfbd.DivisionClassification() # DivisionClassification | Division classification. (optional)
+    season_type = cfbd.SeasonType() # SeasonType | Season type. (optional)
+    category = 'category_example' # str | Player statistical category. (optional)
+    id = 56 # int | Game ID. When specified, returns statistics for that game. (optional)
 
     try:
         api_response = api_instance.get_game_player_stats(year=year, week=week, team=team, conference=conference, classification=classification, season_type=season_type, category=category, id=id)
@@ -230,14 +230,14 @@ with cfbd.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **year** | **int**| Required year filter (along with one of week, team, or conference), unless id is specified | [optional] 
- **week** | **int**| Optional week filter, required if team and conference not specified | [optional] 
- **team** | **str**| Optional team filter, required if week and conference not specified | [optional] 
- **conference** | **str**| Optional conference filter, required if week and team not specified | [optional] 
- **classification** | [**DivisionClassification**](.md)| Optional division classification filter | [optional] 
- **season_type** | [**SeasonType**](.md)| Optional season type filter | [optional] 
- **category** | **str**| Optional player statistical category filter | [optional] 
- **id** | **int**| Optional id filter to retrieve a single game | [optional] 
+ **year** | **int**| Season year. Required unless &#x60;id&#x60; is specified. | [optional] 
+ **week** | **int**| Week number. One of &#x60;week&#x60;, &#x60;team&#x60;, or &#x60;conference&#x60; is required when filtering by year. | [optional] 
+ **team** | **str**| Team name. One of &#x60;week&#x60;, &#x60;team&#x60;, or &#x60;conference&#x60; is required when filtering by year. | [optional] 
+ **conference** | **str**| Conference name or abbreviation. One of &#x60;week&#x60;, &#x60;team&#x60;, or &#x60;conference&#x60; is required when filtering by year. | [optional] 
+ **classification** | [**DivisionClassification**](.md)| Division classification. | [optional] 
+ **season_type** | [**SeasonType**](.md)| Season type. | [optional] 
+ **category** | **str**| Player statistical category. | [optional] 
+ **id** | **int**| Game ID. When specified, returns statistics for that game. | [optional] 
 
 ### Return type
 
@@ -264,7 +264,7 @@ Name | Type | Description  | Notes
 
 
 
-Retrieves team box score statistics
+Returns team box score statistics by game.
 
 ### Example
 
@@ -299,13 +299,13 @@ configuration = cfbd.Configuration(
 with cfbd.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = cfbd.GamesApi(api_client)
-    year = 56 # int | Required year filter (along with one of week, team, or conference), unless id is specified (optional)
-    week = 56 # int | Optional week filter, required if team and conference not specified (optional)
-    team = 'team_example' # str | Optional team filter, required if week and conference not specified (optional)
-    conference = 'conference_example' # str | Optional conference filter, required if week and team not specified (optional)
-    classification = cfbd.DivisionClassification() # DivisionClassification | Optional division classification filter (optional)
-    season_type = cfbd.SeasonType() # SeasonType | Optional season type filter (optional)
-    id = 56 # int | Optional id filter to retrieve a single game (optional)
+    year = 56 # int | Season year. Required unless `id` is specified. (optional)
+    week = 56 # int | Week number. One of `week`, `team`, or `conference` is required when filtering by year. (optional)
+    team = 'team_example' # str | Team name. One of `week`, `team`, or `conference` is required when filtering by year. (optional)
+    conference = 'conference_example' # str | Conference name or abbreviation. One of `week`, `team`, or `conference` is required when filtering by year. (optional)
+    classification = cfbd.DivisionClassification() # DivisionClassification | Division classification. (optional)
+    season_type = cfbd.SeasonType() # SeasonType | Season type. (optional)
+    id = 56 # int | Game ID. When specified, returns statistics for that game. (optional)
 
     try:
         api_response = api_instance.get_game_team_stats(year=year, week=week, team=team, conference=conference, classification=classification, season_type=season_type, id=id)
@@ -321,13 +321,13 @@ with cfbd.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **year** | **int**| Required year filter (along with one of week, team, or conference), unless id is specified | [optional] 
- **week** | **int**| Optional week filter, required if team and conference not specified | [optional] 
- **team** | **str**| Optional team filter, required if week and conference not specified | [optional] 
- **conference** | **str**| Optional conference filter, required if week and team not specified | [optional] 
- **classification** | [**DivisionClassification**](.md)| Optional division classification filter | [optional] 
- **season_type** | [**SeasonType**](.md)| Optional season type filter | [optional] 
- **id** | **int**| Optional id filter to retrieve a single game | [optional] 
+ **year** | **int**| Season year. Required unless &#x60;id&#x60; is specified. | [optional] 
+ **week** | **int**| Week number. One of &#x60;week&#x60;, &#x60;team&#x60;, or &#x60;conference&#x60; is required when filtering by year. | [optional] 
+ **team** | **str**| Team name. One of &#x60;week&#x60;, &#x60;team&#x60;, or &#x60;conference&#x60; is required when filtering by year. | [optional] 
+ **conference** | **str**| Conference name or abbreviation. One of &#x60;week&#x60;, &#x60;team&#x60;, or &#x60;conference&#x60; is required when filtering by year. | [optional] 
+ **classification** | [**DivisionClassification**](.md)| Division classification. | [optional] 
+ **season_type** | [**SeasonType**](.md)| Season type. | [optional] 
+ **id** | **int**| Game ID. When specified, returns statistics for that game. | [optional] 
 
 ### Return type
 
@@ -354,7 +354,7 @@ Name | Type | Description  | Notes
 
 
 
-Retrieves historical game data
+Returns historical game data.
 
 ### Example
 
@@ -391,17 +391,17 @@ configuration = cfbd.Configuration(
 with cfbd.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = cfbd.GamesApi(api_client)
-    year = 56 # int | Required year filter (except when id is specified) (optional)
-    week = 56 # int | Optional week filter (optional)
-    season_type = cfbd.SeasonType() # SeasonType | Optional season type filter (optional)
-    classification = cfbd.DivisionClassification() # DivisionClassification | Optional division classification filter (optional)
-    team = 'team_example' # str | Optional team filter (optional)
-    home = 'home_example' # str | Optional home team filter (optional)
-    away = 'away_example' # str | Optional away team filter (optional)
-    conference = 'conference_example' # str | Optional conference filter (optional)
-    id = 56 # int | Game id filter to retrieve a single game (optional)
-    competition = cfbd.PlayoffCompetition() # PlayoffCompetition | Optional playoff competition filter (optional)
-    round = cfbd.PlayoffRound() # PlayoffRound | Optional playoff round filter; requires competition (optional)
+    year = 56 # int | Season year. Required unless `id` is specified. (optional)
+    week = 56 # int | Week number. (optional)
+    season_type = cfbd.SeasonType() # SeasonType | Season type. (optional)
+    classification = cfbd.DivisionClassification() # DivisionClassification | Division classification. (optional)
+    team = 'team_example' # str | Team name on either side of the game. (optional)
+    home = 'home_example' # str | Home team name. (optional)
+    away = 'away_example' # str | Away team name. (optional)
+    conference = 'conference_example' # str | Conference of either team. (optional)
+    id = 56 # int | Game ID. When specified, returns data for that game. (optional)
+    competition = cfbd.PlayoffCompetition() # PlayoffCompetition | Playoff competition. (optional)
+    round = cfbd.PlayoffRound() # PlayoffRound | Playoff round. Requires `competition`. (optional)
 
     try:
         api_response = api_instance.get_games(year=year, week=week, season_type=season_type, classification=classification, team=team, home=home, away=away, conference=conference, id=id, competition=competition, round=round)
@@ -417,17 +417,17 @@ with cfbd.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **year** | **int**| Required year filter (except when id is specified) | [optional] 
- **week** | **int**| Optional week filter | [optional] 
- **season_type** | [**SeasonType**](.md)| Optional season type filter | [optional] 
- **classification** | [**DivisionClassification**](.md)| Optional division classification filter | [optional] 
- **team** | **str**| Optional team filter | [optional] 
- **home** | **str**| Optional home team filter | [optional] 
- **away** | **str**| Optional away team filter | [optional] 
- **conference** | **str**| Optional conference filter | [optional] 
- **id** | **int**| Game id filter to retrieve a single game | [optional] 
- **competition** | [**PlayoffCompetition**](.md)| Optional playoff competition filter | [optional] 
- **round** | [**PlayoffRound**](.md)| Optional playoff round filter; requires competition | [optional] 
+ **year** | **int**| Season year. Required unless &#x60;id&#x60; is specified. | [optional] 
+ **week** | **int**| Week number. | [optional] 
+ **season_type** | [**SeasonType**](.md)| Season type. | [optional] 
+ **classification** | [**DivisionClassification**](.md)| Division classification. | [optional] 
+ **team** | **str**| Team name on either side of the game. | [optional] 
+ **home** | **str**| Home team name. | [optional] 
+ **away** | **str**| Away team name. | [optional] 
+ **conference** | **str**| Conference of either team. | [optional] 
+ **id** | **int**| Game ID. When specified, returns data for that game. | [optional] 
+ **competition** | [**PlayoffCompetition**](.md)| Playoff competition. | [optional] 
+ **round** | [**PlayoffRound**](.md)| Playoff round. Requires &#x60;competition&#x60;. | [optional] 
 
 ### Return type
 
@@ -455,7 +455,7 @@ Name | Type | Description  | Notes
 
 
 
-Retrieves media information for games
+Returns broadcast and media information for games.
 
 ### Example
 
@@ -491,13 +491,13 @@ configuration = cfbd.Configuration(
 with cfbd.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = cfbd.GamesApi(api_client)
-    year = 56 # int | Required year filter
-    season_type = cfbd.SeasonType() # SeasonType | Optional season type filter (optional)
-    week = 56 # int | Optional week filter (optional)
-    team = 'team_example' # str | Optional team filter (optional)
-    conference = 'conference_example' # str | Optional conference filter (optional)
-    media_type = cfbd.MediaType() # MediaType | Optional media type filter (optional)
-    classification = cfbd.DivisionClassification() # DivisionClassification | Optional division classification filter (optional)
+    year = 56 # int | Season year.
+    season_type = cfbd.SeasonType() # SeasonType | Season type. (optional)
+    week = 56 # int | Week number. (optional)
+    team = 'team_example' # str | Team name. (optional)
+    conference = 'conference_example' # str | Conference name or abbreviation. (optional)
+    media_type = cfbd.MediaType() # MediaType | Media type. (optional)
+    classification = cfbd.DivisionClassification() # DivisionClassification | Division classification. (optional)
 
     try:
         api_response = api_instance.get_media(year, season_type=season_type, week=week, team=team, conference=conference, media_type=media_type, classification=classification)
@@ -513,13 +513,13 @@ with cfbd.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **year** | **int**| Required year filter | 
- **season_type** | [**SeasonType**](.md)| Optional season type filter | [optional] 
- **week** | **int**| Optional week filter | [optional] 
- **team** | **str**| Optional team filter | [optional] 
- **conference** | **str**| Optional conference filter | [optional] 
- **media_type** | [**MediaType**](.md)| Optional media type filter | [optional] 
- **classification** | [**DivisionClassification**](.md)| Optional division classification filter | [optional] 
+ **year** | **int**| Season year. | 
+ **season_type** | [**SeasonType**](.md)| Season type. | [optional] 
+ **week** | **int**| Week number. | [optional] 
+ **team** | **str**| Team name. | [optional] 
+ **conference** | **str**| Conference name or abbreviation. | [optional] 
+ **media_type** | [**MediaType**](.md)| Media type. | [optional] 
+ **classification** | [**DivisionClassification**](.md)| Division classification. | [optional] 
 
 ### Return type
 
@@ -546,7 +546,7 @@ Name | Type | Description  | Notes
 
 
 
-Retrieves historical team records
+Returns historical team records by season.
 
 ### Example
 
@@ -579,9 +579,9 @@ configuration = cfbd.Configuration(
 with cfbd.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = cfbd.GamesApi(api_client)
-    year = 56 # int | Year filter, required if team not specified (optional)
-    team = 'team_example' # str | Team filter, required if year not specified (optional)
-    conference = 'conference_example' # str | Optional conference filter (optional)
+    year = 56 # int | Season year. Required unless `team` is specified. (optional)
+    team = 'team_example' # str | Team name. Required unless `year` is specified. (optional)
+    conference = 'conference_example' # str | Conference name or abbreviation. (optional)
 
     try:
         api_response = api_instance.get_records(year=year, team=team, conference=conference)
@@ -597,9 +597,9 @@ with cfbd.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **year** | **int**| Year filter, required if team not specified | [optional] 
- **team** | **str**| Team filter, required if year not specified | [optional] 
- **conference** | **str**| Optional conference filter | [optional] 
+ **year** | **int**| Season year. Required unless &#x60;team&#x60; is specified. | [optional] 
+ **team** | **str**| Team name. Required unless &#x60;year&#x60; is specified. | [optional] 
+ **conference** | **str**| Conference name or abbreviation. | [optional] 
 
 ### Return type
 
@@ -626,7 +626,7 @@ Name | Type | Description  | Notes
 
 
 
-Retrieves live scoreboard data
+Returns current scoreboard data.
 
 ### Example
 
@@ -660,8 +660,8 @@ configuration = cfbd.Configuration(
 with cfbd.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = cfbd.GamesApi(api_client)
-    classification = cfbd.DivisionClassification() # DivisionClassification | Optional division classification filter, defaults to fbs (optional)
-    conference = 'conference_example' # str | Optional conference filter (optional)
+    classification = cfbd.DivisionClassification() # DivisionClassification | Division classification. Defaults to `fbs`. (optional)
+    conference = 'conference_example' # str | Conference name or abbreviation. (optional)
 
     try:
         api_response = api_instance.get_scoreboard(classification=classification, conference=conference)
@@ -677,8 +677,8 @@ with cfbd.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **classification** | [**DivisionClassification**](.md)| Optional division classification filter, defaults to fbs | [optional] 
- **conference** | **str**| Optional conference filter | [optional] 
+ **classification** | [**DivisionClassification**](.md)| Division classification. Defaults to &#x60;fbs&#x60;. | [optional] 
+ **conference** | **str**| Conference name or abbreviation. | [optional] 
 
 ### Return type
 
@@ -705,7 +705,7 @@ Name | Type | Description  | Notes
 
 
 
-Retrieve historical and future weather data (Patreon only)
+Returns historical and forecast weather data for games. Requires Patreon.
 
 ### Example
 
@@ -740,13 +740,13 @@ configuration = cfbd.Configuration(
 with cfbd.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = cfbd.GamesApi(api_client)
-    year = 56 # int | Year filter, required if game id not specified (optional)
-    season_type = cfbd.SeasonType() # SeasonType | Optional season type filter (optional)
-    week = 56 # int | Optional week filter (optional)
-    team = 'team_example' # str | Optional team filter (optional)
-    conference = 'conference_example' # str | Optional conference filter (optional)
-    classification = cfbd.DivisionClassification() # DivisionClassification | Optional division classification filter (optional)
-    game_id = 56 # int | Filter for retrieving a single game (optional)
+    year = 56 # int | Season year. Required unless `gameId` is specified. (optional)
+    season_type = cfbd.SeasonType() # SeasonType | Season type. (optional)
+    week = 56 # int | Week number. (optional)
+    team = 'team_example' # str | Team name. (optional)
+    conference = 'conference_example' # str | Conference name or abbreviation. (optional)
+    classification = cfbd.DivisionClassification() # DivisionClassification | Division classification. (optional)
+    game_id = 56 # int | Game ID. When specified, returns weather for that game. (optional)
 
     try:
         api_response = api_instance.get_weather(year=year, season_type=season_type, week=week, team=team, conference=conference, classification=classification, game_id=game_id)
@@ -762,13 +762,13 @@ with cfbd.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **year** | **int**| Year filter, required if game id not specified | [optional] 
- **season_type** | [**SeasonType**](.md)| Optional season type filter | [optional] 
- **week** | **int**| Optional week filter | [optional] 
- **team** | **str**| Optional team filter | [optional] 
- **conference** | **str**| Optional conference filter | [optional] 
- **classification** | [**DivisionClassification**](.md)| Optional division classification filter | [optional] 
- **game_id** | **int**| Filter for retrieving a single game | [optional] 
+ **year** | **int**| Season year. Required unless &#x60;gameId&#x60; is specified. | [optional] 
+ **season_type** | [**SeasonType**](.md)| Season type. | [optional] 
+ **week** | **int**| Week number. | [optional] 
+ **team** | **str**| Team name. | [optional] 
+ **conference** | **str**| Conference name or abbreviation. | [optional] 
+ **classification** | [**DivisionClassification**](.md)| Division classification. | [optional] 
+ **game_id** | **int**| Game ID. When specified, returns weather for that game. | [optional] 
 
 ### Return type
 

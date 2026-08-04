@@ -16,7 +16,8 @@ Method | HTTP request | Description
 
 
 
-Retrieves a player season overview with box score, usage, and PPA data
+Returns a player season overview with box score, usage, and Predicted
+Points Added (PPA) data.
 
 ### Example
 
@@ -49,8 +50,8 @@ configuration = cfbd.Configuration(
 with cfbd.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = cfbd.PlayersApi(api_client)
-    year = 56 # int | Required year filter
-    player_id = 56 # int | Required player id filter
+    year = 56 # int | Season year.
+    player_id = 56 # int | Player ID.
 
     try:
         api_response = api_instance.get_player_season_overview(year, player_id)
@@ -66,8 +67,8 @@ with cfbd.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **year** | **int**| Required year filter | 
- **player_id** | **int**| Required player id filter | 
+ **year** | **int**| Season year. | 
+ **player_id** | **int**| Player ID. | 
 
 ### Return type
 
@@ -94,7 +95,7 @@ Name | Type | Description  | Notes
 
 
 
-Retrieves player usage data for a given season
+Returns player usage metrics for a season.
 
 ### Example
 
@@ -127,12 +128,12 @@ configuration = cfbd.Configuration(
 with cfbd.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = cfbd.PlayersApi(api_client)
-    year = 56 # int | Required year filter
-    conference = 'conference_example' # str | Optional conference abbreviation filter (optional)
-    position = 'position_example' # str | Optional position abbreivation filter (optional)
-    team = 'team_example' # str | Optional team filter (optional)
-    player_id = 56 # int | Optional player id filter (optional)
-    exclude_garbage_time = True # bool | Optional exclude garbage time flag, defaults to false (optional)
+    year = 56 # int | Season year.
+    conference = 'conference_example' # str | Conference abbreviation. (optional)
+    position = 'position_example' # str | Player position abbreviation. (optional)
+    team = 'team_example' # str | Team name. (optional)
+    player_id = 56 # int | Player ID. (optional)
+    exclude_garbage_time = True # bool | Excludes garbage-time plays when `true`. Defaults to `false`. (optional)
 
     try:
         api_response = api_instance.get_player_usage(year, conference=conference, position=position, team=team, player_id=player_id, exclude_garbage_time=exclude_garbage_time)
@@ -148,12 +149,12 @@ with cfbd.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **year** | **int**| Required year filter | 
- **conference** | **str**| Optional conference abbreviation filter | [optional] 
- **position** | **str**| Optional position abbreivation filter | [optional] 
- **team** | **str**| Optional team filter | [optional] 
- **player_id** | **int**| Optional player id filter | [optional] 
- **exclude_garbage_time** | **bool**| Optional exclude garbage time flag, defaults to false | [optional] 
+ **year** | **int**| Season year. | 
+ **conference** | **str**| Conference abbreviation. | [optional] 
+ **position** | **str**| Player position abbreviation. | [optional] 
+ **team** | **str**| Team name. | [optional] 
+ **player_id** | **int**| Player ID. | [optional] 
+ **exclude_garbage_time** | **bool**| Excludes garbage-time plays when &#x60;true&#x60;. Defaults to &#x60;false&#x60;. | [optional] 
 
 ### Return type
 
@@ -180,7 +181,7 @@ Name | Type | Description  | Notes
 
 
 
-Retrieves returning production data. Either a year or team filter must be specified.
+Returns returning production metrics by team and season.
 
 ### Example
 
@@ -213,9 +214,9 @@ configuration = cfbd.Configuration(
 with cfbd.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = cfbd.PlayersApi(api_client)
-    year = 56 # int | Year filter, required if team not specified (optional)
-    team = 'team_example' # str | Team filter, required if year not specified (optional)
-    conference = 'conference_example' # str | Optional conference filter (optional)
+    year = 56 # int | Season year. Required unless `team` is specified. (optional)
+    team = 'team_example' # str | Team name. Required unless `year` is specified. (optional)
+    conference = 'conference_example' # str | Conference name or abbreviation. (optional)
 
     try:
         api_response = api_instance.get_returning_production(year=year, team=team, conference=conference)
@@ -231,9 +232,9 @@ with cfbd.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **year** | **int**| Year filter, required if team not specified | [optional] 
- **team** | **str**| Team filter, required if year not specified | [optional] 
- **conference** | **str**| Optional conference filter | [optional] 
+ **year** | **int**| Season year. Required unless &#x60;team&#x60; is specified. | [optional] 
+ **team** | **str**| Team name. Required unless &#x60;year&#x60; is specified. | [optional] 
+ **conference** | **str**| Conference name or abbreviation. | [optional] 
 
 ### Return type
 
@@ -260,7 +261,7 @@ Name | Type | Description  | Notes
 
 
 
-Retrieves transfer portal data for a given year
+Returns transfer portal entries for a season.
 
 ### Example
 
@@ -293,7 +294,7 @@ configuration = cfbd.Configuration(
 with cfbd.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = cfbd.PlayersApi(api_client)
-    year = 56 # int | Required year filter
+    year = 56 # int | Season year.
 
     try:
         api_response = api_instance.get_transfer_portal(year)
@@ -309,7 +310,7 @@ with cfbd.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **year** | **int**| Required year filter | 
+ **year** | **int**| Season year. | 
 
 ### Return type
 
@@ -336,7 +337,7 @@ Name | Type | Description  | Notes
 
 
 
-Search for players (lists top 100 results)
+Returns up to 100 players whose names match the search term.
 
 ### Example
 
@@ -369,10 +370,10 @@ configuration = cfbd.Configuration(
 with cfbd.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = cfbd.PlayersApi(api_client)
-    search_term = 'search_term_example' # str | Search term for matching player name
-    year = 56 # int | Optional year filter (optional)
-    team = 'team_example' # str | Optional team filter (optional)
-    position = 'position_example' # str | Optional position abbreviation filter (optional)
+    search_term = 'search_term_example' # str | Full or partial player name.
+    year = 56 # int | Season year. (optional)
+    team = 'team_example' # str | Team name. (optional)
+    position = 'position_example' # str | Player position abbreviation. (optional)
 
     try:
         api_response = api_instance.search_players(search_term, year=year, team=team, position=position)
@@ -388,10 +389,10 @@ with cfbd.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **search_term** | **str**| Search term for matching player name | 
- **year** | **int**| Optional year filter | [optional] 
- **team** | **str**| Optional team filter | [optional] 
- **position** | **str**| Optional position abbreviation filter | [optional] 
+ **search_term** | **str**| Full or partial player name. | 
+ **year** | **int**| Season year. | [optional] 
+ **team** | **str**| Team name. | [optional] 
+ **position** | **str**| Player position abbreviation. | [optional] 
 
 ### Return type
 

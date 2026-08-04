@@ -17,7 +17,7 @@ Method | HTTP request | Description
 
 
 
-Retrieves information on teams playing in the highest division of CFB
+Returns Football Bowl Subdivision (FBS) teams for a season.
 
 ### Example
 
@@ -50,7 +50,7 @@ configuration = cfbd.Configuration(
 with cfbd.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = cfbd.TeamsApi(api_client)
-    year = 56 # int | Year or season (optional)
+    year = 56 # int | Season year. (optional)
 
     try:
         api_response = api_instance.get_fbs_teams(year=year)
@@ -66,7 +66,7 @@ with cfbd.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **year** | **int**| Year or season | [optional] 
+ **year** | **int**| Season year. | [optional] 
 
 ### Return type
 
@@ -93,7 +93,7 @@ Name | Type | Description  | Notes
 
 
 
-Retrieves historical matchup details for two given teams
+Returns historical matchup results between two teams.
 
 ### Example
 
@@ -126,10 +126,10 @@ configuration = cfbd.Configuration(
 with cfbd.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = cfbd.TeamsApi(api_client)
-    team1 = 'team1_example' # str | First team to compare
-    team2 = 'team2_example' # str | Second team to compare
-    min_year = 56 # int | Optional starting year (optional)
-    max_year = 56 # int | Optional ending year (optional)
+    team1 = 'team1_example' # str | First team name.
+    team2 = 'team2_example' # str | Second team name.
+    min_year = 56 # int | Earliest season year to include. (optional)
+    max_year = 56 # int | Latest season year to include. (optional)
 
     try:
         api_response = api_instance.get_matchup(team1, team2, min_year=min_year, max_year=max_year)
@@ -145,10 +145,10 @@ with cfbd.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **team1** | **str**| First team to compare | 
- **team2** | **str**| Second team to compare | 
- **min_year** | **int**| Optional starting year | [optional] 
- **max_year** | **int**| Optional ending year | [optional] 
+ **team1** | **str**| First team name. | 
+ **team2** | **str**| Second team name. | 
+ **min_year** | **int**| Earliest season year to include. | [optional] 
+ **max_year** | **int**| Latest season year to include. | [optional] 
 
 ### Return type
 
@@ -175,7 +175,7 @@ Name | Type | Description  | Notes
 
 
 
-Retrieves historical roster data
+Returns historical roster data.
 
 ### Example
 
@@ -209,9 +209,9 @@ configuration = cfbd.Configuration(
 with cfbd.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = cfbd.TeamsApi(api_client)
-    team = 'team_example' # str | Optional team filter (optional)
-    year = 56 # int | Optional year filter, defaults to 2025 (optional)
-    classification = cfbd.DivisionClassification() # DivisionClassification | Optional filter to only include players from FBS or FCS teams (optional)
+    team = 'team_example' # str | Team name. (optional)
+    year = 56 # int | Season year. Defaults to 2025. (optional)
+    classification = cfbd.DivisionClassification() # DivisionClassification | Division classification: `fbs` or `fcs`. (optional)
 
     try:
         api_response = api_instance.get_roster(team=team, year=year, classification=classification)
@@ -227,9 +227,9 @@ with cfbd.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **team** | **str**| Optional team filter | [optional] 
- **year** | **int**| Optional year filter, defaults to 2025 | [optional] 
- **classification** | [**DivisionClassification**](.md)| Optional filter to only include players from FBS or FCS teams | [optional] 
+ **team** | **str**| Team name. | [optional] 
+ **year** | **int**| Season year. Defaults to 2025. | [optional] 
+ **classification** | [**DivisionClassification**](.md)| Division classification: &#x60;fbs&#x60; or &#x60;fcs&#x60;. | [optional] 
 
 ### Return type
 
@@ -256,7 +256,7 @@ Name | Type | Description  | Notes
 
 
 
-Retrieve 247 Team Talent Composite for a given year
+Returns 247Sports Team Talent Composite ratings for a season.
 
 ### Example
 
@@ -289,7 +289,7 @@ configuration = cfbd.Configuration(
 with cfbd.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = cfbd.TeamsApi(api_client)
-    year = 56 # int | Year filter
+    year = 56 # int | Season year.
 
     try:
         api_response = api_instance.get_talent(year)
@@ -305,7 +305,7 @@ with cfbd.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **year** | **int**| Year filter | 
+ **year** | **int**| Season year. | 
 
 ### Return type
 
@@ -332,7 +332,7 @@ Name | Type | Description  | Notes
 
 
 
-Retrieves team information
+Returns team information and conference affiliations.
 
 ### Example
 
@@ -365,8 +365,8 @@ configuration = cfbd.Configuration(
 with cfbd.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = cfbd.TeamsApi(api_client)
-    conference = 'conference_example' # str | Optional conference abbreviation filter (optional)
-    year = 56 # int | Optional year filter to get historical conference affiliations (optional)
+    conference = 'conference_example' # str | Conference abbreviation. (optional)
+    year = 56 # int | Season year for historical conference affiliations. (optional)
 
     try:
         api_response = api_instance.get_teams(conference=conference, year=year)
@@ -382,8 +382,8 @@ with cfbd.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **conference** | **str**| Optional conference abbreviation filter | [optional] 
- **year** | **int**| Optional year filter to get historical conference affiliations | [optional] 
+ **conference** | **str**| Conference abbreviation. | [optional] 
+ **year** | **int**| Season year for historical conference affiliations. | [optional] 
 
 ### Return type
 
@@ -410,7 +410,7 @@ Name | Type | Description  | Notes
 
 
 
-Retrieves against-the-spread (ATS) summary by team
+Returns against-the-spread (ATS) records by team.
 
 ### Example
 
@@ -443,9 +443,9 @@ configuration = cfbd.Configuration(
 with cfbd.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = cfbd.TeamsApi(api_client)
-    year = 56 # int | Required year filter
-    conference = 'conference_example' # str | Optional conference filter (optional)
-    team = 'team_example' # str | Optional team filter (optional)
+    year = 56 # int | Season year.
+    conference = 'conference_example' # str | Conference name or abbreviation. (optional)
+    team = 'team_example' # str | Team name. (optional)
 
     try:
         api_response = api_instance.get_teams_ats(year, conference=conference, team=team)
@@ -461,9 +461,9 @@ with cfbd.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **year** | **int**| Required year filter | 
- **conference** | **str**| Optional conference filter | [optional] 
- **team** | **str**| Optional team filter | [optional] 
+ **year** | **int**| Season year. | 
+ **conference** | **str**| Conference name or abbreviation. | [optional] 
+ **team** | **str**| Team name. | [optional] 
 
 ### Return type
 

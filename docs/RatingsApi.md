@@ -17,7 +17,7 @@ Method | HTTP request | Description
 
 
 
-Retrieves aggregated historical conference SP+ data
+Returns conference-level SP+ ratings by season.
 
 ### Example
 
@@ -51,9 +51,9 @@ configuration = cfbd.Configuration(
 with cfbd.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = cfbd.RatingsApi(api_client)
-    year = 56 # int | Optional year filter (optional)
-    conference = 'conference_example' # str | Optional conference filter (optional)
-    classification = cfbd.DivisionClassification() # DivisionClassification | Optional division classification filter, defaults to fbs (optional)
+    year = 56 # int | Season year. (optional)
+    conference = 'conference_example' # str | Conference name or abbreviation. (optional)
+    classification = cfbd.DivisionClassification() # DivisionClassification | Division classification. Defaults to `fbs`. (optional)
 
     try:
         api_response = api_instance.get_conference_sp(year=year, conference=conference, classification=classification)
@@ -69,9 +69,9 @@ with cfbd.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **year** | **int**| Optional year filter | [optional] 
- **conference** | **str**| Optional conference filter | [optional] 
- **classification** | [**DivisionClassification**](.md)| Optional division classification filter, defaults to fbs | [optional] 
+ **year** | **int**| Season year. | [optional] 
+ **conference** | **str**| Conference name or abbreviation. | [optional] 
+ **classification** | [**DivisionClassification**](.md)| Division classification. Defaults to &#x60;fbs&#x60;. | [optional] 
 
 ### Return type
 
@@ -98,7 +98,7 @@ Name | Type | Description  | Notes
 
 
 
-Retrieves historical Elo ratings
+Returns historical Elo ratings.
 
 ### Example
 
@@ -132,11 +132,11 @@ configuration = cfbd.Configuration(
 with cfbd.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = cfbd.RatingsApi(api_client)
-    year = 56 # int | Optional year filter (optional)
-    week = 56 # int | Optional week filter, defaults to last available week in the season (optional)
-    season_type = cfbd.SeasonType() # SeasonType | Optional season type filter (optional)
-    team = 'team_example' # str | Optional team filter (optional)
-    conference = 'conference_example' # str | Optional conference filter (optional)
+    year = 56 # int | Season year. (optional)
+    week = 56 # int | Week number. Defaults to the latest available week in the season. (optional)
+    season_type = cfbd.SeasonType() # SeasonType | Season type. (optional)
+    team = 'team_example' # str | Team name. (optional)
+    conference = 'conference_example' # str | Conference name or abbreviation. (optional)
 
     try:
         api_response = api_instance.get_elo(year=year, week=week, season_type=season_type, team=team, conference=conference)
@@ -152,11 +152,11 @@ with cfbd.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **year** | **int**| Optional year filter | [optional] 
- **week** | **int**| Optional week filter, defaults to last available week in the season | [optional] 
- **season_type** | [**SeasonType**](.md)| Optional season type filter | [optional] 
- **team** | **str**| Optional team filter | [optional] 
- **conference** | **str**| Optional conference filter | [optional] 
+ **year** | **int**| Season year. | [optional] 
+ **week** | **int**| Week number. Defaults to the latest available week in the season. | [optional] 
+ **season_type** | [**SeasonType**](.md)| Season type. | [optional] 
+ **team** | **str**| Team name. | [optional] 
+ **conference** | **str**| Conference name or abbreviation. | [optional] 
 
 ### Return type
 
@@ -183,7 +183,7 @@ Name | Type | Description  | Notes
 
 
 
-Retrieves expanded historical SRS (including FCS) for a year or team
+Returns expanded Simple Rating System (SRS) ratings, including FCS teams.
 
 ### Example
 
@@ -217,10 +217,10 @@ configuration = cfbd.Configuration(
 with cfbd.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = cfbd.RatingsApi(api_client)
-    year = 56 # int | Year filter, required if team not specified (optional)
-    team = 'team_example' # str | Team filter, required if year not specified (optional)
-    conference = 'conference_example' # str | Optional conference filter (optional)
-    classification = cfbd.DivisionClassification() # DivisionClassification | Optional division classification filter (fbs or fcs) (optional)
+    year = 56 # int | Season year. Required unless `team` is specified. (optional)
+    team = 'team_example' # str | Team name. Required unless `year` is specified. (optional)
+    conference = 'conference_example' # str | Conference name or abbreviation. (optional)
+    classification = cfbd.DivisionClassification() # DivisionClassification | Division classification: `fbs` or `fcs`. (optional)
 
     try:
         api_response = api_instance.get_expanded_srs(year=year, team=team, conference=conference, classification=classification)
@@ -236,10 +236,10 @@ with cfbd.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **year** | **int**| Year filter, required if team not specified | [optional] 
- **team** | **str**| Team filter, required if year not specified | [optional] 
- **conference** | **str**| Optional conference filter | [optional] 
- **classification** | [**DivisionClassification**](.md)| Optional division classification filter (fbs or fcs) | [optional] 
+ **year** | **int**| Season year. Required unless &#x60;team&#x60; is specified. | [optional] 
+ **team** | **str**| Team name. Required unless &#x60;year&#x60; is specified. | [optional] 
+ **conference** | **str**| Conference name or abbreviation. | [optional] 
+ **classification** | [**DivisionClassification**](.md)| Division classification: &#x60;fbs&#x60; or &#x60;fcs&#x60;. | [optional] 
 
 ### Return type
 
@@ -266,7 +266,7 @@ Name | Type | Description  | Notes
 
 
 
-Retrieves historical Football Power Index (FPI) ratings
+Returns historical Football Power Index (FPI) ratings.
 
 ### Example
 
@@ -299,9 +299,9 @@ configuration = cfbd.Configuration(
 with cfbd.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = cfbd.RatingsApi(api_client)
-    year = 56 # int | year filter, required if team not specified (optional)
-    team = 'team_example' # str | team filter, required if year not specified (optional)
-    conference = 'conference_example' # str | Optional conference filter (optional)
+    year = 56 # int | Season year. Required unless `team` is specified. (optional)
+    team = 'team_example' # str | Team name. Required unless `year` is specified. (optional)
+    conference = 'conference_example' # str | Conference name or abbreviation. (optional)
 
     try:
         api_response = api_instance.get_fpi(year=year, team=team, conference=conference)
@@ -317,9 +317,9 @@ with cfbd.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **year** | **int**| year filter, required if team not specified | [optional] 
- **team** | **str**| team filter, required if year not specified | [optional] 
- **conference** | **str**| Optional conference filter | [optional] 
+ **year** | **int**| Season year. Required unless &#x60;team&#x60; is specified. | [optional] 
+ **team** | **str**| Team name. Required unless &#x60;year&#x60; is specified. | [optional] 
+ **conference** | **str**| Conference name or abbreviation. | [optional] 
 
 ### Return type
 
@@ -346,7 +346,7 @@ Name | Type | Description  | Notes
 
 
 
-Retrieves SP+ ratings for a given year or school
+Returns SP+ ratings by team and season.
 
 ### Example
 
@@ -379,8 +379,8 @@ configuration = cfbd.Configuration(
 with cfbd.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = cfbd.RatingsApi(api_client)
-    year = 56 # int | Year filter, required if team not specified (optional)
-    team = 'team_example' # str | Team filter, required if year not specified (optional)
+    year = 56 # int | Season year. Required unless `team` is specified. (optional)
+    team = 'team_example' # str | Team name. Required unless `year` is specified. (optional)
 
     try:
         api_response = api_instance.get_sp(year=year, team=team)
@@ -396,8 +396,8 @@ with cfbd.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **year** | **int**| Year filter, required if team not specified | [optional] 
- **team** | **str**| Team filter, required if year not specified | [optional] 
+ **year** | **int**| Season year. Required unless &#x60;team&#x60; is specified. | [optional] 
+ **team** | **str**| Team name. Required unless &#x60;year&#x60; is specified. | [optional] 
 
 ### Return type
 
@@ -424,7 +424,7 @@ Name | Type | Description  | Notes
 
 
 
-Retrieves historical SRS for a year or team
+Returns Simple Rating System (SRS) ratings by team and season.
 
 ### Example
 
@@ -457,9 +457,9 @@ configuration = cfbd.Configuration(
 with cfbd.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = cfbd.RatingsApi(api_client)
-    year = 56 # int | Year filter, required if team not specified (optional)
-    team = 'team_example' # str | Team filter, required if year not specified (optional)
-    conference = 'conference_example' # str | Optional conference filter (optional)
+    year = 56 # int | Season year. Required unless `team` is specified. (optional)
+    team = 'team_example' # str | Team name. Required unless `year` is specified. (optional)
+    conference = 'conference_example' # str | Conference name or abbreviation. (optional)
 
     try:
         api_response = api_instance.get_srs(year=year, team=team, conference=conference)
@@ -475,9 +475,9 @@ with cfbd.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **year** | **int**| Year filter, required if team not specified | [optional] 
- **team** | **str**| Team filter, required if year not specified | [optional] 
- **conference** | **str**| Optional conference filter | [optional] 
+ **year** | **int**| Season year. Required unless &#x60;team&#x60; is specified. | [optional] 
+ **team** | **str**| Team name. Required unless &#x60;year&#x60; is specified. | [optional] 
+ **conference** | **str**| Conference name or abbreviation. | [optional] 
 
 ### Return type
 

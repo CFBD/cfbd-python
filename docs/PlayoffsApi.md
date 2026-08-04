@@ -14,7 +14,7 @@ Method | HTTP request | Description
 
 
 
-Retrieves College Football Playoff matchups for a season
+Returns College Football Playoff matchups for a season.
 
 ### Example
 
@@ -48,8 +48,8 @@ configuration = cfbd.Configuration(
 with cfbd.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = cfbd.PlayoffsApi(api_client)
-    year = 56 # int | Required year filter
-    round = cfbd.PlayoffRound() # PlayoffRound | Optional playoff round filter (optional)
+    year = 56 # int | Season year.
+    round = cfbd.PlayoffRound() # PlayoffRound | Playoff round. (optional)
 
     try:
         api_response = api_instance.get_cfp_games(year, round=round)
@@ -65,8 +65,8 @@ with cfbd.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **year** | **int**| Required year filter | 
- **round** | [**PlayoffRound**](.md)| Optional playoff round filter | [optional] 
+ **year** | **int**| Season year. | 
+ **round** | [**PlayoffRound**](.md)| Playoff round. | [optional] 
 
 ### Return type
 
@@ -95,7 +95,7 @@ Name | Type | Description  | Notes
 
 
 
-Retrieves College Football Playoff participants for a season
+Returns College Football Playoff participants for a season.
 
 ### Example
 
@@ -128,7 +128,7 @@ configuration = cfbd.Configuration(
 with cfbd.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = cfbd.PlayoffsApi(api_client)
-    year = 56 # int | Required year filter
+    year = 56 # int | Season year.
 
     try:
         api_response = api_instance.get_cfp_participants(year)
@@ -144,7 +144,7 @@ with cfbd.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **year** | **int**| Required year filter | 
+ **year** | **int**| Season year. | 
 
 ### Return type
 
@@ -173,7 +173,7 @@ Name | Type | Description  | Notes
 
 
 
-Retrieves the complete College Football Playoff bracket for a season
+Returns the complete College Football Playoff bracket for a season.
 
 ### Example
 
@@ -206,7 +206,7 @@ configuration = cfbd.Configuration(
 with cfbd.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = cfbd.PlayoffsApi(api_client)
-    year = 56 # int | Required year filter
+    year = 56 # int | Season year.
 
     try:
         api_response = api_instance.get_cfp_playoff(year)
@@ -222,7 +222,7 @@ with cfbd.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **year** | **int**| Required year filter | 
+ **year** | **int**| Season year. | 
 
 ### Return type
 

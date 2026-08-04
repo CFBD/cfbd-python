@@ -13,7 +13,8 @@ Method | HTTP request | Description
 
 
 
-Retrieves bounded API usage for the authenticated user's shared CFB/CBB call pool.
+Returns recent usage for the authenticated user's shared CFB and CBB call
+pool. Returns `null` when the request is not authenticated.
 
 ### Example
 
@@ -47,9 +48,9 @@ configuration = cfbd.Configuration(
 with cfbd.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = cfbd.InfoApi(api_client)
-    days = 56 # int | Number of trailing days to include, defaults to 7 and is capped at 31 (optional)
-    limit = 56 # int | Number of endpoint and recent request rows to return, defaults to 10 and is capped at 50 (optional)
-    api = cfbd.UserUsageApi() # UserUsageApi | Optional API filter: all, cfb, or cbb (optional)
+    days = 56 # int | Trailing days to include. Defaults to 7; maximum 31. (optional)
+    limit = 56 # int | Maximum endpoint and request rows to return. Defaults to 10; maximum 50. (optional)
+    api = cfbd.UserUsageApi() # UserUsageApi | API to include: `all`, `cfb`, or `cbb`. (optional)
 
     try:
         api_response = api_instance.get_usage(days=days, limit=limit, api=api)
@@ -65,9 +66,9 @@ with cfbd.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **days** | **int**| Number of trailing days to include, defaults to 7 and is capped at 31 | [optional] 
- **limit** | **int**| Number of endpoint and recent request rows to return, defaults to 10 and is capped at 50 | [optional] 
- **api** | [**UserUsageApi**](.md)| Optional API filter: all, cfb, or cbb | [optional] 
+ **days** | **int**| Trailing days to include. Defaults to 7; maximum 31. | [optional] 
+ **limit** | **int**| Maximum endpoint and request rows to return. Defaults to 10; maximum 50. | [optional] 
+ **api** | [**UserUsageApi**](.md)| API to include: &#x60;all&#x60;, &#x60;cfb&#x60;, or &#x60;cbb&#x60;. | [optional] 
 
 ### Return type
 
@@ -94,7 +95,8 @@ Name | Type | Description  | Notes
 
 
 
-Retrieves information about the user, including their Patreon level and remaining API calls.
+Returns the authenticated user's Patreon level and remaining API calls.
+Returns `null` when the request is not authenticated.
 
 ### Example
 
@@ -157,7 +159,7 @@ This endpoint does not need any parameter.
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | UserInfo object containing patron level and remaining calls, or null if not authenticated. |  -  |
+**200** | Ok |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

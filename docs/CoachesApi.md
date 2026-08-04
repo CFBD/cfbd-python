@@ -15,7 +15,7 @@ Method | HTTP request | Description
 
 
 
-Retrieves canonical coach identity and complete career totals
+Returns a coach profile with canonical identity and career totals.
 
 ### Example
 
@@ -48,7 +48,7 @@ configuration = cfbd.Configuration(
 with cfbd.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = cfbd.CoachesApi(api_client)
-    coach_id = 56 # int | Required coach ID
+    coach_id = 56 # int | Coach ID.
 
     try:
         api_response = api_instance.get_coach_profile(coach_id)
@@ -64,7 +64,7 @@ with cfbd.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **coach_id** | **int**| Required coach ID | 
+ **coach_id** | **int**| Coach ID. | 
 
 ### Return type
 
@@ -93,8 +93,7 @@ Name | Type | Description  | Notes
 
 
 
-Retrieves detailed coach-season records with attributed results and
-whole-team season context
+Returns coach-season records with attributed results and team context.
 
 ### Example
 
@@ -127,11 +126,11 @@ configuration = cfbd.Configuration(
 with cfbd.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = cfbd.CoachesApi(api_client)
-    coach_id = 56 # int | Optional coach ID (optional)
-    team = 'team_example' # str | Optional team filter (optional)
-    year = 56 # int | Optional exact season year (optional)
-    min_year = 56 # int | Optional start year range filter (optional)
-    max_year = 56 # int | Optional end year range filter (optional)
+    coach_id = 56 # int | Coach ID. (optional)
+    team = 'team_example' # str | Team name. (optional)
+    year = 56 # int | Exact season year. (optional)
+    min_year = 56 # int | Earliest season year to include. (optional)
+    max_year = 56 # int | Latest season year to include. (optional)
 
     try:
         api_response = api_instance.get_coach_seasons(coach_id=coach_id, team=team, year=year, min_year=min_year, max_year=max_year)
@@ -147,11 +146,11 @@ with cfbd.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **coach_id** | **int**| Optional coach ID | [optional] 
- **team** | **str**| Optional team filter | [optional] 
- **year** | **int**| Optional exact season year | [optional] 
- **min_year** | **int**| Optional start year range filter | [optional] 
- **max_year** | **int**| Optional end year range filter | [optional] 
+ **coach_id** | **int**| Coach ID. | [optional] 
+ **team** | **str**| Team name. | [optional] 
+ **year** | **int**| Exact season year. | [optional] 
+ **min_year** | **int**| Earliest season year to include. | [optional] 
+ **max_year** | **int**| Latest season year to include. | [optional] 
 
 ### Return type
 
@@ -179,7 +178,7 @@ Name | Type | Description  | Notes
 
 
 
-Retrieves continuous head-coaching stints and attributed records
+Returns continuous head-coaching tenures and their attributed records.
 
 ### Example
 
@@ -212,10 +211,10 @@ configuration = cfbd.Configuration(
 with cfbd.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = cfbd.CoachesApi(api_client)
-    coach_id = 56 # int | Optional coach ID (optional)
-    team = 'team_example' # str | Optional team filter (optional)
-    year = 56 # int | Optional season year contained by the tenure (optional)
-    active = True # bool | Optional active-tenure filter (optional)
+    coach_id = 56 # int | Coach ID. (optional)
+    team = 'team_example' # str | Team name. (optional)
+    year = 56 # int | Season year contained within the tenure. (optional)
+    active = True # bool | Filters by active status when specified. (optional)
 
     try:
         api_response = api_instance.get_coach_tenures(coach_id=coach_id, team=team, year=year, active=active)
@@ -231,10 +230,10 @@ with cfbd.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **coach_id** | **int**| Optional coach ID | [optional] 
- **team** | **str**| Optional team filter | [optional] 
- **year** | **int**| Optional season year contained by the tenure | [optional] 
- **active** | **bool**| Optional active-tenure filter | [optional] 
+ **coach_id** | **int**| Coach ID. | [optional] 
+ **team** | **str**| Team name. | [optional] 
+ **year** | **int**| Season year contained within the tenure. | [optional] 
+ **active** | **bool**| Filters by active status when specified. | [optional] 
 
 ### Return type
 
@@ -262,7 +261,7 @@ Name | Type | Description  | Notes
 
 
 
-Retrieves historical head coach information and records
+Returns historical head coach records.
 
 ### Example
 
@@ -295,12 +294,12 @@ configuration = cfbd.Configuration(
 with cfbd.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = cfbd.CoachesApi(api_client)
-    first_name = 'first_name_example' # str | Optional first name filter (optional)
-    last_name = 'last_name_example' # str | Optional last name filter (optional)
-    team = 'team_example' # str | Optional team filter (optional)
-    year = 56 # int | Optional year filter (optional)
-    min_year = 56 # int | Optional start year range filter (optional)
-    max_year = 56 # int | Optional end year range filter (optional)
+    first_name = 'first_name_example' # str | Coach first name. (optional)
+    last_name = 'last_name_example' # str | Coach last name. (optional)
+    team = 'team_example' # str | Team name. (optional)
+    year = 56 # int | Season year. (optional)
+    min_year = 56 # int | Earliest season year to include. (optional)
+    max_year = 56 # int | Latest season year to include. (optional)
 
     try:
         api_response = api_instance.get_coaches(first_name=first_name, last_name=last_name, team=team, year=year, min_year=min_year, max_year=max_year)
@@ -316,12 +315,12 @@ with cfbd.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **first_name** | **str**| Optional first name filter | [optional] 
- **last_name** | **str**| Optional last name filter | [optional] 
- **team** | **str**| Optional team filter | [optional] 
- **year** | **int**| Optional year filter | [optional] 
- **min_year** | **int**| Optional start year range filter | [optional] 
- **max_year** | **int**| Optional end year range filter | [optional] 
+ **first_name** | **str**| Coach first name. | [optional] 
+ **last_name** | **str**| Coach last name. | [optional] 
+ **team** | **str**| Team name. | [optional] 
+ **year** | **int**| Season year. | [optional] 
+ **min_year** | **int**| Earliest season year to include. | [optional] 
+ **max_year** | **int**| Latest season year to include. | [optional] 
 
 ### Return type
 

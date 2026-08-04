@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 
 
-Retrieves historical betting data
+Returns historical betting lines and results.
 
 ### Example
 
@@ -46,15 +46,15 @@ configuration = cfbd.Configuration(
 with cfbd.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = cfbd.BettingApi(api_client)
-    game_id = 56 # int | Optional gameId filter (optional)
-    year = 56 # int | Year filter, required if game id not specified (optional)
-    season_type = cfbd.SeasonType() # SeasonType | Optional season type filter (optional)
-    week = 56 # int | Optional week filter (optional)
-    team = 'team_example' # str | Optional team filter (optional)
-    home = 'home_example' # str | Optional home team filter (optional)
-    away = 'away_example' # str | Optional away team filter (optional)
-    conference = 'conference_example' # str | Optional conference filter (optional)
-    provider = 'provider_example' # str | Optional provider name filter (optional)
+    game_id = 56 # int | Game ID. (optional)
+    year = 56 # int | Season year. Required unless `gameId` is specified. (optional)
+    season_type = cfbd.SeasonType() # SeasonType | Season type. (optional)
+    week = 56 # int | Week number. (optional)
+    team = 'team_example' # str | Team name on either side of the game. (optional)
+    home = 'home_example' # str | Home team name. (optional)
+    away = 'away_example' # str | Away team name. (optional)
+    conference = 'conference_example' # str | Conference of either team. (optional)
+    provider = 'provider_example' # str | Betting line provider. (optional)
 
     try:
         api_response = api_instance.get_lines(game_id=game_id, year=year, season_type=season_type, week=week, team=team, home=home, away=away, conference=conference, provider=provider)
@@ -70,15 +70,15 @@ with cfbd.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **game_id** | **int**| Optional gameId filter | [optional] 
- **year** | **int**| Year filter, required if game id not specified | [optional] 
- **season_type** | [**SeasonType**](.md)| Optional season type filter | [optional] 
- **week** | **int**| Optional week filter | [optional] 
- **team** | **str**| Optional team filter | [optional] 
- **home** | **str**| Optional home team filter | [optional] 
- **away** | **str**| Optional away team filter | [optional] 
- **conference** | **str**| Optional conference filter | [optional] 
- **provider** | **str**| Optional provider name filter | [optional] 
+ **game_id** | **int**| Game ID. | [optional] 
+ **year** | **int**| Season year. Required unless &#x60;gameId&#x60; is specified. | [optional] 
+ **season_type** | [**SeasonType**](.md)| Season type. | [optional] 
+ **week** | **int**| Week number. | [optional] 
+ **team** | **str**| Team name on either side of the game. | [optional] 
+ **home** | **str**| Home team name. | [optional] 
+ **away** | **str**| Away team name. | [optional] 
+ **conference** | **str**| Conference of either team. | [optional] 
+ **provider** | **str**| Betting line provider. | [optional] 
 
 ### Return type
 

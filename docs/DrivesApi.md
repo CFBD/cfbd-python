@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 
 
-Retrieves historical drive data
+Returns historical drive data.
 
 ### Example
 
@@ -47,16 +47,16 @@ configuration = cfbd.Configuration(
 with cfbd.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = cfbd.DrivesApi(api_client)
-    year = 56 # int | Required year filter
-    season_type = cfbd.SeasonType() # SeasonType | Optional season type filter (optional)
-    week = 56 # int | Optional week filter (optional)
-    team = 'team_example' # str | Optional team filter (optional)
-    offense = 'offense_example' # str | Optional offensive team filter (optional)
-    defense = 'defense_example' # str | Optional defensive team filter (optional)
-    conference = 'conference_example' # str | Optional conference filter (optional)
-    offense_conference = 'offense_conference_example' # str | Optional offensive team conference filter (optional)
-    defense_conference = 'defense_conference_example' # str | Optional defensive team conference filter (optional)
-    classification = cfbd.DivisionClassification() # DivisionClassification | Optional division classification filter (optional)
+    year = 56 # int | Season year.
+    season_type = cfbd.SeasonType() # SeasonType | Season type. (optional)
+    week = 56 # int | Week number. (optional)
+    team = 'team_example' # str | Team name on either side of the drive. (optional)
+    offense = 'offense_example' # str | Offensive team name. (optional)
+    defense = 'defense_example' # str | Defensive team name. (optional)
+    conference = 'conference_example' # str | Conference of either team. (optional)
+    offense_conference = 'offense_conference_example' # str | Offensive team conference. (optional)
+    defense_conference = 'defense_conference_example' # str | Defensive team conference. (optional)
+    classification = cfbd.DivisionClassification() # DivisionClassification | Division classification of either team. (optional)
 
     try:
         api_response = api_instance.get_drives(year, season_type=season_type, week=week, team=team, offense=offense, defense=defense, conference=conference, offense_conference=offense_conference, defense_conference=defense_conference, classification=classification)
@@ -72,16 +72,16 @@ with cfbd.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **year** | **int**| Required year filter | 
- **season_type** | [**SeasonType**](.md)| Optional season type filter | [optional] 
- **week** | **int**| Optional week filter | [optional] 
- **team** | **str**| Optional team filter | [optional] 
- **offense** | **str**| Optional offensive team filter | [optional] 
- **defense** | **str**| Optional defensive team filter | [optional] 
- **conference** | **str**| Optional conference filter | [optional] 
- **offense_conference** | **str**| Optional offensive team conference filter | [optional] 
- **defense_conference** | **str**| Optional defensive team conference filter | [optional] 
- **classification** | [**DivisionClassification**](.md)| Optional division classification filter | [optional] 
+ **year** | **int**| Season year. | 
+ **season_type** | [**SeasonType**](.md)| Season type. | [optional] 
+ **week** | **int**| Week number. | [optional] 
+ **team** | **str**| Team name on either side of the drive. | [optional] 
+ **offense** | **str**| Offensive team name. | [optional] 
+ **defense** | **str**| Defensive team name. | [optional] 
+ **conference** | **str**| Conference of either team. | [optional] 
+ **offense_conference** | **str**| Offensive team conference. | [optional] 
+ **defense_conference** | **str**| Defensive team conference. | [optional] 
+ **classification** | [**DivisionClassification**](.md)| Division classification of either team. | [optional] 
 
 ### Return type
 

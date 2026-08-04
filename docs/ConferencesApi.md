@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 
 
-Retrieves list of conferences
+Returns the available conferences.
 
 ### Example
 

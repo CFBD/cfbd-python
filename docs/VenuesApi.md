@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 
 
-Retrieve list of venues
+Returns college football venues.
 
 ### Example
 

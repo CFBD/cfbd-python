@@ -19,7 +19,7 @@ Method | HTTP request | Description
 
 
 
-Queries field goal expected points values
+Returns expected points values for field goal attempts.
 
 ### Example
 
@@ -91,7 +91,7 @@ This endpoint does not need any parameter.
 
 
 
-Query Predicted Points values by down and distance
+Returns predicted points values by down and distance.
 
 ### Example
 
@@ -124,8 +124,8 @@ configuration = cfbd.Configuration(
 with cfbd.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = cfbd.MetricsApi(api_client)
-    down = 56 # int | Down value
-    distance = 56 # int | Distance value
+    down = 56 # int | Down number.
+    distance = 56 # int | Distance to gain, in yards.
 
     try:
         api_response = api_instance.get_predicted_points(down, distance)
@@ -141,8 +141,8 @@ with cfbd.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **down** | **int**| Down value | 
- **distance** | **int**| Distance value | 
+ **down** | **int**| Down number. | 
+ **distance** | **int**| Distance to gain, in yards. | 
 
 ### Return type
 
@@ -169,7 +169,7 @@ Name | Type | Description  | Notes
 
 
 
-Retrieves historical team PPA metrics by game
+Returns team Predicted Points Added (PPA) metrics by game.
 
 ### Example
 
@@ -204,13 +204,13 @@ configuration = cfbd.Configuration(
 with cfbd.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = cfbd.MetricsApi(api_client)
-    year = 56 # int | Required year filter
-    week = 56 # int | Optional week filter (optional)
-    season_type = cfbd.SeasonType() # SeasonType | Optional season type filter (optional)
-    team = 'team_example' # str | Optional team filter (optional)
-    conference = 'conference_example' # str | Optional conference abbreviation filter (optional)
-    exclude_garbage_time = True # bool | Optional flag to exclude garbage time plays (optional)
-    classification = cfbd.DivisionClassification() # DivisionClassification | Optional division classification filter, defaults to fbs (optional)
+    year = 56 # int | Season year.
+    week = 56 # int | Week number. (optional)
+    season_type = cfbd.SeasonType() # SeasonType | Season type. (optional)
+    team = 'team_example' # str | Team name. (optional)
+    conference = 'conference_example' # str | Conference abbreviation. (optional)
+    exclude_garbage_time = True # bool | Excludes garbage-time plays when `true`. (optional)
+    classification = cfbd.DivisionClassification() # DivisionClassification | Division classification. Defaults to `fbs`. (optional)
 
     try:
         api_response = api_instance.get_predicted_points_added_by_game(year, week=week, season_type=season_type, team=team, conference=conference, exclude_garbage_time=exclude_garbage_time, classification=classification)
@@ -226,13 +226,13 @@ with cfbd.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **year** | **int**| Required year filter | 
- **week** | **int**| Optional week filter | [optional] 
- **season_type** | [**SeasonType**](.md)| Optional season type filter | [optional] 
- **team** | **str**| Optional team filter | [optional] 
- **conference** | **str**| Optional conference abbreviation filter | [optional] 
- **exclude_garbage_time** | **bool**| Optional flag to exclude garbage time plays | [optional] 
- **classification** | [**DivisionClassification**](.md)| Optional division classification filter, defaults to fbs | [optional] 
+ **year** | **int**| Season year. | 
+ **week** | **int**| Week number. | [optional] 
+ **season_type** | [**SeasonType**](.md)| Season type. | [optional] 
+ **team** | **str**| Team name. | [optional] 
+ **conference** | **str**| Conference abbreviation. | [optional] 
+ **exclude_garbage_time** | **bool**| Excludes garbage-time plays when &#x60;true&#x60;. | [optional] 
+ **classification** | [**DivisionClassification**](.md)| Division classification. Defaults to &#x60;fbs&#x60;. | [optional] 
 
 ### Return type
 
@@ -259,7 +259,7 @@ Name | Type | Description  | Notes
 
 
 
-Queries player PPA statistics by game
+Returns player Predicted Points Added (PPA) metrics by game.
 
 ### Example
 
@@ -293,14 +293,14 @@ configuration = cfbd.Configuration(
 with cfbd.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = cfbd.MetricsApi(api_client)
-    year = 56 # int | Required year filter
-    week = 56 # int | Week filter, required if team not specified (optional)
-    season_type = cfbd.SeasonType() # SeasonType | Optional season type filter (optional)
-    team = 'team_example' # str | Team filter, required if week not specified (optional)
-    position = 'position_example' # str | Optional player position abbreviation filter (optional)
-    player_id = 'player_id_example' # str | Optional player ID filter (optional)
-    threshold = 3.4 # float | Threshold value for minimum number of plays (optional)
-    exclude_garbage_time = True # bool | Optional flag to exclude garbage time plays (optional)
+    year = 56 # int | Season year.
+    week = 56 # int | Week number. Required unless `team` is specified. (optional)
+    season_type = cfbd.SeasonType() # SeasonType | Season type. (optional)
+    team = 'team_example' # str | Team name. Required unless `week` is specified. (optional)
+    position = 'position_example' # str | Player position abbreviation. (optional)
+    player_id = 'player_id_example' # str | Player ID. (optional)
+    threshold = 3.4 # float | Minimum number of plays. (optional)
+    exclude_garbage_time = True # bool | Excludes garbage-time plays when `true`. (optional)
 
     try:
         api_response = api_instance.get_predicted_points_added_by_player_game(year, week=week, season_type=season_type, team=team, position=position, player_id=player_id, threshold=threshold, exclude_garbage_time=exclude_garbage_time)
@@ -316,14 +316,14 @@ with cfbd.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **year** | **int**| Required year filter | 
- **week** | **int**| Week filter, required if team not specified | [optional] 
- **season_type** | [**SeasonType**](.md)| Optional season type filter | [optional] 
- **team** | **str**| Team filter, required if week not specified | [optional] 
- **position** | **str**| Optional player position abbreviation filter | [optional] 
- **player_id** | **str**| Optional player ID filter | [optional] 
- **threshold** | **float**| Threshold value for minimum number of plays | [optional] 
- **exclude_garbage_time** | **bool**| Optional flag to exclude garbage time plays | [optional] 
+ **year** | **int**| Season year. | 
+ **week** | **int**| Week number. Required unless &#x60;team&#x60; is specified. | [optional] 
+ **season_type** | [**SeasonType**](.md)| Season type. | [optional] 
+ **team** | **str**| Team name. Required unless &#x60;week&#x60; is specified. | [optional] 
+ **position** | **str**| Player position abbreviation. | [optional] 
+ **player_id** | **str**| Player ID. | [optional] 
+ **threshold** | **float**| Minimum number of plays. | [optional] 
+ **exclude_garbage_time** | **bool**| Excludes garbage-time plays when &#x60;true&#x60;. | [optional] 
 
 ### Return type
 
@@ -350,7 +350,7 @@ Name | Type | Description  | Notes
 
 
 
-Queries player PPA statistics by season
+Returns player Predicted Points Added (PPA) metrics by season.
 
 ### Example
 
@@ -383,13 +383,13 @@ configuration = cfbd.Configuration(
 with cfbd.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = cfbd.MetricsApi(api_client)
-    year = 56 # int | Year filter, required if playerId not specified (optional)
-    conference = 'conference_example' # str | Optional conference abbreviation filter (optional)
-    team = 'team_example' # str | Optional team filter (optional)
-    position = 'position_example' # str | Optional position abbreviation filter (optional)
-    player_id = 'player_id_example' # str | Player ID filter, required if year not specified (optional)
-    threshold = 3.4 # float | Threshold value for minimum number of plays (optional)
-    exclude_garbage_time = True # bool | Optional flag to exclude garbage time plays (optional)
+    year = 56 # int | Season year. Required unless `playerId` is specified. (optional)
+    conference = 'conference_example' # str | Conference abbreviation. (optional)
+    team = 'team_example' # str | Team name. (optional)
+    position = 'position_example' # str | Player position abbreviation. (optional)
+    player_id = 'player_id_example' # str | Player ID. Required unless `year` is specified. (optional)
+    threshold = 3.4 # float | Minimum number of plays. (optional)
+    exclude_garbage_time = True # bool | Excludes garbage-time plays when `true`. (optional)
 
     try:
         api_response = api_instance.get_predicted_points_added_by_player_season(year=year, conference=conference, team=team, position=position, player_id=player_id, threshold=threshold, exclude_garbage_time=exclude_garbage_time)
@@ -405,13 +405,13 @@ with cfbd.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **year** | **int**| Year filter, required if playerId not specified | [optional] 
- **conference** | **str**| Optional conference abbreviation filter | [optional] 
- **team** | **str**| Optional team filter | [optional] 
- **position** | **str**| Optional position abbreviation filter | [optional] 
- **player_id** | **str**| Player ID filter, required if year not specified | [optional] 
- **threshold** | **float**| Threshold value for minimum number of plays | [optional] 
- **exclude_garbage_time** | **bool**| Optional flag to exclude garbage time plays | [optional] 
+ **year** | **int**| Season year. Required unless &#x60;playerId&#x60; is specified. | [optional] 
+ **conference** | **str**| Conference abbreviation. | [optional] 
+ **team** | **str**| Team name. | [optional] 
+ **position** | **str**| Player position abbreviation. | [optional] 
+ **player_id** | **str**| Player ID. Required unless &#x60;year&#x60; is specified. | [optional] 
+ **threshold** | **float**| Minimum number of plays. | [optional] 
+ **exclude_garbage_time** | **bool**| Excludes garbage-time plays when &#x60;true&#x60;. | [optional] 
 
 ### Return type
 
@@ -438,7 +438,7 @@ Name | Type | Description  | Notes
 
 
 
-Retrieves historical team PPA metrics by season
+Returns team Predicted Points Added (PPA) metrics by season.
 
 ### Example
 
@@ -472,11 +472,11 @@ configuration = cfbd.Configuration(
 with cfbd.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = cfbd.MetricsApi(api_client)
-    year = 56 # int | Year filter, required if team not specified (optional)
-    team = 'team_example' # str | Team filter, required if year not specified (optional)
-    conference = 'conference_example' # str | Conference abbreviation filter (optional)
-    exclude_garbage_time = True # bool | Exclude garbage time plays (optional)
-    classification = cfbd.DivisionClassification() # DivisionClassification | Optional division classification filter, defaults to fbs (optional)
+    year = 56 # int | Season year. Required unless `team` is specified. (optional)
+    team = 'team_example' # str | Team name. Required unless `year` is specified. (optional)
+    conference = 'conference_example' # str | Conference abbreviation. (optional)
+    exclude_garbage_time = True # bool | Excludes garbage-time plays when `true`. (optional)
+    classification = cfbd.DivisionClassification() # DivisionClassification | Division classification. Defaults to `fbs`. (optional)
 
     try:
         api_response = api_instance.get_predicted_points_added_by_team(year=year, team=team, conference=conference, exclude_garbage_time=exclude_garbage_time, classification=classification)
@@ -492,11 +492,11 @@ with cfbd.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **year** | **int**| Year filter, required if team not specified | [optional] 
- **team** | **str**| Team filter, required if year not specified | [optional] 
- **conference** | **str**| Conference abbreviation filter | [optional] 
- **exclude_garbage_time** | **bool**| Exclude garbage time plays | [optional] 
- **classification** | [**DivisionClassification**](.md)| Optional division classification filter, defaults to fbs | [optional] 
+ **year** | **int**| Season year. Required unless &#x60;team&#x60; is specified. | [optional] 
+ **team** | **str**| Team name. Required unless &#x60;year&#x60; is specified. | [optional] 
+ **conference** | **str**| Conference abbreviation. | [optional] 
+ **exclude_garbage_time** | **bool**| Excludes garbage-time plays when &#x60;true&#x60;. | [optional] 
+ **classification** | [**DivisionClassification**](.md)| Division classification. Defaults to &#x60;fbs&#x60;. | [optional] 
 
 ### Return type
 
@@ -523,7 +523,7 @@ Name | Type | Description  | Notes
 
 
 
-Queries pregame win probabilities
+Returns pregame win probabilities.
 
 ### Example
 
@@ -557,10 +557,10 @@ configuration = cfbd.Configuration(
 with cfbd.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = cfbd.MetricsApi(api_client)
-    year = 56 # int | Optional year filter (optional)
-    week = 56 # int | Optional week filter (optional)
-    season_type = cfbd.SeasonType() # SeasonType | Optional season type filter (optional)
-    team = 'team_example' # str | Optional team filter (optional)
+    year = 56 # int | Season year. (optional)
+    week = 56 # int | Week number. (optional)
+    season_type = cfbd.SeasonType() # SeasonType | Season type. (optional)
+    team = 'team_example' # str | Team name. (optional)
 
     try:
         api_response = api_instance.get_pregame_win_probabilities(year=year, week=week, season_type=season_type, team=team)
@@ -576,10 +576,10 @@ with cfbd.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **year** | **int**| Optional year filter | [optional] 
- **week** | **int**| Optional week filter | [optional] 
- **season_type** | [**SeasonType**](.md)| Optional season type filter | [optional] 
- **team** | **str**| Optional team filter | [optional] 
+ **year** | **int**| Season year. | [optional] 
+ **week** | **int**| Week number. | [optional] 
+ **season_type** | [**SeasonType**](.md)| Season type. | [optional] 
+ **team** | **str**| Team name. | [optional] 
 
 ### Return type
 
@@ -606,7 +606,7 @@ Name | Type | Description  | Notes
 
 
 
-Query play win probabilities by game
+Returns play-by-play win probabilities for a game.
 
 ### Example
 
@@ -639,7 +639,7 @@ configuration = cfbd.Configuration(
 with cfbd.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = cfbd.MetricsApi(api_client)
-    game_id = 56 # int | Required game ID filter
+    game_id = 56 # int | Game ID.
 
     try:
         api_response = api_instance.get_win_probability(game_id)
@@ -655,7 +655,7 @@ with cfbd.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **game_id** | **int**| Required game ID filter | 
+ **game_id** | **int**| Game ID. | 
 
 ### Return type
 

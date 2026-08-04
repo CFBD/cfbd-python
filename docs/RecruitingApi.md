@@ -14,7 +14,7 @@ Method | HTTP request | Description
 
 
 
-Retrieves aggregated recruiting statistics by team and position grouping
+Returns recruiting ratings aggregated by team and position group.
 
 ### Example
 
@@ -48,11 +48,11 @@ configuration = cfbd.Configuration(
 with cfbd.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = cfbd.RecruitingApi(api_client)
-    team = 'team_example' # str | Optional team filter (optional)
-    conference = 'conference_example' # str | Optional conference filter (optional)
-    recruit_type = cfbd.RecruitClassification() # RecruitClassification | Optional recruit type filter, defaults to HighSchool (optional)
-    start_year = 56 # int | Optional start year range, defaults to 2000 (optional)
-    end_year = 56 # int | Optional end year range, defaults to current year (optional)
+    team = 'team_example' # str | Team name. (optional)
+    conference = 'conference_example' # str | Conference name or abbreviation. (optional)
+    recruit_type = cfbd.RecruitClassification() # RecruitClassification | Recruit classification. Defaults to `HighSchool`. (optional)
+    start_year = 56 # int | Earliest recruiting class year. Defaults to 2000. (optional)
+    end_year = 56 # int | Latest recruiting class year. Defaults to the current year. (optional)
 
     try:
         api_response = api_instance.get_aggregated_team_recruiting_ratings(team=team, conference=conference, recruit_type=recruit_type, start_year=start_year, end_year=end_year)
@@ -68,11 +68,11 @@ with cfbd.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **team** | **str**| Optional team filter | [optional] 
- **conference** | **str**| Optional conference filter | [optional] 
- **recruit_type** | [**RecruitClassification**](.md)| Optional recruit type filter, defaults to HighSchool | [optional] 
- **start_year** | **int**| Optional start year range, defaults to 2000 | [optional] 
- **end_year** | **int**| Optional end year range, defaults to current year | [optional] 
+ **team** | **str**| Team name. | [optional] 
+ **conference** | **str**| Conference name or abbreviation. | [optional] 
+ **recruit_type** | [**RecruitClassification**](.md)| Recruit classification. Defaults to &#x60;HighSchool&#x60;. | [optional] 
+ **start_year** | **int**| Earliest recruiting class year. Defaults to 2000. | [optional] 
+ **end_year** | **int**| Latest recruiting class year. Defaults to the current year. | [optional] 
 
 ### Return type
 
@@ -99,7 +99,7 @@ Name | Type | Description  | Notes
 
 
 
-Retrieves player recruiting rankings
+Returns player recruiting rankings.
 
 ### Example
 
@@ -133,11 +133,11 @@ configuration = cfbd.Configuration(
 with cfbd.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = cfbd.RecruitingApi(api_client)
-    year = 56 # int | Year filter, required when no team specified (optional)
-    team = 'team_example' # str | Team filter, required when no team specified (optional)
-    position = 'position_example' # str | Optional position categorization filter (optional)
-    state = 'state_example' # str | Optional state/province filter (optional)
-    classification = cfbd.RecruitClassification() # RecruitClassification | Optional recruit type classification filter, defaults to HighSchool (optional)
+    year = 56 # int | Recruiting class year. Required unless `team` is specified. (optional)
+    team = 'team_example' # str | Team name. Required unless `year` is specified. (optional)
+    position = 'position_example' # str | Position category. (optional)
+    state = 'state_example' # str | State or province abbreviation. (optional)
+    classification = cfbd.RecruitClassification() # RecruitClassification | Recruit classification. Defaults to `HighSchool`. (optional)
 
     try:
         api_response = api_instance.get_recruits(year=year, team=team, position=position, state=state, classification=classification)
@@ -153,11 +153,11 @@ with cfbd.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **year** | **int**| Year filter, required when no team specified | [optional] 
- **team** | **str**| Team filter, required when no team specified | [optional] 
- **position** | **str**| Optional position categorization filter | [optional] 
- **state** | **str**| Optional state/province filter | [optional] 
- **classification** | [**RecruitClassification**](.md)| Optional recruit type classification filter, defaults to HighSchool | [optional] 
+ **year** | **int**| Recruiting class year. Required unless &#x60;team&#x60; is specified. | [optional] 
+ **team** | **str**| Team name. Required unless &#x60;year&#x60; is specified. | [optional] 
+ **position** | **str**| Position category. | [optional] 
+ **state** | **str**| State or province abbreviation. | [optional] 
+ **classification** | [**RecruitClassification**](.md)| Recruit classification. Defaults to &#x60;HighSchool&#x60;. | [optional] 
 
 ### Return type
 
@@ -184,7 +184,7 @@ Name | Type | Description  | Notes
 
 
 
-Retrieves team recruiting rankings
+Returns team recruiting rankings.
 
 ### Example
 
@@ -217,8 +217,8 @@ configuration = cfbd.Configuration(
 with cfbd.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = cfbd.RecruitingApi(api_client)
-    year = 56 # int | Optional year filter (optional)
-    team = 'team_example' # str | Optional team filter (optional)
+    year = 56 # int | Recruiting class year. (optional)
+    team = 'team_example' # str | Team name. (optional)
 
     try:
         api_response = api_instance.get_team_recruiting_rankings(year=year, team=team)
@@ -234,8 +234,8 @@ with cfbd.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **year** | **int**| Optional year filter | [optional] 
- **team** | **str**| Optional team filter | [optional] 
+ **year** | **int**| Recruiting class year. | [optional] 
+ **team** | **str**| Team name. | [optional] 
 
 ### Return type
 
