@@ -78,6 +78,7 @@ cfbd/models/conference.py
 cfbd/models/conference_sp.py
 cfbd/models/conference_sp_defense.py
 cfbd/models/conference_sp_offense.py
+cfbd/models/core_rating_season_type.py
 cfbd/models/detailed_coach_season.py
 cfbd/models/division_classification.py
 cfbd/models/draft_pick.py
@@ -177,6 +178,7 @@ cfbd/models/season_type_db.py
 cfbd/models/stats_by_quarter.py
 cfbd/models/team.py
 cfbd/models/team_ats.py
+cfbd/models/team_core_rating.py
 cfbd/models/team_elo.py
 cfbd/models/team_explosiveness.py
 cfbd/models/team_field_position.py
@@ -268,6 +270,7 @@ docs/ConferenceSP.md
 docs/ConferenceSPDefense.md
 docs/ConferenceSPOffense.md
 docs/ConferencesApi.md
+docs/CoreRatingSeasonType.md
 docs/DetailedCoachSeason.md
 docs/DivisionClassification.md
 docs/DraftApi.md
@@ -379,6 +382,7 @@ docs/StatsApi.md
 docs/StatsByQuarter.md
 docs/Team.md
 docs/TeamATS.md
+docs/TeamCoreRating.md
 docs/TeamElo.md
 docs/TeamExplosiveness.md
 docs/TeamFPI.md
@@ -477,6 +481,7 @@ test/test_conference_sp.py
 test/test_conference_sp_defense.py
 test/test_conference_sp_offense.py
 test/test_conferences_api.py
+test/test_core_rating_season_type.py
 test/test_detailed_coach_season.py
 test/test_division_classification.py
 test/test_draft_api.py
@@ -588,6 +593,7 @@ test/test_stats_api.py
 test/test_stats_by_quarter.py
 test/test_team.py
 test/test_team_ats.py
+test/test_team_core_rating.py
 test/test_team_elo.py
 test/test_team_explosiveness.py
 test/test_team_field_position.py
