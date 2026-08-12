@@ -8,7 +8,8 @@ Name | Type | Description | Notes
 **name** | **str** |  | 
 **short_name** | **str** |  | 
 **abbreviation** | **str** |  | 
-**classification** | [**DivisionClassification**](DivisionClassification.md) |  | 
+**classification** | [**ConferenceClassification**](ConferenceClassification.md) |  | 
+**member_count** | **int** |  | 
 
 ## Example
 
