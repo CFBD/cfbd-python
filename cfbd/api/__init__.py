@@ -17,6 +17,7 @@ from cfbd.api.plays_api import PlaysApi
 from cfbd.api.rankings_api import RankingsApi
 from cfbd.api.ratings_api import RatingsApi
 from cfbd.api.recruiting_api import RecruitingApi
+from cfbd.api.rushing_api import RushingApi
 from cfbd.api.stats_api import StatsApi
 from cfbd.api.teams_api import TeamsApi
 from cfbd.api.venues_api import VenuesApi
