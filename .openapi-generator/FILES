@@ -121,6 +121,8 @@ cfbd/models/pass_direction.py
 cfbd/models/pass_location.py
 cfbd/models/pass_outcome.py
 cfbd/models/pass_parse_status.py
+cfbd/models/passing_location_production.py
+cfbd/models/passing_locations.py
 cfbd/models/passing_play.py
 cfbd/models/passing_play_clock.py
 cfbd/models/passing_production.py
@@ -346,6 +348,8 @@ docs/PassLocation.md
 docs/PassOutcome.md
 docs/PassParseStatus.md
 docs/PassingApi.md
+docs/PassingLocationProduction.md
+docs/PassingLocations.md
 docs/PassingPlay.md
 docs/PassingPlayClock.md
 docs/PassingProduction.md
@@ -586,6 +590,8 @@ test/test_pass_location.py
 test/test_pass_outcome.py
 test/test_pass_parse_status.py
 test/test_passing_api.py
+test/test_passing_location_production.py
+test/test_passing_locations.py
 test/test_passing_play.py
 test/test_passing_play_clock.py
 test/test_passing_production.py

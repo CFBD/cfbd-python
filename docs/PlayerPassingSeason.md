@@ -17,6 +17,17 @@ Name | Type | Description | Notes
 **yards_after_catch_attempts_available** | **int** | Number of completed attempts with valid total yards and air yards to calculate yards after catch, including zero-yard values. | 
 **total_yards_after_catch** | **int** |  | 
 **average_yards_after_catch** | **float** |  | 
+**success_rate** | **float** | Successful eligible attempts / all eligible attempts; zero if empty. | 
+**ppa** | **float** | Average available PPA on eligible attempts; zero if unavailable. | 
+**total_ppa** | **float** | Sum of available PPA on eligible attempts; zero if unavailable. | 
+**explosiveness** | **float** | Average available PPA on successful eligible attempts; zero if unavailable. | 
+**ppa_attempts_available** | **int** | Eligible attempts with non-null PPA, including zero and negative values. | 
+**success_attempts_available** | **int** | Eligible attempts with non-null success. Missing success remains in the success-rate denominator but does not count as successful. | 
+**successful_attempts** | **int** | Eligible attempts with stored success equal to true. | 
+**successful_ppa_attempts_available** | **int** | Successful eligible attempts with non-null PPA; explosiveness denominator. | 
+**location_eligible_attempts** | **int** | Attempts eligible for advanced metrics and location analysis. Existing overall production includes ineligible attempts; location buckets do not. | 
+**location_available_attempts** | **int** | Eligible attempts with both recognized source depth and direction. | 
+**locations** | [**PassingLocations**](PassingLocations.md) |  | 
 **season** | **int** |  | 
 **player_id** | **str** |  | 
 **player** | **str** |  | 

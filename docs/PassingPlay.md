@@ -39,6 +39,9 @@ Name | Type | Description | Notes
 **is_throwaway** | **bool** |  | 
 **is_intentional_grounding** | **bool** |  | 
 **parse_status** | [**PassParseStatus**](PassParseStatus.md) |  | 
+**ppa** | **float** | Stored offensive PPA, including zero and negative values. | 
+**success** | **bool** | Stored success classification; null means unavailable. | 
+**location_analysis_eligible** | **bool** | Excludes spikes, intentional grounding, and invalid parses. Throwaways, partial parses, and attempts with missing location or air yards qualify. | 
 
 ## Example
 
