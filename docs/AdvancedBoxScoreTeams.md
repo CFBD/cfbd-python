@@ -4,6 +4,8 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**rushing_advanced** | [**List[TeamRushingGame]**](TeamRushingGame.md) | Enriched rushing, separate from the legacy rushing section. | 
+**passing** | [**List[TeamPassingGame]**](TeamPassingGame.md) | Enriched offense/defense passing; empty when no qualifying rows exist. | 
 **field_position** | [**List[TeamFieldPosition]**](TeamFieldPosition.md) |  | 
 **scoring_opportunities** | [**List[TeamScoringOpportunities]**](TeamScoringOpportunities.md) |  | 
 **havoc** | [**List[TeamHavoc]**](TeamHavoc.md) |  | 

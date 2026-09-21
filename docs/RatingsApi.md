@@ -176,7 +176,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_elo**
-> List[TeamElo] get_elo(year=year, week=week, season_type=season_type, team=team, conference=conference)
+> List[TeamElo] get_elo(year=year, week=week, season_type=season_type, team=team, conference=conference, preseason=preseason)
 
 
 
@@ -219,9 +219,10 @@ with cfbd.ApiClient(configuration) as api_client:
     season_type = cfbd.SeasonType() # SeasonType | Season type. (optional)
     team = 'team_example' # str | Team name. (optional)
     conference = 'conference_example' # str | Conference name or abbreviation. (optional)
+    preseason = False # bool | Return initial ratings from each team's opening regular-season game. Missing opening ratings are omitted. Cannot be combined with week; seasonType must be regular or both when specified. Defaults to false. (optional) (default to False)
 
     try:
-        api_response = api_instance.get_elo(year=year, week=week, season_type=season_type, team=team, conference=conference)
+        api_response = api_instance.get_elo(year=year, week=week, season_type=season_type, team=team, conference=conference, preseason=preseason)
         print("The response of RatingsApi->get_elo:\n")
         pprint(api_response)
     except Exception as e:
@@ -239,6 +240,7 @@ Name | Type | Description  | Notes
  **season_type** | [**SeasonType**](.md)| Season type. | [optional] 
  **team** | **str**| Team name. | [optional] 
  **conference** | **str**| Conference name or abbreviation. | [optional] 
+ **preseason** | **bool**| Return initial ratings from each team&#39;s opening regular-season game. Missing opening ratings are omitted. Cannot be combined with week; seasonType must be regular or both when specified. Defaults to false. | [optional] [default to False]
 
 ### Return type
 

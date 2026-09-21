@@ -6,6 +6,8 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **ppa** | [**List[PlayerPPA]**](PlayerPPA.md) |  | 
 **usage** | [**List[PlayerGameUsage]**](PlayerGameUsage.md) |  | 
+**rushing** | [**List[PlayerRushingGame]**](PlayerRushingGame.md) | Enriched rushing by athlete ID, including direction coverage. | 
+**passing** | [**List[PlayerPassingGame]**](PlayerPassingGame.md) | Enriched passing by athlete ID, including location coverage. | 
 
 ## Example
 
