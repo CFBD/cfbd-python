@@ -28,7 +28,7 @@ Name | Type | Description | Notes
 **stuff_rate** | **float** |  | 
 **power_success** | **float** |  | 
 **explosiveness** | **float** |  | 
-**directions** | [**PlayerRushingSeasonDirections**](PlayerRushingSeasonDirections.md) |  | 
+**directions** | [**TeamRushingProductionDirections**](TeamRushingProductionDirections.md) |  | 
 **season** | **int** |  | 
 **player_id** | **str** |  | 
 **player** | **str** |  | 

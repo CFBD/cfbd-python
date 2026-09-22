@@ -7,8 +7,8 @@ Name | Type | Description | Notes
 **season** | **int** |  | 
 **team** | **str** |  | 
 **conference** | **str** |  | 
-**offense** | [**AdvancedSeasonStatOffense**](AdvancedSeasonStatOffense.md) |  | 
-**defense** | [**AdvancedSeasonStatDefense**](AdvancedSeasonStatDefense.md) |  | 
+**offense** | [**TeamSeasonAdvancedStatsOffense**](TeamSeasonAdvancedStatsOffense.md) |  | 
+**defense** | [**TeamSeasonAdvancedStatsDefense**](TeamSeasonAdvancedStatsDefense.md) |  | 
 
 ## Example
 

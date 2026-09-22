@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **conference** | **str** |  | 
 **games** | **int** |  | 
 **box_score_stats** | [**PlayerSeasonOverviewBoxScoreStats**](PlayerSeasonOverviewBoxScoreStats.md) |  | 
-**usage** | [**PlayerUsageUsage**](PlayerUsageUsage.md) |  | [optional] 
+**usage** | [**TeamSeasonPlayerUsageUsage**](TeamSeasonPlayerUsageUsage.md) |  | [optional] 
 **ppa** | [**PlayerSeasonOverviewPPA**](PlayerSeasonOverviewPPA.md) |  | [optional] 
 
 ## Example

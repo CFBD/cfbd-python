@@ -8,6 +8,7 @@ Method | HTTP request | Description
 [**get_matchup**](TeamsApi.md#get_matchup) | **GET** /teams/matchup | 
 [**get_roster**](TeamsApi.md#get_roster) | **GET** /roster | 
 [**get_talent**](TeamsApi.md#get_talent) | **GET** /talent | 
+[**get_team_season_overview**](TeamsApi.md#get_team_season_overview) | **GET** /teams/season/overview | 
 [**get_teams**](TeamsApi.md#get_teams) | **GET** /teams | 
 [**get_teams_ats**](TeamsApi.md#get_teams_ats) | **GET** /teams/ats | 
 
@@ -324,6 +325,88 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | Ok |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_team_season_overview**
+> TeamSeasonOverview get_team_season_overview(year, team)
+
+
+
+Returns a stored full-season team overview, including postseason and garbage time.
+
+### Example
+
+* Bearer Authentication (apiKey):
+```python
+import time
+import os
+import cfbd
+from cfbd.models.team_season_overview import TeamSeasonOverview
+from cfbd.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://api.collegefootballdata.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = cfbd.Configuration(
+    host = "https://api.collegefootballdata.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: apiKey
+configuration = cfbd.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+with cfbd.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cfbd.TeamsApi(api_client)
+    year = 56 # int | Season year.
+    team = 'team_example' # str | Team name.
+
+    try:
+        api_response = api_instance.get_team_season_overview(year, team)
+        print("The response of TeamsApi->get_team_season_overview:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling TeamsApi->get_team_season_overview: %s\n" % e)
+```
+
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **year** | **int**| Season year. | 
+ **team** | **str**| Team name. | 
+
+### Return type
+
+[**TeamSeasonOverview**](TeamSeasonOverview.md)
+
+### Authorization
+
+[apiKey](../README.md#apiKey)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Ok |  -  |
+**400** | Validation error |  -  |
+**401** | Unauthorized |  -  |
+**404** |  |  -  |
+**503** |  |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

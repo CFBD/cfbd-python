@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **position** | **str** |  | 
 **team** | **str** |  | 
 **conference** | **str** |  | 
-**usage** | [**PlayerUsageUsage**](PlayerUsageUsage.md) |  | 
+**usage** | [**TeamSeasonPlayerUsageUsage**](TeamSeasonPlayerUsageUsage.md) |  | 
 
 ## Example
 

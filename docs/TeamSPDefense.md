@@ -4,7 +4,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**havoc** | [**AdvancedSeasonStatOffenseHavoc**](AdvancedSeasonStatOffenseHavoc.md) |  | 
+**havoc** | [**TeamSeasonAdvancedStatsOffenseHavoc**](TeamSeasonAdvancedStatsOffenseHavoc.md) |  | 
 **passing_downs** | **float** |  | 
 **standard_downs** | **float** |  | 
 **passing** | **float** |  | 
