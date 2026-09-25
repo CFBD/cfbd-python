@@ -179,6 +179,7 @@ Name | Type | Description  | Notes
 
 
 Returns continuous head-coaching tenures and their attributed records.
+Requires coachId or team; year and active only filter the results.
 
 ### Example
 

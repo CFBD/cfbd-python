@@ -84,6 +84,7 @@ cfbd/models/draft_position.py
 cfbd/models/draft_team.py
 cfbd/models/drive.py
 cfbd/models/expanded_team_srs.py
+cfbd/models/field_errors_value.py
 cfbd/models/field_goal_ep.py
 cfbd/models/game.py
 cfbd/models/game_havoc_stats.py
@@ -101,6 +102,7 @@ cfbd/models/game_team_stats.py
 cfbd/models/game_team_stats_team.py
 cfbd/models/game_team_stats_team_stat.py
 cfbd/models/game_weather.py
+cfbd/models/get_coach_tenures400_response.py
 cfbd/models/get_team_season_overview400_response.py
 cfbd/models/kicker_paar.py
 cfbd/models/live_game.py
@@ -320,6 +322,7 @@ docs/DraftTeam.md
 docs/Drive.md
 docs/DrivesApi.md
 docs/ExpandedTeamSRS.md
+docs/FieldErrorsValue.md
 docs/FieldGoalEP.md
 docs/Game.md
 docs/GameHavocStats.md
@@ -338,6 +341,7 @@ docs/GameTeamStatsTeam.md
 docs/GameTeamStatsTeamStat.md
 docs/GameWeather.md
 docs/GamesApi.md
+docs/GetCoachTenures400Response.md
 docs/GetTeamSeasonOverview400Response.md
 docs/InfoApi.md
 docs/KickerPAAR.md
@@ -575,6 +579,7 @@ test/test_draft_team.py
 test/test_drive.py
 test/test_drives_api.py
 test/test_expanded_team_srs.py
+test/test_field_errors_value.py
 test/test_field_goal_ep.py
 test/test_game.py
 test/test_game_havoc_stats.py
@@ -593,6 +598,7 @@ test/test_game_team_stats_team.py
 test/test_game_team_stats_team_stat.py
 test/test_game_weather.py
 test/test_games_api.py
+test/test_get_coach_tenures400_response.py
 test/test_get_team_season_overview400_response.py
 test/test_info_api.py
 test/test_kicker_paar.py
