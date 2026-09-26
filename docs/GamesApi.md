@@ -4,9 +4,12 @@ All URIs are relative to *https://api.collegefootballdata.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**get_adjusted_game_preview**](GamesApi.md#get_adjusted_game_preview) | **GET** /games/{gameId}/preview/adjusted | 
 [**get_advanced_box_score**](GamesApi.md#get_advanced_box_score) | **GET** /game/box/advanced | 
 [**get_calendar**](GamesApi.md#get_calendar) | **GET** /calendar | 
 [**get_game_player_stats**](GamesApi.md#get_game_player_stats) | **GET** /games/players | 
+[**get_game_preview**](GamesApi.md#get_game_preview) | **GET** /games/{gameId}/preview | 
+[**get_game_schedule**](GamesApi.md#get_game_schedule) | **GET** /games/schedule | 
 [**get_game_team_stats**](GamesApi.md#get_game_team_stats) | **GET** /games/teams | 
 [**get_games**](GamesApi.md#get_games) | **GET** /games | 
 [**get_media**](GamesApi.md#get_media) | **GET** /games/media | 
@@ -14,6 +17,87 @@ Method | HTTP request | Description
 [**get_scoreboard**](GamesApi.md#get_scoreboard) | **GET** /scoreboard | 
 [**get_weather**](GamesApi.md#get_weather) | **GET** /games/weather | 
 
+
+# **get_adjusted_game_preview**
+> AdjustedGamePreview get_adjusted_game_preview(game_id)
+
+
+
+Returns stored adjusted team and player metrics. Requires Patreon Tier 1.
+Team metrics may use the previous season; players remain current-season.
+
+### Example
+
+* Bearer Authentication (apiKey):
+```python
+import time
+import os
+import cfbd
+from cfbd.models.adjusted_game_preview import AdjustedGamePreview
+from cfbd.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://api.collegefootballdata.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = cfbd.Configuration(
+    host = "https://api.collegefootballdata.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: apiKey
+configuration = cfbd.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+with cfbd.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cfbd.GamesApi(api_client)
+    game_id = 56 # int | 
+
+    try:
+        api_response = api_instance.get_adjusted_game_preview(game_id)
+        print("The response of GamesApi->get_adjusted_game_preview:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling GamesApi->get_adjusted_game_preview: %s\n" % e)
+```
+
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **game_id** | **int**|  | 
+
+### Return type
+
+[**AdjustedGamePreview**](AdjustedGamePreview.md)
+
+### Authorization
+
+[apiKey](../README.md#apiKey)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Ok |  -  |
+**400** | Validation error |  -  |
+**401** | Unauthorized |  -  |
+**404** |  |  -  |
+**503** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_advanced_box_score**
 > AdvancedBoxScore get_advanced_box_score(id)
@@ -256,6 +340,176 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | Ok |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_game_preview**
+> GamePreview get_game_preview(game_id)
+
+
+
+Returns pregame team comparisons and key players. Started games return metadata only.
+Team statistics may use the previous season; players and context stay in the game season.
+
+### Example
+
+* Bearer Authentication (apiKey):
+```python
+import time
+import os
+import cfbd
+from cfbd.models.game_preview import GamePreview
+from cfbd.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://api.collegefootballdata.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = cfbd.Configuration(
+    host = "https://api.collegefootballdata.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: apiKey
+configuration = cfbd.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+with cfbd.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cfbd.GamesApi(api_client)
+    game_id = 56 # int | 
+
+    try:
+        api_response = api_instance.get_game_preview(game_id)
+        print("The response of GamesApi->get_game_preview:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling GamesApi->get_game_preview: %s\n" % e)
+```
+
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **game_id** | **int**|  | 
+
+### Return type
+
+[**GamePreview**](GamePreview.md)
+
+### Authorization
+
+[apiKey](../README.md#apiKey)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Ok |  -  |
+**400** | Validation error |  -  |
+**401** | Unauthorized |  -  |
+**404** |  |  -  |
+**503** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_game_schedule**
+> GameSchedule get_game_schedule(year=year, season_type=season_type, week=week, classification=classification, conference=conference)
+
+
+
+Returns the active or next calendar slate, including completed games.
+Explicit windows require year, seasonType, and week together.
+
+### Example
+
+* Bearer Authentication (apiKey):
+```python
+import time
+import os
+import cfbd
+from cfbd.models.game_schedule import GameSchedule
+from cfbd.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://api.collegefootballdata.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = cfbd.Configuration(
+    host = "https://api.collegefootballdata.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: apiKey
+configuration = cfbd.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+with cfbd.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cfbd.GamesApi(api_client)
+    year = 56 # int |  (optional)
+    season_type = 'season_type_example' # str |  (optional)
+    week = 56 # int |  (optional)
+    classification = 'classification_example' # str | Division of either participant. Defaults to fbs. (optional)
+    conference = 'conference_example' # str | Conference abbreviation of either participant. (optional)
+
+    try:
+        api_response = api_instance.get_game_schedule(year=year, season_type=season_type, week=week, classification=classification, conference=conference)
+        print("The response of GamesApi->get_game_schedule:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling GamesApi->get_game_schedule: %s\n" % e)
+```
+
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **year** | **int**|  | [optional] 
+ **season_type** | **str**|  | [optional] 
+ **week** | **int**|  | [optional] 
+ **classification** | **str**| Division of either participant. Defaults to fbs. | [optional] 
+ **conference** | **str**| Conference abbreviation of either participant. | [optional] 
+
+### Return type
+
+[**GameSchedule**](GameSchedule.md)
+
+### Authorization
+
+[apiKey](../README.md#apiKey)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Ok |  -  |
+**400** | Validation error |  -  |
+**401** | Unauthorized |  -  |
+**404** |  |  -  |
+**503** |  |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
