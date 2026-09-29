@@ -48,6 +48,8 @@ cfbd/models/advanced_game_stat_offense.py
 cfbd/models/advanced_game_stat_offense_passing_downs.py
 cfbd/models/advanced_game_stat_offense_passing_plays.py
 cfbd/models/advanced_season_stat.py
+cfbd/models/advanced_season_stat_defense.py
+cfbd/models/advanced_season_stat_offense.py
 cfbd/models/aggregated_team_recruiting.py
 cfbd/models/betting_game.py
 cfbd/models/calendar_week.py
@@ -80,6 +82,7 @@ cfbd/models/conference_sp_defense.py
 cfbd/models/conference_sp_offense.py
 cfbd/models/core_rating_season_type.py
 cfbd/models/detailed_coach_season.py
+cfbd/models/division.py
 cfbd/models/division_classification.py
 cfbd/models/draft_pick.py
 cfbd/models/draft_pick_hometown_info.py
@@ -213,6 +216,7 @@ cfbd/models/preview_venue.py
 cfbd/models/ranking_poll.py
 cfbd/models/recent_result.py
 cfbd/models/recent_result_opponent.py
+cfbd/models/record_stat_metric_key_team_stat_rank_or_null.py
 cfbd/models/recruit.py
 cfbd/models/recruit_classification.py
 cfbd/models/recruit_hometown_info.py
@@ -287,12 +291,14 @@ cfbd/models/team_season_player_usage_usage.py
 cfbd/models/team_season_predicted_points_added.py
 cfbd/models/team_season_predicted_points_added_offense.py
 cfbd/models/team_season_ranked_rating.py
+cfbd/models/team_season_stat_rankings.py
 cfbd/models/team_sp.py
 cfbd/models/team_sp_defense.py
 cfbd/models/team_sp_offense.py
 cfbd/models/team_sp_special_teams.py
 cfbd/models/team_srs.py
 cfbd/models/team_stat.py
+cfbd/models/team_stat_rank.py
 cfbd/models/team_stat_stat_value.py
 cfbd/models/team_success_rates.py
 cfbd/models/team_talent.py
@@ -326,6 +332,8 @@ docs/AdvancedGameStatOffense.md
 docs/AdvancedGameStatOffensePassingDowns.md
 docs/AdvancedGameStatOffensePassingPlays.md
 docs/AdvancedSeasonStat.md
+docs/AdvancedSeasonStatDefense.md
+docs/AdvancedSeasonStatOffense.md
 docs/AggregatedTeamRecruiting.md
 docs/BettingApi.md
 docs/BettingGame.md
@@ -361,6 +369,7 @@ docs/ConferenceSPOffense.md
 docs/ConferencesApi.md
 docs/CoreRatingSeasonType.md
 docs/DetailedCoachSeason.md
+docs/Division.md
 docs/DivisionClassification.md
 docs/DraftApi.md
 docs/DraftPick.md
@@ -505,6 +514,7 @@ docs/RankingsApi.md
 docs/RatingsApi.md
 docs/RecentResult.md
 docs/RecentResultOpponent.md
+docs/RecordStatMetricKeyTeamStatRankOrNull.md
 docs/Recruit.md
 docs/RecruitClassification.md
 docs/RecruitHometownInfo.md
@@ -587,7 +597,9 @@ docs/TeamSeasonPlayerUsageUsage.md
 docs/TeamSeasonPredictedPointsAdded.md
 docs/TeamSeasonPredictedPointsAddedOffense.md
 docs/TeamSeasonRankedRating.md
+docs/TeamSeasonStatRankings.md
 docs/TeamStat.md
+docs/TeamStatRank.md
 docs/TeamStatStatValue.md
 docs/TeamSuccessRates.md
 docs/TeamTalent.md
@@ -628,6 +640,8 @@ test/test_advanced_game_stat_offense.py
 test/test_advanced_game_stat_offense_passing_downs.py
 test/test_advanced_game_stat_offense_passing_plays.py
 test/test_advanced_season_stat.py
+test/test_advanced_season_stat_defense.py
+test/test_advanced_season_stat_offense.py
 test/test_aggregated_team_recruiting.py
 test/test_betting_api.py
 test/test_betting_game.py
@@ -663,6 +677,7 @@ test/test_conference_sp_offense.py
 test/test_conferences_api.py
 test/test_core_rating_season_type.py
 test/test_detailed_coach_season.py
+test/test_division.py
 test/test_division_classification.py
 test/test_draft_api.py
 test/test_draft_pick.py
@@ -807,6 +822,7 @@ test/test_rankings_api.py
 test/test_ratings_api.py
 test/test_recent_result.py
 test/test_recent_result_opponent.py
+test/test_record_stat_metric_key_team_stat_rank_or_null.py
 test/test_recruit.py
 test/test_recruit_classification.py
 test/test_recruit_hometown_info.py
@@ -884,12 +900,14 @@ test/test_team_season_player_usage_usage.py
 test/test_team_season_predicted_points_added.py
 test/test_team_season_predicted_points_added_offense.py
 test/test_team_season_ranked_rating.py
+test/test_team_season_stat_rankings.py
 test/test_team_sp.py
 test/test_team_sp_defense.py
 test/test_team_sp_offense.py
 test/test_team_sp_special_teams.py
 test/test_team_srs.py
 test/test_team_stat.py
+test/test_team_stat_rank.py
 test/test_team_stat_stat_value.py
 test/test_team_success_rates.py
 test/test_team_talent.py

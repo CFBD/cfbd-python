@@ -20,6 +20,7 @@ Name | Type | Description | Notes
 **line_yards** | **float** |  | 
 **stuff_rate** | **float** |  | 
 **power_success** | **float** |  | 
+**power_rush_attempts** | **float** |  | [optional] 
 **explosiveness** | **float** |  | 
 **success_rate** | **float** |  | 
 **total_ppa** | **float** |  | 

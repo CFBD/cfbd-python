@@ -4,12 +4,12 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**passing_plays** | [**AdvancedSeasonStatOffensePassingPlays**](AdvancedSeasonStatOffensePassingPlays.md) |  | 
-**rushing_plays** | [**AdvancedSeasonStatOffensePassingPlays**](AdvancedSeasonStatOffensePassingPlays.md) |  | 
-**passing_downs** | [**AdvancedSeasonStatOffensePassingDowns**](AdvancedSeasonStatOffensePassingDowns.md) |  | 
-**standard_downs** | [**AdvancedSeasonStatOffensePassingDowns**](AdvancedSeasonStatOffensePassingDowns.md) |  | 
-**havoc** | [**AdvancedSeasonStatOffenseHavoc**](AdvancedSeasonStatOffenseHavoc.md) |  | 
-**field_position** | [**AdvancedSeasonStatOffenseFieldPosition**](AdvancedSeasonStatOffenseFieldPosition.md) |  | 
+**passing_plays** | [**TeamSeasonAdvancedStatsOffensePassingPlays**](TeamSeasonAdvancedStatsOffensePassingPlays.md) |  | 
+**rushing_plays** | [**TeamSeasonAdvancedStatsOffensePassingPlays**](TeamSeasonAdvancedStatsOffensePassingPlays.md) |  | 
+**passing_downs** | [**TeamSeasonAdvancedStatsOffensePassingDowns**](TeamSeasonAdvancedStatsOffensePassingDowns.md) |  | 
+**standard_downs** | [**TeamSeasonAdvancedStatsOffensePassingDowns**](TeamSeasonAdvancedStatsOffensePassingDowns.md) |  | 
+**havoc** | [**TeamSeasonAdvancedStatsOffenseHavoc**](TeamSeasonAdvancedStatsOffenseHavoc.md) |  | 
+**field_position** | [**TeamSeasonAdvancedStatsOffenseFieldPosition**](TeamSeasonAdvancedStatsOffenseFieldPosition.md) |  | 
 **points_per_opportunity** | **float** |  | 
 **total_opportunies** | **int** |  | 
 **open_field_yards_total** | **int** |  | 

@@ -4,6 +4,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**stat_rankings** | [**TeamSeasonStatRankings**](TeamSeasonStatRankings.md) |  | [optional] 
 **season** | **int** |  | 
 **is_previous_season** | **bool** |  | 
 **advanced** | [**TeamSeasonAdvancedStats**](TeamSeasonAdvancedStats.md) |  | 

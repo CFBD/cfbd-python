@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **players** | [**TeamSeasonOverviewPlayers**](TeamSeasonOverviewPlayers.md) |  | 
 **passing** | [**TeamPassingSeason**](TeamPassingSeason.md) |  | 
 **rushing** | [**TeamRushingSeason**](TeamRushingSeason.md) |  | 
+**stat_rankings** | [**TeamSeasonStatRankings**](TeamSeasonStatRankings.md) |  | [optional] 
 **record** | [**TeamSeasonOverviewRecord**](TeamSeasonOverviewRecord.md) |  | 
 **ratings** | [**TeamSeasonOverviewRatings**](TeamSeasonOverviewRatings.md) |  | 
 **season** | **int** |  | 
