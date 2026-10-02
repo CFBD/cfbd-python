@@ -20,6 +20,7 @@ Name | Type | Description | Notes
 **playoff** | [**GamePlayoff**](GamePlayoff.md) |  | 
 **broadcasts** | [**PreviewSectionPreviewBroadcastArray**](PreviewSectionPreviewBroadcastArray.md) |  | 
 **odds** | [**PreviewSectionSelectedOdds**](PreviewSectionSelectedOdds.md) |  | 
+**watchability_score** | **float** |  | 
 
 ## Example
 
