@@ -19,6 +19,7 @@ cfbd/api/passing_api.py
 cfbd/api/players_api.py
 cfbd/api/playoffs_api.py
 cfbd/api/plays_api.py
+cfbd/api/punting_api.py
 cfbd/api/rankings_api.py
 cfbd/api/ratings_api.py
 cfbd/api/recruiting_api.py
@@ -152,6 +153,10 @@ cfbd/models/player_passing_game.py
 cfbd/models/player_passing_season.py
 cfbd/models/player_ppa.py
 cfbd/models/player_ppa_chart_item.py
+cfbd/models/player_punt_return_production.py
+cfbd/models/player_punting_game.py
+cfbd/models/player_punting_production.py
+cfbd/models/player_punting_season.py
 cfbd/models/player_rushing_game.py
 cfbd/models/player_rushing_season.py
 cfbd/models/player_search_result.py
@@ -213,6 +218,9 @@ cfbd/models/preview_section_team_season_overview_at_record_data.py
 cfbd/models/preview_team_identity.py
 cfbd/models/preview_team_statistics.py
 cfbd/models/preview_venue.py
+cfbd/models/punt_parse_status.py
+cfbd/models/punting_play.py
+cfbd/models/punting_play_clock.py
 cfbd/models/ranking_poll.py
 cfbd/models/recent_result.py
 cfbd/models/recent_result_opponent.py
@@ -260,6 +268,9 @@ cfbd/models/team_havoc.py
 cfbd/models/team_passing_game.py
 cfbd/models/team_passing_season.py
 cfbd/models/team_ppa.py
+cfbd/models/team_punting_game.py
+cfbd/models/team_punting_production.py
+cfbd/models/team_punting_season.py
 cfbd/models/team_record.py
 cfbd/models/team_records.py
 cfbd/models/team_recruiting_ranking.py
@@ -445,6 +456,10 @@ docs/PlayerPPA.md
 docs/PlayerPPAChartItem.md
 docs/PlayerPassingGame.md
 docs/PlayerPassingSeason.md
+docs/PlayerPuntReturnProduction.md
+docs/PlayerPuntingGame.md
+docs/PlayerPuntingProduction.md
+docs/PlayerPuntingSeason.md
 docs/PlayerRushingGame.md
 docs/PlayerRushingSeason.md
 docs/PlayerSearchResult.md
@@ -509,6 +524,10 @@ docs/PreviewSectionTeamSeasonOverviewAtRecordData.md
 docs/PreviewTeamIdentity.md
 docs/PreviewTeamStatistics.md
 docs/PreviewVenue.md
+docs/PuntParseStatus.md
+docs/PuntingApi.md
+docs/PuntingPlay.md
+docs/PuntingPlayClock.md
 docs/RankingPoll.md
 docs/RankingsApi.md
 docs/RatingsApi.md
@@ -561,6 +580,9 @@ docs/TeamHavoc.md
 docs/TeamPPA.md
 docs/TeamPassingGame.md
 docs/TeamPassingSeason.md
+docs/TeamPuntingGame.md
+docs/TeamPuntingProduction.md
+docs/TeamPuntingSeason.md
 docs/TeamRecord.md
 docs/TeamRecords.md
 docs/TeamRecruitingRanking.md
@@ -753,6 +775,10 @@ test/test_player_passing_game.py
 test/test_player_passing_season.py
 test/test_player_ppa.py
 test/test_player_ppa_chart_item.py
+test/test_player_punt_return_production.py
+test/test_player_punting_game.py
+test/test_player_punting_production.py
+test/test_player_punting_season.py
 test/test_player_rushing_game.py
 test/test_player_rushing_season.py
 test/test_player_search_result.py
@@ -817,6 +843,10 @@ test/test_preview_section_team_season_overview_at_record_data.py
 test/test_preview_team_identity.py
 test/test_preview_team_statistics.py
 test/test_preview_venue.py
+test/test_punt_parse_status.py
+test/test_punting_api.py
+test/test_punting_play.py
+test/test_punting_play_clock.py
 test/test_ranking_poll.py
 test/test_rankings_api.py
 test/test_ratings_api.py
@@ -869,6 +899,9 @@ test/test_team_havoc.py
 test/test_team_passing_game.py
 test/test_team_passing_season.py
 test/test_team_ppa.py
+test/test_team_punting_game.py
+test/test_team_punting_production.py
+test/test_team_punting_season.py
 test/test_team_record.py
 test/test_team_records.py
 test/test_team_recruiting_ranking.py

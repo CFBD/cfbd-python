@@ -25,6 +25,11 @@ Name | Type | Description | Notes
 **success_attempts_available** | **int** | Eligible attempts with non-null success. Missing success remains in the success-rate denominator but does not count as successful. | 
 **successful_attempts** | **int** | Eligible attempts with stored success equal to true. | 
 **successful_ppa_attempts_available** | **int** | Successful eligible attempts with non-null PPA; explosiveness denominator. | 
+**cpoe_attempts_available** | **int** | Attempts with a completion probability; denominator for CPOE metrics. | 
+**cpoe_completions** | **int** | Completions among attempts with a completion probability. | 
+**expected_completions** | **float** | Sum of completion probabilities; null if unavailable. | 
+**expected_completion_rate** | **float** | Expected completions / cpoeAttemptsAvailable; null if unavailable. | 
+**cpoe** | **float** | Completion percentage over expected, in percentage points; null if unavailable. | 
 **location_eligible_attempts** | **int** | Attempts eligible for advanced metrics and location analysis. Existing overall production includes ineligible attempts; location buckets do not. | 
 **location_available_attempts** | **int** | Eligible attempts with both recognized source depth and direction. | 
 **locations** | [**PassingLocations**](PassingLocations.md) |  | 

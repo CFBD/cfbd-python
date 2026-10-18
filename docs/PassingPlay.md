@@ -38,6 +38,8 @@ Name | Type | Description | Notes
 **is_spike** | **bool** |  | 
 **is_throwaway** | **bool** |  | 
 **is_intentional_grounding** | **bool** |  | 
+**completion_probability** | **float** | Estimated chance of a completion, from 0 to 1; null if unavailable. | 
+**cpoe** | **float** | Completion over expected, in percentage points; null if unavailable. | 
 **parse_status** | [**PassParseStatus**](PassParseStatus.md) |  | 
 **ppa** | **float** | Stored offensive PPA, including zero and negative values. | 
 **success** | **bool** | Stored success classification; null means unavailable. | 

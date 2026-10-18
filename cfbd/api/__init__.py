@@ -14,6 +14,7 @@ from cfbd.api.passing_api import PassingApi
 from cfbd.api.players_api import PlayersApi
 from cfbd.api.playoffs_api import PlayoffsApi
 from cfbd.api.plays_api import PlaysApi
+from cfbd.api.punting_api import PuntingApi
 from cfbd.api.rankings_api import RankingsApi
 from cfbd.api.ratings_api import RatingsApi
 from cfbd.api.recruiting_api import RecruitingApi
