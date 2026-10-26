@@ -40,6 +40,7 @@ cfbd/models/adjusted_team_metrics_epa.py
 cfbd/models/adjusted_team_metrics_rushing.py
 cfbd/models/adjusted_team_metrics_success_rate.py
 cfbd/models/advanced_box_score.py
+cfbd/models/advanced_box_score_error.py
 cfbd/models/advanced_box_score_game_info.py
 cfbd/models/advanced_box_score_players.py
 cfbd/models/advanced_box_score_teams.py
@@ -334,6 +335,7 @@ docs/AdjustedTeamMetricsEpa.md
 docs/AdjustedTeamMetricsRushing.md
 docs/AdjustedTeamMetricsSuccessRate.md
 docs/AdvancedBoxScore.md
+docs/AdvancedBoxScoreError.md
 docs/AdvancedBoxScoreGameInfo.md
 docs/AdvancedBoxScorePlayers.md
 docs/AdvancedBoxScoreTeams.md
@@ -653,6 +655,7 @@ test/test_adjusted_team_metrics_epa.py
 test/test_adjusted_team_metrics_rushing.py
 test/test_adjusted_team_metrics_success_rate.py
 test/test_advanced_box_score.py
+test/test_advanced_box_score_error.py
 test/test_advanced_box_score_game_info.py
 test/test_advanced_box_score_players.py
 test/test_advanced_box_score_teams.py

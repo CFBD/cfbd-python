@@ -210,7 +210,7 @@ class GamesApi:
     def get_advanced_box_score(self, id : Annotated[StrictInt, Field(..., description="Game ID.")], **kwargs) -> AdvancedBoxScore:  # noqa: E501
         """get_advanced_box_score  # noqa: E501
 
-        Returns an advanced box score for a game.  # noqa: E501
+        Returns an advanced box score for a game. Games without play-by-play data, including games not yet played, return 404.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -240,7 +240,7 @@ class GamesApi:
     def get_advanced_box_score_with_http_info(self, id : Annotated[StrictInt, Field(..., description="Game ID.")], **kwargs) -> ApiResponse:  # noqa: E501
         """get_advanced_box_score  # noqa: E501
 
-        Returns an advanced box score for a game.  # noqa: E501
+        Returns an advanced box score for a game. Games without play-by-play data, including games not yet played, return 404.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -327,6 +327,7 @@ class GamesApi:
 
         _response_types_map = {
             '200': "AdvancedBoxScore",
+            '404': "AdvancedBoxScoreError",
         }
 
         return self.api_client.call_api(

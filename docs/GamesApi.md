@@ -104,7 +104,8 @@ Name | Type | Description  | Notes
 
 
 
-Returns an advanced box score for a game.
+Returns an advanced box score for a game. Games without play-by-play
+data, including games not yet played, return 404.
 
 ### Example
 
@@ -172,6 +173,7 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** |  |  -  |
+**404** |  |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

@@ -183,6 +183,7 @@ Class | Method | HTTP request | Description
  - [AdjustedTeamMetricsRushing](docs/AdjustedTeamMetricsRushing.md)
  - [AdjustedTeamMetricsSuccessRate](docs/AdjustedTeamMetricsSuccessRate.md)
  - [AdvancedBoxScore](docs/AdvancedBoxScore.md)
+ - [AdvancedBoxScoreError](docs/AdvancedBoxScoreError.md)
  - [AdvancedBoxScoreGameInfo](docs/AdvancedBoxScoreGameInfo.md)
  - [AdvancedBoxScorePlayers](docs/AdvancedBoxScorePlayers.md)
  - [AdvancedBoxScoreTeams](docs/AdvancedBoxScoreTeams.md)

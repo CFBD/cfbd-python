@@ -23,6 +23,7 @@ from cfbd.models.adjusted_team_metrics_epa import AdjustedTeamMetricsEpa
 from cfbd.models.adjusted_team_metrics_rushing import AdjustedTeamMetricsRushing
 from cfbd.models.adjusted_team_metrics_success_rate import AdjustedTeamMetricsSuccessRate
 from cfbd.models.advanced_box_score import AdvancedBoxScore
+from cfbd.models.advanced_box_score_error import AdvancedBoxScoreError
 from cfbd.models.advanced_box_score_game_info import AdvancedBoxScoreGameInfo
 from cfbd.models.advanced_box_score_players import AdvancedBoxScorePlayers
 from cfbd.models.advanced_box_score_teams import AdvancedBoxScoreTeams
