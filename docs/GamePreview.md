@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **game** | [**GamePreviewMetadata**](GamePreviewMetadata.md) |  | 
 **availability** | **str** |  | 
 **reason** | [**PreviewReason**](PreviewReason.md) |  | 
-**analysis** | [**FreePreviewAnalysis**](FreePreviewAnalysis.md) |  | 
+**analysis** | [**FreePreviewAnalysis**](FreePreviewAnalysis.md) | Null once the game is completed or when kickoff is unknown. | 
 
 ## Example
 

@@ -13,8 +13,8 @@ Method | HTTP request | Description
 
 
 
-Returns recent usage for the authenticated user's shared CFB and CBB call
-pool. Returns `null` when the request is not authenticated.
+Returns recent usage of the authenticated user's shared CFB and CBB quota.
+Returns `null` when the request is not authenticated.
 
 ### Example
 

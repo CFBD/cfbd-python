@@ -16,11 +16,7 @@ Method | HTTP request | Description
 
 
 
-Returns individually attributed rusher production by game.
-
-Player totals include only guarded rusher attribution, including
-individually attributed sacks. They do not include team-only or unresolved
-attempts and therefore are not expected to sum to team totals.
+Returns player rushing statistics by game.
 
 ### Example
 
@@ -110,11 +106,7 @@ Name | Type | Description  | Notes
 
 
 
-Returns individually attributed rusher production by season.
-
-Player totals include only guarded rusher attribution, including
-individually attributed sacks. They do not include team-only or unresolved
-attempts and therefore are not expected to sum to team totals.
+Returns player rushing statistics by season.
 
 ### Example
 
@@ -202,11 +194,7 @@ Name | Type | Description  | Notes
 
 
 
-Returns enriched rushing attempts.
-
-Team results include sacks, kneels, team-only attempts, and unresolved
-attribution. Direction eligibility identifies the ordinary-rush analysis
-population; eligible attempts can still have an unknown direction.
+Returns enriched rushing attempts with direction and attribution.
 
 ### Example
 
@@ -318,10 +306,7 @@ Name | Type | Description  | Notes
 
 
 
-Returns team rushing production by game.
-
-Team totals include sacks, kneels, team-only attempts, and unresolved
-attribution. Defense contains rushing production allowed.
+Returns team rushing statistics by game.
 
 ### Example
 
@@ -409,10 +394,7 @@ Name | Type | Description  | Notes
 
 
 
-Returns team rushing production by season.
-
-Team totals include sacks, kneels, team-only attempts, and unresolved
-attribution. Defense contains rushing production allowed.
+Returns team rushing statistics by season.
 
 ### Example
 

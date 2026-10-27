@@ -333,7 +333,7 @@ Name | Type | Description  | Notes
 
 
 
-Returns a stored full-season team overview, including postseason and garbage time.
+Returns a full-season team overview, including postseason and garbage time.
 
 ### Example
 

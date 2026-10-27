@@ -100,7 +100,6 @@ Name | Type | Description  | Notes
 
 
 Returns Context & Opponent-Relative Efficiency (CORE) ratings.
-At least one of `year` or `team` is required.
 
 ### Example
 

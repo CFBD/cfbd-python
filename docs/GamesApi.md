@@ -23,8 +23,8 @@ Method | HTTP request | Description
 
 
 
-Returns stored adjusted team and player metrics until game completion. Requires Patreon Tier 1.
-Team metrics may use the previous season; players remain current-season.
+Returns adjusted pregame team and player metrics for a game.
+Requires Patreon Tier 1.
 
 ### Example
 
@@ -104,8 +104,8 @@ Name | Type | Description  | Notes
 
 
 
-Returns an advanced box score for a game. Games without play-by-play
-data, including games not yet played, return 404.
+Returns an advanced box score for a game.
+Returns 404 for games without play-by-play data.
 
 ### Example
 
@@ -350,8 +350,7 @@ Name | Type | Description  | Notes
 
 
 
-Returns pregame team comparisons and key players. Analysis remains available until the game is completed.
-Team statistics may use the previous season; players and context stay in the game season.
+Returns pregame team comparisons and key players for a game.
 
 ### Example
 
@@ -431,8 +430,7 @@ Name | Type | Description  | Notes
 
 
 
-Returns the active or next calendar slate, including completed games.
-Explicit windows require year, seasonType, and week together.
+Returns games for the current, next, or requested week.
 
 ### Example
 
@@ -465,9 +463,9 @@ configuration = cfbd.Configuration(
 with cfbd.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = cfbd.GamesApi(api_client)
-    year = 56 # int |  (optional)
-    season_type = 'season_type_example' # str |  (optional)
-    week = 56 # int |  (optional)
+    year = 56 # int | Season year. Requires `seasonType` and `week`. (optional)
+    season_type = 'season_type_example' # str | Season type. Requires `year` and `week`. (optional)
+    week = 56 # int | Week number. Requires `year` and `seasonType`. (optional)
     classification = 'classification_example' # str | Division of either participant. Defaults to fbs. (optional)
     conference = 'conference_example' # str | Conference abbreviation of either participant. (optional)
 
@@ -485,9 +483,9 @@ with cfbd.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **year** | **int**|  | [optional] 
- **season_type** | **str**|  | [optional] 
- **week** | **int**|  | [optional] 
+ **year** | **int**| Season year. Requires &#x60;seasonType&#x60; and &#x60;week&#x60;. | [optional] 
+ **season_type** | **str**| Season type. Requires &#x60;year&#x60; and &#x60;week&#x60;. | [optional] 
+ **week** | **int**| Week number. Requires &#x60;year&#x60; and &#x60;seasonType&#x60;. | [optional] 
  **classification** | **str**| Division of either participant. Defaults to fbs. | [optional] 
  **conference** | **str**| Conference abbreviation of either participant. | [optional] 
 

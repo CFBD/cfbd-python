@@ -1,5 +1,6 @@
 # TeamRushingProduction
 
+Includes sacks, kneels, team-only attempts, and unattributed attempts.
 
 ## Properties
 Name | Type | Description | Notes

@@ -16,7 +16,7 @@ Method | HTTP request | Description
 
 
 
-Returns enriched pass attempts with PPA, success, completion probability, and CPOE.
+Returns enriched pass attempts with completion probability and CPOE.
 
 ### Example
 
@@ -117,7 +117,7 @@ Name | Type | Description  | Notes
 
 
 
-Returns passer production, CPOE, advanced metrics, and pass-location breakdowns by game.
+Returns player passing statistics and CPOE by game.
 
 ### Example
 
@@ -207,7 +207,7 @@ Name | Type | Description  | Notes
 
 
 
-Returns passer production, CPOE, advanced metrics, and pass-location breakdowns by season.
+Returns player passing statistics and CPOE by season.
 
 ### Example
 
@@ -295,8 +295,7 @@ Name | Type | Description  | Notes
 
 
 
-Returns team passing production, CPOE, advanced metrics, and pass-location
-breakdowns by game for offense and defense.
+Returns team passing statistics and CPOE by game.
 
 ### Example
 
@@ -384,8 +383,7 @@ Name | Type | Description  | Notes
 
 
 
-Returns team passing production, CPOE, advanced metrics, and pass-location
-breakdowns by season for offense and defense.
+Returns team passing statistics and CPOE by season.
 
 ### Example
 

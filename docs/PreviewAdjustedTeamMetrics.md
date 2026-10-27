@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **season** | **int** |  | 
-**is_previous_season** | **bool** |  | 
+**is_previous_season** | **bool** | True when team metrics come from the previous season. Player metrics always use the game season. | 
 **metrics** | [**AdjustedTeamMetrics**](AdjustedTeamMetrics.md) |  | 
 
 ## Example

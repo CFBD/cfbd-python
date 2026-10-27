@@ -16,8 +16,7 @@ Method | HTTP request | Description
 
 
 
-Returns a player season overview with box score, usage, and Predicted
-Points Added (PPA) data.
+Returns a player season overview with box score, usage, and PPA data.
 
 ### Example
 

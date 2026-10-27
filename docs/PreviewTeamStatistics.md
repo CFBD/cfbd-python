@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **stat_rankings** | [**TeamSeasonStatRankings**](TeamSeasonStatRankings.md) |  | [optional] 
 **season** | **int** |  | 
-**is_previous_season** | **bool** |  | 
+**is_previous_season** | **bool** | True when team statistics come from the previous season. Players and game context always use the game season. | 
 **advanced** | [**TeamSeasonAdvancedStats**](TeamSeasonAdvancedStats.md) |  | 
 **passing** | [**TeamPassingSeason**](TeamPassingSeason.md) |  | 
 **rushing** | [**TeamRushingSeason**](TeamRushingSeason.md) |  | 

@@ -178,8 +178,7 @@ Name | Type | Description  | Notes
 
 
 
-Returns continuous head-coaching tenures and their attributed records.
-Requires coachId or team; year and active only filter the results.
+Returns head coaching tenures and their records.
 
 ### Example
 
@@ -212,8 +211,8 @@ configuration = cfbd.Configuration(
 with cfbd.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = cfbd.CoachesApi(api_client)
-    coach_id = 56 # int | Coach ID. (optional)
-    team = 'team_example' # str | Team name. (optional)
+    coach_id = 56 # int | Coach ID. Required unless `team` is specified. (optional)
+    team = 'team_example' # str | Team name. Required unless `coachId` is specified. (optional)
     year = 56 # int | Season year contained within the tenure. (optional)
     active = True # bool | Filters by active status when specified. (optional)
 
@@ -231,8 +230,8 @@ with cfbd.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **coach_id** | **int**| Coach ID. | [optional] 
- **team** | **str**| Team name. | [optional] 
+ **coach_id** | **int**| Coach ID. Required unless &#x60;team&#x60; is specified. | [optional] 
+ **team** | **str**| Team name. Required unless &#x60;coachId&#x60; is specified. | [optional] 
  **year** | **int**| Season year contained within the tenure. | [optional] 
  **active** | **bool**| Filters by active status when specified. | [optional] 
 

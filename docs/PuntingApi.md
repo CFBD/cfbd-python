@@ -16,11 +16,7 @@ Method | HTTP request | Description
 
 
 
-Returns individually attributed punting and punt return production by
-game.
-
-Player totals do not include team-only or unattributed punts and returns,
-and therefore are not expected to sum to team totals.
+Returns player punting and punt return statistics by game.
 
 ### Example
 
@@ -110,11 +106,7 @@ Name | Type | Description  | Notes
 
 
 
-Returns individually attributed punting and punt return production by
-season.
-
-Player totals do not include team-only or unattributed punts and returns,
-and therefore are not expected to sum to team totals.
+Returns player punting and punt return statistics by season.
 
 ### Example
 
@@ -202,8 +194,7 @@ Name | Type | Description  | Notes
 
 
 
-Returns enriched punt plays with gross, return, and net yardage, field
-position, and punt outcomes.
+Returns enriched punt plays with yardage, field position, and outcomes.
 
 ### Example
 
@@ -301,10 +292,7 @@ Name | Type | Description  | Notes
 
 
 
-Returns team punting and punt return production by game.
-
-Punting describes the team's punts. Returning describes opponent punts and
-the team's returns.
+Returns team punting and punt return statistics by game.
 
 ### Example
 
@@ -392,10 +380,7 @@ Name | Type | Description  | Notes
 
 
 
-Returns team punting and punt return production by season.
-
-Punting describes the team's punts. Returning describes opponent punts and
-the team's returns.
+Returns team punting and punt return statistics by season.
 
 ### Example
 

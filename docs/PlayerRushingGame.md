@@ -1,5 +1,6 @@
 # PlayerRushingGame
 
+Individually attributed rushing, including attributed sacks. Team-only and unattributed attempts are excluded, so player totals may not sum to team totals.
 
 ## Properties
 Name | Type | Description | Notes

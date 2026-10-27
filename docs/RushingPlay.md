@@ -33,7 +33,7 @@ Name | Type | Description | Notes
 **is_kneel** | **bool** |  | 
 **is_team_rush** | **bool** |  | 
 **attribution_status** | [**RushAttributionStatus**](RushAttributionStatus.md) |  | 
-**direction_analysis_eligible** | **bool** |  | 
+**direction_analysis_eligible** | **bool** | Whether the attempt is an ordinary rush included in direction analysis. Eligible attempts can still have an unknown direction. | 
 **parse_status** | [**RushParseStatus**](RushParseStatus.md) |  | 
 **ppa** | **float** |  | 
 **success** | **bool** |  | 

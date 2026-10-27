@@ -1,6 +1,6 @@
 # PlayerPuntingGame
 
-Null when the player has no punts or returns in that role.
+Individually attributed punts and returns. Team-only and unattributed plays are excluded, so player totals may not sum to team totals. `punting` or `returning` is null when the player has no punts or returns in that role.
 
 ## Properties
 Name | Type | Description | Notes
